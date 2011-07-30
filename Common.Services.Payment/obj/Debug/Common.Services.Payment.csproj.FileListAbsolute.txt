@@ -1,0 +1,10 @@
+C:\Projects\tfs-dev\VoiceForVictory\Source\Features\v2.0\Libraries\Common\Common.Services.Payment\bin\Debug\Common.Services.Payment.dll.config
+C:\Projects\tfs-dev\VoiceForVictory\Source\Features\v2.0\Libraries\Common\Common.Services.Payment\bin\Debug\Common.Services.Payment.dll
+C:\Projects\tfs-dev\VoiceForVictory\Source\Features\v2.0\Libraries\Common\Common.Services.Payment\bin\Debug\Common.Services.Payment.pdb
+C:\Projects\tfs-dev\VoiceForVictory\Source\Features\v2.0\Libraries\Common\Common.Services.Payment\bin\Debug\Common.Services.Payment.Interfaces.dll
+C:\Projects\tfs-dev\VoiceForVictory\Source\Features\v2.0\Libraries\Common\Common.Services.Payment\bin\Debug\Common.Types.dll
+C:\Projects\tfs-dev\VoiceForVictory\Source\Features\v2.0\Libraries\Common\Common.Services.Payment\bin\Debug\Common.Services.Payment.Interfaces.pdb
+C:\Projects\tfs-dev\VoiceForVictory\Source\Features\v2.0\Libraries\Common\Common.Services.Payment\bin\Debug\Common.Types.pdb
+C:\Projects\tfs-dev\VoiceForVictory\Source\Features\v2.0\Libraries\Common\Common.Services.Payment\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\tfs-dev\VoiceForVictory\Source\Features\v2.0\Libraries\Common\Common.Services.Payment\obj\Debug\Common.Services.Payment.dll
+C:\Projects\tfs-dev\VoiceForVictory\Source\Features\v2.0\Libraries\Common\Common.Services.Payment\obj\Debug\Common.Services.Payment.pdb

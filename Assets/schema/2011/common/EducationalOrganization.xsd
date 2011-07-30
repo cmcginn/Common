@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.org/EducationalOrganization" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="Person.xsd" namespace="http://schema.org/Person" />
+  <xs:import schemaLocation="Organization.xsd" namespace="http://schema.org/Organization" />
+  <xs:complexType name="EducationalOrganization">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schema.org/Organization" base="q1:Organization">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Alumni" xmlns:q2="http://schema.org/Person" type="q2:Person" />
+</xs:schema>

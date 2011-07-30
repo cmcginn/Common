@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="cef67204-94f8-431c-80b9-1121b2c7e4bf" name="Administrator@WIN-RNMUH95F9U1 2011-07-09 06:39:30" runUser="WIN-RNMUH95F9U1\Administrator" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="1ddb4cbd-2c91-4264-b717-275efc45f586">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment userDeploymentRoot="C:\Projects\tfs-dev\VoiceForVictory\Source\Features\v2.0\Libraries\Common\TestResults" useDefaultDeploymentRoot="false" runDeploymentRoot="Administrator_WIN-RNMUH95F9U1 2011-07-09 06_39_30">
+      <DeploymentItem filename="Common.Services.Fax.Interfaces\Validation\FaxRequestType\PreProcess\FaxValidation1.xsd" />
+      <DeploymentItem filename="C:\Projects\tfs-dev\VoiceForVictory\Source\Features\v2.0\Libraries\Common\Common.IO.Interfaces\bin\Debug\Common.IO.Interfaces.dll" />
+      <DeploymentItem filename="C:\Projects\tfs-dev\VoiceForVictory\Source\Features\v2.0\Libraries\Common\Common.IO\bin\Debug\Common.IO.dll" />
+      <DeploymentItem filename="Common.Services.Fax.Tests\TestResources\" />
+      <DeploymentItem filename="C:\lib\Prism\Bin\Desktop\Microsoft.Practices.ServiceLocation.dll" />
+      <DeploymentItem filename="Common.Services.Fax.Interfaces\Validation\FaxRequestType\PreProcess\FaxValidation2.xsd" />
+      <DeploymentItem filename="C:\Projects\tfs-dev\VoiceForVictory\Source\Features\v2.0\Libraries\Common\Common.Net.Interfaces\bin\Debug\Common.Net.Interfaces.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft Unity Application Block 2.0\Bin\Microsoft.Practices.Unity.Interception.Configuration.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft Unity Application Block 2.0\Bin\Microsoft.Practices.Unity.Configuration.dll" />
+      <DeploymentItem filename="Common.Services.Payment.Tests\Resources\" />
+      <DeploymentItem filename="Common.Services.Fax.Interfaces\Validation\FaxRequestType\PreProcess\" />
+      <DeploymentItem filename="C:\lib\Prism\Bin\Desktop\Microsoft.Practices.Unity.dll" />
+      <DeploymentItem filename="Common.Services.Fax\bin\Debug\Common.Services.Fax.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft Unity Application Block 2.0\Bin\Microsoft.Practices.Unity.Interception.dll" />
+      <DeploymentItem filename="Common.IO.Tests\Resources\" />
+      <DeploymentItem filename="Common.Services.Fax.Interfaces\Validation\FaxRequestType\PreProcess\FaxValidation.xsd" />
+      <DeploymentItem filename="C:\Projects\tfs-dev\VoiceForVictory\Source\Features\v2.0\Libraries\Common\Common.Net\bin\Debug\Common.Net.dll" />
+      <DeploymentItem filename="C:\Projects\tfs-dev\VoiceForVictory\Source\Features\v2.0\Libraries\Common\Common.Types\bin\Debug\Common.Types.dll" />
+      <DeploymentItem filename="Common.Services.Fax.Interfaces\Validation\FaxRequestType\" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific>
+        <UnitTestRunConfig testTypeId="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b">
+          <AssemblyResolution>
+            <TestDirectory useLoadContext="true" />
+          </AssemblyResolution>
+        </UnitTestRunConfig>
+        <WebTestRunConfiguration testTypeId="4e7599fa-5ecb-43e9-a887-cd63cf72d207">
+          <Browser name="Internet Explorer 7.0">
+            <Headers>
+              <Header name="User-Agent" value="Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)" />
+              <Header name="Accept" value="*/*" />
+              <Header name="Accept-Language" value="{{$IEAcceptLanguage}}" />
+              <Header name="Accept-Encoding" value="GZIP" />
+            </Headers>
+          </Browser>
+        </WebTestRunConfiguration>
+      </TestTypeSpecific>
+      <AgentRule name="LocalMachineDefaultRole">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-07-09T06:39:30.0927734-04:00" queuing="2011-07-09T06:39:31.5292968-04:00" start="2011-07-09T06:39:31.7021484-04:00" finish="2011-07-09T06:39:32.4082031-04:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="ExtractAll_WhenUsingWellKnownArchiveWithFilesAndDirectory_AssertFileSystemInfosExist" storage="c:\projects\tfs-dev\voiceforvictory\source\features\v2.0\libraries\common\common.io.tests\bin\debug\common.io.tests.dll" id="8fb67cb5-e907-da76-11ae-2131b3d72150">
+      <Execution id="ca2a63c0-b6b0-4cb8-a5fb-1c71b65c769f" />
+      <TestMethod codeBase="C:/Projects/tfs-dev/VoiceForVictory/Source/Features/v2.0/Libraries/Common/Common.IO.Tests/bin/Debug/Common.IO.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Common.IO.Tests.FileUtilitiesTest, Common.IO.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ExtractAll_WhenUsingWellKnownArchiveWithFilesAndDirectory_AssertFileSystemInfosExist" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="8fb67cb5-e907-da76-11ae-2131b3d72150" executionId="ca2a63c0-b6b0-4cb8-a5fb-1c71b65c769f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="ca2a63c0-b6b0-4cb8-a5fb-1c71b65c769f" testId="8fb67cb5-e907-da76-11ae-2131b3d72150" testName="ExtractAll_WhenUsingWellKnownArchiveWithFilesAndDirectory_AssertFileSystemInfosExist" computerName="WIN-RNMUH95F9U1" duration="00:00:00.0974026" startTime="2011-07-09T06:39:31.7763671-04:00" endTime="2011-07-09T06:39:32.1123046-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ca2a63c0-b6b0-4cb8-a5fb-1c71b65c769f">
+    </UnitTestResult>
+  </Results>
+</TestRun>

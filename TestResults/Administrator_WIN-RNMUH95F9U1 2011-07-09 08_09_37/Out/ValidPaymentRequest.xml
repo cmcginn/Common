@@ -1,0 +1,28 @@
+﻿<PaymentRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Person>
+    <FirstName xmlns="http://schema.org/Person">Billy</FirstName>
+    <LastName xmlns="http://schema.org/Person">Bob</LastName>
+    <Address xmlns="http://schema.org/Person">
+      <PostalAddress>
+        <Name xmlns="http://schema.org/Intangible">Billing Address</Name>
+        <Email xmlns="http://schema.org/StructuredValue">jose@donotresolvethis.org</Email>
+        <Telephone xmlns="http://schema.org/StructuredValue">111-222-3333</Telephone>
+        <AddressLocality xmlns="http://schema.org/StructuredValue">Orlando</AddressLocality>
+        <AddressRegion xmlns="http://schema.org/StructuredValue">FL</AddressRegion>
+        <PostalCode xmlns="http://schema.org/StructuredValue">32323</PostalCode>
+        <StreetAddress xmlns="http://schema.org/StructuredValue">123 Smith Street</StreetAddress>
+        <AddressCountry xmlns="http://schema.org/StructuredValue">
+          <Name xmlns="http://schema.org/Place">US</Name>
+        </AddressCountry>
+      </PostalAddress>
+    </Address>
+  </Person>
+  <ElectronicPaymentCardData>
+    <ExpirationMonth xmlns="http://schema.org/Thing">1</ExpirationMonth>
+    <ExpirationYear xmlns="http://schema.org/Thing">2012</ExpirationYear>
+    <CardNumber xmlns="http://schema.org/Thing">4111111111111111</CardNumber>
+    <Cardholder xmlns="http://schema.org/Thing">Billy Bob</Cardholder>
+    <CardType xmlns="http://schema.org/Thing">Visa</CardType>
+    <CVV xmlns="http://schema.org/Thing">123</CVV>
+  </ElectronicPaymentCardData>
+</PaymentRequest>

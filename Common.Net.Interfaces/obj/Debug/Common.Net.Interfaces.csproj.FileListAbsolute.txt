@@ -1,0 +1,7 @@
+C:\Projects\tfs-dev\VoiceForVictory\Source\Features\v2.0\Libraries\Common\Common.Net.Interfaces\bin\Debug\Common.Net.Interfaces.dll
+C:\Projects\tfs-dev\VoiceForVictory\Source\Features\v2.0\Libraries\Common\Common.Net.Interfaces\bin\Debug\Common.Net.Interfaces.pdb
+C:\Projects\tfs-dev\VoiceForVictory\Source\Features\v2.0\Libraries\Common\Common.Net.Interfaces\bin\Debug\Common.Types.dll
+C:\Projects\tfs-dev\VoiceForVictory\Source\Features\v2.0\Libraries\Common\Common.Net.Interfaces\bin\Debug\Common.Types.pdb
+C:\Projects\tfs-dev\VoiceForVictory\Source\Features\v2.0\Libraries\Common\Common.Net.Interfaces\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\tfs-dev\VoiceForVictory\Source\Features\v2.0\Libraries\Common\Common.Net.Interfaces\obj\Debug\Common.Net.Interfaces.dll
+C:\Projects\tfs-dev\VoiceForVictory\Source\Features\v2.0\Libraries\Common\Common.Net.Interfaces\obj\Debug\Common.Net.Interfaces.pdb

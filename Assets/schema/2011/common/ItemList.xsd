@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.org/ItemList" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="Text.xsd" namespace="http://schema.org/Text" />
+  <xs:import schemaLocation="CreativeWork.xsd" namespace="http://schema.org/CreativeWork" />
+  <xs:complexType name="ItemList">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schema.org/CreativeWork" base="q1:CreativeWork">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ItemListElement" xmlns:q2="http://schema.org/Text" type="q2:Text" />
+</xs:schema>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.org/LocalBusiness" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="Organization.xsd" namespace="http://schema.org/Organization" />
+  <xs:import schemaLocation="Text.xsd" namespace="http://schema.org/Text" />
+  <xs:import schemaLocation="Duration.xsd" namespace="http://schema.org/Duration" />
+  <xs:complexType name="LocalBusiness">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schema.org/Organization" base="q1:Organization">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BranchOf" xmlns:q2="http://schema.org/Organization" type="q2:Organization" />
+  <xs:element name="CurrenciesAccepted" xmlns:q3="http://schema.org/Text" type="q3:Text" />
+  <xs:element name="OpeningHours" xmlns:q4="http://schema.org/Duration" type="q4:Duration" />
+  <xs:element name="PaymentAccepted" xmlns:q5="http://schema.org/Text" type="q5:Text" />
+  <xs:element name="PriceRange" xmlns:q6="http://schema.org/Text" type="q6:Text" />
+</xs:schema>

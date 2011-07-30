@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.org/MusicAlbum" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="MusicGroup.xsd" namespace="http://schema.org/MusicGroup" />
+  <xs:import schemaLocation="MusicPlaylist.xsd" namespace="http://schema.org/MusicPlaylist" />
+  <xs:complexType name="MusicAlbum">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schema.org/MusicPlaylist" base="q1:MusicPlaylist">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ByArtist" xmlns:q2="http://schema.org/MusicGroup" type="q2:MusicGroup" />
+</xs:schema>

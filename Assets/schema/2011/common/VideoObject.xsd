@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.org/VideoObject" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="Text.xsd" namespace="http://schema.org/Text" />
+  <xs:import schemaLocation="ImageObject.xsd" namespace="http://schema.org/ImageObject" />
+  <xs:import schemaLocation="MediaObject.xsd" namespace="http://schema.org/MediaObject" />
+  <xs:complexType name="VideoObject">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schema.org/MediaObject" base="q1:MediaObject">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Caption" xmlns:q2="http://schema.org/Text" type="q2:Text" />
+  <xs:element name="Thumbnail" xmlns:q3="http://schema.org/ImageObject" type="q3:ImageObject" />
+</xs:schema>

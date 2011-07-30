@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<FaxMessage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" TraceId="28BB6ABC-A6C7-47F5-8D8E-ECE8CD97468D">
+  <ContactPoint>
+    <FaxNumber xmlns="http://schema.org/StructuredValue">111-222-3343</FaxNumber>
+  </ContactPoint>
+  <CreativeWork>
+    <Url xmlns="http://schema.org/CreativeWork">file://c:/temp/TID123.doc</Url>
+  </CreativeWork>
+  <ResponseStatusType>
+    <Description xmlns="http://schema.org/Intangible">The fax job is processing</Description>
+    <Name xmlns="http://schema.org/Intangible">Pending</Name>
+  </ResponseStatusType>
+</FaxMessage>
+
+
+

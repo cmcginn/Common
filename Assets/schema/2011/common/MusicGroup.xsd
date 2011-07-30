@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.org/MusicGroup" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="MusicAlbum.xsd" namespace="http://schema.org/MusicAlbum" />
+  <xs:import schemaLocation="Person.xsd" namespace="http://schema.org/Person" />
+  <xs:import schemaLocation="MusicRecording.xsd" namespace="http://schema.org/MusicRecording" />
+  <xs:import schemaLocation="PerformingGroup.xsd" namespace="http://schema.org/PerformingGroup" />
+  <xs:complexType name="MusicGroup">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schema.org/PerformingGroup" base="q1:PerformingGroup">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Albums" xmlns:q2="http://schema.org/MusicAlbum" type="q2:MusicAlbum" />
+  <xs:element name="MusicGroupMember" xmlns:q3="http://schema.org/Person" type="q3:Person" />
+  <xs:element name="Tracks" xmlns:q4="http://schema.org/MusicRecording" type="q4:MusicRecording" />
+</xs:schema>

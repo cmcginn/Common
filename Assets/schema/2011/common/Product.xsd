@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.org/Product" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="AggregateRating.xsd" namespace="http://schema.org/AggregateRating" />
+  <xs:import schemaLocation="Organization.xsd" namespace="http://schema.org/Organization" />
+  <xs:import schemaLocation="Text.xsd" namespace="http://schema.org/Text" />
+  <xs:import schemaLocation="Offer.xsd" namespace="http://schema.org/Offer" />
+  <xs:import schemaLocation="Review.xsd" namespace="http://schema.org/Review" />
+  <xs:import schemaLocation="Thing.xsd" namespace="http://schema.org/Thing" />
+  <xs:complexType name="Product">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schema.org/Thing" base="q1:Thing">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AggregateRating" xmlns:q2="http://schema.org/AggregateRating" type="q2:AggregateRating" />
+  <xs:element name="Brand" xmlns:q3="http://schema.org/Organization" type="q3:Organization" />
+  <xs:element name="Manufacturer" xmlns:q4="http://schema.org/Organization" type="q4:Organization" />
+  <xs:element name="Model" xmlns:q5="http://schema.org/Text" type="q5:Text" />
+  <xs:element name="Offers" xmlns:q6="http://schema.org/Offer" type="q6:Offer" />
+  <xs:element name="ProductID" xmlns:q7="http://schema.org/Text" type="q7:Text" />
+  <xs:element name="Reviews" xmlns:q8="http://schema.org/Review" type="q8:Review" />
+</xs:schema>

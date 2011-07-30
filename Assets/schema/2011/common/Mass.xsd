@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.org/Mass" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="Quantity.xsd" namespace="http://schema.org/Quantity" />
+  <xs:complexType name="Mass">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schema.org/Quantity" base="q1:Quantity" />
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

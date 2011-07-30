@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.org/Place" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="PostalAddress.xsd" namespace="http://schema.org/PostalAddress" />
+  <xs:import schemaLocation="AggregateRating.xsd" namespace="http://schema.org/AggregateRating" />
+  <xs:import schemaLocation="Event.xsd" namespace="http://schema.org/Event" />
+  <xs:import schemaLocation="Text.xsd" namespace="http://schema.org/Text" />
+  <xs:import schemaLocation="GeoCoordinates.xsd" namespace="http://schema.org/GeoCoordinates" />
+  <xs:import schemaLocation="Photograph.xsd" namespace="http://schema.org/Photograph" />
+  <xs:import schemaLocation="ImageObject.xsd" namespace="http://schema.org/ImageObject" />
+  <xs:import schemaLocation="Review.xsd" namespace="http://schema.org/Review" />
+  <xs:import schemaLocation="Thing.xsd" namespace="http://schema.org/Thing" />
+  <xs:complexType name="Place">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schema.org/Thing" base="q1:Thing">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Address" xmlns:q2="http://schema.org/PostalAddress" type="q2:PostalAddress" />
+  <xs:element name="AggregateRating" xmlns:q3="http://schema.org/AggregateRating" type="q3:AggregateRating" />
+  <xs:element name="ContainedIn" xmlns:q4="http://schema.org/Place" type="q4:Place" />
+  <xs:element name="Events" xmlns:q5="http://schema.org/Event" type="q5:Event" />
+  <xs:element name="FaxNumber" xmlns:q6="http://schema.org/Text" type="q6:Text" />
+  <xs:element name="Geo" xmlns:q7="http://schema.org/GeoCoordinates" type="q7:GeoCoordinates" />
+  <xs:element name="InteractionCount" xmlns:q8="http://schema.org/Text" type="q8:Text" />
+  <xs:element name="Maps" xmlns:q9="http://schema.org/Text" type="q9:Text" />
+  <xs:element name="Photos">
+    <xs:complexType>
+      <xs:choice>
+        <xs:element xmlns:photograph="http://schema.org/Photograph" name="Photograph" type="photograph:Photograph" />
+        <xs:element xmlns:imageObject="http://schema.org/ImageObject" name="ImageObject" type="imageObject:ImageObject" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Reviews" xmlns:q10="http://schema.org/Review" type="q10:Review" />
+  <xs:element name="Telephone" xmlns:q11="http://schema.org/Text" type="q11:Text" />
+</xs:schema>

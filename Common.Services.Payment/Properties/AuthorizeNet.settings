@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Common.Services.Payment.Gateways.AuthorizeNet" GeneratedClassName="AuthorizeNet">
+  <Profiles />
+  <Settings>
+    <Setting Name="APIAccountName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">9E4n3PdG</Value>
+    </Setting>
+    <Setting Name="APIAccountPassword" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">8RMF6ZjL2D4z8d75</Value>
+    </Setting>
+    <Setting Name="UseSandbox" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

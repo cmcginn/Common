@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<FaxMessage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ContactPoint>
+    <!--Bad Phone Number-->
+    <FaxNumber xmlns="http://schema.org/StructuredValue">111-222-33</FaxNumber>
+  </ContactPoint>
+  <CreativeWork>
+    <Url xmlns="http://schema.org/CreativeWork">file://c:/temp/TID123.doc</Url>
+  </CreativeWork>
+</FaxMessage>

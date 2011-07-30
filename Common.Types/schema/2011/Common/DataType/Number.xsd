@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 (http://www.altova.com) by BillyBob (Bobs) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://schema.org/Number" targetNamespace="http://schema.org/Number" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="C:\Users\Administrator\Documents\AF\XmlProjects\Common\schema\2011\Common\DataTypes\DataType.xsd"/>
+	<xs:complexType name="Float">
+		<xs:simpleContent>
+			<xs:restriction base="ns1:DataType">
+				<xs:simpleType>
+					<xs:restriction base="xs:float"/>
+				</xs:simpleType>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Integer">
+		<xs:simpleContent>
+			<xs:restriction base="ns1:DataType">
+				<xs:simpleType>
+					<xs:restriction base="xs:integer"/>
+				</xs:simpleType>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+</xs:schema>

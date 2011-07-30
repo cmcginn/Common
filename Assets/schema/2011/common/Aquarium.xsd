@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.org/Aquarium" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="CivicStructure.xsd" namespace="http://schema.org/CivicStructure" />
+  <xs:complexType name="Aquarium">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schema.org/CivicStructure" base="q1:CivicStructure" />
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

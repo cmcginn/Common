@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.org/MusicRecording" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="MusicGroup.xsd" namespace="http://schema.org/MusicGroup" />
+  <xs:import schemaLocation="Duration.xsd" namespace="http://schema.org/Duration" />
+  <xs:import schemaLocation="MusicAlbum.xsd" namespace="http://schema.org/MusicAlbum" />
+  <xs:import schemaLocation="MusicPlaylist.xsd" namespace="http://schema.org/MusicPlaylist" />
+  <xs:import schemaLocation="CreativeWork.xsd" namespace="http://schema.org/CreativeWork" />
+  <xs:complexType name="MusicRecording">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schema.org/CreativeWork" base="q1:CreativeWork">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ByArtist" xmlns:q2="http://schema.org/MusicGroup" type="q2:MusicGroup" />
+  <xs:element name="Duration" xmlns:q3="http://schema.org/Duration" type="q3:Duration" />
+  <xs:element name="InAlbum" xmlns:q4="http://schema.org/MusicAlbum" type="q4:MusicAlbum" />
+  <xs:element name="InPlaylist" xmlns:q5="http://schema.org/MusicPlaylist" type="q5:MusicPlaylist" />
+</xs:schema>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.org/Review" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="Thing.xsd" namespace="http://schema.org/Thing" />
+  <xs:import schemaLocation="Text.xsd" namespace="http://schema.org/Text" />
+  <xs:import schemaLocation="Rating.xsd" namespace="http://schema.org/Rating" />
+  <xs:import schemaLocation="CreativeWork.xsd" namespace="http://schema.org/CreativeWork" />
+  <xs:complexType name="Review">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schema.org/CreativeWork" base="q1:CreativeWork">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ItemReviewed" xmlns:q2="http://schema.org/Thing" type="q2:Thing" />
+  <xs:element name="ReviewBody" xmlns:q3="http://schema.org/Text" type="q3:Text" />
+  <xs:element name="ReviewRating" xmlns:q4="http://schema.org/Rating" type="q4:Rating" />
+</xs:schema>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.org/AggregateOffer" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="Number.xsd" namespace="http://schema.org/Number" />
+  <xs:import schemaLocation="Text.xsd" namespace="http://schema.org/Text" />
+  <xs:import schemaLocation="Integer.xsd" namespace="http://schema.org/Integer" />
+  <xs:import schemaLocation="Offer.xsd" namespace="http://schema.org/Offer" />
+  <xs:complexType name="AggregateOffer">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schema.org/Offer" base="q1:Offer">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HighPrice">
+    <xs:complexType>
+      <xs:choice>
+        <xs:element xmlns:number="http://schema.org/Number" name="Number" type="number:Number" />
+        <xs:element xmlns:text="http://schema.org/Text" name="Text" type="text:Text" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LowPrice">
+    <xs:complexType>
+      <xs:choice>
+        <xs:element xmlns:number="http://schema.org/Number" name="Number" type="number:Number" />
+        <xs:element xmlns:text="http://schema.org/Text" name="Text" type="text:Text" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OfferCount" xmlns:q2="http://schema.org/Integer" type="q2:Integer" />
+</xs:schema>

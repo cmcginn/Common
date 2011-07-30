@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.org/AutoPartsStore" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="Store.xsd" namespace="http://schema.org/Store" />
+  <xs:complexType name="AutoPartsStore">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schema.org/Store" base="q1:Store" />
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

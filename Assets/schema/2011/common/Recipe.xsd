@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.org/Recipe" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="Duration.xsd" namespace="http://schema.org/Duration" />
+  <xs:import schemaLocation="Text.xsd" namespace="http://schema.org/Text" />
+  <xs:import schemaLocation="NutritionInformation.xsd" namespace="http://schema.org/NutritionInformation" />
+  <xs:import schemaLocation="CreativeWork.xsd" namespace="http://schema.org/CreativeWork" />
+  <xs:complexType name="Recipe">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schema.org/CreativeWork" base="q1:CreativeWork">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CookTime" xmlns:q2="http://schema.org/Duration" type="q2:Duration" />
+  <xs:element name="CookingMethod" xmlns:q3="http://schema.org/Text" type="q3:Text" />
+  <xs:element name="Ingredients" xmlns:q4="http://schema.org/Text" type="q4:Text" />
+  <xs:element name="Nutrition" xmlns:q5="http://schema.org/NutritionInformation" type="q5:NutritionInformation" />
+  <xs:element name="PrepTime" xmlns:q6="http://schema.org/Duration" type="q6:Duration" />
+  <xs:element name="RecipeCategory" xmlns:q7="http://schema.org/Text" type="q7:Text" />
+  <xs:element name="RecipeCuisine" xmlns:q8="http://schema.org/Text" type="q8:Text" />
+  <xs:element name="RecipeInstructions" xmlns:q9="http://schema.org/Text" type="q9:Text" />
+  <xs:element name="RecipeYield" xmlns:q10="http://schema.org/Text" type="q10:Text" />
+  <xs:element name="TotalTime" xmlns:q11="http://schema.org/Duration" type="q11:Duration" />
+</xs:schema>

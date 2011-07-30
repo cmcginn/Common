@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 (http://www.altova.com) by BillyBob (Bobs) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://schema.org/Text" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:import namespace="http://schema.org/Text" schemaLocation="..\DataType\Text.xsd"/>
+  <xs:complexType name="Thing">
+    <xs:sequence>
+      <xs:element name="Description" type="ns1:Text" minOccurs="0"/>
+      <xs:element name="Image" type="ns1:Text" minOccurs="0"/>
+      <xs:element name="Name" type="ns1:Text" minOccurs="0"/>
+      <xs:element name="URL" type="ns1:URL" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,5 @@
+C:\Projects\tfs-dev\VoiceForVictory\Source\Features\v2.0\Libraries\Common\Common.Types\bin\Debug\Common.Types.dll
+C:\Projects\tfs-dev\VoiceForVictory\Source\Features\v2.0\Libraries\Common\Common.Types\bin\Debug\Common.Types.pdb
+C:\Projects\tfs-dev\VoiceForVictory\Source\Features\v2.0\Libraries\Common\Common.Types\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\tfs-dev\VoiceForVictory\Source\Features\v2.0\Libraries\Common\Common.Types\obj\Debug\Common.Types.dll
+C:\Projects\tfs-dev\VoiceForVictory\Source\Features\v2.0\Libraries\Common\Common.Types\obj\Debug\Common.Types.pdb

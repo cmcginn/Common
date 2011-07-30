@@ -1,0 +1,26 @@
+﻿<PaymentRequestData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CardData>
+    <ExpirationMonth>1</ExpirationMonth>
+    <ExpirationYear>2012</ExpirationYear>
+    <CardNumber>4111111111111111</CardNumber>
+    <SecurityCode>123</SecurityCode>
+    <CardHolderName>Jose Cuervo</CardHolderName>
+    <CardType>Visa</CardType>
+  </CardData>
+  <CustomerData>
+    <AddressLine1>123 Smith Street</AddressLine1>
+    <AddressLine2>Apt #5</AddressLine2>
+    <City />
+    <Company />
+    <Country>US</Country>
+    <CustomerId />
+    <EmailAddress>jose@donotresovsethis.org</EmailAddress>
+    <FaxNumber />
+    <FirstName>Jose</FirstName>
+    <IPAddress />
+    <LastName>Cuervo</LastName>
+    <PhoneNumber>111-222-3333</PhoneNumber>
+    <PostalCode>32323</PostalCode>
+    <State>FL</State>
+  </CustomerData>
+</PaymentRequestData>

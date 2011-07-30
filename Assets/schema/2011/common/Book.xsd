@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.org/Book" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="Text.xsd" namespace="http://schema.org/Text" />
+  <xs:import schemaLocation="BookFormatType.xsd" namespace="http://schema.org/BookFormatType" />
+  <xs:import schemaLocation="Person.xsd" namespace="http://schema.org/Person" />
+  <xs:import schemaLocation="Integer.xsd" namespace="http://schema.org/Integer" />
+  <xs:import schemaLocation="CreativeWork.xsd" namespace="http://schema.org/CreativeWork" />
+  <xs:complexType name="Book">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schema.org/CreativeWork" base="q1:CreativeWork">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BookEdition" xmlns:q2="http://schema.org/Text" type="q2:Text" />
+  <xs:element name="BookFormat" xmlns:q3="http://schema.org/BookFormatType" type="q3:BookFormatType" />
+  <xs:element name="Illustrator" xmlns:q4="http://schema.org/Person" type="q4:Person" />
+  <xs:element name="Isbn" xmlns:q5="http://schema.org/Text" type="q5:Text" />
+  <xs:element name="NumberOfPages" xmlns:q6="http://schema.org/Integer" type="q6:Integer" />
+</xs:schema>

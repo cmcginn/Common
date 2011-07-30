@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.org/ImageObject" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="Text.xsd" namespace="http://schema.org/Text" />
+  <xs:import schemaLocation="Boolean.xsd" namespace="http://schema.org/Boolean" />
+  <xs:import schemaLocation="MediaObject.xsd" namespace="http://schema.org/MediaObject" />
+  <xs:complexType name="ImageObject">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schema.org/MediaObject" base="q1:MediaObject">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Caption" xmlns:q2="http://schema.org/Text" type="q2:Text" />
+  <xs:element name="ExifData" xmlns:q3="http://schema.org/Text" type="q3:Text" />
+  <xs:element name="RepresentativeOfPage" xmlns:q4="http://schema.org/Boolean" type="q4:Boolean" />
+  <xs:element name="Thumbnail" xmlns:q5="http://schema.org/ImageObject" type="q5:ImageObject" />
+</xs:schema>

@@ -1,0 +1,15 @@
+C:\Projects\tfs-dev\VoiceForVictory\Source\Features\v2.0\Libraries\Common\Common.Net\bin\Debug\CodeContracts\Common.Net.Contracts.dll
+C:\Projects\tfs-dev\VoiceForVictory\Source\Features\v2.0\Libraries\Common\Common.Net\bin\Debug\CodeContracts\Common.Net.Contracts.pdb
+C:\Projects\tfs-dev\VoiceForVictory\Source\Features\v2.0\Libraries\Common\Common.Net\bin\Debug\Common.Net.dll
+C:\Projects\tfs-dev\VoiceForVictory\Source\Features\v2.0\Libraries\Common\Common.Net\bin\Debug\Common.Net.pdb
+C:\Projects\tfs-dev\VoiceForVictory\Source\Features\v2.0\Libraries\Common\Common.Net\bin\Debug\Common.Net.Interfaces.dll
+C:\Projects\tfs-dev\VoiceForVictory\Source\Features\v2.0\Libraries\Common\Common.Net\bin\Debug\Common.Types.dll
+C:\Projects\tfs-dev\VoiceForVictory\Source\Features\v2.0\Libraries\Common\Common.Net\bin\Debug\Common.Net.Interfaces.pdb
+C:\Projects\tfs-dev\VoiceForVictory\Source\Features\v2.0\Libraries\Common\Common.Net\bin\Debug\Common.Types.pdb
+C:\Projects\tfs-dev\VoiceForVictory\Source\Features\v2.0\Libraries\Common\Common.Net\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\tfs-dev\VoiceForVictory\Source\Features\v2.0\Libraries\Common\Common.Net\obj\Debug\Decl\Common.Net.dll
+C:\Projects\tfs-dev\VoiceForVictory\Source\Features\v2.0\Libraries\Common\Common.Net\obj\Debug\Decl\Common.Net.pdb
+C:\Projects\tfs-dev\VoiceForVictory\Source\Features\v2.0\Libraries\Common\Common.Net\obj\Debug\Common.Netccrefgen.rsp
+C:\Projects\tfs-dev\VoiceForVictory\Source\Features\v2.0\Libraries\Common\Common.Net\obj\Debug\Common.Net.rewritten
+C:\Projects\tfs-dev\VoiceForVictory\Source\Features\v2.0\Libraries\Common\Common.Net\obj\Debug\Common.Net.dll
+C:\Projects\tfs-dev\VoiceForVictory\Source\Features\v2.0\Libraries\Common\Common.Net\obj\Debug\Common.Net.pdb

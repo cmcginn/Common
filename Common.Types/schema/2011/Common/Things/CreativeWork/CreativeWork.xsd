@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 (http://www.altova.com) by BillyBob (Bobs) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http:/schema.org/Intangible" xmlns:ns2="http://schema.org/Text" xmlns:ns3="http:/schema.org/CreativeWork" xmlns:ns4="http://schema.org/Place" targetNamespace="http:/schema.org/CreativeWork" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:include schemaLocation="..\Thing.xsd"/>
+  <xs:import namespace="http://schema.org/Text" schemaLocation="..\..\DataType\Text.xsd"/>
+  <xs:import namespace="http://schema.org/Place" schemaLocation="..\Place\Place.xsd"/>
+  <xs:complexType name="MediaObject">
+    <xs:complexContent>
+      <xs:extension base="ns3:CreativeWork">
+        <xs:sequence>
+          <xs:element name="ContentUrl" type="ns2:URL" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CreativeWork">
+    <xs:complexContent>
+      <xs:extension base="ns3:Thing">
+        <xs:sequence>
+          <xs:element name="ContentLocation" type="ns4:Place" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

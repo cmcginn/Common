@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.org/Organization" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="PostalAddress.xsd" namespace="http://schema.org/PostalAddress" />
+  <xs:import schemaLocation="AggregateRating.xsd" namespace="http://schema.org/AggregateRating" />
+  <xs:import schemaLocation="ContactPoint.xsd" namespace="http://schema.org/ContactPoint" />
+  <xs:import schemaLocation="Text.xsd" namespace="http://schema.org/Text" />
+  <xs:import schemaLocation="Person.xsd" namespace="http://schema.org/Person" />
+  <xs:import schemaLocation="Event.xsd" namespace="http://schema.org/Event" />
+  <xs:import schemaLocation="Date.xsd" namespace="http://schema.org/Date" />
+  <xs:import schemaLocation="Place.xsd" namespace="http://schema.org/Place" />
+  <xs:import schemaLocation="Review.xsd" namespace="http://schema.org/Review" />
+  <xs:import schemaLocation="Thing.xsd" namespace="http://schema.org/Thing" />
+  <xs:complexType name="Organization">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schema.org/Thing" base="q1:Thing">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Address" xmlns:q2="http://schema.org/PostalAddress" type="q2:PostalAddress" />
+  <xs:element name="AggregateRating" xmlns:q3="http://schema.org/AggregateRating" type="q3:AggregateRating" />
+  <xs:element name="ContactPoints" xmlns:q4="http://schema.org/ContactPoint" type="q4:ContactPoint" />
+  <xs:element name="Email" xmlns:q5="http://schema.org/Text" type="q5:Text" />
+  <xs:element name="Employees" xmlns:q6="http://schema.org/Person" type="q6:Person" />
+  <xs:element name="Events" xmlns:q7="http://schema.org/Event" type="q7:Event" />
+  <xs:element name="FaxNumber" xmlns:q8="http://schema.org/Text" type="q8:Text" />
+  <xs:element name="Founders" xmlns:q9="http://schema.org/Person" type="q9:Person" />
+  <xs:element name="FoundingDate" xmlns:q10="http://schema.org/Date" type="q10:Date" />
+  <xs:element name="InteractionCount" xmlns:q11="http://schema.org/Text" type="q11:Text" />
+  <xs:element name="Location">
+    <xs:complexType>
+      <xs:choice>
+        <xs:element xmlns:postalAddress="http://schema.org/PostalAddress" name="PostalAddress" type="postalAddress:PostalAddress" />
+        <xs:element xmlns:place="http://schema.org/Place" name="Place" type="place:Place" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Members">
+    <xs:complexType>
+      <xs:choice>
+        <xs:element xmlns:person="http://schema.org/Person" name="Person" type="person:Person" />
+        <xs:element xmlns:organization="http://schema.org/Organization" name="Organization" type="organization:Organization" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Reviews" xmlns:q12="http://schema.org/Review" type="q12:Review" />
+  <xs:element name="Telephone" xmlns:q13="http://schema.org/Text" type="q13:Text" />
+</xs:schema>

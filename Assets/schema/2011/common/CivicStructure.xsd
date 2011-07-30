@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.org/CivicStructure" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="Duration.xsd" namespace="http://schema.org/Duration" />
+  <xs:import schemaLocation="Place.xsd" namespace="http://schema.org/Place" />
+  <xs:complexType name="CivicStructure">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schema.org/Place" base="q1:Place">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OpeningHours" xmlns:q2="http://schema.org/Duration" type="q2:Duration" />
+</xs:schema>

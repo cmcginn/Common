@@ -1,0 +1,2381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="MusicVenue">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CivicStructure">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="VideoObject">
+    <xs:complexContent mixed="false">
+      <xs:extension base="MediaObject">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+          <xs:element minOccurs="0" maxOccurs="1" name="Caption" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Thumbnail" type="ImageObject" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Duration">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Quantity">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="WPHeader">
+    <xs:complexContent mixed="false">
+      <xs:extension base="WebPageElement">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RVPark">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CivicStructure">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="MusicVideoObject">
+    <xs:complexContent mixed="false">
+      <xs:extension base="MediaObject">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="MovieRentalStore">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Store">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SkiResort">
+    <xs:complexContent mixed="false">
+      <xs:extension base="SportsActivityLocation">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OceanBodyOfWater">
+    <xs:complexContent mixed="false">
+      <xs:extension base="BodyOfWater">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TattooParlor">
+    <xs:complexContent mixed="false">
+      <xs:extension base="HealthAndBeautyBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ItemAvailability">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Enumeration">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EntertainmentBusiness">
+    <xs:complexContent mixed="false">
+      <xs:extension base="LocalBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EducationalOrganization">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Organization">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+          <xs:element minOccurs="0" maxOccurs="1" name="Alumni" type="Person" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AutomatedTeller">
+    <xs:complexContent mixed="false">
+      <xs:extension base="FinancialService">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Offer">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Intangible">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+          <xs:element minOccurs="0" maxOccurs="1" name="AggregateRating" type="AggregateRating" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Availability" type="ItemAvailability" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ItemCondition" type="OfferItemCondition" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ItemOffered" type="Product" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Price" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="PriceCurrency" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="PriceValidUntil" type="xs:dateTime" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Reviews" type="Review" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Seller" type="Organization" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OfferItemCondition">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Enumeration">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ConvenienceStore">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Store">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AboutPage">
+    <xs:complexContent mixed="false">
+      <xs:extension base="WebPage">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="WPFooter">
+    <xs:complexContent mixed="false">
+      <xs:extension base="WebPageElement">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ImageObject">
+    <xs:complexContent mixed="false">
+      <xs:extension base="MediaObject">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+          <xs:element minOccurs="0" maxOccurs="1" name="Caption" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ExifData" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="RepresentativeofPage" type="xs:boolean" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Thumbnail" type="ImageObject" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SelfStorage">
+    <xs:complexContent mixed="false">
+      <xs:extension base="LocalBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AutomotiveBusiness">
+    <xs:complexContent mixed="false">
+      <xs:extension base="LocalBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PoliceStation">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CivicStructure">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PostOffice">
+    <xs:complexContent mixed="false">
+      <xs:extension base="GovernmentOffice">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Aquarium">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CivicStructure">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="UserDownloads">
+    <xs:complexContent mixed="false">
+      <xs:extension base="UserInteraction">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="MotorcycleRepair">
+    <xs:complexContent mixed="false">
+      <xs:extension base="AutomotiveBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GeoCoordinates">
+    <xs:complexContent mixed="false">
+      <xs:extension base="StructuredValue">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+          <xs:element minOccurs="0" maxOccurs="1" name="Elevation" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Latitude" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Longitude" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AudioObject">
+    <xs:complexContent mixed="false">
+      <xs:extension base="MediaObject">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Physician">
+    <xs:complexContent mixed="false">
+      <xs:extension base="MedicalOrganization">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SearchResultsPage">
+    <xs:complexContent mixed="false">
+      <xs:extension base="WebPage">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ComputerStore">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Store">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Restaurant">
+    <xs:complexContent mixed="false">
+      <xs:extension base="FoodEstablishment">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="WebPage">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CreativeWork">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+          <xs:element minOccurs="0" maxOccurs="1" name="Breadcrumb" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="IsPartof" type="CollectionPage" />
+          <xs:element minOccurs="0" maxOccurs="1" name="MainContentofPage" type="WebPageElement" />
+          <xs:element minOccurs="0" maxOccurs="1" name="PrimaryImageofPage" type="ImageObject" />
+          <xs:element minOccurs="0" maxOccurs="1" name="SignificantLinks" type="URL" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ProfilePage">
+    <xs:complexContent mixed="false">
+      <xs:extension base="WebPage">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="MusicPlaylist">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CreativeWork">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+          <xs:element minOccurs="0" maxOccurs="1" name="NumTracks" type="xs:integer" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Tracks" type="MusicRecording" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="BeautySalon">
+    <xs:complexContent mixed="false">
+      <xs:extension base="HealthAndBeautyBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="MusicStore">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Store">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Crematorium">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CivicStructure">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SocialEvent">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Event">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="LodgingBusiness">
+    <xs:complexContent mixed="false">
+      <xs:extension base="LocalBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Bakery">
+    <xs:complexContent mixed="false">
+      <xs:extension base="FoodEstablishment">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Landform">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Place">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="StadiumOrArena">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CivicStructure">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Organization">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Thing">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+          <xs:element minOccurs="0" maxOccurs="1" name="Address" type="PostalAddress" />
+          <xs:element minOccurs="0" maxOccurs="1" name="AggregateRating" type="AggregateRating" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ContactPoints" type="ContactPoint" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Email" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Employees" type="Person" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Events" type="Event" />
+          <xs:element minOccurs="0" maxOccurs="1" name="FaxNumber" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Founders" type="Person" />
+          <xs:element minOccurs="0" maxOccurs="1" name="FoundingDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" maxOccurs="1" name="InteractionCount" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Location" type="Place" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Members" type="Organization" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Reviews" type="Review" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Telephone" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SaleEvent">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Event">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="MiddleSchool">
+    <xs:complexContent mixed="false">
+      <xs:extension base="EducationalOrganization">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="HardwareStore">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Store">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="FurnitureStore">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Store">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Rating">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Intangible">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+          <xs:element minOccurs="0" maxOccurs="1" name="BestRating" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="RatingValue" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="WorstRating" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SportsClub">
+    <xs:complexContent mixed="false">
+      <xs:extension base="SportsActivityLocation">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="BlogPosting">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Article">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Volcano">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Landform">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="MusicEvent">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Event">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="FoodEstablishment">
+    <xs:complexContent mixed="false">
+      <xs:extension base="LocalBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+          <xs:element minOccurs="0" maxOccurs="1" name="AcceptsReservations" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Menu" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ServesCuisine" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ComedyClub">
+    <xs:complexContent mixed="false">
+      <xs:extension base="EntertainmentBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="MedicalClinic">
+    <xs:complexContent mixed="false">
+      <xs:extension base="MedicalOrganization">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TelevisionStation">
+    <xs:complexContent mixed="false">
+      <xs:extension base="LocalBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="NightClub">
+    <xs:complexContent mixed="false">
+      <xs:extension base="EntertainmentBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CivicStructure">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Place">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+          <xs:element minOccurs="0" maxOccurs="1" name="OpeningHours" type="Duration" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Book">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CreativeWork">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+          <xs:element minOccurs="0" maxOccurs="1" name="BookEdition" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="BookFormat" type="BookFormatType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Illustrator" type="Person" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ISBN" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="NumberofPages" type="xs:integer" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="MusicGroup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="PerformingGroup">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+          <xs:element minOccurs="0" maxOccurs="1" name="Albums" type="MusicAlbum" />
+          <xs:element minOccurs="0" maxOccurs="1" name="MusicGroupMember" type="Person" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Tracks" type="MusicRecording" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ElementarySchool">
+    <xs:complexContent mixed="false">
+      <xs:extension base="EducationalOrganization">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Campground">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CivicStructure">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="FoodEvent">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Event">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Playground">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CivicStructure">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="HairSalon">
+    <xs:complexContent mixed="false">
+      <xs:extension base="HealthAndBeautyBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Synagogue">
+    <xs:complexContent mixed="false">
+      <xs:extension base="PlaceOfWorship">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Courthouse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="GovernmentBuilding">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PerformingArtsTheater">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CivicStructure">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Festival">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Event">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Recipe">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CreativeWork">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+          <xs:element minOccurs="0" maxOccurs="1" name="CookTime" type="Duration" />
+          <xs:element minOccurs="0" maxOccurs="1" name="CookingMethod" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Ingredients" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Nutrition" type="NutritionInformation" />
+          <xs:element minOccurs="0" maxOccurs="1" name="PrepTime" type="Duration" />
+          <xs:element minOccurs="0" maxOccurs="1" name="RecipeCategory" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="RecipeCuisine" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="RecipeInstructions" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="RecipeYield" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="TotalTime" type="Duration" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Hospital">
+    <xs:complexContent mixed="false">
+      <xs:extension base="MedicalOrganization">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="NGO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Organization">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Mosque">
+    <xs:complexContent mixed="false">
+      <xs:extension base="PlaceOfWorship">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="WPSideBar">
+    <xs:complexContent mixed="false">
+      <xs:extension base="WebPageElement">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Enumeration">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Intangible">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Pharmacy">
+    <xs:complexContent mixed="false">
+      <xs:extension base="MedicalOrganization">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EducationEvent">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Event">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="State">
+    <xs:complexContent mixed="false">
+      <xs:extension base="AdministrativeArea">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="BikeStore">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Store">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Electrician">
+    <xs:complexContent mixed="false">
+      <xs:extension base="HomeAndConstructionBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PetStore">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Store">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EmploymentAgency">
+    <xs:complexContent mixed="false">
+      <xs:extension base="LocalBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TVEpisode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CreativeWork">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+          <xs:element minOccurs="0" maxOccurs="1" name="Actors" type="Person" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Director" type="Person" />
+          <xs:element minOccurs="0" maxOccurs="1" name="EpisodeNumber" type="Number" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Musicby" type="MusicGroup" />
+          <xs:element minOccurs="0" maxOccurs="1" name="PartofSeason" type="TVSeason" />
+          <xs:element minOccurs="0" maxOccurs="1" name="PartofTVSeries" type="TVSeries" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Producer" type="Person" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ProductionCompany" type="Organization" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ItemPage">
+    <xs:complexContent mixed="false">
+      <xs:extension base="WebPage">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Locksmith">
+    <xs:complexContent mixed="false">
+      <xs:extension base="HomeAndConstructionBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GolfCourse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="SportsActivityLocation">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AutoWash">
+    <xs:complexContent mixed="false">
+      <xs:extension base="AutomotiveBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AggregateOffer">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Offer">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+          <xs:element minOccurs="0" maxOccurs="1" name="HighPrice" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="LowPrice" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="OfferCount" type="xs:integer" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RecyclingCenter">
+    <xs:complexContent mixed="false">
+      <xs:extension base="LocalBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SingleFamilyResidence">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Residence">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Park">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CivicStructure">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ClothingStore">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Store">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="StructuredValue">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Intangible">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AutoRental">
+    <xs:complexContent mixed="false">
+      <xs:extension base="AutomotiveBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Waterfall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="BodyOfWater">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="NewsArticle">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Article">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Country">
+    <xs:complexContent mixed="false">
+      <xs:extension base="AdministrativeArea">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="BookFormatType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Enumeration">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Article">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CreativeWork">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+          <xs:element minOccurs="0" maxOccurs="1" name="ArticleBody" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ArticleSection" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="HomeAndConstructionBusiness">
+    <xs:complexContent mixed="false">
+      <xs:extension base="LocalBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ComedyEvent">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Event">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GovernmentOrganization">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Organization">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Plumber">
+    <xs:complexContent mixed="false">
+      <xs:extension base="HomeAndConstructionBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="MusicRecording">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CreativeWork">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+          <xs:element minOccurs="0" maxOccurs="1" name="ByArtist" type="MusicGroup" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Duration" type="Duration" />
+          <xs:element minOccurs="0" maxOccurs="1" name="InAlbum" type="MusicAlbum" />
+          <xs:element minOccurs="0" maxOccurs="1" name="InPlaylist" type="MusicPlaylist" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="HomeGoodsStore">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Store">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="UserInteraction">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Event">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TouristInformationCenter">
+    <xs:complexContent mixed="false">
+      <xs:extension base="LocalBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="UserComments">
+    <xs:complexContent mixed="false">
+      <xs:extension base="UserInteraction">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GeneralContractor">
+    <xs:complexContent mixed="false">
+      <xs:extension base="HomeAndConstructionBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ItemList">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CreativeWork">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+          <xs:element minOccurs="0" maxOccurs="1" name="ItemListElement" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AutoRepair">
+    <xs:complexContent mixed="false">
+      <xs:extension base="AutomotiveBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Thing">
+    <xs:sequence>
+      <xs:element name="Description" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Image" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Name" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Url" type="xs:string" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TennisComplex">
+    <xs:complexContent mixed="false">
+      <xs:extension base="SportsActivityLocation">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EventVenue">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CivicStructure">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Place">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Thing">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+          <xs:element minOccurs="0" maxOccurs="1" name="Address" type="PostalAddress" />
+          <xs:element minOccurs="0" maxOccurs="1" name="AggregateRating" type="AggregateRating" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Containedin" type="Place" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Events" type="Event" />
+          <xs:element minOccurs="0" maxOccurs="1" name="FaxNumber" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Geo" type="GeoCoordinates" />
+          <xs:element minOccurs="0" maxOccurs="1" name="InteractionCount" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Maps" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Photos" type="ImageObject" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Reviews" type="Review" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Telephone" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="WholesaleStore">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Store">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TrainStation">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CivicStructure">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Hotel">
+    <xs:complexContent mixed="false">
+      <xs:extension base="LodgingBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="WPAdBlock">
+    <xs:complexContent mixed="false">
+      <xs:extension base="WebPageElement">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AutoBodyShop">
+    <xs:complexContent mixed="false">
+      <xs:extension base="AutomotiveBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="HVACBusiness">
+    <xs:complexContent mixed="false">
+      <xs:extension base="HomeAndConstructionBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="BarOrPub">
+    <xs:complexContent mixed="false">
+      <xs:extension base="FoodEstablishment">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AutoPartsStore">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Store">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CollectionPage">
+    <xs:complexContent mixed="false">
+      <xs:extension base="WebPage">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="MotorcycleDealer">
+    <xs:complexContent mixed="false">
+      <xs:extension base="AutomotiveBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="BodyOfWater">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Landform">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Reservoir">
+    <xs:complexContent mixed="false">
+      <xs:extension base="BodyOfWater">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DefenceEstablishment">
+    <xs:complexContent mixed="false">
+      <xs:extension base="GovernmentBuilding">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ApartmentComplex">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Residence">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DanceEvent">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Event">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Event">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Thing">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+          <xs:element minOccurs="0" maxOccurs="1" name="Attendees" type="Organization" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Duration" type="Duration" />
+          <xs:element minOccurs="0" maxOccurs="1" name="EndDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Location" type="Place" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Offers" type="Offer" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Performers" type="Organization" />
+          <xs:element minOccurs="0" maxOccurs="1" name="StartDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" maxOccurs="1" name="SubEvents" type="Event" />
+          <xs:element minOccurs="0" maxOccurs="1" name="SuperEvent" type="Event" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AnimalShelter">
+    <xs:complexContent mixed="false">
+      <xs:extension base="LocalBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Embassy">
+    <xs:complexContent mixed="false">
+      <xs:extension base="GovernmentBuilding">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="HinduTemple">
+    <xs:complexContent mixed="false">
+      <xs:extension base="PlaceOfWorship">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TVSeries">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CreativeWork">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+          <xs:element minOccurs="0" maxOccurs="1" name="Actors" type="Person" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Director" type="Person" />
+          <xs:element minOccurs="0" maxOccurs="1" name="EndDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Episodes" type="TVEpisode" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Musicby" type="MusicGroup" />
+          <xs:element minOccurs="0" maxOccurs="1" name="NumberofEpisodes" type="Number" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Producer" type="Person" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ProductionCompany" type="Organization" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Seasons" type="TVSeason" />
+          <xs:element minOccurs="0" maxOccurs="1" name="StartDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Trailer" type="VideoObject" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ContactPage">
+    <xs:complexContent mixed="false">
+      <xs:extension base="WebPage">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Sculpture">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CreativeWork">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ChildCare">
+    <xs:complexContent mixed="false">
+      <xs:extension base="LocalBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AccountingService">
+    <xs:complexContent mixed="false">
+      <xs:extension base="FinancialService">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="LiquorStore">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Store">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Continent">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Landform">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="MensClothingStore">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Store">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Canal">
+    <xs:complexContent mixed="false">
+      <xs:extension base="BodyOfWater">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Mountain">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Landform">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="UserPlays">
+    <xs:complexContent mixed="false">
+      <xs:extension base="UserInteraction">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ShoppingCenter">
+    <xs:complexContent mixed="false">
+      <xs:extension base="LocalBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TireShop">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Store">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TouristAttraction">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Place">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="HealthClub">
+    <xs:complexContent mixed="false">
+      <xs:extension base="HealthAndBeautyBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Review">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CreativeWork">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+          <xs:element minOccurs="0" maxOccurs="1" name="ItemReviewed" type="Thing" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ReviewBody" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ReviewRating" type="Rating" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="MovingCompany">
+    <xs:complexContent mixed="false">
+      <xs:extension base="HomeAndConstructionBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SportsActivityLocation">
+    <xs:complexContent mixed="false">
+      <xs:extension base="LocalBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="LocalBusiness">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Organization">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+          <xs:element minOccurs="0" maxOccurs="1" name="Branchof" type="Organization" />
+          <xs:element minOccurs="0" maxOccurs="1" name="CurrenciesAccepted" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="OpeningHours" type="Duration" />
+          <xs:element minOccurs="0" maxOccurs="1" name="PaymentAccepted" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="PriceRange" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="BookStore">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Store">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="VeterinaryCare">
+    <xs:complexContent mixed="false">
+      <xs:extension base="MedicalOrganization">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="MedicalOrganization">
+    <xs:complexContent mixed="false">
+      <xs:extension base="LocalBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Store">
+    <xs:complexContent mixed="false">
+      <xs:extension base="LocalBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PerformingGroup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Organization">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DaySpa">
+    <xs:complexContent mixed="false">
+      <xs:extension base="HealthAndBeautyBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="UserCheckins">
+    <xs:complexContent mixed="false">
+      <xs:extension base="UserInteraction">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DryCleaningOrLaundry">
+    <xs:complexContent mixed="false">
+      <xs:extension base="LocalBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OfficeEquipmentStore">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Store">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="InternetCafe">
+    <xs:complexContent mixed="false">
+      <xs:extension base="LocalBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="BusinessEvent">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Event">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="HobbyShop">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Store">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Dentist">
+    <xs:complexContent mixed="false">
+      <xs:extension base="MedicalOrganization">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GroceryStore">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Store">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Movie">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CreativeWork">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+          <xs:element minOccurs="0" maxOccurs="1" name="Actors" type="Person" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Director" type="Person" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Duration" type="Duration" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Musicby" type="MusicGroup" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Producer" type="Person" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ProductionCompany" type="Organization" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Trailer" type="VideoObject" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ImageGallery">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CollectionPage">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CreativeWork">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Thing">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+          <xs:element minOccurs="0" maxOccurs="1" name="About" type="Thing" />
+          <xs:element minOccurs="0" maxOccurs="1" name="AggregateRating" type="AggregateRating" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Audio" type="AudioObject" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Author" type="Organization" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Awards" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ContentLocation" type="Place" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ContentRating" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="DatePublished" type="xs:dateTime" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Editor" type="Person" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Encodings" type="MediaObject" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Genre" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Headline" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="InLanguage" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="InteractionCount" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="IsFamilyFriendly" type="xs:boolean" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Keywords" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Offers" type="Offer" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Publisher" type="Organization" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Reviews" type="Review" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Video" type="VideoObject" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="MediaObject">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CreativeWork">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+          <xs:element minOccurs="0" maxOccurs="1" name="Bitrate" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ContentSize" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ContentURL" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Duration" type="Duration" />
+          <xs:element minOccurs="0" maxOccurs="1" name="EmbedURL" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="EncodesCreativeWork" type="CreativeWork" />
+          <xs:element minOccurs="0" maxOccurs="1" name="EncodingFormat" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Expires" type="xs:dateTime" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Height" type="Distance" />
+          <xs:element minOccurs="0" maxOccurs="1" name="PlayerType" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="RegionsAllowed" type="Place" />
+          <xs:element minOccurs="0" maxOccurs="1" name="RequiresSubscription" type="xs:boolean" />
+          <xs:element minOccurs="0" maxOccurs="1" name="UploadDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Width" type="Distance" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Preschool">
+    <xs:complexContent mixed="false">
+      <xs:extension base="EducationalOrganization">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SiteNavigationElement">
+    <xs:complexContent mixed="false">
+      <xs:extension base="WebPageElement">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ProfessionalService">
+    <xs:complexContent mixed="false">
+      <xs:extension base="LocalBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Language">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Intangible">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SubwayStation">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CivicStructure">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SeaBodyOfWater">
+    <xs:complexContent mixed="false">
+      <xs:extension base="BodyOfWater">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Casino">
+    <xs:complexContent mixed="false">
+      <xs:extension base="EntertainmentBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GovernmentOffice">
+    <xs:complexContent mixed="false">
+      <xs:extension base="LocalBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Person">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Thing">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+          <xs:element name="FirstName" maxOccurs="1" minOccurs="0" type="xs:string"/>
+          <xs:element name="MiddleName" maxOccurs="1" minOccurs="0" type="xs:string"/>
+          <xs:element name="LastName" maxOccurs="1" minOccurs="0" type="xs:string"/>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Address" type="PostalAddress" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Affiliation" type="Organization" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Alumniof" type="EducationalOrganization" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Awards" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="BirthDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Children" type="Person" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Colleagues" type="Person" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ContactPoints" type="ContactPoint" />
+          <xs:element minOccurs="0" maxOccurs="1" name="DeathDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Email" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="FaxNumber" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Follows" type="Person" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Gender" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="HomeLocation" type="ContactPoint" />
+          <xs:element minOccurs="0" maxOccurs="1" name="InteractionCount" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="JobTitle" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Knows" type="Person" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Memberof" type="Organization" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Nationality" type="Country" />
+          <xs:element minOccurs="0" maxOccurs="2" name="Parents" type="Person" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Performerin" type="Event" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Relatedto" type="Person" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Siblings" type="Person" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Spouse" type="Person" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Telephone" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="WorkLocation" type="ContactPoint" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Worksfor" type="Organization" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Mass">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Quantity">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SportingGoodsStore">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Store">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Notary">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ProfessionalService">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AggregateRating">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Rating">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+          <xs:element minOccurs="0" maxOccurs="1" name="ItemReviewed" type="Thing" />
+          <xs:element minOccurs="0" maxOccurs="1" name="RatingCount" type="Number" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ReviewCount" type="Number" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="UserPlusOnes">
+    <xs:complexContent mixed="false">
+      <xs:extension base="UserInteraction">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Zoo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CivicStructure">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Painting">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CreativeWork">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GardenStore">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Store">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Quantity">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Intangible">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Blog">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CreativeWork">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+          <xs:element minOccurs="0" maxOccurs="1" name="BlogPosts" type="BlogPosting" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="HealthAndBeautyBusiness">
+    <xs:complexContent mixed="false">
+      <xs:extension base="LocalBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ArtGallery">
+    <xs:complexContent mixed="false">
+      <xs:extension base="EntertainmentBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="NailSalon">
+    <xs:complexContent mixed="false">
+      <xs:extension base="HealthAndBeautyBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CatholicChurch">
+    <xs:complexContent mixed="false">
+      <xs:extension base="PlaceOfWorship">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="BusStation">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CivicStructure">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Library">
+    <xs:complexContent mixed="false">
+      <xs:extension base="LocalBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TheaterEvent">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Event">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="MusicAlbum">
+    <xs:complexContent mixed="false">
+      <xs:extension base="MusicPlaylist">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+          <xs:element minOccurs="0" maxOccurs="1" name="ByArtist" type="MusicGroup" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DepartmentStore">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Store">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AdministrativeArea">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Place">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="LakeBodyOfWater">
+    <xs:complexContent mixed="false">
+      <xs:extension base="BodyOfWater">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="FinancialService">
+    <xs:complexContent mixed="false">
+      <xs:extension base="LocalBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PlaceOfWorship">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CivicStructure">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Church">
+    <xs:complexContent mixed="false">
+      <xs:extension base="PlaceOfWorship">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="MobilePhoneStore">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Store">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ContactPoint">
+    <xs:complexContent mixed="false">
+      <xs:extension base="StructuredValue">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+          <xs:element minOccurs="0" maxOccurs="1" name="ContactType" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Email" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="FaxNumber" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Telephone" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OutletStore">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Store">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AutoDealer">
+    <xs:complexContent mixed="false">
+      <xs:extension base="AutomotiveBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="FastFoodRestaurant">
+    <xs:complexContent mixed="false">
+      <xs:extension base="FoodEstablishment">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AmusementPark">
+    <xs:complexContent mixed="false">
+      <xs:extension base="EntertainmentBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="UserBlocks">
+    <xs:complexContent mixed="false">
+      <xs:extension base="UserInteraction">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="FireStation">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CivicStructure">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GasStation">
+    <xs:complexContent mixed="false">
+      <xs:extension base="AutomotiveBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Museum">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CivicStructure">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AdultEntertainment">
+    <xs:complexContent mixed="false">
+      <xs:extension base="EntertainmentBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Corporation">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Organization">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Motel">
+    <xs:complexContent mixed="false">
+      <xs:extension base="LodgingBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ElectronicsStore">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Store">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TravelAgency">
+    <xs:complexContent mixed="false">
+      <xs:extension base="LocalBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="UserPageVisits">
+    <xs:complexContent mixed="false">
+      <xs:extension base="UserInteraction">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ShoeStore">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Store">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="LegislativeBuilding">
+    <xs:complexContent mixed="false">
+      <xs:extension base="GovernmentBuilding">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SportsEvent">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Event">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GovernmentBuilding">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CivicStructure">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EmergencyService">
+    <xs:complexContent mixed="false">
+      <xs:extension base="LocalBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="HousePainter">
+    <xs:complexContent mixed="false">
+      <xs:extension base="HomeAndConstructionBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ToyStore">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Store">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="IceCreamShop">
+    <xs:complexContent mixed="false">
+      <xs:extension base="FoodEstablishment">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="HighSchool">
+    <xs:complexContent mixed="false">
+      <xs:extension base="EducationalOrganization">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Beach">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CivicStructure">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Brewery">
+    <xs:complexContent mixed="false">
+      <xs:extension base="FoodEstablishment">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Map">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CreativeWork">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Product">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Thing">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+          <xs:element minOccurs="0" maxOccurs="1" name="AggregateRating" type="AggregateRating" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Brand" type="Organization" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Manufacturer" type="Organization" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Model" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Offers" type="Offer" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ProductID" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Reviews" type="Review" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CollegeOrUniversity">
+    <xs:complexContent mixed="false">
+      <xs:extension base="EducationalOrganization">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="BuddhistTemple">
+    <xs:complexContent mixed="false">
+      <xs:extension base="PlaceOfWorship">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RealEstateAgent">
+    <xs:complexContent mixed="false">
+      <xs:extension base="LocalBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="UserTweets">
+    <xs:complexContent mixed="false">
+      <xs:extension base="UserInteraction">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RiverBodyOfWater">
+    <xs:complexContent mixed="false">
+      <xs:extension base="BodyOfWater">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="BedAndBreakfast">
+    <xs:complexContent mixed="false">
+      <xs:extension base="LodgingBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CheckoutPage">
+    <xs:complexContent mixed="false">
+      <xs:extension base="WebPage">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ScholarlyArticle">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Article">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CityHall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="GovernmentBuilding">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="BowlingAlley">
+    <xs:complexContent mixed="false">
+      <xs:extension base="SportsActivityLocation">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ChildrensEvent">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Event">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="WebPageElement">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CreativeWork">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TheaterGroup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="PerformingGroup">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Distance">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Quantity">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Energy">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Quantity">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ExerciseGym">
+    <xs:complexContent mixed="false">
+      <xs:extension base="SportsActivityLocation">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Optician">
+    <xs:complexContent mixed="false">
+      <xs:extension base="MedicalOrganization">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="NutritionInformation">
+    <xs:complexContent mixed="false">
+      <xs:extension base="StructuredValue">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+          <xs:element minOccurs="0" maxOccurs="1" name="Calories" type="Energy" />
+          <xs:element minOccurs="0" maxOccurs="1" name="CarbohydrateContent" type="Mass" />
+          <xs:element minOccurs="0" maxOccurs="1" name="CholesterolContent" type="Mass" />
+          <xs:element minOccurs="0" maxOccurs="1" name="FatContent" type="Mass" />
+          <xs:element minOccurs="0" maxOccurs="1" name="FiberContent" type="Mass" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ProteinContent" type="Mass" />
+          <xs:element minOccurs="0" maxOccurs="1" name="SaturatedFatContent" type="Mass" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ServingSize" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="SodiumContent" type="Mass" />
+          <xs:element minOccurs="0" maxOccurs="1" name="SugarContent" type="Mass" />
+          <xs:element minOccurs="0" maxOccurs="1" name="TransFatContent" type="Mass" />
+          <xs:element minOccurs="0" maxOccurs="1" name="UnsaturatedFatContent" type="Mass" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="JewelryStore">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Store">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Photograph">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CreativeWork">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Residence">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Place">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="City">
+    <xs:complexContent mixed="false">
+      <xs:extension base="AdministrativeArea">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GatedResidenceCommunity">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Residence">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SportsTeam">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Organization">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RoofingContractor">
+    <xs:complexContent mixed="false">
+      <xs:extension base="HomeAndConstructionBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RadioStation">
+    <xs:complexContent mixed="false">
+      <xs:extension base="LocalBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Florist">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Store">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Airport">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CivicStructure">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CafeOrCoffeeShop">
+    <xs:complexContent mixed="false">
+      <xs:extension base="FoodEstablishment">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="InsuranceAgency">
+    <xs:complexContent mixed="false">
+      <xs:extension base="FinancialService">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Winery">
+    <xs:complexContent mixed="false">
+      <xs:extension base="FoodEstablishment">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Pond">
+    <xs:complexContent mixed="false">
+      <xs:extension base="BodyOfWater">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="VideoGallery">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CollectionPage">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PostalAddress">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ContactPoint">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+          <xs:element minOccurs="0" maxOccurs="1" name="AddressCountry" type="Country" />
+          <xs:element minOccurs="0" maxOccurs="1" name="AddressLocality" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="AddressRegion" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="PostOfficeBoxNumber" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="PostalCode" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="StreetAddress" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DanceGroup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="PerformingGroup">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ParkingFacility">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CivicStructure">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Attorney">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ProfessionalService">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="MovieTheater">
+    <xs:complexContent mixed="false">
+      <xs:extension base="EntertainmentBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PublicSwimmingPool">
+    <xs:complexContent mixed="false">
+      <xs:extension base="SportsActivityLocation">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PawnShop">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Store">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="LandmarksOrHistoricalBuildings">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Place">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Cemetery">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CivicStructure">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TaxiStand">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CivicStructure">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TVSeason">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CreativeWork">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+          <xs:element minOccurs="0" maxOccurs="1" name="EndDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Episodes" type="TVEpisode" />
+          <xs:element minOccurs="0" maxOccurs="1" name="NumberofEpisodes" type="Number" />
+          <xs:element minOccurs="0" maxOccurs="1" name="PartofTVSeries" type="TVSeries" />
+          <xs:element minOccurs="0" maxOccurs="1" name="SeasonNumber" type="xs:integer" />
+          <xs:element minOccurs="0" maxOccurs="1" name="StartDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Trailer" type="VideoObject" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="BankOrCreditUnion">
+    <xs:complexContent mixed="false">
+      <xs:extension base="FinancialService">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Intangible">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Thing">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="VisualArtsEvent">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Event">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="School">
+    <xs:complexContent mixed="false">
+      <xs:extension base="EducationalOrganization">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Table">
+    <xs:complexContent mixed="false">
+      <xs:extension base="WebPageElement">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="UserLikes">
+    <xs:complexContent mixed="false">
+      <xs:extension base="UserInteraction">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Hostel">
+    <xs:complexContent mixed="false">
+      <xs:extension base="LodgingBusiness">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="LiteraryEvent">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Event">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="BusStop">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CivicStructure">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DataType" />
+  <xs:complexType name="Boolean">
+    <xs:complexContent mixed="false">
+      <xs:extension base="DataType">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TRUE">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Boolean">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="FALSE">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Boolean">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Number">
+    <xs:complexContent mixed="false">
+      <xs:extension base="DataType">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Integer">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Number">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Float">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Number">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Text">
+    <xs:complexContent mixed="false">
+      <xs:extension base="DataType">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="URL">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Text">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Date">
+    <xs:complexContent mixed="false">
+      <xs:extension base="DataType">
+        <xs:sequence minOccurs="0" maxOccurs="1" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <!--Custom types here-->
+  <xs:complexType name="ResponseStatusType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Enumeration">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+          <xs:element minOccurs="0" maxOccurs="1" name="Complete" type="xs:boolean" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Completed" type="xs:dateTime" />
+          <xs:element minOccurs="0" maxOccurs="1" name="SystemMessage" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ElectronicPaymentCardData">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Thing">
+        <xs:sequence>
+          <xs:element name="ExpirationMonth" type="xs:int"/>
+          <xs:element name="ExpirationYear" type="xs:int"/>
+          <xs:element name="CardNumber" type="xs:string"/>
+          <xs:element name="Cardholder" type="xs:string"/>
+          <xs:element name="CardType" type="xs:string"/>
+          <xs:element name="CVV" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <!--End Custom Types-->
+</xs:schema>

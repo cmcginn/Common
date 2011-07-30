@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 (http://www.altova.com) by BillyBob (Bobs) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://common/schema/2011/common" xmlns:enumeration="http://schema.org/Enumeration" targetNamespace="http://common/schema/2011/common" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:import schemaLocation="C:\Users\Administrator\Documents\Visual Studio 2010\Projects\ProtoTypes\CommonTypes\schema\2011\Common\ISOCountryCodeType-V2006.xsd"/>
+  <xs:complexType name="Place">
+    <xs:sequence>
+      <xs:element name="Address" type="ns1:PostalAddress"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ContactPoint">
+    <xs:complexContent>
+      <xs:extension base="ns1:Thing">
+        <xs:sequence>
+          <xs:element name="ContactType" type="xs:string" minOccurs="0"/>
+          <xs:element name="Email" type="xs:string" minOccurs="0"/>
+          <xs:element name="FaxNumber" type="xs:string" minOccurs="0"/>
+          <xs:element name="Telephone" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Thing">
+    <xs:sequence>
+      <xs:element name="Description" type="xs:string" minOccurs="0"/>
+      <xs:element name="Image" type="ns1:Url" minOccurs="0"/>
+      <xs:element name="Name" type="xs:string" minOccurs="0"/>
+      <xs:element name="Url" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PostalAddress">
+    <xs:complexContent>
+      <xs:extension base="ns1:ContactPoint">
+        <xs:sequence>
+          <xs:element name="AddressCountry" type="ISOCountryCodeType" minOccurs="0"/>
+          <xs:element name="AddressLocality" type="xs:string"/>
+          <xs:element name="AddressRegion" type="xs:string"/>
+          <xs:element name="PostOfficeBoxNumber" type="xs:string" minOccurs="0"/>
+          <xs:element name="PostalCode" type="xs:string"/>
+          <xs:element name="StreetAddress" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CreativeWork">
+    <xs:complexContent>
+      <xs:extension base="ns1:Thing">
+        <xs:sequence>
+          <xs:element name="About" type="ns1:Thing" minOccurs="0"/>
+          <xs:element name="AggregateRatiing" type="ns1:Rating" minOccurs="0"/>
+          <xs:element name="Audio" type="ns1:AudioObject" minOccurs="0"/>
+          <xs:element name="Author" minOccurs="0">
+            <xs:complexType>
+              <xs:choice>
+                <xs:element name="Person" type="ns1:Person" minOccurs="0"/>
+                <xs:element name="Organization" type="ns1:Organization" minOccurs="0"/>
+              </xs:choice>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Awards" type="xs:string" minOccurs="0"/>
+          <xs:element name="ContentLocation" type="ns1:Place" minOccurs="0"/>
+          <xs:element name="ContentRating" type="ns1:Rating" minOccurs="0"/>
+          <xs:element name="DatePublished" type="xs:date" minOccurs="0"/>
+          <xs:element name="Editor" type="ns1:Person" minOccurs="0"/>
+          <xs:element name="Encodings" minOccurs="0">
+            <xs:complexType>
+              <xs:complexContent>
+                <xs:extension base="ns1:MediaObject">
+                  <xs:sequence>
+                    <xs:element name="Bitrate" type="xs:string" minOccurs="0"/>
+                    <xs:element name="ContentSize" type="xs:int" minOccurs="0"/>
+                    <xs:element name="ContentUrl" type="ns1:Url" minOccurs="0"/>
+                    <xs:element name="Duration" type="ns1:Duration" minOccurs="0"/>
+                    <xs:element name="EmbedUrl" type="ns1:Url" minOccurs="0"/>
+                    <xs:element name="EncodingFormat" type="xs:string" minOccurs="0"/>
+                    <xs:element name="Expires" type="xs:date" minOccurs="0"/>
+                    <xs:element name="Height" type="ns1:Distance" minOccurs="0"/>
+                    <xs:element name="Width" type="ns1:Distance" minOccurs="0"/>
+                    <xs:element name="PlayerType" type="xs:string" minOccurs="0"/>
+                    <xs:element name="RegionsAllowed" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Place" type="ns1:Place" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="RequiresSubscription" type="xs:boolean" minOccurs="0"/>
+                    <xs:element name="UploadDate" type="xs:dateTime" minOccurs="0"/>
+                    <xs:element name="EncodesCreativeWork" type="ns1:CreativeWork" minOccurs="0"/>
+                  </xs:sequence>
+                </xs:extension>
+              </xs:complexContent>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Genre" type="xs:string" minOccurs="0"/>
+          <xs:element name="Headline" type="xs:string" minOccurs="0"/>
+          <xs:element name="InLanguage" type="xs:string" minOccurs="0"/>
+          <xs:element name="InteractionCount" type="xs:int" minOccurs="0"/>
+          <xs:element name="IsFamilyFriendly" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="Keywords" type="xs:string" minOccurs="0"/>
+          <xs:element name="Offers" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Offer" type="ns1:Offer" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Publisher" type="ns1:Organization" minOccurs="0"/>
+          <xs:element name="Reviews" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Review" type="ns1:Review" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Video" type="ns1:VideoObject" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Organization">
+    <xs:complexContent>
+      <xs:extension base="ns1:Thing">
+        <xs:sequence>
+          <xs:element name="Address" type="ns1:PostalAddress" minOccurs="0"/>
+          <xs:element name="AggregateRating" type="ns1:Rating" minOccurs="0"/>
+          <xs:element name="ContactPoints" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ContactPoint" type="ns1:ContactPoint" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Email" minOccurs="0"/>
+          <xs:element name="Employees" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Person" type="ns1:Person" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Events" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Event" type="ns1:Event" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="FaxNumber" type="xs:string" minOccurs="0"/>
+          <xs:element name="Founders" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Person" type="ns1:Person" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="FoundingDate" type="xs:date" minOccurs="0"/>
+          <xs:element name="InteractionCount" type="xs:int" minOccurs="0"/>
+          <xs:element name="Location" minOccurs="0">
+            <xs:complexType>
+              <xs:choice>
+                <xs:element name="Place" type="ns1:Place" minOccurs="0"/>
+                <xs:element name="PostalAddress" type="ns1:PostalAddress" minOccurs="0"/>
+              </xs:choice>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Members" minOccurs="0">
+            <xs:complexType>
+              <xs:choice>
+                <xs:element name="Person" type="ns1:Person" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="Organization" type="ns1:Organization" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:choice>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Reviews" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Review" type="ns1:Review" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Telephone" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Person">
+    <xs:complexContent>
+      <xs:extension base="ns1:Thing">
+        <xs:sequence>
+          <xs:element name="Address" type="ns1:PostalAddress" minOccurs="0"/>
+          <xs:element name="Affiliation" type="ns1:Organization" minOccurs="0"/>
+          <xs:element name="AlumniOf" type="ns1:EducationalOrganization" minOccurs="0"/>
+          <xs:element name="Awards" type="xs:string" minOccurs="0"/>
+          <xs:element name="Birthdate" type="xs:date" minOccurs="0"/>
+          <xs:element name="Children" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Person" type="ns1:Person" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Collegues" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Person" type="ns1:Person" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="ContactPoints" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ContactPoint" type="ns1:ContactPoint" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="DeathDate" type="xs:date" minOccurs="0"/>
+          <xs:element name="Email" type="xs:string" minOccurs="0"/>
+          <xs:element name="FaxNumber" type="xs:string" minOccurs="0"/>
+          <xs:element name="Follows" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Person" type="ns1:Person" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Gender" type="xs:string" minOccurs="0"/>
+          <xs:element name="HomeLocation" minOccurs="0">
+            <xs:complexType>
+              <xs:choice>
+                <xs:element name="Place" type="ns1:Place" minOccurs="0"/>
+                <xs:element name="ContactPoint" type="ns1:ContactPoint" minOccurs="0"/>
+              </xs:choice>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="InterationCount" type="xs:int" minOccurs="0"/>
+          <xs:element name="JobTitle" type="xs:string" minOccurs="0"/>
+          <xs:element name="Knows" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Person" type="ns1:Person" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="MemberOf" type="ns1:Organization" minOccurs="0"/>
+          <xs:element name="Nationality" type="ns1:Country" minOccurs="0"/>
+          <xs:element name="Parents" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Person" type="ns1:Person" maxOccurs="2"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="PerformerIn" type="ns1:Event" minOccurs="0"/>
+          <xs:element name="RelatedTo" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Person" type="ns1:Person" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Siblings" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Person" type="ns1:Person" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Telephone" type="xs:string" minOccurs="0"/>
+          <xs:element name="WorkLocation" minOccurs="0">
+            <xs:complexType>
+              <xs:choice>
+                <xs:element name="Place" type="ns1:Place" minOccurs="0"/>
+                <xs:element name="ContactPoint" type="ns1:ContactPoint" minOccurs="0"/>
+              </xs:choice>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="WorksFor" type="ns1:Organization" minOccurs="0"/>
+          <xs:element name="Spouse" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Person"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Event">
+    <xs:complexContent>
+      <xs:extension base="ns1:Thing"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Rating">
+    <xs:sequence>
+      <xs:element name="BestRating" type="xs:string" minOccurs="0"/>
+      <xs:element name="RatingValue" type="xs:string" minOccurs="0"/>
+      <xs:element name="WorstRating" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AudioObject">
+    <xs:complexContent>
+      <xs:extension base="ns1:Thing"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="MediaObject">
+    <xs:complexContent>
+      <xs:extension base="ns1:Thing"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Duration"/>
+  <xs:complexType name="Offer">
+    <xs:complexContent>
+      <xs:extension base="ns1:Thing"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Review">
+    <xs:complexContent>
+      <xs:extension base="ns1:CreativeWork">
+        <xs:sequence>
+          <xs:element name="ItemReviewed" type="ns1:CreativeWork"/>
+          <xs:element name="ReviewBody" type="xs:string" minOccurs="0"/>
+          <xs:element name="ReviewRating" type="ns1:Rating" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="VideoObject">
+    <xs:complexContent>
+      <xs:extension base="ns1:Thing"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Distance"/>
+  <xs:complexType name="EducationalOrganization">
+    <xs:complexContent>
+      <xs:extension base="ns1:Organization"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Country"/>
+  <xs:complexType name="Url">
+    <xs:simpleContent>
+      <xs:extension base="xs:string"/>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="Spouse" type="ns1:Person"/>
+</xs:schema>

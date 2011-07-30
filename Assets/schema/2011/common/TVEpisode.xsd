@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.org/TVEpisode" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="Person.xsd" namespace="http://schema.org/Person" />
+  <xs:import schemaLocation="Number.xsd" namespace="http://schema.org/Number" />
+  <xs:import schemaLocation="MusicGroup.xsd" namespace="http://schema.org/MusicGroup" />
+  <xs:import schemaLocation="TVSeason.xsd" namespace="http://schema.org/TVSeason" />
+  <xs:import schemaLocation="TVSeries.xsd" namespace="http://schema.org/TVSeries" />
+  <xs:import schemaLocation="Organization.xsd" namespace="http://schema.org/Organization" />
+  <xs:import schemaLocation="CreativeWork.xsd" namespace="http://schema.org/CreativeWork" />
+  <xs:complexType name="TVEpisode">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schema.org/CreativeWork" base="q1:CreativeWork">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Actors" xmlns:q2="http://schema.org/Person" type="q2:Person" />
+  <xs:element name="Director" xmlns:q3="http://schema.org/Person" type="q3:Person" />
+  <xs:element name="EpisodeNumber" xmlns:q4="http://schema.org/Number" type="q4:Number" />
+  <xs:element name="MusicBy">
+    <xs:complexType>
+      <xs:choice>
+        <xs:element xmlns:person="http://schema.org/Person" name="Person" type="person:Person" />
+        <xs:element xmlns:musicGroup="http://schema.org/MusicGroup" name="MusicGroup" type="musicGroup:MusicGroup" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PartOfSeason" xmlns:q5="http://schema.org/TVSeason" type="q5:TVSeason" />
+  <xs:element name="PartOfTVSeries" xmlns:q6="http://schema.org/TVSeries" type="q6:TVSeries" />
+  <xs:element name="Producer" xmlns:q7="http://schema.org/Person" type="q7:Person" />
+  <xs:element name="ProductionCompany" xmlns:q8="http://schema.org/Organization" type="q8:Organization" />
+</xs:schema>

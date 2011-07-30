@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 (http://www.altova.com) by BillyBob (Bobs) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://schema.org/Place" targetNamespace="http://schema.org/Place" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:include schemaLocation="..\Thing.xsd"/>
+  <xs:complexType name="Place">
+    <xs:complexContent>
+      <xs:extension base="ns1:Thing"/>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

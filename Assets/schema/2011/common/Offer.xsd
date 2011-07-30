@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.org/Offer" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="AggregateRating.xsd" namespace="http://schema.org/AggregateRating" />
+  <xs:import schemaLocation="ItemAvailability.xsd" namespace="http://schema.org/ItemAvailability" />
+  <xs:import schemaLocation="OfferItemCondition.xsd" namespace="http://schema.org/OfferItemCondition" />
+  <xs:import schemaLocation="Product.xsd" namespace="http://schema.org/Product" />
+  <xs:import schemaLocation="Number.xsd" namespace="http://schema.org/Number" />
+  <xs:import schemaLocation="Text.xsd" namespace="http://schema.org/Text" />
+  <xs:import schemaLocation="Date.xsd" namespace="http://schema.org/Date" />
+  <xs:import schemaLocation="Review.xsd" namespace="http://schema.org/Review" />
+  <xs:import schemaLocation="Organization.xsd" namespace="http://schema.org/Organization" />
+  <xs:import schemaLocation="Intangible.xsd" namespace="http://schema.org/Intangible" />
+  <xs:complexType name="Offer">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schema.org/Intangible" base="q1:Intangible">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AggregateRating" xmlns:q2="http://schema.org/AggregateRating" type="q2:AggregateRating" />
+  <xs:element name="Availability" xmlns:q3="http://schema.org/ItemAvailability" type="q3:ItemAvailability" />
+  <xs:element name="ItemCondition" xmlns:q4="http://schema.org/OfferItemCondition" type="q4:OfferItemCondition" />
+  <xs:element name="ItemOffered" xmlns:q5="http://schema.org/Product" type="q5:Product" />
+  <xs:element name="Price">
+    <xs:complexType>
+      <xs:choice>
+        <xs:element xmlns:number="http://schema.org/Number" name="Number" type="number:Number" />
+        <xs:element xmlns:text="http://schema.org/Text" name="Text" type="text:Text" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PriceCurrency" xmlns:q6="http://schema.org/Text" type="q6:Text" />
+  <xs:element name="PriceValidUntil" xmlns:q7="http://schema.org/Date" type="q7:Date" />
+  <xs:element name="Reviews" xmlns:q8="http://schema.org/Review" type="q8:Review" />
+  <xs:element name="Seller" xmlns:q9="http://schema.org/Organization" type="q9:Organization" />
+</xs:schema>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.org/PostalAddress" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="Country.xsd" namespace="http://schema.org/Country" />
+  <xs:import schemaLocation="Text.xsd" namespace="http://schema.org/Text" />
+  <xs:import schemaLocation="ContactPoint.xsd" namespace="http://schema.org/ContactPoint" />
+  <xs:complexType name="PostalAddress">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schema.org/ContactPoint" base="q1:ContactPoint">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AddressCountry" xmlns:q2="http://schema.org/Country" type="q2:Country" />
+  <xs:element name="AddressLocality" xmlns:q3="http://schema.org/Text" type="q3:Text" />
+  <xs:element name="AddressRegion" xmlns:q4="http://schema.org/Text" type="q4:Text" />
+  <xs:element name="PostOfficeBoxNumber" xmlns:q5="http://schema.org/Text" type="q5:Text" />
+  <xs:element name="PostalCode" xmlns:q6="http://schema.org/Text" type="q6:Text" />
+  <xs:element name="StreetAddress" xmlns:q7="http://schema.org/Text" type="q7:Text" />
+</xs:schema>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 (http://www.altova.com) by BillyBob (Bobs) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="C:\Users\Administrator\Documents\AF\XmlProjects\Common\schema\2011\Common\DataTypes\DataTypes.xsd"/>
+	<xs:element name="MyStuffers">
+		<xs:annotation>
+			<xs:documentation>Comment describing your root element</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="MyName" type="Text"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

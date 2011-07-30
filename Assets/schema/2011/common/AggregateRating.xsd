@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.org/AggregateRating" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="Thing.xsd" namespace="http://schema.org/Thing" />
+  <xs:import schemaLocation="Number.xsd" namespace="http://schema.org/Number" />
+  <xs:import schemaLocation="Rating.xsd" namespace="http://schema.org/Rating" />
+  <xs:complexType name="AggregateRating">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schema.org/Rating" base="q1:Rating">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ItemReviewed" xmlns:q2="http://schema.org/Thing" type="q2:Thing" />
+  <xs:element name="RatingCount" xmlns:q3="http://schema.org/Number" type="q3:Number" />
+  <xs:element name="ReviewCount" xmlns:q4="http://schema.org/Number" type="q4:Number" />
+</xs:schema>

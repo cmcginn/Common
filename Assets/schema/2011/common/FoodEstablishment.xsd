@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.org/FoodEstablishment" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="Text.xsd" namespace="http://schema.org/Text" />
+  <xs:import schemaLocation="LocalBusiness.xsd" namespace="http://schema.org/LocalBusiness" />
+  <xs:complexType name="FoodEstablishment">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schema.org/LocalBusiness" base="q1:LocalBusiness">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AcceptsReservations" xmlns:q2="http://schema.org/Text" type="q2:Text" />
+  <xs:element name="Menu" xmlns:q3="http://schema.org/Text" type="q3:Text" />
+  <xs:element name="ServesCuisine" xmlns:q4="http://schema.org/Text" type="q4:Text" />
+</xs:schema>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http:/schema.org/Intangible" xmlns:ns2="http://schema.org/Text" targetNamespace="http:/schema.org/Intangible" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:include schemaLocation="..\Thing.xsd"/>
+  <xs:import namespace="http://schema.org/Text" schemaLocation="..\..\DataType\Text.xsd"/>
+  <xs:complexType name="ItemAvailability">
+    <xs:complexContent>
+      <xs:extension base="ns1:Enumeration">
+        <xs:choice>
+          <xs:element name="InStoreOnly" type="xs:boolean" fixed="1"/>
+          <xs:element name="Discontinued" type="xs:boolean" fixed="1"/>
+          <xs:element name="PreOrder" type="xs:boolean" fixed="1"/>
+          <xs:element name="OutOfStock" type="xs:boolean" fixed="1"/>
+          <xs:element name="OnlineOnly" type="xs:boolean" fixed="1"/>
+          <xs:element name="InStock" type="xs:boolean" fixed="1"/>
+        </xs:choice>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Enumeration">
+    <xs:complexContent>
+      <xs:extension base="ns1:Intangible"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ContactPoint">
+    <xs:complexContent>
+      <xs:extension base="ns1:StructuredValue">
+        <xs:sequence>
+          <xs:element name="ContactType" type="ns2:Text" minOccurs="0" maxOccurs="1"/>
+          <xs:element name="Email" type="ns2:Text" minOccurs="0" maxOccurs="1"/>
+          <xs:element name="FaxNumber" type="ns2:Text" minOccurs="0" maxOccurs="1"/>
+          <xs:element name="Telephone" type="ns2:Text" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Rating">
+    <xs:complexContent>
+      <xs:extension base="ns1:Intangible"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="StructuredValue">
+    <xs:complexContent>
+      <xs:extension base="ns1:Intangible"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Quantity">
+    <xs:complexContent>
+      <xs:extension base="ns1:Intangible"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Intangible">
+    <xs:complexContent>
+      <xs:extension base="ns1:Thing"/>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

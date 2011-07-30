@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.org/Rating" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="Number.xsd" namespace="http://schema.org/Number" />
+  <xs:import schemaLocation="Text.xsd" namespace="http://schema.org/Text" />
+  <xs:import schemaLocation="Intangible.xsd" namespace="http://schema.org/Intangible" />
+  <xs:complexType name="Rating">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schema.org/Intangible" base="q1:Intangible">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BestRating">
+    <xs:complexType>
+      <xs:choice>
+        <xs:element xmlns:number="http://schema.org/Number" name="Number" type="number:Number" />
+        <xs:element xmlns:text="http://schema.org/Text" name="Text" type="text:Text" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RatingValue" xmlns:q2="http://schema.org/Text" type="q2:Text" />
+  <xs:element name="WorstRating">
+    <xs:complexType>
+      <xs:choice>
+        <xs:element xmlns:number="http://schema.org/Number" name="Number" type="number:Number" />
+        <xs:element xmlns:text="http://schema.org/Text" name="Text" type="text:Text" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

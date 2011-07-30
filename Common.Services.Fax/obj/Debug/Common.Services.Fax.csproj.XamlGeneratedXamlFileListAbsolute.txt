@@ -1,0 +1,1 @@
+obj\Debug\Activity1.g.xaml

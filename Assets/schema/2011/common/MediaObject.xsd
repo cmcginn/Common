@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.org/MediaObject" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="Text.xsd" namespace="http://schema.org/Text" />
+  <xs:import schemaLocation="Duration.xsd" namespace="http://schema.org/Duration" />
+  <xs:import schemaLocation="CreativeWork.xsd" namespace="http://schema.org/CreativeWork" />
+  <xs:import schemaLocation="Date.xsd" namespace="http://schema.org/Date" />
+  <xs:import schemaLocation="Distance.xsd" namespace="http://schema.org/Distance" />
+  <xs:import schemaLocation="Place.xsd" namespace="http://schema.org/Place" />
+  <xs:import schemaLocation="Boolean.xsd" namespace="http://schema.org/Boolean" />
+  <xs:complexType name="MediaObject">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schema.org/CreativeWork" base="q1:CreativeWork">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Bitrate" xmlns:q2="http://schema.org/Text" type="q2:Text" />
+  <xs:element name="ContentSize" xmlns:q3="http://schema.org/Text" type="q3:Text" />
+  <xs:element name="ContentURL" xmlns:q4="http://schema.org/Text" type="q4:Text" />
+  <xs:element name="Duration" xmlns:q5="http://schema.org/Duration" type="q5:Duration" />
+  <xs:element name="EmbedURL" xmlns:q6="http://schema.org/Text" type="q6:Text" />
+  <xs:element name="EncodesCreativeWork" xmlns:q7="http://schema.org/CreativeWork" type="q7:CreativeWork" />
+  <xs:element name="EncodingFormat" xmlns:q8="http://schema.org/Text" type="q8:Text" />
+  <xs:element name="Expires" xmlns:q9="http://schema.org/Date" type="q9:Date" />
+  <xs:element name="Height" xmlns:q10="http://schema.org/Distance" type="q10:Distance" />
+  <xs:element name="PlayerType" xmlns:q11="http://schema.org/Text" type="q11:Text" />
+  <xs:element name="RegionsAllowed" xmlns:q12="http://schema.org/Place" type="q12:Place" />
+  <xs:element name="RequiresSubscription" xmlns:q13="http://schema.org/Boolean" type="q13:Boolean" />
+  <xs:element name="UploadDate" xmlns:q14="http://schema.org/Date" type="q14:Date" />
+  <xs:element name="Width" xmlns:q15="http://schema.org/Distance" type="q15:Distance" />
+</xs:schema>

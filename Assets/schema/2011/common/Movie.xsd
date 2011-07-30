@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.org/Movie" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="Person.xsd" namespace="http://schema.org/Person" />
+  <xs:import schemaLocation="Duration.xsd" namespace="http://schema.org/Duration" />
+  <xs:import schemaLocation="MusicGroup.xsd" namespace="http://schema.org/MusicGroup" />
+  <xs:import schemaLocation="Organization.xsd" namespace="http://schema.org/Organization" />
+  <xs:import schemaLocation="VideoObject.xsd" namespace="http://schema.org/VideoObject" />
+  <xs:import schemaLocation="CreativeWork.xsd" namespace="http://schema.org/CreativeWork" />
+  <xs:complexType name="Movie">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schema.org/CreativeWork" base="q1:CreativeWork">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Actors" xmlns:q2="http://schema.org/Person" type="q2:Person" />
+  <xs:element name="Director" xmlns:q3="http://schema.org/Person" type="q3:Person" />
+  <xs:element name="Duration" xmlns:q4="http://schema.org/Duration" type="q4:Duration" />
+  <xs:element name="MusicBy">
+    <xs:complexType>
+      <xs:choice>
+        <xs:element xmlns:person="http://schema.org/Person" name="Person" type="person:Person" />
+        <xs:element xmlns:musicGroup="http://schema.org/MusicGroup" name="MusicGroup" type="musicGroup:MusicGroup" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Producer" xmlns:q5="http://schema.org/Person" type="q5:Person" />
+  <xs:element name="ProductionCompany" xmlns:q6="http://schema.org/Organization" type="q6:Organization" />
+  <xs:element name="Trailer" xmlns:q7="http://schema.org/VideoObject" type="q7:VideoObject" />
+</xs:schema>

@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.org/Person" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="PostalAddress.xsd" namespace="http://schema.org/PostalAddress" />
+  <xs:import schemaLocation="Organization.xsd" namespace="http://schema.org/Organization" />
+  <xs:import schemaLocation="EducationalOrganization.xsd" namespace="http://schema.org/EducationalOrganization" />
+  <xs:import schemaLocation="Text.xsd" namespace="http://schema.org/Text" />
+  <xs:import schemaLocation="Date.xsd" namespace="http://schema.org/Date" />
+  <xs:import schemaLocation="ContactPoint.xsd" namespace="http://schema.org/ContactPoint" />
+  <xs:import schemaLocation="Place.xsd" namespace="http://schema.org/Place" />
+  <xs:import schemaLocation="Country.xsd" namespace="http://schema.org/Country" />
+  <xs:import schemaLocation="Event.xsd" namespace="http://schema.org/Event" />
+  <xs:import schemaLocation="Thing.xsd" namespace="http://schema.org/Thing" />
+  <xs:complexType name="Person">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schema.org/Thing" base="q1:Thing">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Address" xmlns:q2="http://schema.org/PostalAddress" type="q2:PostalAddress" />
+  <xs:element name="Affiliation" xmlns:q3="http://schema.org/Organization" type="q3:Organization" />
+  <xs:element name="AlumniOf" xmlns:q4="http://schema.org/EducationalOrganization" type="q4:EducationalOrganization" />
+  <xs:element name="Awards" xmlns:q5="http://schema.org/Text" type="q5:Text" />
+  <xs:element name="BirthDate" xmlns:q6="http://schema.org/Date" type="q6:Date" />
+  <xs:element name="Children" xmlns:q7="http://schema.org/Person" type="q7:Person" />
+  <xs:element name="Colleagues" xmlns:q8="http://schema.org/Person" type="q8:Person" />
+  <xs:element name="ContactPoints" xmlns:q9="http://schema.org/ContactPoint" type="q9:ContactPoint" />
+  <xs:element name="DeathDate" xmlns:q10="http://schema.org/Date" type="q10:Date" />
+  <xs:element name="Email" xmlns:q11="http://schema.org/Text" type="q11:Text" />
+  <xs:element name="FaxNumber" xmlns:q12="http://schema.org/Text" type="q12:Text" />
+  <xs:element name="Follows" xmlns:q13="http://schema.org/Person" type="q13:Person" />
+  <xs:element name="Gender" xmlns:q14="http://schema.org/Text" type="q14:Text" />
+  <xs:element name="HomeLocation">
+    <xs:complexType>
+      <xs:choice>
+        <xs:element xmlns:place="http://schema.org/Place" name="Place" type="place:Place" />
+        <xs:element xmlns:contactPoint="http://schema.org/ContactPoint" name="ContactPoint" type="contactPoint:ContactPoint" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InteractionCount" xmlns:q15="http://schema.org/Text" type="q15:Text" />
+  <xs:element name="JobTitle" xmlns:q16="http://schema.org/Text" type="q16:Text" />
+  <xs:element name="Knows" xmlns:q17="http://schema.org/Person" type="q17:Person" />
+  <xs:element name="MemberOf" xmlns:q18="http://schema.org/Organization" type="q18:Organization" />
+  <xs:element name="Nationality" xmlns:q19="http://schema.org/Country" type="q19:Country" />
+  <xs:element name="Parents" xmlns:q20="http://schema.org/Person" type="q20:Person" />
+  <xs:element name="PerformerIn" xmlns:q21="http://schema.org/Event" type="q21:Event" />
+  <xs:element name="RelatedTo" xmlns:q22="http://schema.org/Person" type="q22:Person" />
+  <xs:element name="Siblings" xmlns:q23="http://schema.org/Person" type="q23:Person" />
+  <xs:element name="Spouse" xmlns:q24="http://schema.org/Person" type="q24:Person" />
+  <xs:element name="Telephone" xmlns:q25="http://schema.org/Text" type="q25:Text" />
+  <xs:element name="WorkLocation">
+    <xs:complexType>
+      <xs:choice>
+        <xs:element xmlns:place="http://schema.org/Place" name="Place" type="place:Place" />
+        <xs:element xmlns:contactPoint="http://schema.org/ContactPoint" name="ContactPoint" type="contactPoint:ContactPoint" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WorksFor" xmlns:q26="http://schema.org/Organization" type="q26:Organization" />
+</xs:schema>

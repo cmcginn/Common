@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.org/Text" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="DataType.xsd" namespace="http://schema.org/DataType" />
+  <xs:complexType name="Text">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schema.org/DataType" base="q1:DataType" />
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

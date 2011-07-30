@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.org/ContactPoint" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="Text.xsd" namespace="http://schema.org/Text" />
+  <xs:import schemaLocation="StructuredValue.xsd" namespace="http://schema.org/StructuredValue" />
+  <xs:complexType name="ContactPoint">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schema.org/StructuredValue" base="q1:StructuredValue">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ContactType" xmlns:q2="http://schema.org/Text" type="q2:Text" />
+  <xs:element name="Email" xmlns:q3="http://schema.org/Text" type="q3:Text" />
+  <xs:element name="FaxNumber" xmlns:q4="http://schema.org/Text" type="q4:Text" />
+  <xs:element name="Telephone" xmlns:q5="http://schema.org/Text" type="q5:Text" />
+</xs:schema>

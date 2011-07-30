@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.org/Event" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="Person.xsd" namespace="http://schema.org/Person" />
+  <xs:import schemaLocation="Organization.xsd" namespace="http://schema.org/Organization" />
+  <xs:import schemaLocation="Duration.xsd" namespace="http://schema.org/Duration" />
+  <xs:import schemaLocation="Date.xsd" namespace="http://schema.org/Date" />
+  <xs:import schemaLocation="PostalAddress.xsd" namespace="http://schema.org/PostalAddress" />
+  <xs:import schemaLocation="Place.xsd" namespace="http://schema.org/Place" />
+  <xs:import schemaLocation="Offer.xsd" namespace="http://schema.org/Offer" />
+  <xs:import schemaLocation="Thing.xsd" namespace="http://schema.org/Thing" />
+  <xs:complexType name="Event">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schema.org/Thing" base="q1:Thing">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Attendees">
+    <xs:complexType>
+      <xs:choice>
+        <xs:element xmlns:person="http://schema.org/Person" name="Person" type="person:Person" />
+        <xs:element xmlns:organization="http://schema.org/Organization" name="Organization" type="organization:Organization" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Duration" xmlns:q2="http://schema.org/Duration" type="q2:Duration" />
+  <xs:element name="EndDate" xmlns:q3="http://schema.org/Date" type="q3:Date" />
+  <xs:element name="Location">
+    <xs:complexType>
+      <xs:choice>
+        <xs:element xmlns:postalAddress="http://schema.org/PostalAddress" name="PostalAddress" type="postalAddress:PostalAddress" />
+        <xs:element xmlns:place="http://schema.org/Place" name="Place" type="place:Place" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Offers" xmlns:q4="http://schema.org/Offer" type="q4:Offer" />
+  <xs:element name="Performers">
+    <xs:complexType>
+      <xs:choice>
+        <xs:element xmlns:person="http://schema.org/Person" name="Person" type="person:Person" />
+        <xs:element xmlns:organization="http://schema.org/Organization" name="Organization" type="organization:Organization" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StartDate" xmlns:q5="http://schema.org/Date" type="q5:Date" />
+  <xs:element name="SubEvents" xmlns:q6="http://schema.org/Event" type="q6:Event" />
+  <xs:element name="SuperEvent" xmlns:q7="http://schema.org/Event" type="q7:Event" />
+</xs:schema>

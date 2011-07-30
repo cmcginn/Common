@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Common.Net.Interfaces.NetException">
+    <Position X="5.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NetException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Common.Net.Interfaces.IHttpPost">
+    <Position X="3.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAIAAACABAAABAAAAAAAAACAAAAAAAAIAAAAEAAAE=</HashCode>
+      <FileName>IHttpPost.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Common.Net.Interfaces.PostEncodingTypes">
+    <Position X="1.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>PostEncodingTypes.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Common.Net.Interfaces.PostTypes">
+    <Position X="1.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PostTypes.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

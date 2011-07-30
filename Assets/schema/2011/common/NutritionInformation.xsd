@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.org/NutritionInformation" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="Energy.xsd" namespace="http://schema.org/Energy" />
+  <xs:import schemaLocation="Mass.xsd" namespace="http://schema.org/Mass" />
+  <xs:import schemaLocation="Text.xsd" namespace="http://schema.org/Text" />
+  <xs:import schemaLocation="StructuredValue.xsd" namespace="http://schema.org/StructuredValue" />
+  <xs:complexType name="NutritionInformation">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schema.org/StructuredValue" base="q1:StructuredValue">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Calories" xmlns:q2="http://schema.org/Energy" type="q2:Energy" />
+  <xs:element name="CarbohydrateContent" xmlns:q3="http://schema.org/Mass" type="q3:Mass" />
+  <xs:element name="CholesterolContent" xmlns:q4="http://schema.org/Mass" type="q4:Mass" />
+  <xs:element name="FatContent" xmlns:q5="http://schema.org/Mass" type="q5:Mass" />
+  <xs:element name="FiberContent" xmlns:q6="http://schema.org/Mass" type="q6:Mass" />
+  <xs:element name="ProteinContent" xmlns:q7="http://schema.org/Mass" type="q7:Mass" />
+  <xs:element name="SaturatedFatContent" xmlns:q8="http://schema.org/Mass" type="q8:Mass" />
+  <xs:element name="ServingSize" xmlns:q9="http://schema.org/Text" type="q9:Text" />
+  <xs:element name="SodiumContent" xmlns:q10="http://schema.org/Mass" type="q10:Mass" />
+  <xs:element name="SugarContent" xmlns:q11="http://schema.org/Mass" type="q11:Mass" />
+  <xs:element name="TransFatContent" xmlns:q12="http://schema.org/Mass" type="q12:Mass" />
+  <xs:element name="UnsaturatedFatContent" xmlns:q13="http://schema.org/Mass" type="q13:Mass" />
+</xs:schema>

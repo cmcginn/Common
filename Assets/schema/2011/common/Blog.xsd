@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schema.org/Blog" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="BlogPosting.xsd" namespace="http://schema.org/BlogPosting" />
+  <xs:import schemaLocation="CreativeWork.xsd" namespace="http://schema.org/CreativeWork" />
+  <xs:complexType name="Blog">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schema.org/CreativeWork" base="q1:CreativeWork">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BlogPosts" xmlns:q2="http://schema.org/BlogPosting" type="q2:BlogPosting" />
+</xs:schema>
