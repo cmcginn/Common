@@ -29,10 +29,10 @@ namespace Common.Services.Payment.Tests.Gateways.AuthorizeNet
             result.GatewaySettings.TestMode = true;
 
             result.Customer = new CustomerData();
-            result.Customer.AddressLine1 = "123 Test Street";
-            result.Customer.City = "Testville";
-            result.Customer.Country = "US";
-            result.Customer.PostalCode = "32323";
+            result.Customer.Address.AddressLine1 = "123 Test Street";
+            result.Customer.Address.City = "Testville";
+            result.Customer.Address.Country = "US";
+            result.Customer.Address.PostalCode = "32323";
             result.Customer.FirstName = "Test";
             result.Customer.LastName = "Cardholder";
             result.Transaction = new TransactionData();

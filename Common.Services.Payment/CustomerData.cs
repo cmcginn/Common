@@ -7,11 +7,8 @@ namespace Common.Services.Payment
 
     public class CustomerData : ICustomerData
     {
-        private string _AddressLine1 = string.Empty;
-        private string _AddressLine2 = string.Empty;
-        private string _City = string.Empty;
-        private string _Company = string.Empty;
-        private string _Country = string.Empty;
+        private string _MerchantId = string.Empty;        
+        private string _Company = string.Empty;        
         private string _CustomerId = string.Empty;
         private string _EmailAddress = string.Empty;
         private string _FaxNumber = string.Empty;
@@ -19,34 +16,20 @@ namespace Common.Services.Payment
         private string _IPAddress = string.Empty;
         private string _LastName = string.Empty;
         private string _PhoneNumber = string.Empty;
-        private string _PostalCode = string.Empty;
-        private string _State = string.Empty;
+        private IAddressType _Address;
+        
+        private string _CustomerDescription;
 
-        public string AddressLine1
+        public string MerchantId
         {
-            get { return _AddressLine1; }
-            set { _AddressLine1 = value; }
-        }
-        public string AddressLine2
-        {
-            get { return _AddressLine2; }
-            set { _AddressLine2 = value; }
-        }
-        public string City
-        {
-            get { return _City; }
-            set { _City = value; }
-        }
+            get { return _MerchantId; }
+            set { _MerchantId = value; }
+        }       
         public string Company
         {
             get { return _Company; }
             set { _Company = value; }
-        }
-        public string Country
-        {
-            get { return _Country; }
-            set { _Country = value; }
-        }
+        }        
         public string CustomerId
         {
             get { return _CustomerId; }
@@ -81,17 +64,17 @@ namespace Common.Services.Payment
         {
             get { return _PhoneNumber; }
             set { _PhoneNumber = value; }
-        }
-        public string PostalCode
+        }        
+        public string CustomerDescription
         {
-            get { return _PostalCode; }
-            set { _PostalCode = value; }
+            get { return _CustomerDescription; }
+            set { _CustomerDescription = value; }
         }
-        public string State
+        public IAddressType Address
         {
-            get { return _State; }
-            set { _State = value; }
+            get { return _Address; }
+            set { _Address = value; }
         }
-     
+       
     }
 }

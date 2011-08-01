@@ -6,7 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Common.Types;
 using Common.Services.Payment.Interfaces;
 using Common.Services.Payment.Gateways;
-using Common.Services.Payment.Gateways.AuthorizeNet;
+using Common.Services.Payment.Gateways.AuthNet;
 namespace Common.Services.Payment.Tests.Gateways.AuthorizeNet
 {
     [TestClass]
@@ -29,17 +29,29 @@ namespace Common.Services.Payment.Tests.Gateways.AuthorizeNet
             result.GatewaySettings.TestMode = true;
 
             result.Customer = new CustomerData();
-            result.Customer.AddressLine1 = "123 Test Street";
-            result.Customer.City = "Testville";
-            result.Customer.Country = "US";
-            result.Customer.PostalCode = "32323";
+            result.Customer.Address = new AddressType();
+            result.Customer.Address.AddressLine1 = "123 Test Street";
+            result.Customer.Address.City = "Testville";
+            result.Customer.Address.Country = "US";
+            result.Customer.Address.PostalCode = "32323";
             result.Customer.FirstName = "Test";
             result.Customer.LastName = "Cardholder";
+            result.Customer.EmailAddress = "testemail1234567@donotresove.com";
             result.Transaction = new TransactionData();
             result.Transaction.Amount = (decimal)0.01;
             result.Transaction.PreviousTransactionReferenceNumber = "0";
             return result;
         }
+
+
+        #region Test Helper Methods
+        public static IGatewayProfile CreateProfile(ICustomerData data)
+        {
+            IProfileCreditCardGateway target = new AuthorizeNetCIMCreditCardGateway();
+            return target.GetOrCreateProfile(data);
+        }
+        #endregion
+
         [TestMethod]
         public void AuthorizeTest_WhenValidData_CheckResultIsTrue()
         {
@@ -51,5 +63,16 @@ namespace Common.Services.Payment.Tests.Gateways.AuthorizeNet
             //Assert
             Assert.IsTrue(actual);
         }
+
+        [TestMethod]
+        public void CreateProfileTest_AssertProfileResponseLengthGreaterThanZero()
+        {
+            //Arrange
+            IGatewayProfile actual = CreateProfile(GetPaymentData().Customer);
+            //Assert
+            Assert.IsTrue(int.Parse(actual.ProfileId)>0);
+        }
     }
+
+   
 }

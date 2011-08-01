@@ -13,6 +13,7 @@ namespace Common.Services.Payment
         private string _CardNumber = string.Empty;
         private string _SecurityCode = string.Empty;
         private string _CardHolderName = string.Empty;
+        public IAddressType BillingAddress { get; set; }
         private PaymentCardType _CardType = PaymentCardType.Unknown;
 
         public int ExpirationMonth

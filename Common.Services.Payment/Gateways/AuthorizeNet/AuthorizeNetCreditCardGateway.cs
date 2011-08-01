@@ -121,27 +121,27 @@ namespace Common.Services.Payment.Gateways
                 sb.Append("&x_Company=");
                 sb.Append(SafeWriteString(data.Customer.Company));
                 sb.Append("&x_Address=");
-                sb.Append(SafeWriteString(data.Customer.AddressLine1));
+                sb.Append(SafeWriteString(data.Customer.Address.AddressLine1));
                 sb.Append("&x_City=");
-                sb.Append(SafeWriteString(data.Customer.City));
+                sb.Append(SafeWriteString(data.Customer.Address.City));
 
 
                 // TODO: Convert country codes to ISO Codes or
                 // find a way to guarantee that we're getting an iso code
                 sb.Append("&x_Country=");
-                sb.Append(SafeWriteString(data.Customer.Country));
+                sb.Append(SafeWriteString(data.Customer.Address.Country));
 
                 // TODO: Add code to make sure we've got the correct state format
-                if (data.Customer.State != string.Empty)
+                if (data.Customer.Address.State != string.Empty)
                 {
                     sb.Append("&x_State=");
-                    sb.Append(SafeWriteString(data.Customer.State));
+                    sb.Append(SafeWriteString(data.Customer.Address.State));
                 }
 
                 sb.Append("&x_Zip=");
-                sb.Append(SafeWriteString(data.Customer.PostalCode));
+                sb.Append(SafeWriteString(data.Customer.Address.PostalCode));
                 sb.Append("&x_Phone=");
-                sb.Append(SafeWriteString(data.Customer.PhoneNumber));
+                sb.Append(SafeWriteString(data.Customer.Address.PhoneNumber));
 
                 sb.Append("&x_Method=");
                 sb.Append(SafeWriteString("CC"));

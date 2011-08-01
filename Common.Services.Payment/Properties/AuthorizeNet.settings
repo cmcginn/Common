@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Common.Services.Payment.Gateways.AuthorizeNet" GeneratedClassName="AuthorizeNet">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Common.Services.Payment.Properties" GeneratedClassName="AuthorizeNet">
   <Profiles />
   <Settings>
     <Setting Name="APIAccountName" Type="System.String" Scope="Application">
@@ -10,6 +10,12 @@
     </Setting>
     <Setting Name="UseSandbox" Type="System.Boolean" Scope="Application">
       <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="APIMerchantName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="APIUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://apitest.authorize.net/soap/v1/Service.asmx</Value>
     </Setting>
   </Settings>
 </SettingsFile>

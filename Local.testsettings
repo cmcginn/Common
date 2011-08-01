@@ -2,6 +2,7 @@
 <TestSettings name="Local" id="1ddb4cbd-2c91-4264-b717-275efc45f586" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
   <Description>These are default test settings for a local test run.</Description>
   <Deployment>
+    <DeploymentItem filename="Common.Workflows.Activities.Tests\Resources\Placeholder.txt" />
     <DeploymentItem filename="Common.Services.Fax.Interfaces\Validation\FaxRequestType\PreProcess\" />
     <DeploymentItem filename="Common.Services.Fax.Interfaces\Validation\FaxRequestType\PreProcess\FaxValidation2.xsd" />
     <DeploymentItem filename="Common.Services.Payment.Tests\Resources\" />

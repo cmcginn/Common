@@ -88,6 +88,9 @@
       <HintPath>..\..\..\Dependencies\EntLib50\Microsoft.Practices.Unity.Interception.Configuration.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Neovolve.Toolkit">
+      <HintPath>..\Dependencies\Neovolve.Toolkit 1.0\Neovolve.Toolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Neovolve.Toolkit.Unity">
       <HintPath>..\..\..\Dependencies\Neovolve.Toolkit 1.0\Neovolve.Toolkit.Unity.dll</HintPath>
     </Reference>

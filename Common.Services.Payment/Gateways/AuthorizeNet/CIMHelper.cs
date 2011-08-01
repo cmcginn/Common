@@ -6,7 +6,7 @@ using Common.Services.Payment.Interfaces;
 using System.Web;
 using Common.Services.Payment.AuthorizeNetCIMGateway;
 
-namespace Common.Services.Payment.Gateways.AuthorizeNet
+namespace Common.Services.Payment.Gateways.AuthNet
 {
     public class CIMHelper
     {

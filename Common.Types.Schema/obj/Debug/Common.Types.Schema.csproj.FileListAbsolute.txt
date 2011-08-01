@@ -3,3 +3,8 @@ C:\Projects\tfs-dev\VoiceForVictory\Source\Features\v2.0\Libraries\Common\Common
 C:\Projects\tfs-dev\VoiceForVictory\Source\Features\v2.0\Libraries\Common\Common.Types.Schema\obj\Debug\ResolveAssemblyReference.cache
 C:\Projects\tfs-dev\VoiceForVictory\Source\Features\v2.0\Libraries\Common\Common.Types.Schema\obj\Debug\Common.Types.Schema.dll
 C:\Projects\tfs-dev\VoiceForVictory\Source\Features\v2.0\Libraries\Common\Common.Types.Schema\obj\Debug\Common.Types.Schema.pdb
+C:\Projects\Urbana\Common\Common.Types.Schema\bin\Debug\Common.Types.Schema.dll
+C:\Projects\Urbana\Common\Common.Types.Schema\bin\Debug\Common.Types.Schema.pdb
+C:\Projects\Urbana\Common\Common.Types.Schema\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\Urbana\Common\Common.Types.Schema\obj\Debug\Common.Types.Schema.dll
+C:\Projects\Urbana\Common\Common.Types.Schema\obj\Debug\Common.Types.Schema.pdb

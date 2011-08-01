@@ -39,9 +39,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AuthorizeNet">
+      <HintPath>..\Dependencies\AuthorizeNet\AuthorizeNet.dll</HintPath>
+    </Reference>
+    <Reference Include="AuthorizeNet.Helpers">
+      <HintPath>..\Dependencies\AuthorizeNet\AuthorizeNet.Helpers.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web" />
@@ -52,11 +59,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddressType.cs" />
     <Compile Include="CreditCardProcessor.cs" />
     <Compile Include="CreditCardProcessorType.cs" />
     <Compile Include="CustomerData.cs" />
+    <Compile Include="GatewayPaymentProfile.cs" />
     <Compile Include="Gateways\AuthorizeNet\AuthorizeNetCIMCreditCardGateway.cs" />
     <Compile Include="Gateways\AuthorizeNet\CIMHelper.cs" />
+    <Compile Include="Gateways\AuthorizeNet\helpers\AuthorizeNetExtensions.cs" />
+    <Compile Include="Gateways\AuthorizeNet\helpers\CIMGatewayHelper.cs" />
+    <Compile Include="Gateways\AuthorizeNet\helpers\XmlAPIUtilities.cs" />
+    <Compile Include="GatewayProfile.cs" />
     <Compile Include="Properties\AuthorizeNet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>

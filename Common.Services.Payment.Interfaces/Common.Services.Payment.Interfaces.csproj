@@ -49,19 +49,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseCreditCardGateway.cs" />
+    <Compile Include="BaseProfileCreditCardGateway.cs" />
+    <Compile Include="IAddressType.cs" />
     <Compile Include="ICreditCardGateway.cs" />
     <Compile Include="ICustomerData.cs" />
     <Compile Include="IPaymentCardData.cs" />
     <Compile Include="IPaymentData.cs" />
     <Compile Include="IPaymentGatewaySettings.cs" />
-    <Compile Include="IPaymentProfile.cs" />
+    <Compile Include="IGatewayPaymentProfile.cs" />
     <Compile Include="IPaymentService.cs" />
+    <Compile Include="IGatewayProfile.cs" />
+    <Compile Include="IProfileCreditCardGateway.cs" />
+    <Compile Include="IResponseMessage.cs" />
     <Compile Include="ITransactionData.cs" />
     <Compile Include="ITransactionMessage.cs" />
     <Compile Include="ITransactionResultData.cs" />
     <Compile Include="PaymentCardType.cs" />
     <Compile Include="PaymentServiceException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResponseMessage.cs" />
     <Compile Include="TransactionMessageType.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
