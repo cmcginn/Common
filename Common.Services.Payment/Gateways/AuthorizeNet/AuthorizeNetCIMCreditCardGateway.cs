@@ -4,16 +4,14 @@ using System.Linq;
 using System.Text;
 using Common.Services.Payment.Interfaces;
 using System.Web;
-using Common.Services.Payment.AuthorizeNetCIMGateway;
-using AuthorizeNet;
-using AuthorizeNet.APICore;
-using AuthorizeNet.Helpers;
+using System.Diagnostics.Contracts;
 using Common.Services.Payment.Gateways.AuthNet.helpers;
+
 namespace Common.Services.Payment.Gateways.AuthNet
 {
-    public class AuthorizeNetCIMCreditCardGateway:BaseProfileCreditCardGateway
+    public class AuthorizeNetCIMCreditCardGateway : BaseProfileCreditCardGateway
     {
-        
+
 
         #region public interface
         public const string GATEWAY_ID_STRING = "7107FFA1-D376-422E-9DF5-A15DD6909E9C";
@@ -55,7 +53,35 @@ namespace Common.Services.Payment.Gateways.AuthNet
 
         public override bool Authorize(IPaymentData data)
         {
-            throw new NotImplementedException();
+            Contract.Requires(data.Customer != null, "Customer required");
+            Contract.Requires(data.CardData != null, "CardData Required");
+            Contract.Requires(data.CardData.BillingAddress != null, "CardData billing address required");
+            Contract.Requires(!String.IsNullOrWhiteSpace(data.CardData.BillingAddress.AddressLine1), "CardData Street Address Required");
+            Contract.Requires(!String.IsNullOrWhiteSpace(data.CardData.BillingAddress.City), "CardData City Required");
+            Contract.Requires(!String.IsNullOrWhiteSpace(data.CardData.BillingAddress.Country), "CardData country required");
+            Contract.Requires(!String.IsNullOrWhiteSpace(data.CardData.BillingAddress.PostalCode), "CardData postal code required");
+            Contract.Requires(!String.IsNullOrWhiteSpace(data.CardData.CardNumber), "CardData cardnumber required");
+            Contract.Requires(data.CardData.ExpirationMonth < 1, "CardData expiration monthr equired");
+            Contract.Requires(data.CardData.ExpirationYear < 1, "CardData expiration monthr equired");
+            Contract.Requires(!String.IsNullOrWhiteSpace(data.CardData.CardHolderName), "CardData carholder name required");
+            Contract.Requires(!String.IsNullOrWhiteSpace(data.Customer.FirstName), "PaymentData first name required");
+            Contract.Requires(!String.IsNullOrWhiteSpace(data.Customer.LastName), "PaymentData last name required");
+            Contract.Requires(data.Transaction != null, "PaymentData transaction required");
+            Contract.Requires(data.Transaction.Amount > 0, "PaymentData transaction amount must be greater than zero");
+
+            if (!SupportsAuthorize)
+                throw new System.NotSupportedException("Authorize not supported by gateway");
+
+            IGatewayProfile profile = GetOrCreateCustomerProfile(data.Customer);
+
+            return false;
+            //CustomerGateway.Authorize(
+            //return false;
+
+
+            //CustomerGateway.Authorize(
+
+
         }
 
         public override bool Capture(IPaymentData data)
@@ -77,76 +103,55 @@ namespace Common.Services.Payment.Gateways.AuthNet
         {
             throw new NotImplementedException();
         }
-        #endregion
 
+        public override IGatewayProfile GetCustomerProfile(string id)
+        {
+            long profileId = long.Parse(id);
+            IGatewayProfile result = new GatewayProfile();
+            var service = new AuthorizeNetCIMGatewayHelper();
+            service.MerchantAuthenticationType = MerchantAuthentication;
+            var response = service.GetCustomerProfile(profileId);
+            result = response.MapCustomerProfileToGatewayProfile();
+            return result;
+
+        }
+
+        public override IGatewayProfile GetOrCreateCustomerProfile(ICustomerData customerData)
+        {
+
+            IGatewayProfile result = new GatewayProfile();
+            var service = new AuthorizeNetCIMGatewayHelper();
+            service.MerchantAuthenticationType = MerchantAuthentication;
+            var profileId = service.CreateCustomerProfile(customerData.EmailAddress, customerData.CustomerDescription);
+            result = service.GetCustomerProfile(profileId).MapCustomerProfileToGatewayProfile();
+            return result;
+
+        }
+
+        #endregion
 
         #region Class Memebers
 
-        ICustomerGateway _CustomerGateway;
-        ICustomerGateway CustomerGateway
-        {
-            get 
-            {
-                if(_CustomerGateway==null)
-                    _CustomerGateway = new CustomerGateway(Properties.AuthorizeNet.Default.APIAccountName, Properties.AuthorizeNet.Default.APIAccountPassword);
-                return _CustomerGateway; 
-            }
-            set { _CustomerGateway = value; }
-        }
-        //{
-        //    ICustomerGateway result = 
-        //    return result;
-        //}
-        #endregion
-        public IGatewayProfile GetCustomerProfile(string id)
-        {
-            IGatewayProfile result = new GatewayProfile();
-            var customer = CustomerGateway.GetCustomer(id);
-            result.ProfileCustomerData = new CustomerData();
-            if (customer.BillingAddress != null)
-            {
-                result.ProfileCustomerData.Address = customer.BillingAddress.MapAddressType();
-                result.ProfileCustomerData.FirstName = customer.BillingAddress.First;
-                result.ProfileCustomerData.LastName = customer.BillingAddress.Last;
-            }
-            result.ProfileId = customer.ProfileID;
-            result.ProfileCustomerData.CustomerId = customer.ID;
-            result.ProfileCustomerData.EmailAddress = customer.Email;
-            result.PaymentProfiles = new List<IGatewayPaymentProfile>();
-            customer.PaymentProfiles.ToList().ForEach(paymentProfile =>
-                {
-                    var gatewayPaymentProfile = new GatewayPaymentProfile();
-                    gatewayPaymentProfile.CustomerData = new CustomerData();
-                    gatewayPaymentProfile.CustomerData.Address= paymentProfile.BillingAddress.MapAddressType();
-                    gatewayPaymentProfile.PaymentCardData = paymentProfile.MapPaymentCardData();
-                    gatewayPaymentProfile.CustomerData.CustomerId = customer.ID;
-                    gatewayPaymentProfile.PaymentProfileId = paymentProfile.ProfileID;
-                    result.PaymentProfiles.Add(gatewayPaymentProfile);
-                });
-            return result;
 
-        }
-        public override IGatewayProfile GetOrCreateProfile(ICustomerData customerData)
+        AuthorizeNet.APICore.merchantAuthenticationType _MerchantAuthentication;
+        AuthorizeNet.APICore.merchantAuthenticationType MerchantAuthentication
         {
-            IGatewayProfile result = new GatewayProfile();
-            try
+            get
             {
-                var customer = CustomerGateway.CreateCustomer(customerData.EmailAddress, customerData.CustomerDescription);
-                CustomerGateway.CreateCustomer(customerData.EmailAddress, customerData.CustomerDescription);
-                result.ProfileId = customer.ProfileID;
-                return result;
-            }
-            catch (System.InvalidOperationException ex)
-            {
-                if(ex.Message.Contains(DUPLICATE_PROFILE_MESSAGE))
+                if (_MerchantAuthentication == null)
                 {
-                    var profileId = ex.Message.Replace(DUPLICATE_PROFILE_MESSAGE,"").Replace(" already exists.","");
-                    result = GetCustomerProfile(profileId);                  
-                  
+                    _MerchantAuthentication = new AuthorizeNet.APICore.merchantAuthenticationType();
+                    _MerchantAuthentication.name = Properties.AuthorizeNet.Default.APIAccountName;
+                    _MerchantAuthentication.transactionKey = Properties.AuthorizeNet.Default.APIAccountPassword;
                 }
-              
+                return _MerchantAuthentication;
             }
-            return result;
+            set { _MerchantAuthentication = value; }
         }
+
+        #endregion
+
+
+
     }
 }

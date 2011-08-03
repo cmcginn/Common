@@ -13,6 +13,10 @@ namespace Common.Services.Payment
         private string _CardNumber = string.Empty;
         private string _SecurityCode = string.Empty;
         private string _CardHolderName = string.Empty;
+        private string _CardHolderFirstName = string.Empty;
+        private string _CardHolderLastName = string.Empty;
+        private string _MaskedCardNumber = string.Empty;
+
         public IAddressType BillingAddress { get; set; }
         private PaymentCardType _CardType = PaymentCardType.Unknown;
 
@@ -31,6 +35,11 @@ namespace Common.Services.Payment
             get { return _CardNumber; }
             set { _CardNumber = value; }
         }
+        public string MaskedCardNumber
+        {
+            get { return _MaskedCardNumber; }
+            set { _MaskedCardNumber = value; }
+        }
         public string SecurityCode
         {
             get { return _SecurityCode; }
@@ -38,8 +47,35 @@ namespace Common.Services.Payment
         }
         public string CardHolderName
         {
-            get { return _CardHolderName; }
+            get 
+            {
+                if (String.IsNullOrWhiteSpace(_CardHolderName) & !String.IsNullOrWhiteSpace(CardHolderLastName) & !String.IsNullOrWhiteSpace(CardHolderFirstName))
+                    _CardHolderName = String.Format("{0} {1}", CardHolderFirstName, CardHolderLastName);
+                return _CardHolderName; 
+            }
             set { _CardHolderName = value; }
+        }
+        public string CardHolderFirstName
+        {
+            get
+            {
+                return _CardHolderFirstName;
+            }
+            set
+            {
+                _CardHolderFirstName = value;
+            }
+        }
+        public string CardHolderLastName
+        {
+            get
+            {
+                return _CardHolderLastName;
+            }
+            set
+            {
+                _CardHolderLastName = value;
+            }
         }
         public PaymentCardType CardType
         {

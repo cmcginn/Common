@@ -48,7 +48,12 @@ namespace Common.Services.Payment.Tests.Gateways.AuthorizeNet
         public static IGatewayProfile CreateProfile(ICustomerData data)
         {
             IProfileCreditCardGateway target = new AuthorizeNetCIMCreditCardGateway();
-            return target.GetOrCreateProfile(data);
+            return target.GetOrCreateCustomerProfile(data);
+        }
+        public static IGatewayProfile GetGatewayProfile(IGatewayProfile profile)
+        {
+            IProfileCreditCardGateway target = new AuthorizeNetCIMCreditCardGateway();
+            return target.GetCustomerProfile(profile.ProfileId);
         }
         #endregion
 
@@ -62,7 +67,7 @@ namespace Common.Services.Payment.Tests.Gateways.AuthorizeNet
             var actual = target.Authorize(paymentData);
             //Assert
             Assert.IsTrue(actual);
-        }
+        }      
 
         [TestMethod]
         public void CreateProfileTest_AssertProfileResponseLengthGreaterThanZero()
@@ -71,6 +76,18 @@ namespace Common.Services.Payment.Tests.Gateways.AuthorizeNet
             IGatewayProfile actual = CreateProfile(GetPaymentData().Customer);
             //Assert
             Assert.IsTrue(int.Parse(actual.ProfileId)>0);
+        }
+
+        [TestMethod]
+        public void GetCustomerProfileTest_WhenProfileExists_AssertProfileIdsMatch()
+        {
+            //Arrange
+            var customer = CreateProfile(GetPaymentData().Customer);
+            //Act
+            var actual = GetGatewayProfile(customer);
+            //Assert
+            Assert.IsTrue(customer.ProfileId == actual.ProfileId);
+            
         }
     }
 
