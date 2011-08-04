@@ -11,12 +11,8 @@ namespace Common.Services.Payment.Gateways.AuthNet
 {
     public class AuthorizeNetCIMCreditCardGateway : BaseProfileCreditCardGateway
     {
-
-
         #region public interface
         public const string GATEWAY_ID_STRING = "7107FFA1-D376-422E-9DF5-A15DD6909E9C";
-        const string DUPLICATE_PROFILE_MESSAGE = "Error processing request: E00039 - A duplicate record with ID ";
-        const string DUPLICATE_PAYMENT_PROFILE_MESSAGE = "Error processing request: E00039 - A duplicate customer payment profile already exists.";
         public const string GATEWAY_NAME = "CIMAuthorize.Net";
         public override Guid GatewayId
         {
@@ -178,7 +174,7 @@ namespace Common.Services.Payment.Gateways.AuthNet
             }
             catch (System.InvalidOperationException ex)
             {
-                if (ex.Message == DUPLICATE_PAYMENT_PROFILE_MESSAGE)
+                if (ex.Message == AuthorizeNetCIMGatewayHelper.DUPLICATE_PAYMENT_PROFILE_MESSAGE)
                 {
                     var lastFour = data.CardData.CardNumber.Substring(data.CardData.CardNumber.Length - 4);
                     //get the existing profile
@@ -190,8 +186,5 @@ namespace Common.Services.Payment.Gateways.AuthNet
             return result;
         }
         #endregion
-
-
-
     }
 }

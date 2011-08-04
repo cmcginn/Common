@@ -8,7 +8,8 @@ namespace Common.Services.Payment.Gateways.AuthNet.helpers
 {
     public class AuthorizeNetCIMGatewayHelper
     {
-        const string E00039_DUPLICATE_PROFILE = "Error processing request: E00039 - A duplicate record with ID";
+        public const string DUPLICATE_PROFILE_MESSAGE = "Error processing request: E00039 - A duplicate record with ID ";
+        public const string DUPLICATE_PAYMENT_PROFILE_MESSAGE = "Error processing request: E00039 - A duplicate customer payment profile already exists.";
         AuthorizeNet.APICore.merchantAuthenticationType _MerchantAuthenticationType;
         public AuthorizeNet.APICore.merchantAuthenticationType MerchantAuthenticationType
         {
@@ -43,9 +44,9 @@ namespace Common.Services.Payment.Gateways.AuthNet.helpers
             }
             catch (System.InvalidOperationException ex)
             {
-                if (ex.Message.Contains(E00039_DUPLICATE_PROFILE))
+                if (ex.Message.Contains(DUPLICATE_PROFILE_MESSAGE))
                 {
-                    profileId = ex.Message.Replace(E00039_DUPLICATE_PROFILE, String.Empty).Replace(" already exists.", String.Empty);
+                    profileId = ex.Message.Replace(DUPLICATE_PROFILE_MESSAGE, String.Empty).Replace(" already exists.", String.Empty);
                     long.TryParse(profileId, out result);
                 }
             }
