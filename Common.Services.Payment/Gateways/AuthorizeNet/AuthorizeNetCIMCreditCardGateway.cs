@@ -76,10 +76,11 @@ namespace Common.Services.Payment.Gateways.AuthNet
                 throw new System.NotSupportedException("Authorize not supported by gateway");
             //If profile exists then the profile id will be returned
             IGatewayProfile profile = GetOrCreateCustomerProfile(data.Customer);
+           
             var customerPaymentProfile = data.MapPaymentDataToCustomerPaymentProfileType();
             var service = new AuthorizeNetCIMGatewayHelper();
             service.MerchantAuthenticationType = MerchantAuthentication;
-            var paymentProfile = GetOrCreateCustomerPaymentProfile(data, long.Parse(profile.ProfileId));
+            var paymentProfile = GetOrCreateCustomerPaymentProfile(profile,data);
             var transaction = data.MapPaymentDataToProfileTransAuthCaptureType(long.Parse(paymentProfile.PaymentProfileId),long.Parse(profile.ProfileId));
             var transactionResult = service.CreateProfileTransaction(transaction);
             return transactionResult.messages.resultCode == AuthorizeNet.APICore.messageTypeEnum.Ok;
@@ -132,8 +133,6 @@ namespace Common.Services.Payment.Gateways.AuthNet
         #endregion
 
         #region Class Memebers
-
-
         AuthorizeNet.APICore.merchantAuthenticationType _MerchantAuthentication;
         AuthorizeNet.APICore.merchantAuthenticationType MerchantAuthentication
         {
@@ -148,6 +147,22 @@ namespace Common.Services.Payment.Gateways.AuthNet
                 return _MerchantAuthentication;
             }
             set { _MerchantAuthentication = value; }
+        }
+        IGatewayPaymentProfile GetOrCreateCustomerPaymentProfile(IGatewayProfile gatewayProfile,IPaymentData data)
+        {
+            IGatewayPaymentProfile result = null;
+            if (gatewayProfile.PaymentProfiles != null && gatewayProfile.PaymentProfiles.Count > 0)
+            {
+                var lastFour = data.CardData.CardNumber.Substring(data.CardData.CardNumber.Length - 4);
+                var paymentProfileMatch = gatewayProfile.PaymentProfiles.SingleOrDefault(n => n.PaymentCardData.MaskedCardNumber.Contains(lastFour));
+                if (paymentProfileMatch != null)
+                    result = paymentProfileMatch;
+            }
+            if (result == null)
+            {
+                result = GetOrCreateCustomerPaymentProfile(data, long.Parse(gatewayProfile.ProfileId));
+            }
+            return result;
         }
         IGatewayPaymentProfile GetOrCreateCustomerPaymentProfile(IPaymentData data,long customerProfileId)
         {

@@ -9,5 +9,6 @@ namespace Common.Services.Payment.Interfaces
     {
         IGatewayProfile GetOrCreateCustomerProfile(ICustomerData customerData);
         IGatewayProfile GetCustomerProfile(string id);
+        
     }
 }

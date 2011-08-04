@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<TestRun id="03a79807-a72d-4206-88bb-ed80fd93948c" name="Administrator@WIN-RNMUH95F9U1 2011-08-03 09:45:04" runUser="WIN-RNMUH95F9U1\Administrator" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+<TestRun id="e22a371c-9ab7-4d5e-90aa-9587f0fda574" name="Administrator@WIN-RNMUH95F9U1 2011-08-04 06:34:05" runUser="WIN-RNMUH95F9U1\Administrator" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
   <TestSettings name="Local" id="1ddb4cbd-2c91-4264-b717-275efc45f586">
     <Description>These are default test settings for a local test run.</Description>
-    <Deployment userDeploymentRoot="C:\Projects\Urbana\Common\TestResults" useDefaultDeploymentRoot="false" runDeploymentRoot="Administrator_WIN-RNMUH95F9U1 2011-08-03 09_45_04">
+    <Deployment userDeploymentRoot="C:\Projects\Urbana\Common\TestResults" useDefaultDeploymentRoot="false" runDeploymentRoot="Administrator_WIN-RNMUH95F9U1 2011-08-04 06_34_05">
       <DeploymentItem filename="Common.Services.Fax\bin\Debug\Common.Services.Fax.dll" />
       <DeploymentItem filename="Common.Services.Fax.Interfaces\Validation\FaxRequestType\PreProcess\FaxValidation.xsd" />
       <DeploymentItem filename="C:\Projects\Urbana\Common\Common.Testing\bin\Debug\Common.Testing.dll" />
@@ -50,23 +50,19 @@
       </AgentRule>
     </Execution>
   </TestSettings>
-  <Times creation="2011-08-03T09:45:04.9420781-04:00" queuing="2011-08-03T09:45:05.6129765-04:00" start="2011-08-03T09:45:05.8942265-04:00" finish="2011-08-03T09:45:09.8942265-04:00" />
-  <ResultSummary outcome="Failed">
-    <Counters total="2" executed="2" passed="1" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  <Times creation="2011-08-04T06:34:05.3932500-04:00" queuing="2011-08-04T06:34:06.4928593-04:00" start="2011-08-04T06:34:06.7506718-04:00" finish="2011-08-04T06:34:13.8121953-04:00" />
+  <ResultSummary outcome="Warning">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
     <RunInfos>
-      <RunInfo computerName="WIN-RNMUH95F9U1" outcome="Warning" timestamp="2011-08-03T09:45:05.2672734-04:00">
+      <RunInfo computerName="WIN-RNMUH95F9U1" outcome="Warning" timestamp="2011-08-04T06:34:06.4147343-04:00">
         <Text>Warning: conflict during test run deployment: deployment item 'Common.IO.Tests\Resources\' specified by the test settings cannot be deployed to 'Placeholder.txt' because otherwise the file 'C:\Projects\Urbana\Common\Common.IO.Tests\Resources\Placeholder.txt' would overwrite deployment item 'Common.Workflows.Activities.Tests\Resources\' specified by the test settings.</Text>
       </RunInfo>
     </RunInfos>
   </ResultSummary>
   <TestDefinitions>
-    <UnitTest name="GetCustomerProfileTest_WhenProfileExists_AssertProfileIdsMatch" storage="c:\projects\urbana\common\common.services.payment.tests\bin\debug\common.services.payment.tests.dll" id="2632879d-831e-a597-cc1f-72206b206ef7">
-      <Execution id="0c518fa3-d04d-471a-8f84-d9c256cbfd9e" />
-      <TestMethod codeBase="C:/Projects/Urbana/Common/Common.Services.Payment.Tests/bin/Debug/Common.Services.Payment.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Common.Services.Payment.Tests.Gateways.AuthorizeNet.AuthorizeNetCIMCreditCardGatewayTest, Common.Services.Payment.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetCustomerProfileTest_WhenProfileExists_AssertProfileIdsMatch" />
-    </UnitTest>
-    <UnitTest name="AuthorizeTest_WhenValidData_CheckResultIsTrue" storage="c:\projects\urbana\common\common.services.payment.tests\bin\debug\common.services.payment.tests.dll" id="84e670af-5682-ef51-3af4-74679c65ea20">
-      <Execution id="360a10b7-eb09-4264-ad04-839f1e10bdbf" />
-      <TestMethod codeBase="C:/Projects/Urbana/Common/Common.Services.Payment.Tests/bin/Debug/Common.Services.Payment.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Common.Services.Payment.Tests.Gateways.AuthorizeNet.AuthorizeNetCIMCreditCardGatewayTest, Common.Services.Payment.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="AuthorizeTest_WhenValidData_CheckResultIsTrue" />
+    <UnitTest name="AuthorizeTest_WhenDuplicate_CheckResponseStillOk" storage="c:\projects\urbana\common\common.services.payment.tests\bin\debug\common.services.payment.tests.dll" id="e2d077a5-2dbb-f972-5303-f04d4c874234">
+      <Execution id="56943df4-a641-44f9-a688-00754681a19e" />
+      <TestMethod codeBase="C:/Projects/Urbana/Common/Common.Services.Payment.Tests/bin/Debug/Common.Services.Payment.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Common.Services.Payment.Tests.Gateways.AuthorizeNet.AuthorizeNetCIMCreditCardGatewayTest, Common.Services.Payment.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="AuthorizeTest_WhenDuplicate_CheckResponseStillOk" />
     </UnitTest>
   </TestDefinitions>
   <TestLists>
@@ -74,20 +70,10 @@
     <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
   </TestLists>
   <TestEntries>
-    <TestEntry testId="84e670af-5682-ef51-3af4-74679c65ea20" executionId="360a10b7-eb09-4264-ad04-839f1e10bdbf" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
-    <TestEntry testId="2632879d-831e-a597-cc1f-72206b206ef7" executionId="0c518fa3-d04d-471a-8f84-d9c256cbfd9e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e2d077a5-2dbb-f972-5303-f04d4c874234" executionId="56943df4-a641-44f9-a688-00754681a19e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
   </TestEntries>
   <Results>
-    <UnitTestResult executionId="360a10b7-eb09-4264-ad04-839f1e10bdbf" testId="84e670af-5682-ef51-3af4-74679c65ea20" testName="AuthorizeTest_WhenValidData_CheckResultIsTrue" computerName="WIN-RNMUH95F9U1" duration="00:00:02.1024465" startTime="2011-08-03T09:45:06.0475468-04:00" endTime="2011-08-03T09:45:08.4967656-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="360a10b7-eb09-4264-ad04-839f1e10bdbf">
-      <Output>
-        <ErrorInfo>
-          <Message>Assert.IsTrue failed. </Message>
-          <StackTrace>   at Common.Services.Payment.Tests.Gateways.AuthorizeNet.AuthorizeNetCIMCreditCardGatewayTest.AuthorizeTest_WhenValidData_CheckResultIsTrue() in C:\Projects\Urbana\Common\Common.Services.Payment.Tests\Gateways\AuthorizeNet\AuthorizeNetCIMCreditCardGatewayTest.cs:line 69
-</StackTrace>
-        </ErrorInfo>
-      </Output>
-    </UnitTestResult>
-    <UnitTestResult executionId="0c518fa3-d04d-471a-8f84-d9c256cbfd9e" testId="2632879d-831e-a597-cc1f-72206b206ef7" testName="GetCustomerProfileTest_WhenProfileExists_AssertProfileIdsMatch" computerName="WIN-RNMUH95F9U1" duration="00:00:00.7736893" startTime="2011-08-03T09:45:08.5065312-04:00" endTime="2011-08-03T09:45:09.6276250-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0c518fa3-d04d-471a-8f84-d9c256cbfd9e">
+    <UnitTestResult executionId="56943df4-a641-44f9-a688-00754681a19e" testId="e2d077a5-2dbb-f972-5303-f04d4c874234" testName="AuthorizeTest_WhenDuplicate_CheckResponseStillOk" computerName="WIN-RNMUH95F9U1" duration="00:00:06.1865454" startTime="2011-08-04T06:34:06.8698125-04:00" endTime="2011-08-04T06:34:13.5465703-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="56943df4-a641-44f9-a688-00754681a19e">
     </UnitTestResult>
   </Results>
 </TestRun>
