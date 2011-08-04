@@ -67,5 +67,14 @@ namespace Common.Services.Payment.Gateways.AuthNet.helpers
             AuthorizeNet.HttpXmlUtility util = new AuthorizeNet.HttpXmlUtility(AuthorizeNet.ServiceMode.Test, MerchantAuthenticationType.name, MerchantAuthenticationType.transactionKey);
             return (AuthorizeNet.APICore.createCustomerPaymentProfileResponse)util.Send(req);
         }
+        public AuthorizeNet.APICore.createCustomerProfileTransactionResponse CreateProfileTransaction(AuthorizeNet.APICore.profileTransactionType transaction)
+        {
+            AuthorizeNet.APICore.createCustomerProfileTransactionRequest req = new AuthorizeNet.APICore.createCustomerProfileTransactionRequest();
+            req.transaction = transaction;
+            req.merchantAuthentication = MerchantAuthenticationType;
+            AuthorizeNet.HttpXmlUtility util = new AuthorizeNet.HttpXmlUtility(AuthorizeNet.ServiceMode.Test, MerchantAuthenticationType.name, MerchantAuthenticationType.transactionKey);
+            return (AuthorizeNet.APICore.createCustomerProfileTransactionResponse)util.Send(req);
+
+        }
     }
 }

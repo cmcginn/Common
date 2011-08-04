@@ -36,10 +36,13 @@ namespace Common.Services.Payment.Tests.Gateways.AuthorizeNet
             result.Customer.Address.PostalCode = "32323";
             result.Customer.FirstName = "Test";
             result.Customer.LastName = "Cardholder";
-            result.Customer.EmailAddress = "testemail1234567@donotresove.com";
+            result.Customer.EmailAddress = Guid.NewGuid().ToString().Replace("-",String.Empty) + "@sxddasdasddonotresolve.com";
             result.Transaction = new TransactionData();
             result.Transaction.Amount = (decimal)0.01;
             result.Transaction.PreviousTransactionReferenceNumber = "0";
+            result.CardData.CardHolderFirstName = "Test";
+            result.CardData.CardHolderLastName = "Cardholder";
+            result.CardData.BillingAddress = result.Customer.Address;
             return result;
         }
 

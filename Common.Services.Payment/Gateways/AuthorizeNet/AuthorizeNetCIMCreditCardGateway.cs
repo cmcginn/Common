@@ -61,11 +61,13 @@ namespace Common.Services.Payment.Gateways.AuthNet
             Contract.Requires(!String.IsNullOrWhiteSpace(data.CardData.BillingAddress.Country), "CardData country required");
             Contract.Requires(!String.IsNullOrWhiteSpace(data.CardData.BillingAddress.PostalCode), "CardData postal code required");
             Contract.Requires(!String.IsNullOrWhiteSpace(data.CardData.CardNumber), "CardData cardnumber required");
-            Contract.Requires(data.CardData.ExpirationMonth < 1, "CardData expiration monthr equired");
-            Contract.Requires(data.CardData.ExpirationYear < 1, "CardData expiration monthr equired");
+            Contract.Requires(data.CardData.ExpirationMonth > 0, "CardData expiration month required");
+            Contract.Requires(data.CardData.ExpirationYear >= System.DateTime.Now.Year, "CardData expiration year must be greater than or equal current year.");
             Contract.Requires(!String.IsNullOrWhiteSpace(data.CardData.CardHolderName), "CardData carholder name required");
             Contract.Requires(!String.IsNullOrWhiteSpace(data.Customer.FirstName), "PaymentData first name required");
             Contract.Requires(!String.IsNullOrWhiteSpace(data.Customer.LastName), "PaymentData last name required");
+            Contract.Requires(!String.IsNullOrWhiteSpace(data.CardData.CardHolderFirstName), "PaymentData cardholder first name required");
+            Contract.Requires(!String.IsNullOrWhiteSpace(data.CardData.CardHolderLastName), "PaymentData cardholder last name required");
             Contract.Requires(data.Transaction != null, "PaymentData transaction required");
             Contract.Requires(data.Transaction.Amount > 0, "PaymentData transaction amount must be greater than zero");
 
@@ -73,15 +75,13 @@ namespace Common.Services.Payment.Gateways.AuthNet
                 throw new System.NotSupportedException("Authorize not supported by gateway");
 
             IGatewayProfile profile = GetOrCreateCustomerProfile(data.Customer);
-
-            return false;
-            //CustomerGateway.Authorize(
-            //return false;
-
-
-            //CustomerGateway.Authorize(
-
-
+            var customerPaymentProfile = data.MapPaymentDataToCustomerPaymentProfileType();
+            var service = new AuthorizeNetCIMGatewayHelper();
+            service.MerchantAuthenticationType = MerchantAuthentication;
+            var paymentProfile = service.CreateCustomerPaymentProfile(customerPaymentProfile, long.Parse(profile.ProfileId));
+            var transaction = data.MapPaymentDataToProfileTransAuthCaptureType(long.Parse(paymentProfile.customerPaymentProfileId), long.Parse(profile.ProfileId));
+            var transactionResult = service.CreateProfileTransaction(transaction);
+            return transactionResult.messages.resultCode == AuthorizeNet.APICore.messageTypeEnum.Ok;
         }
 
         public override bool Capture(IPaymentData data)

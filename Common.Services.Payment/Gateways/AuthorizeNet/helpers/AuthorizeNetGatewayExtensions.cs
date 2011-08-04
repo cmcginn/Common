@@ -19,6 +19,7 @@ namespace Common.Services.Payment.Gateways.AuthNet.helpers
             result.ProfileCustomerData.CustomerDescription = response.profile.description;
             if (response.profile.paymentProfiles != null)
             {
+                result.PaymentProfiles = new List<IGatewayPaymentProfile>();
                 response.profile.paymentProfiles.ToList().ForEach(n =>
                     {
                         var gatewayPaymentProfile = n.MapCustomerPaymentProfileMaskTypeToGatewayPaymentProfile();
@@ -46,8 +47,8 @@ namespace Common.Services.Payment.Gateways.AuthNet.helpers
                 result.PaymentCardData.MaskedCardNumber = creditCard.cardNumber;
                 PaymentCardType cardType = PaymentCardType.Unknown;
                 Enum.TryParse<PaymentCardType>(creditCard.cardType, out cardType);
-                result.PaymentCardData.ExpirationMonth = int.Parse(creditCard.expirationDate.Substring(2, 2));
-                result.PaymentCardData.ExpirationYear = int.Parse(creditCard.expirationDate.Substring(0, 4));
+                //result.PaymentCardData.ExpirationMonth = int.Parse(creditCard.expirationDate.Substring(2, 2));
+                //result.PaymentCardData.ExpirationYear = int.Parse(creditCard.expirationDate.Substring(0, 4));
                
             }
 
@@ -66,6 +67,47 @@ namespace Common.Services.Payment.Gateways.AuthNet.helpers
             result.PostalCode = response.zip;
             result.State = response.state;
             return result;
+        }
+        public static AuthorizeNet.APICore.customerPaymentProfileType MapPaymentDataToCustomerPaymentProfileType(this IPaymentData request)
+        {
+            var result = new AuthorizeNet.APICore.customerPaymentProfileType();
+            result.billTo = request.CardData.BillingAddress.MapAddressTypeToCustomerAddressType();
+            result.customerTypeSpecified = false;
+            result.billTo.firstName = request.CardData.CardHolderFirstName;
+            result.billTo.lastName = request.CardData.CardHolderLastName;
+            result.payment = new AuthorizeNet.APICore.paymentType();
+            var creditCard = new AuthorizeNet.APICore.creditCardType();
+            creditCard.cardCode = request.CardData.SecurityCode;
+            creditCard.cardNumber = request.CardData.CardNumber;
+           
+            creditCard.expirationDate = String.Format("{0}-{1}", request.CardData.ExpirationYear.ToString(), request.CardData.ExpirationMonth.ToString().PadLeft(2, '0'));
+            result.payment.Item = creditCard;
+            return result;
+        }
+        public static AuthorizeNet.APICore.customerAddressType MapAddressTypeToCustomerAddressType(this IAddressType request)
+        {
+            var result = new AuthorizeNet.APICore.customerAddressType();
+            result.address = String.Format("{0} {1}", request.AddressLine1, request.AddressLine2);
+            result.city = request.City;
+            result.country = request.Country;
+            result.company = request.Company;
+            result.state = request.State;
+            result.zip = request.PostalCode;
+            result.phoneNumber = request.PhoneNumber;
+            return result;
+            
+        }
+        public static AuthorizeNet.APICore.profileTransactionType MapPaymentDataToProfileTransAuthCaptureType(this IPaymentData request,long paymentProfileId,long customerProfileId)
+        {
+            var result = new AuthorizeNet.APICore.profileTransactionType();
+            AuthorizeNet.APICore.profileTransAuthCaptureType transactionType = new AuthorizeNet.APICore.profileTransAuthCaptureType();
+            transactionType.amount = request.Transaction.Amount;
+            transactionType.cardCode = request.CardData.SecurityCode;
+            transactionType.customerPaymentProfileId = paymentProfileId.ToString();
+            transactionType.customerProfileId = customerProfileId.ToString();
+            result.Item = transactionType;
+            return result;
+            
         }
     }
 }
