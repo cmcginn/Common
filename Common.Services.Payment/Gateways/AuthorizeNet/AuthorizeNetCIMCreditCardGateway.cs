@@ -16,6 +16,7 @@ namespace Common.Services.Payment.Gateways.AuthNet
         #region public interface
         public const string GATEWAY_ID_STRING = "7107FFA1-D376-422E-9DF5-A15DD6909E9C";
         const string DUPLICATE_PROFILE_MESSAGE = "Error processing request: E00039 - A duplicate record with ID ";
+        const string DUPLICATE_PAYMENT_PROFILE_MESSAGE = "Error processing request: E00039 - A duplicate customer payment profile already exists.";
         public const string GATEWAY_NAME = "CIMAuthorize.Net";
         public override Guid GatewayId
         {
@@ -73,13 +74,13 @@ namespace Common.Services.Payment.Gateways.AuthNet
 
             if (!SupportsAuthorize)
                 throw new System.NotSupportedException("Authorize not supported by gateway");
-
+            //If profile exists then the profile id will be returned
             IGatewayProfile profile = GetOrCreateCustomerProfile(data.Customer);
             var customerPaymentProfile = data.MapPaymentDataToCustomerPaymentProfileType();
             var service = new AuthorizeNetCIMGatewayHelper();
             service.MerchantAuthenticationType = MerchantAuthentication;
-            var paymentProfile = service.CreateCustomerPaymentProfile(customerPaymentProfile, long.Parse(profile.ProfileId));
-            var transaction = data.MapPaymentDataToProfileTransAuthCaptureType(long.Parse(paymentProfile.customerPaymentProfileId), long.Parse(profile.ProfileId));
+            var paymentProfile = GetOrCreateCustomerPaymentProfile(data, long.Parse(profile.ProfileId));
+            var transaction = data.MapPaymentDataToProfileTransAuthCaptureType(long.Parse(paymentProfile.PaymentProfileId),long.Parse(profile.ProfileId));
             var transactionResult = service.CreateProfileTransaction(transaction);
             return transactionResult.messages.resultCode == AuthorizeNet.APICore.messageTypeEnum.Ok;
         }
@@ -148,7 +149,31 @@ namespace Common.Services.Payment.Gateways.AuthNet
             }
             set { _MerchantAuthentication = value; }
         }
-
+        IGatewayPaymentProfile GetOrCreateCustomerPaymentProfile(IPaymentData data,long customerProfileId)
+        {
+            var customerPaymentProfile = data.MapPaymentDataToCustomerPaymentProfileType();
+            var service = new AuthorizeNetCIMGatewayHelper();
+            IGatewayPaymentProfile result = null;
+            service.MerchantAuthenticationType = MerchantAuthentication;
+            try
+            {                
+                var paymentProfileResponse = service.CreateCustomerPaymentProfile(customerPaymentProfile, customerProfileId);
+                result = service.GetCustomerPaymentProfile(customerProfileId, long.Parse(paymentProfileResponse.customerPaymentProfileId)).MapCustomerPaymentProfileMaskTypeToGatewayPaymentProfile();
+                
+            }
+            catch (System.InvalidOperationException ex)
+            {
+                if (ex.Message == DUPLICATE_PAYMENT_PROFILE_MESSAGE)
+                {
+                    var lastFour = data.CardData.CardNumber.Substring(data.CardData.CardNumber.Length - 4);
+                    //get the existing profile
+                    var paymentProfiles = service.GetCustomerPaymentProfiles(customerProfileId).ToList();
+                    var paymentProfile = paymentProfiles.SingleOrDefault(n => n.payment.Item as AuthorizeNet.APICore.creditCardMaskedType != null && ((AuthorizeNet.APICore.creditCardMaskedType)n.payment.Item).cardNumber.Contains(lastFour));
+                    result = paymentProfile.MapCustomerPaymentProfileMaskTypeToGatewayPaymentProfile();
+                }
+            }
+            return result;
+        }
         #endregion
 
 

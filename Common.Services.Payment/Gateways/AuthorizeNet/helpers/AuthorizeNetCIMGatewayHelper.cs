@@ -25,7 +25,6 @@ namespace Common.Services.Payment.Gateways.AuthNet.helpers
                 _MerchantAuthenticationType = value;
             }
         }
-
         public long CreateCustomerProfile(string email, string description)
         {
             long result = 0;
@@ -58,6 +57,20 @@ namespace Common.Services.Payment.Gateways.AuthNet.helpers
             req.customerProfileId = profileId.ToString();
             AuthorizeNet.HttpXmlUtility util = new AuthorizeNet.HttpXmlUtility(AuthorizeNet.ServiceMode.Test, MerchantAuthenticationType.name, MerchantAuthenticationType.transactionKey);
             return (AuthorizeNet.APICore.getCustomerProfileResponse)util.Send(req);
+        }
+        public AuthorizeNet.APICore.customerPaymentProfileMaskedType GetCustomerPaymentProfile(long profileId, long paymentProfileId)
+        {
+            AuthorizeNet.APICore.getCustomerPaymentProfileRequest req = new AuthorizeNet.APICore.getCustomerPaymentProfileRequest();
+            req.merchantAuthentication = MerchantAuthenticationType;
+            req.customerProfileId = profileId.ToString();
+            req.customerPaymentProfileId = paymentProfileId.ToString();
+            AuthorizeNet.HttpXmlUtility util = new AuthorizeNet.HttpXmlUtility(AuthorizeNet.ServiceMode.Test, MerchantAuthenticationType.name, MerchantAuthenticationType.transactionKey);
+            return ((AuthorizeNet.APICore.getCustomerPaymentProfileResponse)util.Send(req)).paymentProfile;
+        }
+        public AuthorizeNet.APICore.customerPaymentProfileMaskedType[] GetCustomerPaymentProfiles(long profileId)
+        {
+            var profile = GetCustomerProfile(profileId);
+            return profile.profile.paymentProfiles;            
         }
         public AuthorizeNet.APICore.createCustomerPaymentProfileResponse CreateCustomerPaymentProfile(AuthorizeNet.APICore.customerPaymentProfileType paymentProfile, long profileId)
         {

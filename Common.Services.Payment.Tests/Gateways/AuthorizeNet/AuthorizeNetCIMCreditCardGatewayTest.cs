@@ -92,6 +92,25 @@ namespace Common.Services.Payment.Tests.Gateways.AuthorizeNet
             Assert.IsTrue(customer.ProfileId == actual.ProfileId);
             
         }
+
+        [TestMethod]
+        public void AuthorizeTest_WhenDuplicate_CheckResponseStillOk()
+        {
+            //Arrange
+            var target = new AuthorizeNetCIMCreditCardGateway();
+            var paymentData = GetPaymentData();
+            paymentData.Transaction.Amount = (new System.Random().Next(1, 99) * (decimal)0.01);
+            var expected = target.Authorize(paymentData);
+            //PreQualify
+            Assert.IsTrue(expected);
+            paymentData.Transaction.Amount = paymentData.Transaction.Amount + (decimal)0.10;
+            //Act
+            var actual = target.Authorize(paymentData);
+            //Assert
+            Assert.IsTrue(actual);
+
+           
+        }
     }
 
    

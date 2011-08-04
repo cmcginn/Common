@@ -109,5 +109,6 @@ namespace Common.Services.Payment.Gateways.AuthNet.helpers
             return result;
             
         }
+       
     }
 }
