@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using AuthorizeNet;
 using AuthorizeNet.APICore;
+using System.Xml.Serialization;
+
 namespace Common.Services.Payment.Gateways.AuthNet.helpers
 {
     public class AuthorizeNetCIMGatewayHelper
@@ -26,9 +28,10 @@ namespace Common.Services.Payment.Gateways.AuthNet.helpers
                 _MerchantAuthenticationType = value;
             }
         }
-        public long CreateCustomerProfile(string email, string description)
+        public long CreateCustomerProfile(string email, string description,out string messages)
         {
             long result = 0;
+            messages = string.Empty;
             string profileId = "0";
             AuthorizeNet.APICore.customerProfileType profile = new AuthorizeNet.APICore.customerProfileType();
             profile.email = email;
@@ -40,12 +43,14 @@ namespace Common.Services.Payment.Gateways.AuthNet.helpers
             try
             {
                 var response = (AuthorizeNet.APICore.createCustomerProfileResponse)util.Send(req);
+                messages = Serialize(response);
                 long.TryParse(response.customerProfileId, out result);
             }
             catch (System.InvalidOperationException ex)
             {
                 if (ex.Message.Contains(DUPLICATE_PROFILE_MESSAGE))
                 {
+                    messages = messages + ex.Message;
                     profileId = ex.Message.Replace(DUPLICATE_PROFILE_MESSAGE, String.Empty).Replace(" already exists.", String.Empty);
                     long.TryParse(profileId, out result);
                 }
@@ -89,6 +94,16 @@ namespace Common.Services.Payment.Gateways.AuthNet.helpers
             AuthorizeNet.HttpXmlUtility util = new AuthorizeNet.HttpXmlUtility(AuthorizeNet.ServiceMode.Test, MerchantAuthenticationType.name, MerchantAuthenticationType.transactionKey);
             return (AuthorizeNet.APICore.createCustomerProfileTransactionResponse)util.Send(req);
 
+        }
+        public static string Serialize(object target)
+        {
+            {
+                StringBuilder builder = new StringBuilder();
+                System.Xml.XmlWriter xmlWriter = System.Xml.XmlWriter.Create(builder);
+                System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(target.GetType());
+                serializer.Serialize(xmlWriter, target);
+                return builder.ToString();
+            };
         }
     }
 }

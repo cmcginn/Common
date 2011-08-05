@@ -7,7 +7,7 @@ namespace Common.Services.Payment.Interfaces
 {
     public abstract class BaseProfileCreditCardGateway:BaseCreditCardGateway,IProfileCreditCardGateway
     {
-        public abstract IGatewayProfile GetOrCreateCustomerProfile(ICustomerData customerData);        
+        public abstract IGatewayProfile GetOrCreateCustomerProfile(IPaymentData data);        
         public override bool SupportsProfile
         {
             get { return true; }

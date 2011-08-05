@@ -50,6 +50,7 @@ namespace Common.Services.Payment.Gateways.AuthNet
 
         public override bool Authorize(IPaymentData data)
         {
+            //Pre Conditions
             Contract.Requires(data.Customer != null, "Customer required");
             Contract.Requires(data.CardData != null, "CardData Required");
             Contract.Requires(data.CardData.BillingAddress != null, "CardData billing address required");
@@ -67,17 +68,19 @@ namespace Common.Services.Payment.Gateways.AuthNet
             Contract.Requires(!String.IsNullOrWhiteSpace(data.CardData.CardHolderLastName), "PaymentData cardholder last name required");
             Contract.Requires(data.Transaction != null, "PaymentData transaction required");
             Contract.Requires(data.Transaction.Amount > 0, "PaymentData transaction amount must be greater than zero");
+            //Post Conditions
+            Contract.Ensures(data.TransactionResult.Messages.Count > 0, "A critical error was encountered left control of authorize without assigning  transaction result messages");
 
             if (!SupportsAuthorize)
                 throw new System.NotSupportedException("Authorize not supported by gateway");
             //If profile exists then the profile id will be returned
-            IGatewayProfile profile = GetOrCreateCustomerProfile(data.Customer);
-           
+            data.TransactionResult = new TransactionResultData();
+            IGatewayProfile profile = GetOrCreateCustomerProfile(data);
             var customerPaymentProfile = data.MapPaymentDataToCustomerPaymentProfileType();
             var service = new AuthorizeNetCIMGatewayHelper();
             service.MerchantAuthenticationType = MerchantAuthentication;
-            var paymentProfile = GetOrCreateCustomerPaymentProfile(profile,data);
-            var transaction = data.MapPaymentDataToProfileTransAuthCaptureType(long.Parse(paymentProfile.PaymentProfileId),long.Parse(profile.ProfileId));
+            var paymentProfile = GetOrCreateCustomerPaymentProfile(profile, data);
+            var transaction = data.MapPaymentDataToProfileTransAuthCaptureType(long.Parse(paymentProfile.PaymentProfileId), long.Parse(profile.ProfileId));
             var transactionResult = service.CreateProfileTransaction(transaction);
             return transactionResult.messages.resultCode == AuthorizeNet.APICore.messageTypeEnum.Ok;
         }
@@ -94,24 +97,35 @@ namespace Common.Services.Payment.Gateways.AuthNet
 
         public override bool Refund(IPaymentData data)
         {
+            //Pre Conditions
             Contract.Requires(data.Transaction != null, "A valid transaction is required for refunds");
-            Contract.Requires(data.Transaction.Amount > 0,"A refund requires a transaction amount greater than 0");
-            Contract.Requires(!String.IsNullOrWhiteSpace(data.Id),"A refund requires a PaymentProfileId assigned to the Id property of PaymentData");
-            Contract.Requires(!String.IsNullOrWhiteSpace(data.Transaction.PreviousTransactionReferenceNumber),"A refund requires a previous transaction number");
-            Contract.Requires(data.Customer != null,"A refund requires a Customer");
+            Contract.Requires(data.Transaction.Amount > 0, "A refund requires a transaction amount greater than 0");
+            Contract.Requires(!String.IsNullOrWhiteSpace(data.Id), "A refund requires a PaymentProfileId assigned to the Id property of PaymentData");
+            Contract.Requires(!String.IsNullOrWhiteSpace(data.Transaction.PreviousTransactionReferenceNumber), "A refund requires a previous transaction number");
+            Contract.Requires(data.Customer != null, "A refund requires a Customer");
             Contract.Requires(!String.IsNullOrWhiteSpace(data.Customer.CustomerId), "A refund requires a customer profile id assigned as CustomerId");
-
+            //Post Conditions 
+            Contract.Ensures(data.TransactionResult.Messages.Count > 0, "A critical error was encountered left control of refund without assigning  transaction result messages");
+            data.TransactionResult = new TransactionResultData();
             var refundTransactionType = new AuthorizeNet.APICore.profileTransRefundType();
             refundTransactionType.customerProfileId = data.Customer.CustomerId;
             refundTransactionType.customerPaymentProfileId = data.Id;
             refundTransactionType.transId = data.Transaction.PreviousTransactionReferenceNumber;
-            refundTransactionType.amount = data.Transaction.Amount;            
+            refundTransactionType.amount = data.Transaction.Amount;
             var profileTransactionType = new AuthorizeNet.APICore.profileTransactionType();
             profileTransactionType.Item = refundTransactionType;
 
             var service = new AuthorizeNetCIMGatewayHelper();
             service.MerchantAuthenticationType = MerchantAuthentication;
             var result = service.CreateProfileTransaction(profileTransactionType);
+            var messages = AuthorizeNetCIMGatewayHelper.Serialize(result).ToString();
+            var message = new TransactionMessage
+            {
+                Description = "createCustomerProfileTransactionResponse",
+                Message = messages,
+                Code = Enum.GetName(typeof(AuthorizeNet.APICore.messageTypeEnum), result.messages.resultCode)
+            };
+            data.TransactionResult.Messages.Add(message);
             return result.messages.resultCode == AuthorizeNet.APICore.messageTypeEnum.Ok;
         }
 
@@ -132,14 +146,21 @@ namespace Common.Services.Payment.Gateways.AuthNet
 
         }
 
-        public override IGatewayProfile GetOrCreateCustomerProfile(ICustomerData customerData)
+        public override IGatewayProfile GetOrCreateCustomerProfile(IPaymentData data)
         {
 
             IGatewayProfile result = new GatewayProfile();
             var service = new AuthorizeNetCIMGatewayHelper();
             service.MerchantAuthenticationType = MerchantAuthentication;
-            var profileId = service.CreateCustomerProfile(customerData.EmailAddress, customerData.CustomerDescription);
+            string messages = string.Empty;
+            var profileId = service.CreateCustomerProfile(data.Customer.EmailAddress, data.Customer.CustomerDescription, out messages);
             result = service.GetCustomerProfile(profileId).MapCustomerProfileToGatewayProfile();
+            var message = new TransactionMessage
+            {
+                Message = messages,
+                Description = "createCustomerProfileRequest"
+            };
+            data.TransactionResult.Messages.Add(message);
             return result;
 
         }
@@ -162,7 +183,7 @@ namespace Common.Services.Payment.Gateways.AuthNet
             }
             set { _MerchantAuthentication = value; }
         }
-        IGatewayPaymentProfile GetOrCreateCustomerPaymentProfile(IGatewayProfile gatewayProfile,IPaymentData data)
+        IGatewayPaymentProfile GetOrCreateCustomerPaymentProfile(IGatewayProfile gatewayProfile, IPaymentData data)
         {
             IGatewayPaymentProfile result = null;
             if (gatewayProfile.PaymentProfiles != null && gatewayProfile.PaymentProfiles.Count > 0)
@@ -178,17 +199,17 @@ namespace Common.Services.Payment.Gateways.AuthNet
             }
             return result;
         }
-        IGatewayPaymentProfile GetOrCreateCustomerPaymentProfile(IPaymentData data,long customerProfileId)
+        IGatewayPaymentProfile GetOrCreateCustomerPaymentProfile(IPaymentData data, long customerProfileId)
         {
             var customerPaymentProfile = data.MapPaymentDataToCustomerPaymentProfileType();
             var service = new AuthorizeNetCIMGatewayHelper();
             IGatewayPaymentProfile result = null;
             service.MerchantAuthenticationType = MerchantAuthentication;
             try
-            {                
+            {
                 var paymentProfileResponse = service.CreateCustomerPaymentProfile(customerPaymentProfile, customerProfileId);
                 result = service.GetCustomerPaymentProfile(customerProfileId, long.Parse(paymentProfileResponse.customerPaymentProfileId)).MapCustomerPaymentProfileMaskTypeToGatewayPaymentProfile();
-                
+
             }
             catch (System.InvalidOperationException ex)
             {

@@ -6,5 +6,6 @@ namespace Common.Services.Payment.Interfaces
         string Code { get; set; }
         string Description { get; set; }
         TransactionMessageType MessageType { get; set; }
+        string Message { get; set; }
     }
 }

@@ -7,7 +7,7 @@ namespace Common.Services.Payment.Interfaces
 {
     public interface IProfileCreditCardGateway:ICreditCardGateway
     {
-        IGatewayProfile GetOrCreateCustomerProfile(ICustomerData customerData);
+        IGatewayProfile GetOrCreateCustomerProfile(IPaymentData data);
         IGatewayProfile GetCustomerProfile(string id);
         
     }

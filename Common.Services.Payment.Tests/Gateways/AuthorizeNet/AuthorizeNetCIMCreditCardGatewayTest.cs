@@ -59,7 +59,7 @@ namespace Common.Services.Payment.Tests.Gateways.AuthorizeNet
             result.Customer.CustomerId = "4255825";
             return result;
         }
-        public static IGatewayProfile CreateProfile(ICustomerData data)
+        public static IGatewayProfile CreateProfile(IPaymentData data)
         {
             IProfileCreditCardGateway target = new AuthorizeNetCIMCreditCardGateway();
             return target.GetOrCreateCustomerProfile(data);
@@ -87,7 +87,7 @@ namespace Common.Services.Payment.Tests.Gateways.AuthorizeNet
         public void CreateProfileTest_AssertProfileResponseLengthGreaterThanZero()
         {
             //Arrange
-            IGatewayProfile actual = CreateProfile(GetPaymentData().Customer);
+            IGatewayProfile actual = CreateProfile(GetPaymentData());
             //Assert
             Assert.IsTrue(int.Parse(actual.ProfileId)>0);
         }
@@ -96,7 +96,7 @@ namespace Common.Services.Payment.Tests.Gateways.AuthorizeNet
         public void GetCustomerProfileTest_WhenProfileExists_AssertProfileIdsMatch()
         {
             //Arrange
-            var customer = CreateProfile(GetPaymentData().Customer);
+            var customer = CreateProfile(GetPaymentData());
             //Act
             var actual = GetGatewayProfile(customer);
             //Assert
@@ -132,6 +132,29 @@ namespace Common.Services.Payment.Tests.Gateways.AuthorizeNet
             var actual = target.Refund(paymentData);
             //Assert
             Assert.IsTrue(actual);
+        }
+
+        [TestMethod]
+        public void AuthorizeTest_WhenValidData_CheckTransactionResultMessageCountGreaterThanZero()
+        {
+            //Arrange
+            var target = new AuthorizeNetCIMCreditCardGateway();
+            var paymentData = GetPaymentData();
+            //Act
+            var actual = target.Authorize(paymentData);
+            //Assert
+            Assert.IsTrue(paymentData.TransactionResult.Messages.Count>0);
+        }
+        [TestMethod]
+        public void RefundTest_WhenUsingRefundableTransaction_CheckTransactionResultMessageCountGreaterThanZero()
+        {
+            //Arrange
+            var target = new AuthorizeNetCIMCreditCardGateway();
+            var paymentData = GetRefundTransactionPaymentData();
+            //Act
+            var actual = target.Refund(paymentData);
+            //Assert
+            Assert.IsTrue(paymentData.TransactionResult.Messages.Count > 0);
         }
     }
 

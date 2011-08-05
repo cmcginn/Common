@@ -9,6 +9,13 @@ namespace Common.Services.Payment
      
         private string _Description = string.Empty;
         private string _Code = string.Empty;
+        private string _Message = String.Empty;
+
+        public string Message
+        {
+            get { return _Message; }
+            set { _Message = value; }
+        }
         private TransactionMessageType _MessageType = TransactionMessageType.Unknown;
 
         public string Description
@@ -26,7 +33,7 @@ namespace Common.Services.Payment
             get { return _MessageType; }
             set { _MessageType = value; }
         }
-
+        
         public TransactionMessage()
         {
 
