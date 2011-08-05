@@ -94,7 +94,25 @@ namespace Common.Services.Payment.Gateways.AuthNet
 
         public override bool Refund(IPaymentData data)
         {
-            throw new NotImplementedException();
+            Contract.Requires(data.Transaction != null, "A valid transaction is required for refunds");
+            Contract.Requires(data.Transaction.Amount > 0,"A refund requires a transaction amount greater than 0");
+            Contract.Requires(!String.IsNullOrWhiteSpace(data.Id),"A refund requires a PaymentProfileId assigned to the Id property of PaymentData");
+            Contract.Requires(!String.IsNullOrWhiteSpace(data.Transaction.PreviousTransactionReferenceNumber),"A refund requires a previous transaction number");
+            Contract.Requires(data.Customer != null,"A refund requires a Customer");
+            Contract.Requires(!String.IsNullOrWhiteSpace(data.Customer.CustomerId), "A refund requires a customer profile id assigned as CustomerId");
+
+            var refundTransactionType = new AuthorizeNet.APICore.profileTransRefundType();
+            refundTransactionType.customerProfileId = data.Customer.CustomerId;
+            refundTransactionType.customerPaymentProfileId = data.Id;
+            refundTransactionType.transId = data.Transaction.PreviousTransactionReferenceNumber;
+            refundTransactionType.amount = data.Transaction.Amount;            
+            var profileTransactionType = new AuthorizeNet.APICore.profileTransactionType();
+            profileTransactionType.Item = refundTransactionType;
+
+            var service = new AuthorizeNetCIMGatewayHelper();
+            service.MerchantAuthenticationType = MerchantAuthentication;
+            var result = service.CreateProfileTransaction(profileTransactionType);
+            return result.messages.resultCode == AuthorizeNet.APICore.messageTypeEnum.Ok;
         }
 
         public override bool Void(IPaymentData data)

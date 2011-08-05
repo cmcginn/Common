@@ -48,6 +48,17 @@ namespace Common.Services.Payment.Tests.Gateways.AuthorizeNet
 
 
         #region Test Helper Methods
+        public static IPaymentData GetRefundTransactionPaymentData()
+        {
+            var result = new PaymentData();
+            result.Id = "3756118";
+            result.Transaction = new TransactionData();
+            result.Transaction.PreviousTransactionReferenceNumber = "2161773175";
+            result.Customer = new CustomerData();
+            result.Transaction.Amount = (decimal)0.01;
+            result.Customer.CustomerId = "4255825";
+            return result;
+        }
         public static IGatewayProfile CreateProfile(ICustomerData data)
         {
             IProfileCreditCardGateway target = new AuthorizeNetCIMCreditCardGateway();
@@ -110,6 +121,17 @@ namespace Common.Services.Payment.Tests.Gateways.AuthorizeNet
             Assert.IsTrue(actual);
 
            
+        }
+        [TestMethod]
+        public void RefundTest_WhenUsingRefundableTransaction_CheckResponseOk()
+        {
+            //Arrange
+            var target = new AuthorizeNetCIMCreditCardGateway();
+            var paymentData = GetRefundTransactionPaymentData();
+            //Act
+            var actual = target.Refund(paymentData);
+            //Assert
+            Assert.IsTrue(actual);
         }
     }
 

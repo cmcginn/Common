@@ -3,6 +3,7 @@ namespace Common.Services.Payment.Interfaces
 {
     public interface IPaymentCardData
     {
+        
         string CardHolderName { get; set; }
         string CardHolderFirstName { get; set; }
         string CardHolderLastName { get; set; }

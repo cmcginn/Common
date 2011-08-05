@@ -73,7 +73,6 @@ C:\Projects\Urbana\Common\Common.Workflows.Activities.Tests\bin\Debug\Microsoft.
 C:\Projects\Urbana\Common\Common.Workflows.Activities.Tests\bin\Debug\Microsoft.Practices.Unity.Interception.xml
 C:\Projects\Urbana\Common\Common.Workflows.Activities.Tests\bin\Debug\Microsoft.Practices.Unity.Interception.Configuration.pdb
 C:\Projects\Urbana\Common\Common.Workflows.Activities.Tests\bin\Debug\Microsoft.Practices.Unity.Interception.Configuration.xml
-C:\Projects\Urbana\Common\Common.Workflows.Activities.Tests\bin\Debug\Neovolve.Toolkit.Unity.xml
 C:\Projects\Urbana\Common\Common.Workflows.Activities.Tests\bin\Debug\System.Windows.Data.xml
 C:\Projects\Urbana\Common\Common.Workflows.Activities.Tests\bin\Debug\Common.Net.Interfaces.pdb
 C:\Projects\Urbana\Common\Common.Workflows.Activities.Tests\bin\Debug\Common.Types.pdb

@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="17489ae7-92b0-494f-a922-8a01b8b74487" name="Administrator@WIN-RNMUH95F9U1 2011-08-05 04:48:30" runUser="WIN-RNMUH95F9U1\Administrator" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="1ddb4cbd-2c91-4264-b717-275efc45f586">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment userDeploymentRoot="C:\Projects\Urbana\Common\TestResults" useDefaultDeploymentRoot="false" runDeploymentRoot="Administrator_WIN-RNMUH95F9U1 2011-08-05 04_48_30">
+      <DeploymentItem filename="Common.Services.Fax\bin\Debug\Common.Services.Fax.dll" />
+      <DeploymentItem filename="Common.Services.Fax.Interfaces\Validation\FaxRequestType\PreProcess\FaxValidation.xsd" />
+      <DeploymentItem filename="C:\Projects\Urbana\Common\Common.Services.Payment.Interfaces\bin\Debug\Common.Services.Payment.Interfaces.dll" />
+      <DeploymentItem filename="C:\Projects\Urbana\Common\Common.Testing\bin\Debug\Common.Testing.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft Enterprise Library 5.0\Bin\Microsoft.Practices.EnterpriseLibrary.Logging.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft Unity Application Block 2.0\Bin\Microsoft.Practices.Unity.Interception.Configuration.dll" />
+      <DeploymentItem filename="Common.Workflows.Activities.Tests\Resources\" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft Enterprise Library 5.0\Bin\Microsoft.Practices.EnterpriseLibrary.PolicyInjection.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft Unity Application Block 2.0\Bin\Microsoft.Practices.Unity.Configuration.dll" />
+      <DeploymentItem filename="C:\Projects\Urbana\Common\Common.Services.Payment\bin\Debug\Common.Services.Payment.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft Unity Application Block 2.0\Bin\Microsoft.Practices.Unity.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft Unity Application Block 2.0\Bin\Microsoft.Practices.ServiceLocation.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft Unity Application Block 2.0\Bin\Microsoft.Practices.Unity.Interception.dll" />
+      <DeploymentItem filename="Common.Services.Fax.Interfaces\Validation\FaxRequestType\PreProcess\FaxValidation2.xsd" />
+      <DeploymentItem filename="Common.Services.Fax.Interfaces\Validation\FaxRequestType\" />
+      <DeploymentItem filename="C:\Projects\Urbana\Common\Common.Utils\bin\Debug\Common.Utils.dll" />
+      <DeploymentItem filename="Common.IO.Tests\Resources\" />
+      <DeploymentItem filename="Common.Workflows.Activities.Tests\Resources\Placeholder.txt" />
+      <DeploymentItem filename="Common.Services.Fax.Interfaces\Validation\FaxRequestType\PreProcess\FaxValidation1.xsd" />
+      <DeploymentItem filename="Common.Services.Fax.Interfaces\Validation\FaxRequestType\PreProcess\" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft Enterprise Library 5.0\Bin\Microsoft.Practices.EnterpriseLibrary.Common.dll" />
+      <DeploymentItem filename="C:\Projects\Urbana\Common\Common.Types\bin\Debug\Common.Types.dll" />
+      <DeploymentItem filename="Common.Services.Payment.Tests\Resources\" />
+      <DeploymentItem filename="Common.Services.Fax.Tests\TestResources\" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific>
+        <UnitTestRunConfig testTypeId="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b">
+          <AssemblyResolution>
+            <TestDirectory useLoadContext="true" />
+          </AssemblyResolution>
+        </UnitTestRunConfig>
+        <WebTestRunConfiguration testTypeId="4e7599fa-5ecb-43e9-a887-cd63cf72d207">
+          <Browser name="Internet Explorer 7.0">
+            <Headers>
+              <Header name="User-Agent" value="Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)" />
+              <Header name="Accept" value="*/*" />
+              <Header name="Accept-Language" value="{{$IEAcceptLanguage}}" />
+              <Header name="Accept-Encoding" value="GZIP" />
+            </Headers>
+          </Browser>
+        </WebTestRunConfiguration>
+      </TestTypeSpecific>
+      <AgentRule name="LocalMachineDefaultRole">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-08-05T04:48:30.6266484-04:00" queuing="2011-08-05T04:48:31.0299687-04:00" start="2011-08-05T04:48:31.2545781-04:00" finish="2011-08-05T04:48:36.7760625-04:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="WIN-RNMUH95F9U1" outcome="Warning" timestamp="2011-08-05T04:48:31.0104375-04:00">
+        <Text>Warning: conflict during test run deployment: deployment item 'Common.IO.Tests\Resources\' specified by the test settings cannot be deployed to 'Placeholder.txt' because otherwise the file 'C:\Projects\Urbana\Common\Common.IO.Tests\Resources\Placeholder.txt' would overwrite deployment item 'Common.Workflows.Activities.Tests\Resources\' specified by the test settings.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="AuthorizeTest_WhenSuccess_CheckTransactionDataIncludesSerializedGatewayProfile" storage="c:\projects\urbana\common\common.services.payment.tests\bin\debug\common.services.payment.tests.dll" id="9e4324d6-f7f0-e51e-bf0b-ad75a84b3940">
+      <Execution id="94a18715-004d-4d6f-b32c-ac37c81e0d55" />
+      <TestMethod codeBase="C:/Projects/Urbana/Common/Common.Services.Payment.Tests/bin/Debug/Common.Services.Payment.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Common.Services.Payment.Tests.Gateways.AuthorizeNet.AuthorizeNetCIMCreditCardGatewayTest, Common.Services.Payment.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="AuthorizeTest_WhenSuccess_CheckTransactionDataIncludesSerializedGatewayProfile" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="9e4324d6-f7f0-e51e-bf0b-ad75a84b3940" executionId="94a18715-004d-4d6f-b32c-ac37c81e0d55" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="94a18715-004d-4d6f-b32c-ac37c81e0d55" testId="9e4324d6-f7f0-e51e-bf0b-ad75a84b3940" testName="AuthorizeTest_WhenSuccess_CheckTransactionDataIncludesSerializedGatewayProfile" computerName="WIN-RNMUH95F9U1" duration="00:00:04.9640323" startTime="2011-08-05T04:48:31.3561406-04:00" endTime="2011-08-05T04:48:36.5348515-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="94a18715-004d-4d6f-b32c-ac37c81e0d55">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method Common.Services.Payment.Tests.Gateways.AuthorizeNet.AuthorizeNetCIMCreditCardGatewayTest.AuthorizeTest_WhenSuccess_CheckTransactionDataIncludesSerializedGatewayProfile threw exception: 
+System.InvalidOperationException: There was an error reflecting type 'Common.Services.Payment.PaymentData'. ---&gt; System.InvalidOperationException: Cannot serialize member 'Common.Services.Payment.PaymentData.CardData' of type 'Common.Services.Payment.Interfaces.IPaymentCardData', see inner exception for more details. ---&gt; System.NotSupportedException: Cannot serialize member Common.Services.Payment.PaymentData.CardData of type Common.Services.Payment.Interfaces.IPaymentCardData because it is an interface.</Message>
+          <StackTrace> 
+ --- End of inner exception stack trace ---
+    at System.Xml.Serialization.StructModel.CheckSupportedMember(TypeDesc typeDesc, MemberInfo member, Type type)
+   at System.Xml.Serialization.StructModel.GetPropertyModel(PropertyInfo propertyInfo)
+   at System.Xml.Serialization.StructModel.GetFieldModel(MemberInfo memberInfo)
+   at System.Xml.Serialization.XmlReflectionImporter.InitializeStructMembers(StructMapping mapping, StructModel model, Boolean openModel, String typeName, RecursionLimiter limiter)
+   at System.Xml.Serialization.XmlReflectionImporter.ImportStructLikeMapping(StructModel model, String ns, Boolean openModel, XmlAttributes a, RecursionLimiter limiter)
+   at System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(TypeModel model, String ns, ImportContext context, String dataType, XmlAttributes a, Boolean repeats, Boolean openModel, RecursionLimiter limiter)
+ --- End of inner exception stack trace ---
+    at System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(TypeModel model, String ns, ImportContext context, String dataType, XmlAttributes a, Boolean repeats, Boolean openModel, RecursionLimiter limiter)
+   at System.Xml.Serialization.XmlReflectionImporter.ImportElement(TypeModel model, XmlRootAttribute root, String defaultNamespace, RecursionLimiter limiter)
+   at System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(Type type, XmlRootAttribute root, String defaultNamespace)
+   at System.Xml.Serialization.XmlSerializer..ctor(Type type, String defaultNamespace)
+   at System.Xml.Serialization.XmlSerializer..ctor(Type type)
+   at Common.Utils.Extensions.XmlExtensions.Serialize(Object target) in C:\Projects\Urbana\Common\Common.Utils\Extensions\XmlExtensions.cs:line 20
+   at Common.Services.Payment.Gateways.AuthNet.AuthorizeNetCIMCreditCardGateway.Authorize(IPaymentData data) in C:\Projects\Urbana\Common\Common.Services.Payment\Gateways\AuthorizeNet\AuthorizeNetCIMCreditCardGateway.cs:line 82
+   at Common.Services.Payment.Tests.Gateways.AuthorizeNet.AuthorizeNetCIMCreditCardGatewayTest.AuthorizeTest_WhenSuccess_CheckTransactionDataIncludesSerializedGatewayProfile() in C:\Projects\Urbana\Common\Common.Services.Payment.Tests\Gateways\AuthorizeNet\AuthorizeNetCIMCreditCardGatewayTest.cs:line 123
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

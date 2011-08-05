@@ -16,7 +16,8 @@ namespace Common.Services.Payment
         private IPaymentGatewaySettings _GatewaySettings = new PaymentGatewaySettings();
         private ITransactionData _Transaction = new TransactionData();
         private ITransactionResultData _TransactionResult = new TransactionResultData();
-        
+
+        public string Id { get; set; }
         public IPaymentCardData CardData
         {
             get { return _CardData; }

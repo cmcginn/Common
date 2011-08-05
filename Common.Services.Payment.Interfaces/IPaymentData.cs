@@ -7,6 +7,7 @@ namespace Common.Services.Payment.Interfaces
 {
     public interface IPaymentData
     {
+        string Id { get; set; }
         IPaymentCardData CardData { get; set; }        
         ICustomerData Customer { get; set; }
         IPaymentGatewaySettings GatewaySettings { get; set; }
