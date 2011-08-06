@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using System.ComponentModel.DataAnnotations;
 namespace Common.Services.Payment.Interfaces
 {
     public interface IAddressType
     {
+        [System.ComponentModel.DataAnnotations.Key()]
         string Id { get; set; }
         string AddressLine1 { get; set; }
         string AddressLine2 { get; set; }

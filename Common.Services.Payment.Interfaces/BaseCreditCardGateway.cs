@@ -9,7 +9,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-
+using Microsoft.Practices.Unity;
 namespace Common.Services.Payment.Interfaces
 {
     /// <summary>
@@ -41,5 +41,9 @@ namespace Common.Services.Payment.Interfaces
         public abstract bool Refund(IPaymentData data);
         public abstract bool Void(IPaymentData data);
 
+
+        [Dependency]
+        public IPaymentGatewaySettings GatewaySettings { get; set; }
+       
     }
 }

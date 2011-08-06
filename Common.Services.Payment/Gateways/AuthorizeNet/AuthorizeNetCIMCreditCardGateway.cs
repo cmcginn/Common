@@ -76,12 +76,13 @@ namespace Common.Services.Payment.Gateways.AuthNet
             //If profile exists then the profile id will be returned
             data.TransactionResult = new TransactionResultData();
             IGatewayProfile profile = GetOrCreateCustomerProfile(data);
-            var customerPaymentProfile = data.MapPaymentDataToCustomerPaymentProfileType();
-            var service = new AuthorizeNetCIMGatewayHelper();
-            service.MerchantAuthenticationType = MerchantAuthentication;
+            var customerPaymentProfile = data.MapPaymentDataToCustomerPaymentProfileType();                   
             var paymentProfile = GetOrCreateCustomerPaymentProfile(profile, data);
             var transaction = data.MapPaymentDataToProfileTransAuthCaptureType(long.Parse(paymentProfile.PaymentProfileId), long.Parse(profile.ProfileId));
-            var transactionResult = service.CreateProfileTransaction(transaction);
+            var transactionResult = GatewayHelper.CreateProfileTransaction(transaction);
+            var transactionResultMessage = new TransactionMessage();
+            transactionResultMessage.Message = AuthorizeNetCIMGatewayHelper.Serialize(transactionResult.messages.message).ToString();
+            data.TransactionResult.Messages.Add(transactionResultMessage);
             return transactionResult.messages.resultCode == AuthorizeNet.APICore.messageTypeEnum.Ok;
         }
 
@@ -115,9 +116,8 @@ namespace Common.Services.Payment.Gateways.AuthNet
             var profileTransactionType = new AuthorizeNet.APICore.profileTransactionType();
             profileTransactionType.Item = refundTransactionType;
 
-            var service = new AuthorizeNetCIMGatewayHelper();
-            service.MerchantAuthenticationType = MerchantAuthentication;
-            var result = service.CreateProfileTransaction(profileTransactionType);
+            
+            var result = GatewayHelper.CreateProfileTransaction(profileTransactionType);
             var messages = AuthorizeNetCIMGatewayHelper.Serialize(result).ToString();
             var message = new TransactionMessage
             {
@@ -137,10 +137,8 @@ namespace Common.Services.Payment.Gateways.AuthNet
         public override IGatewayProfile GetCustomerProfile(string id)
         {
             long profileId = long.Parse(id);
-            IGatewayProfile result = new GatewayProfile();
-            var service = new AuthorizeNetCIMGatewayHelper();
-            service.MerchantAuthenticationType = MerchantAuthentication;
-            var response = service.GetCustomerProfile(profileId);
+            IGatewayProfile result = new GatewayProfile();           
+            var response = GatewayHelper.GetCustomerProfile(profileId);
             result = response.MapCustomerProfileToGatewayProfile();
             return result;
 
@@ -149,12 +147,10 @@ namespace Common.Services.Payment.Gateways.AuthNet
         public override IGatewayProfile GetOrCreateCustomerProfile(IPaymentData data)
         {
 
-            IGatewayProfile result = new GatewayProfile();
-            var service = new AuthorizeNetCIMGatewayHelper();
-            service.MerchantAuthenticationType = MerchantAuthentication;
+            IGatewayProfile result = new GatewayProfile();            
             string messages = string.Empty;
-            var profileId = service.CreateCustomerProfile(data.Customer.EmailAddress, data.Customer.CustomerDescription, out messages);
-            result = service.GetCustomerProfile(profileId).MapCustomerProfileToGatewayProfile();
+            var profileId = GatewayHelper.CreateCustomerProfile(data.Customer.EmailAddress, data.Customer.CustomerDescription, out messages);
+            result = GatewayHelper.GetCustomerProfile(profileId).MapCustomerProfileToGatewayProfile();
             var message = new TransactionMessage
             {
                 Message = messages,
@@ -168,6 +164,22 @@ namespace Common.Services.Payment.Gateways.AuthNet
         #endregion
 
         #region Class Memebers
+        AuthorizeNetCIMGatewayHelper _GatewayHelper;
+
+        public AuthorizeNetCIMGatewayHelper GatewayHelper
+        {
+            get
+            {
+                if (_GatewayHelper == null)
+                {
+                    _GatewayHelper = new AuthorizeNetCIMGatewayHelper();
+                    _GatewayHelper.MerchantAuthenticationType = MerchantAuthentication;
+                    _GatewayHelper.ServiceMode = GatewaySettings.TestMode ? AuthorizeNet.ServiceMode.Test : AuthorizeNet.ServiceMode.Live;
+                }
+                return _GatewayHelper;
+            }
+            set { _GatewayHelper = value; }
+        }
         AuthorizeNet.APICore.merchantAuthenticationType _MerchantAuthentication;
         AuthorizeNet.APICore.merchantAuthenticationType MerchantAuthentication
         {
@@ -176,8 +188,8 @@ namespace Common.Services.Payment.Gateways.AuthNet
                 if (_MerchantAuthentication == null)
                 {
                     _MerchantAuthentication = new AuthorizeNet.APICore.merchantAuthenticationType();
-                    _MerchantAuthentication.name = Properties.AuthorizeNet.Default.APIAccountName;
-                    _MerchantAuthentication.transactionKey = Properties.AuthorizeNet.Default.APIAccountPassword;
+                    _MerchantAuthentication.name = GatewaySettings.Username;
+                    _MerchantAuthentication.transactionKey = GatewaySettings.Password;
                 }
                 return _MerchantAuthentication;
             }
@@ -201,14 +213,12 @@ namespace Common.Services.Payment.Gateways.AuthNet
         }
         IGatewayPaymentProfile GetOrCreateCustomerPaymentProfile(IPaymentData data, long customerProfileId)
         {
-            var customerPaymentProfile = data.MapPaymentDataToCustomerPaymentProfileType();
-            var service = new AuthorizeNetCIMGatewayHelper();
+            var customerPaymentProfile = data.MapPaymentDataToCustomerPaymentProfileType();            
             IGatewayPaymentProfile result = null;
-            service.MerchantAuthenticationType = MerchantAuthentication;
             try
             {
-                var paymentProfileResponse = service.CreateCustomerPaymentProfile(customerPaymentProfile, customerProfileId);
-                result = service.GetCustomerPaymentProfile(customerProfileId, long.Parse(paymentProfileResponse.customerPaymentProfileId)).MapCustomerPaymentProfileMaskTypeToGatewayPaymentProfile();
+                var paymentProfileResponse = GatewayHelper.CreateCustomerPaymentProfile(customerPaymentProfile, customerProfileId);
+                result = GatewayHelper.GetCustomerPaymentProfile(customerProfileId, long.Parse(paymentProfileResponse.customerPaymentProfileId)).MapCustomerPaymentProfileMaskTypeToGatewayPaymentProfile();
 
             }
             catch (System.InvalidOperationException ex)
@@ -217,7 +227,7 @@ namespace Common.Services.Payment.Gateways.AuthNet
                 {
                     var lastFour = data.CardData.CardNumber.Substring(data.CardData.CardNumber.Length - 4);
                     //get the existing profile
-                    var paymentProfiles = service.GetCustomerPaymentProfiles(customerProfileId).ToList();
+                    var paymentProfiles = GatewayHelper.GetCustomerPaymentProfiles(customerProfileId).ToList();
                     var paymentProfile = paymentProfiles.SingleOrDefault(n => n.payment.Item as AuthorizeNet.APICore.creditCardMaskedType != null && ((AuthorizeNet.APICore.creditCardMaskedType)n.payment.Item).cardNumber.Contains(lastFour));
                     result = paymentProfile.MapCustomerPaymentProfileMaskTypeToGatewayPaymentProfile();
                 }

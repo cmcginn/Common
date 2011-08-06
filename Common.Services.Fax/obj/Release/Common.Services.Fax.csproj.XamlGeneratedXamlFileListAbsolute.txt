@@ -1,0 +1,1 @@
+obj\Release\Activity1.g.xaml

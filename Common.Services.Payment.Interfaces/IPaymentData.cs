@@ -9,8 +9,7 @@ namespace Common.Services.Payment.Interfaces
     {
         string Id { get; set; }
         IPaymentCardData CardData { get; set; }        
-        ICustomerData Customer { get; set; }
-        IPaymentGatewaySettings GatewaySettings { get; set; }
+        ICustomerData Customer { get; set; }        
         ITransactionData Transaction { get; set; }
         ITransactionResultData TransactionResult { get; set; }
     }

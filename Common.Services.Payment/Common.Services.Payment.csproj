@@ -74,11 +74,15 @@
       <HintPath>..\Dependencies\AuthorizeNet\AuthorizeNet.Helpers.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.DomainServices.Hosting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.ServiceModel.DomainServices.Hosting.OData, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System.ServiceModel.DomainServices.Server, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -96,6 +100,7 @@
     <Compile Include="GatewayProfile.cs" />
     <Compile Include="Gateways\AuthorizeNet\helpers\AuthorizeNetCIMGatewayHelper.cs" />
     <Compile Include="Gateways\AuthorizeNet\helpers\AuthorizeNetGatewayExtensions.cs" />
+    <Compile Include="PaymentDomainService.cs" />
     <Compile Include="Properties\AuthorizeNet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>

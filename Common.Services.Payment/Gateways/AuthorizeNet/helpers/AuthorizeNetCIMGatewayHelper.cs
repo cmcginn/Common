@@ -13,6 +13,7 @@ namespace Common.Services.Payment.Gateways.AuthNet.helpers
         public const string DUPLICATE_PROFILE_MESSAGE = "Error processing request: E00039 - A duplicate record with ID ";
         public const string DUPLICATE_PAYMENT_PROFILE_MESSAGE = "Error processing request: E00039 - A duplicate customer payment profile already exists.";
         AuthorizeNet.APICore.merchantAuthenticationType _MerchantAuthenticationType;
+        public AuthorizeNet.ServiceMode ServiceMode { get; set; }
         public AuthorizeNet.APICore.merchantAuthenticationType MerchantAuthenticationType
         {
             get
@@ -38,7 +39,7 @@ namespace Common.Services.Payment.Gateways.AuthNet.helpers
             profile.description = description;
             AuthorizeNet.APICore.createCustomerProfileRequest req = new AuthorizeNet.APICore.createCustomerProfileRequest();
             req.profile = profile;
-            AuthorizeNet.HttpXmlUtility util = new AuthorizeNet.HttpXmlUtility(AuthorizeNet.ServiceMode.Test, MerchantAuthenticationType.name, MerchantAuthenticationType.transactionKey);
+            AuthorizeNet.HttpXmlUtility util = new AuthorizeNet.HttpXmlUtility(ServiceMode, MerchantAuthenticationType.name, MerchantAuthenticationType.transactionKey);
 
             try
             {
@@ -61,7 +62,7 @@ namespace Common.Services.Payment.Gateways.AuthNet.helpers
         {
             AuthorizeNet.APICore.getCustomerProfileRequest req = new AuthorizeNet.APICore.getCustomerProfileRequest();
             req.customerProfileId = profileId.ToString();
-            AuthorizeNet.HttpXmlUtility util = new AuthorizeNet.HttpXmlUtility(AuthorizeNet.ServiceMode.Test, MerchantAuthenticationType.name, MerchantAuthenticationType.transactionKey);
+            AuthorizeNet.HttpXmlUtility util = new AuthorizeNet.HttpXmlUtility(ServiceMode, MerchantAuthenticationType.name, MerchantAuthenticationType.transactionKey);
             return (AuthorizeNet.APICore.getCustomerProfileResponse)util.Send(req);
         }
         public AuthorizeNet.APICore.customerPaymentProfileMaskedType GetCustomerPaymentProfile(long profileId, long paymentProfileId)
@@ -83,7 +84,7 @@ namespace Common.Services.Payment.Gateways.AuthNet.helpers
             AuthorizeNet.APICore.createCustomerPaymentProfileRequest req = new AuthorizeNet.APICore.createCustomerPaymentProfileRequest();
             req.customerProfileId = profileId.ToString();
             req.paymentProfile = paymentProfile;
-            AuthorizeNet.HttpXmlUtility util = new AuthorizeNet.HttpXmlUtility(AuthorizeNet.ServiceMode.Test, MerchantAuthenticationType.name, MerchantAuthenticationType.transactionKey);
+            AuthorizeNet.HttpXmlUtility util = new AuthorizeNet.HttpXmlUtility(ServiceMode, MerchantAuthenticationType.name, MerchantAuthenticationType.transactionKey);
             return (AuthorizeNet.APICore.createCustomerPaymentProfileResponse)util.Send(req);
         }
         public AuthorizeNet.APICore.createCustomerProfileTransactionResponse CreateProfileTransaction(AuthorizeNet.APICore.profileTransactionType transaction)
@@ -91,7 +92,7 @@ namespace Common.Services.Payment.Gateways.AuthNet.helpers
             AuthorizeNet.APICore.createCustomerProfileTransactionRequest req = new AuthorizeNet.APICore.createCustomerProfileTransactionRequest();
             req.transaction = transaction;
             req.merchantAuthentication = MerchantAuthenticationType;
-            AuthorizeNet.HttpXmlUtility util = new AuthorizeNet.HttpXmlUtility(AuthorizeNet.ServiceMode.Test, MerchantAuthenticationType.name, MerchantAuthenticationType.transactionKey);
+            AuthorizeNet.HttpXmlUtility util = new AuthorizeNet.HttpXmlUtility(ServiceMode, MerchantAuthenticationType.name, MerchantAuthenticationType.transactionKey);
             return (AuthorizeNet.APICore.createCustomerProfileTransactionResponse)util.Send(req);
 
         }

@@ -1,0 +1,9 @@
+C:\Projects\Urbana\Common\Common.Testing\bin\Release\Common.Testing.dll
+C:\Projects\Urbana\Common\Common.Testing\bin\Release\Common.Testing.pdb
+C:\Projects\Urbana\Common\Common.Testing\bin\Release\Common.Types.dll
+C:\Projects\Urbana\Common\Common.Testing\bin\Release\Common.Utils.dll
+C:\Projects\Urbana\Common\Common.Testing\bin\Release\Common.Types.pdb
+C:\Projects\Urbana\Common\Common.Testing\bin\Release\Common.Utils.pdb
+C:\Projects\Urbana\Common\Common.Testing\obj\Release\ResolveAssemblyReference.cache
+C:\Projects\Urbana\Common\Common.Testing\obj\Release\Common.Testing.dll
+C:\Projects\Urbana\Common\Common.Testing\obj\Release\Common.Testing.pdb

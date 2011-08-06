@@ -9,7 +9,7 @@ namespace Common.Services.Payment.Interfaces
     {
         // generate a unique ID for your processor for this method
         Guid GatewayId { get; }
-
+        IPaymentGatewaySettings GatewaySettings { get; set; }
         // a user friendly display name for your gateway
         string GatewayName { get; }
 

@@ -22,11 +22,11 @@ namespace Common.Services.Payment.Tests.Gateways.AuthorizeNet
             result.CardData.ExpirationMonth = 1;
             result.CardData.ExpirationYear = 2020;
             result.CardData.SecurityCode = "123";
-            result.GatewaySettings = new PaymentGatewaySettings();
-            result.GatewaySettings.EmailCustomer = false;
-            result.GatewaySettings.Password = Properties.AuthorizeNet.Default.APIAccountPassword;
-            result.GatewaySettings.Username = Properties.AuthorizeNet.Default.APIAccountName;
-            result.GatewaySettings.TestMode = true;
+            //result.GatewaySettings = new PaymentGatewaySettings();
+            //result.GatewaySettings.EmailCustomer = false;
+            //result.GatewaySettings.Password = Properties.AuthorizeNet.Default.APIAccountPassword;
+            //result.GatewaySettings.Username = Properties.AuthorizeNet.Default.APIAccountName;
+            //result.GatewaySettings.TestMode = true;
 
             result.Customer = new CustomerData();
             result.Customer.Address.AddressLine1 = "123 Test Street";

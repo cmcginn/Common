@@ -1,0 +1,5 @@
+C:\Projects\Urbana\Common\Common.Types\bin\Release\Common.Types.dll
+C:\Projects\Urbana\Common\Common.Types\bin\Release\Common.Types.pdb
+C:\Projects\Urbana\Common\Common.Types\obj\Release\ResolveAssemblyReference.cache
+C:\Projects\Urbana\Common\Common.Types\obj\Release\Common.Types.dll
+C:\Projects\Urbana\Common\Common.Types\obj\Release\Common.Types.pdb

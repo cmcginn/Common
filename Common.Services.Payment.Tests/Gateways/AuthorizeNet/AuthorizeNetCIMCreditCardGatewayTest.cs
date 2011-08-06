@@ -5,13 +5,64 @@ using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Common.Types;
 using Common.Services.Payment.Interfaces;
-using Common.Services.Payment.Gateways;
-using Common.Services.Payment.Gateways.AuthNet;
+using Microsoft.Practices.Unity;
+using Microsoft.Practices.Unity.Configuration;
 namespace Common.Services.Payment.Tests.Gateways.AuthorizeNet
 {
     [TestClass]
     public class AuthorizeNetCIMCreditCardGatewayTest
     {
+        public class Container
+        {
+
+            IUnityContainer _UnityContainer;
+            static Container _Instance;
+
+            private Container()
+            {
+                _UnityContainer = new UnityContainer();
+                _UnityContainer.LoadConfiguration();
+
+            }
+            public static Container Instance
+            {
+                get
+                {
+                    if (_Instance == null)
+                        _Instance = new Container();
+                    return Container._Instance;
+                }
+                set { Container._Instance = value; }
+            }
+            public IAddressType GetNewAddressType()
+            {
+                return _UnityContainer.Resolve<IAddressType>();
+            }
+            public IPaymentGatewaySettings GetNewPaymentGatewaySettings()
+            {
+                return _UnityContainer.Resolve<IPaymentGatewaySettings>();
+            }
+            public IPaymentCardData GetNewPaymentCardData()
+            {
+                return _UnityContainer.Resolve<IPaymentCardData>();
+            }
+            public ICustomerData GetNewCustomerData()
+            {
+                return _UnityContainer.Resolve<ICustomerData>();
+            }
+            public IPaymentData GetNewPaymentData()
+            {
+                return _UnityContainer.Resolve<IPaymentData>();
+            }
+            public ITransactionData GetNewTransactionData()
+            {
+                return _UnityContainer.Resolve<ITransactionData>();
+            }
+            public IProfileCreditCardGateway GetNewProfileCreditCardGateway()
+            {
+                return _UnityContainer.Resolve<IProfileCreditCardGateway>();
+            }
+        }
         static IPaymentData GetPaymentData()
         {
             var result = new PaymentData();
@@ -22,11 +73,11 @@ namespace Common.Services.Payment.Tests.Gateways.AuthorizeNet
             result.CardData.ExpirationMonth = 1;
             result.CardData.ExpirationYear = 2020;
             result.CardData.SecurityCode = "123";
-            result.GatewaySettings = new PaymentGatewaySettings();
-            result.GatewaySettings.EmailCustomer = false;
-            result.GatewaySettings.Password = Properties.AuthorizeNet.Default.APIAccountPassword;
-            result.GatewaySettings.Username = Properties.AuthorizeNet.Default.APIAccountName;
-            result.GatewaySettings.TestMode = true;
+            //result.GatewaySettings = new PaymentGatewaySettings();
+            //result.GatewaySettings.EmailCustomer = false;
+            //result.GatewaySettings.Password = Properties.AuthorizeNet.Default.APIAccountPassword;
+            //result.GatewaySettings.Username = Properties.AuthorizeNet.Default.APIAccountName;
+            //result.GatewaySettings.TestMode = true;
 
             result.Customer = new CustomerData();
             result.Customer.Address = new AddressType();
@@ -44,29 +95,36 @@ namespace Common.Services.Payment.Tests.Gateways.AuthorizeNet
             result.CardData.CardHolderLastName = "Cardholder";
             result.CardData.BillingAddress = result.Customer.Address;
             return result;
-        }
-
+        }       
 
         #region Test Helper Methods
+        static Container _Container;
+        [ClassInitialize()]
+        public static void MyClassInitialize(TestContext testContext)
+        {
+            _Container = Container.Instance;          
+            
+        }
         public static IPaymentData GetRefundTransactionPaymentData()
         {
-            var result = new PaymentData();
+            var result = _Container.GetNewPaymentData();
             result.Id = "3756118";
             result.Transaction = new TransactionData();
             result.Transaction.PreviousTransactionReferenceNumber = "2161773175";
-            result.Customer = new CustomerData();
+            result.Customer = _Container.GetNewCustomerData();
+            result.Transaction = _Container.GetNewTransactionData();
             result.Transaction.Amount = (decimal)0.01;
             result.Customer.CustomerId = "4255825";
             return result;
         }
         public static IGatewayProfile CreateProfile(IPaymentData data)
         {
-            IProfileCreditCardGateway target = new AuthorizeNetCIMCreditCardGateway();
+            var target = _Container.GetNewProfileCreditCardGateway();
             return target.GetOrCreateCustomerProfile(data);
         }
         public static IGatewayProfile GetGatewayProfile(IGatewayProfile profile)
         {
-            IProfileCreditCardGateway target = new AuthorizeNetCIMCreditCardGateway();
+            IProfileCreditCardGateway target = _Container.GetNewProfileCreditCardGateway();
             return target.GetCustomerProfile(profile.ProfileId);
         }
         #endregion
@@ -75,14 +133,13 @@ namespace Common.Services.Payment.Tests.Gateways.AuthorizeNet
         public void AuthorizeTest_WhenValidData_CheckResultIsTrue()
         {
             //Arrange
-            var target = new AuthorizeNetCIMCreditCardGateway();
+            var target = Container.Instance.GetNewProfileCreditCardGateway();
             var paymentData = GetPaymentData();
             //Act
             var actual = target.Authorize(paymentData);
             //Assert
             Assert.IsTrue(actual);
         }      
-
         [TestMethod]
         public void CreateProfileTest_AssertProfileResponseLengthGreaterThanZero()
         {
@@ -91,7 +148,6 @@ namespace Common.Services.Payment.Tests.Gateways.AuthorizeNet
             //Assert
             Assert.IsTrue(int.Parse(actual.ProfileId)>0);
         }
-
         [TestMethod]
         public void GetCustomerProfileTest_WhenProfileExists_AssertProfileIdsMatch()
         {
@@ -103,12 +159,11 @@ namespace Common.Services.Payment.Tests.Gateways.AuthorizeNet
             Assert.IsTrue(customer.ProfileId == actual.ProfileId);
             
         }
-
         [TestMethod]
         public void AuthorizeTest_WhenDuplicate_CheckResponseStillOk()
         {
             //Arrange
-            var target = new AuthorizeNetCIMCreditCardGateway();
+            var target = _Container.GetNewProfileCreditCardGateway();
             var paymentData = GetPaymentData();
             paymentData.Transaction.Amount = (new System.Random().Next(1, 99) * (decimal)0.01);
             var expected = target.Authorize(paymentData);
@@ -126,19 +181,18 @@ namespace Common.Services.Payment.Tests.Gateways.AuthorizeNet
         public void RefundTest_WhenUsingRefundableTransaction_CheckResponseOk()
         {
             //Arrange
-            var target = new AuthorizeNetCIMCreditCardGateway();
+            var target = _Container.GetNewProfileCreditCardGateway();
             var paymentData = GetRefundTransactionPaymentData();
             //Act
             var actual = target.Refund(paymentData);
             //Assert
             Assert.IsTrue(actual);
         }
-
         [TestMethod]
         public void AuthorizeTest_WhenValidData_CheckTransactionResultMessageCountGreaterThanZero()
         {
             //Arrange
-            var target = new AuthorizeNetCIMCreditCardGateway();
+            var target = _Container.GetNewProfileCreditCardGateway();
             var paymentData = GetPaymentData();
             //Act
             var actual = target.Authorize(paymentData);
@@ -149,7 +203,7 @@ namespace Common.Services.Payment.Tests.Gateways.AuthorizeNet
         public void RefundTest_WhenUsingRefundableTransaction_CheckTransactionResultMessageCountGreaterThanZero()
         {
             //Arrange
-            var target = new AuthorizeNetCIMCreditCardGateway();
+            var target = _Container.GetNewProfileCreditCardGateway();
             var paymentData = GetRefundTransactionPaymentData();
             //Act
             var actual = target.Refund(paymentData);

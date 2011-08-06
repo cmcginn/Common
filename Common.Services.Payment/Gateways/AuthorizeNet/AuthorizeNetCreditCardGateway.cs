@@ -53,13 +53,13 @@ namespace Common.Services.Payment.Gateways
             try
             {
                 // Get Processor Settings   
-                data.GatewaySettings.UrlLive = new Uri("https://secure.authorize.net/gateway/transact.dll");
-                data.GatewaySettings.UrlTest = new Uri("https://test.authorize.net/gateway/transact.dll");
+                GatewaySettings.UrlLive = new Uri("https://secure.authorize.net/gateway/transact.dll");
+                GatewaySettings.UrlTest = new Uri("https://test.authorize.net/gateway/transact.dll");
                 // Set Server
-                string serverUrl = data.GatewaySettings.UrlTest.ToString();
-                if (!data.GatewaySettings.TestMode)
+                string serverUrl = GatewaySettings.UrlTest.ToString();
+                if (!GatewaySettings.TestMode)
                 {
-                    serverUrl = data.GatewaySettings.UrlLive.ToString();
+                    serverUrl = GatewaySettings.UrlLive.ToString();
                 }
 
                 // Build Data String
@@ -89,9 +89,9 @@ namespace Common.Services.Payment.Gateways
 
                 sb.Append("x_version=3.1");
                 sb.Append("&x_login=");
-                sb.Append(SafeWriteString(data.GatewaySettings.Username.Trim()));
+                sb.Append(SafeWriteString(GatewaySettings.Username.Trim()));
                 sb.Append("&x_tran_key=");
-                sb.Append(SafeWriteString(data.GatewaySettings.Password.Trim()));
+                sb.Append(SafeWriteString(GatewaySettings.Password.Trim()));
                 sb.Append("&x_Amount=");
                 sb.Append(SafeWriteString(data.Transaction.Amount.ToString()));
                 sb.Append("&x_Cust_ID=");
@@ -101,7 +101,7 @@ namespace Common.Services.Payment.Gateways
                 sb.Append("&x_invoice_num=");
                 sb.Append(SafeWriteString(data.Transaction.MerchantInvoiceNumber));
                 sb.Append("&x_Email_Customer=");
-                sb.Append(SafeWriteBool(data.GatewaySettings.EmailCustomer));
+                sb.Append(SafeWriteBool(GatewaySettings.EmailCustomer));
                 sb.Append("&x_delim_data=");
                 sb.Append(SafeWriteBool(true));
                 sb.Append("&x_ADC_URL=");
@@ -147,7 +147,7 @@ namespace Common.Services.Payment.Gateways
                 sb.Append(SafeWriteString("CC"));
 
                 // Add Test Mode Flag if needed
-                if (data.GatewaySettings.TestMode)
+                if (GatewaySettings.TestMode)
                 {
                     sb.Append(SafeWriteString("&x_test_request=TRUE"));
                 }

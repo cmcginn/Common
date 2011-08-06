@@ -21,3 +21,7 @@ C:\Projects\Urbana\Common\Common.Services.Payment\obj\Debug\Common.Services.Paym
 C:\Projects\Urbana\Common\Common.Services.Payment\bin\Debug\AuthorizeNet.dll
 C:\Projects\Urbana\Common\Common.Services.Payment\bin\Debug\AuthorizeNet.Helpers.dll
 C:\Projects\Urbana\Common\Common.Services.Payment\obj\Debug\Common.Services.Payment.rewritten
+C:\Projects\Urbana\Common\Common.Services.Payment\bin\Debug\Microsoft.Practices.Unity.dll
+C:\Projects\Urbana\Common\Common.Services.Payment\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Projects\Urbana\Common\Common.Services.Payment\bin\Debug\Microsoft.Practices.Unity.pdb
+C:\Projects\Urbana\Common\Common.Services.Payment\bin\Debug\Microsoft.Practices.Unity.xml

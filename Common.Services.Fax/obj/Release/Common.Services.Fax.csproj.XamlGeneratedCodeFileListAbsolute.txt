@@ -1,0 +1,2 @@
+obj\Release\_Common.Services.Fax.g.cs
+obj\Release\Activity1.g.cs

@@ -27,12 +27,7 @@ namespace Common.Services.Payment
         {
             get { return _Customer; }
             set { _Customer = value; }
-        }
-        public IPaymentGatewaySettings GatewaySettings
-        {
-            get { return _GatewaySettings; }
-            set { _GatewaySettings = value; }
-        }
+        }        
         public ITransactionData Transaction
         {
             get { return _Transaction; }
