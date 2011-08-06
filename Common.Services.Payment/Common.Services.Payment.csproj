@@ -126,7 +126,6 @@
     </Compile>
     <Compile Include="TransactionData.cs" />
     <Compile Include="TransactionMessage.cs" />
-    <Compile Include="TransactionResultData.cs" />
     <Compile Include="Utilities.cs" />
   </ItemGroup>
   <ItemGroup>

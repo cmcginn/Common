@@ -3,9 +3,8 @@ namespace Common.Services.Payment.Interfaces
 {
     public interface ITransactionMessage
     {
-        string Code { get; set; }
-        string Description { get; set; }
         TransactionMessageType MessageType { get; set; }
-        string Message { get; set; }
+        string TransactionMessageResult { get; set; }
+        Exception TransactionResultException { get; set; }
     }
 }

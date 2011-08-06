@@ -63,6 +63,14 @@ namespace Common.Services.Payment.Tests.Gateways.AuthorizeNet
                 return _UnityContainer.Resolve<IProfileCreditCardGateway>();
             }
         }
+        static IPaymentGatewaySettings GetPaymentGatewaySettings()
+        {
+            var result = _Container.GetNewPaymentGatewaySettings();
+            result.TestMode = true;
+            result.Username = "9E4n3PdG";
+            result.Password = "8RMF6ZjL2D4z8d75";
+            return result;
+        }
         static IPaymentData GetPaymentData()
         {
             var result = new PaymentData();
@@ -73,11 +81,6 @@ namespace Common.Services.Payment.Tests.Gateways.AuthorizeNet
             result.CardData.ExpirationMonth = 1;
             result.CardData.ExpirationYear = 2020;
             result.CardData.SecurityCode = "123";
-            //result.GatewaySettings = new PaymentGatewaySettings();
-            //result.GatewaySettings.EmailCustomer = false;
-            //result.GatewaySettings.Password = Properties.AuthorizeNet.Default.APIAccountPassword;
-            //result.GatewaySettings.Username = Properties.AuthorizeNet.Default.APIAccountName;
-            //result.GatewaySettings.TestMode = true;
 
             result.Customer = new CustomerData();
             result.Customer.Address = new AddressType();
@@ -134,6 +137,7 @@ namespace Common.Services.Payment.Tests.Gateways.AuthorizeNet
         {
             //Arrange
             var target = Container.Instance.GetNewProfileCreditCardGateway();
+            target.GatewaySettings = GetPaymentGatewaySettings();
             var paymentData = GetPaymentData();
             //Act
             var actual = target.Authorize(paymentData);
@@ -197,7 +201,7 @@ namespace Common.Services.Payment.Tests.Gateways.AuthorizeNet
             //Act
             var actual = target.Authorize(paymentData);
             //Assert
-            Assert.IsTrue(paymentData.TransactionResult.Messages.Count>0);
+            Assert.IsTrue(paymentData.Transaction.TransactionMessages.Count>0);
         }
         [TestMethod]
         public void RefundTest_WhenUsingRefundableTransaction_CheckTransactionResultMessageCountGreaterThanZero()
@@ -208,7 +212,7 @@ namespace Common.Services.Payment.Tests.Gateways.AuthorizeNet
             //Act
             var actual = target.Refund(paymentData);
             //Assert
-            Assert.IsTrue(paymentData.TransactionResult.Messages.Count > 0);
+            Assert.IsTrue(paymentData.Transaction.TransactionMessages.Count > 0);
         }
     }
 

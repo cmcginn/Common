@@ -15,7 +15,7 @@ namespace Common.Services.Payment
         private ICustomerData _Customer = new CustomerData();
         private IPaymentGatewaySettings _GatewaySettings = new PaymentGatewaySettings();
         private ITransactionData _Transaction = new TransactionData();
-        private ITransactionResultData _TransactionResult = new TransactionResultData();
+        
 
         public string Id { get; set; }
         public IPaymentCardData CardData
@@ -33,11 +33,7 @@ namespace Common.Services.Payment
             get { return _Transaction; }
             set { _Transaction = value; }
         }
-        public ITransactionResultData TransactionResult
-        {
-            get { return _TransactionResult; }
-            set { _TransactionResult = value; }
-        }
+        
 
     }
 }

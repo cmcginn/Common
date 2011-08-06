@@ -10,8 +10,14 @@ namespace Common.Services.Payment
         private string _Description = string.Empty;
         private string _Code = string.Empty;
         private string _Message = String.Empty;
+        private Exception _TransactionResultException;
 
-        public string Message
+        public Exception TransactionResultException
+        {
+            get { return _TransactionResultException; }
+            set { _TransactionResultException = value; }
+        }
+        public string TransactionMessageResult
         {
             get { return _Message; }
             set { _Message = value; }
@@ -45,5 +51,6 @@ namespace Common.Services.Payment
             _Code = code;
             _MessageType = type;
         }
+       
     }
 }

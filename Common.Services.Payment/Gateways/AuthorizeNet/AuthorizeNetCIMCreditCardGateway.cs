@@ -69,20 +69,20 @@ namespace Common.Services.Payment.Gateways.AuthNet
             Contract.Requires(data.Transaction != null, "PaymentData transaction required");
             Contract.Requires(data.Transaction.Amount > 0, "PaymentData transaction amount must be greater than zero");
             //Post Conditions
-            Contract.Ensures(data.TransactionResult.Messages.Count > 0, "A critical error was encountered left control of authorize without assigning  transaction result messages");
+            Contract.Ensures(data.Transaction.TransactionMessages.Count > 0, "A critical error was encountered left control of authorize without assigning  transaction result messages");
 
             if (!SupportsAuthorize)
                 throw new System.NotSupportedException("Authorize not supported by gateway");
-            //If profile exists then the profile id will be returned
-            data.TransactionResult = new TransactionResultData();
+            //If profile exists then the profile id will be returned            
             IGatewayProfile profile = GetOrCreateCustomerProfile(data);
             var customerPaymentProfile = data.MapPaymentDataToCustomerPaymentProfileType();                   
             var paymentProfile = GetOrCreateCustomerPaymentProfile(profile, data);
             var transaction = data.MapPaymentDataToProfileTransAuthCaptureType(long.Parse(paymentProfile.PaymentProfileId), long.Parse(profile.ProfileId));
             var transactionResult = GatewayHelper.CreateProfileTransaction(transaction);
-            var transactionResultMessage = new TransactionMessage();
-            transactionResultMessage.Message = AuthorizeNetCIMGatewayHelper.Serialize(transactionResult.messages.message).ToString();
-            data.TransactionResult.Messages.Add(transactionResultMessage);
+            data.Transaction.TransactionMessages.AddRange(GetTransactionMessage(transactionResult.messages,"createCustomerProfileTransactionResponse"));
+           
+
+            
             return transactionResult.messages.resultCode == AuthorizeNet.APICore.messageTypeEnum.Ok;
         }
 
@@ -106,26 +106,16 @@ namespace Common.Services.Payment.Gateways.AuthNet
             Contract.Requires(data.Customer != null, "A refund requires a Customer");
             Contract.Requires(!String.IsNullOrWhiteSpace(data.Customer.CustomerId), "A refund requires a customer profile id assigned as CustomerId");
             //Post Conditions 
-            Contract.Ensures(data.TransactionResult.Messages.Count > 0, "A critical error was encountered left control of refund without assigning  transaction result messages");
-            data.TransactionResult = new TransactionResultData();
+            Contract.Ensures(data.Transaction.TransactionMessages.Count > 0, "A critical error was encountered left control of refund without assigning  transaction result messages");            
             var refundTransactionType = new AuthorizeNet.APICore.profileTransRefundType();
             refundTransactionType.customerProfileId = data.Customer.CustomerId;
             refundTransactionType.customerPaymentProfileId = data.Id;
             refundTransactionType.transId = data.Transaction.PreviousTransactionReferenceNumber;
             refundTransactionType.amount = data.Transaction.Amount;
             var profileTransactionType = new AuthorizeNet.APICore.profileTransactionType();
-            profileTransactionType.Item = refundTransactionType;
-
-            
-            var result = GatewayHelper.CreateProfileTransaction(profileTransactionType);
-            var messages = AuthorizeNetCIMGatewayHelper.Serialize(result).ToString();
-            var message = new TransactionMessage
-            {
-                Description = "createCustomerProfileTransactionResponse",
-                Message = messages,
-                Code = Enum.GetName(typeof(AuthorizeNet.APICore.messageTypeEnum), result.messages.resultCode)
-            };
-            data.TransactionResult.Messages.Add(message);
+            profileTransactionType.Item = refundTransactionType;            
+            var result = GatewayHelper.CreateProfileTransaction(profileTransactionType);           
+            data.Transaction.TransactionMessages.AddRange(GetTransactionMessage(result.messages,"createCustomerProfileTransactionResponse"));
             return result.messages.resultCode == AuthorizeNet.APICore.messageTypeEnum.Ok;
         }
 
@@ -148,15 +138,10 @@ namespace Common.Services.Payment.Gateways.AuthNet
         {
 
             IGatewayProfile result = new GatewayProfile();            
-            string messages = string.Empty;
+            AuthorizeNet.APICore.messagesType messages = null;
             var profileId = GatewayHelper.CreateCustomerProfile(data.Customer.EmailAddress, data.Customer.CustomerDescription, out messages);
-            result = GatewayHelper.GetCustomerProfile(profileId).MapCustomerProfileToGatewayProfile();
-            var message = new TransactionMessage
-            {
-                Message = messages,
-                Description = "createCustomerProfileRequest"
-            };
-            data.TransactionResult.Messages.Add(message);
+            result = GatewayHelper.GetCustomerProfile(profileId).MapCustomerProfileToGatewayProfile();          
+            data.Transaction.TransactionMessages.AddRange(GetTransactionMessage(messages, "createCustomerProfileRequest"));
             return result;
 
         }
@@ -164,8 +149,13 @@ namespace Common.Services.Payment.Gateways.AuthNet
         #endregion
 
         #region Class Memebers
+        IEnumerable<ITransactionMessage> GetTransactionMessage(AuthorizeNet.APICore.messagesType messages,string description)
+        {
+            TransactionMessageType messageType = messages.resultCode == AuthorizeNet.APICore.messageTypeEnum.Ok ? TransactionMessageType.Information : TransactionMessageType.Error;
+            var result = messages.message.Select(n=>new TransactionMessage{ Code=n.code, MessageType=messageType, TransactionMessageResult=n.text, Description=description});
+            return result;
+        }
         AuthorizeNetCIMGatewayHelper _GatewayHelper;
-
         public AuthorizeNetCIMGatewayHelper GatewayHelper
         {
             get

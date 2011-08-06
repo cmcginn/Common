@@ -68,7 +68,6 @@
     <Compile Include="IResponseMessage.cs" />
     <Compile Include="ITransactionData.cs" />
     <Compile Include="ITransactionMessage.cs" />
-    <Compile Include="ITransactionResultData.cs" />
     <Compile Include="PaymentCardType.cs" />
     <Compile Include="PaymentServiceException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

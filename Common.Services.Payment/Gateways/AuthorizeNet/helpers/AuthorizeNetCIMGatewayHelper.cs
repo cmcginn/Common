@@ -29,10 +29,9 @@ namespace Common.Services.Payment.Gateways.AuthNet.helpers
                 _MerchantAuthenticationType = value;
             }
         }
-        public long CreateCustomerProfile(string email, string description,out string messages)
+        public long CreateCustomerProfile(string email, string description,out AuthorizeNet.APICore.messagesType messages)
         {
-            long result = 0;
-            messages = string.Empty;
+            long result = 0;       
             string profileId = "0";
             AuthorizeNet.APICore.customerProfileType profile = new AuthorizeNet.APICore.customerProfileType();
             profile.email = email;
@@ -40,22 +39,22 @@ namespace Common.Services.Payment.Gateways.AuthNet.helpers
             AuthorizeNet.APICore.createCustomerProfileRequest req = new AuthorizeNet.APICore.createCustomerProfileRequest();
             req.profile = profile;
             AuthorizeNet.HttpXmlUtility util = new AuthorizeNet.HttpXmlUtility(ServiceMode, MerchantAuthenticationType.name, MerchantAuthenticationType.transactionKey);
-
+            AuthorizeNet.APICore.createCustomerProfileResponse response = null;
             try
             {
-                var response = (AuthorizeNet.APICore.createCustomerProfileResponse)util.Send(req);
-                messages = Serialize(response);
+                response = (AuthorizeNet.APICore.createCustomerProfileResponse)util.Send(req);                
                 long.TryParse(response.customerProfileId, out result);
             }
             catch (System.InvalidOperationException ex)
             {
                 if (ex.Message.Contains(DUPLICATE_PROFILE_MESSAGE))
                 {
-                    messages = messages + ex.Message;
+                    
                     profileId = ex.Message.Replace(DUPLICATE_PROFILE_MESSAGE, String.Empty).Replace(" already exists.", String.Empty);
                     long.TryParse(profileId, out result);
                 }
             }
+            messages = response.messages;
             return result;
         }
         public AuthorizeNet.APICore.getCustomerProfileResponse GetCustomerProfile(long profileId)

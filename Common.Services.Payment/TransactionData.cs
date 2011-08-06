@@ -11,7 +11,13 @@ namespace Common.Services.Payment
         private string _PreviousTransactionReferenceNumber = string.Empty;
         private string _MerchantDescription = string.Empty;
         private string _MerchantInvoiceNumber = string.Empty;
-        
+        private List<ITransactionMessage> _TransactionMessages = new List<ITransactionMessage>();
+
+        public List<ITransactionMessage> TransactionMessages
+        {
+            get { return _TransactionMessages; }
+            set { _TransactionMessages = value; }
+        }
 
         public decimal Amount
         {
@@ -34,5 +40,11 @@ namespace Common.Services.Payment
             set { _MerchantInvoiceNumber = value; }
         }
 
+
+
+
+
+
+       
     }
 }

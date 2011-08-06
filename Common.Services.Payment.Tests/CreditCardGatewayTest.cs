@@ -24,8 +24,6 @@ namespace Common.Services.Payment.Tests
             [Dependency]
             public ITransactionData TransactionData { get; set; }
             [Dependency]
-            public ITransactionResultData TransactionResultData { get; set; }
-            [Dependency]
             public IPaymentData PaymentCardData { get; set; }
             [Dependency]
             public ICustomerData CustomerData { get; set; }

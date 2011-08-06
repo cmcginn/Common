@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 namespace Common.Services.Payment.Interfaces
 {
     
@@ -8,5 +9,7 @@ namespace Common.Services.Payment.Interfaces
         string MerchantDescription { get; set; }
         string MerchantInvoiceNumber { get; set; }
         string PreviousTransactionReferenceNumber { get; set; }
+        List<ITransactionMessage> TransactionMessages { get; set; }
+        
     }
 }
