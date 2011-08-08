@@ -8,7 +8,7 @@ using System.Xml.Serialization;
 
 namespace Common.Services.Payment.Gateways.AuthNet.helpers
 {
-    public class AuthorizeNetCIMGatewayHelper
+    public class AuthorizeNetGatewayHelper
     {
         public const string DUPLICATE_PROFILE_MESSAGE = "Error processing request: E00039 - A duplicate record with ID ";
         public const string DUPLICATE_PAYMENT_PROFILE_MESSAGE = "Error processing request: E00039 - A duplicate customer payment profile already exists.";
@@ -29,6 +29,7 @@ namespace Common.Services.Payment.Gateways.AuthNet.helpers
                 _MerchantAuthenticationType = value;
             }
         }
+        #region CIM
         public long CreateCustomerProfile(string email, string description,out AuthorizeNet.APICore.messagesType messages)
         {
             long result = 0;       
@@ -70,7 +71,7 @@ namespace Common.Services.Payment.Gateways.AuthNet.helpers
             req.merchantAuthentication = MerchantAuthenticationType;
             req.customerProfileId = profileId.ToString();
             req.customerPaymentProfileId = paymentProfileId.ToString();
-            AuthorizeNet.HttpXmlUtility util = new AuthorizeNet.HttpXmlUtility(AuthorizeNet.ServiceMode.Test, MerchantAuthenticationType.name, MerchantAuthenticationType.transactionKey);
+            AuthorizeNet.HttpXmlUtility util = new AuthorizeNet.HttpXmlUtility(ServiceMode, MerchantAuthenticationType.name, MerchantAuthenticationType.transactionKey);
             return ((AuthorizeNet.APICore.getCustomerPaymentProfileResponse)util.Send(req)).paymentProfile;
         }
         public AuthorizeNet.APICore.customerPaymentProfileMaskedType[] GetCustomerPaymentProfiles(long profileId)
@@ -105,5 +106,40 @@ namespace Common.Services.Payment.Gateways.AuthNet.helpers
                 return builder.ToString();
             };
         }
+        #endregion
+        #region ARB
+        public AuthorizeNet.APICore.ARBCreateSubscriptionResponse CreateARBSubscription(AuthorizeNet.APICore.ARBSubscriptionType subscription)
+        {
+            AuthorizeNet.APICore.ARBCreateSubscriptionRequest req = new AuthorizeNet.APICore.ARBCreateSubscriptionRequest();
+            req.merchantAuthentication = MerchantAuthenticationType;
+            req.subscription = subscription;
+            AuthorizeNet.HttpXmlUtility util = new AuthorizeNet.HttpXmlUtility(ServiceMode, MerchantAuthenticationType.name, MerchantAuthenticationType.transactionKey);
+            return (AuthorizeNet.APICore.ARBCreateSubscriptionResponse)util.Send(req);
+        }
+        public AuthorizeNet.APICore.ARBUpdateSubscriptionResponse UpdateARBSubscription(long subscriptionId, AuthorizeNet.APICore.ARBSubscriptionType subscription)
+        {
+            AuthorizeNet.APICore.ARBUpdateSubscriptionRequest req = new AuthorizeNet.APICore.ARBUpdateSubscriptionRequest();
+            req.subscriptionId = subscriptionId.ToString();
+            req.subscription = subscription;
+            AuthorizeNet.HttpXmlUtility util = new AuthorizeNet.HttpXmlUtility(ServiceMode, MerchantAuthenticationType.name, MerchantAuthenticationType.transactionKey);
+            return (AuthorizeNet.APICore.ARBUpdateSubscriptionResponse)util.Send(req);
+        }
+
+        public AuthorizeNet.APICore.ARBGetSubscriptionStatusResponse GetSubscriptionStatus(long subscriptionId)
+        {
+            AuthorizeNet.APICore.ARBGetSubscriptionStatusRequest req = new AuthorizeNet.APICore.ARBGetSubscriptionStatusRequest();
+            req.subscriptionId = subscriptionId.ToString();
+            AuthorizeNet.HttpXmlUtility util = new AuthorizeNet.HttpXmlUtility(ServiceMode, MerchantAuthenticationType.name, MerchantAuthenticationType.transactionKey);
+            return (AuthorizeNet.APICore.ARBGetSubscriptionStatusResponse)util.Send(req);
+        }
+
+        public AuthorizeNet.APICore.ARBCancelSubscriptionResponse CancelSubscription(long subscriptionId)
+        {
+            AuthorizeNet.APICore.ARBCancelSubscriptionRequest req = new AuthorizeNet.APICore.ARBCancelSubscriptionRequest();
+            req.subscriptionId = subscriptionId.ToString();
+            AuthorizeNet.HttpXmlUtility util = new AuthorizeNet.HttpXmlUtility(ServiceMode, MerchantAuthenticationType.name, MerchantAuthenticationType.transactionKey);
+            return (AuthorizeNet.APICore.ARBCancelSubscriptionResponse)util.Send(req);
+        }
+        #endregion
     }
 }

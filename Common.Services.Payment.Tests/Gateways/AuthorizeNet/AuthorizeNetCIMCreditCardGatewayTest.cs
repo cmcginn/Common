@@ -128,7 +128,7 @@ namespace Common.Services.Payment.Tests.Gateways.AuthorizeNet
         public static IGatewayProfile GetGatewayProfile(IGatewayProfile profile)
         {
             IProfileCreditCardGateway target = _Container.GetNewProfileCreditCardGateway();
-            return target.GetCustomerProfile(profile.ProfileId);
+            return target.GetCustomerProfile(profile.Id);
         }
         #endregion
 
@@ -150,7 +150,7 @@ namespace Common.Services.Payment.Tests.Gateways.AuthorizeNet
             //Arrange
             IGatewayProfile actual = CreateProfile(GetPaymentData());
             //Assert
-            Assert.IsTrue(int.Parse(actual.ProfileId)>0);
+            Assert.IsTrue(int.Parse(actual.Id)>0);
         }
         [TestMethod]
         public void GetCustomerProfileTest_WhenProfileExists_AssertProfileIdsMatch()
@@ -160,7 +160,7 @@ namespace Common.Services.Payment.Tests.Gateways.AuthorizeNet
             //Act
             var actual = GetGatewayProfile(customer);
             //Assert
-            Assert.IsTrue(customer.ProfileId == actual.ProfileId);
+            Assert.IsTrue(customer.Id == actual.Id);
             
         }
         [TestMethod]

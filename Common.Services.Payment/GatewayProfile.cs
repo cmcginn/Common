@@ -7,7 +7,7 @@ namespace Common.Services.Payment
 {
     public class GatewayProfile:IGatewayProfile
     {
-        public string ProfileId { get; set; }
+        public string Id { get; set; }
         IList<IGatewayPaymentProfile> _PaymentProfiles;
         public IList<IGatewayPaymentProfile> PaymentProfiles
         {

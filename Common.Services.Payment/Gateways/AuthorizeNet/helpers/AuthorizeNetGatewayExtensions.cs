@@ -14,7 +14,7 @@ namespace Common.Services.Payment.Gateways.AuthNet.helpers
             var result = new GatewayProfile();
             result.ProfileCustomerData = new CustomerData();
             result.ProfileCustomerData.Address = new AddressType();
-            result.ProfileId = response.profile.customerProfileId;
+            result.Id = response.profile.customerProfileId;
             result.ProfileCustomerData.EmailAddress = response.profile.email;
             result.ProfileCustomerData.CustomerDescription = response.profile.description;
             if (response.profile.paymentProfiles != null)
@@ -33,7 +33,7 @@ namespace Common.Services.Payment.Gateways.AuthNet.helpers
         {
             var result = new GatewayPaymentProfile();
             result.PaymentCardData = new PaymentCardData();
-            result.PaymentProfileId = response.customerPaymentProfileId;
+            result.Id = response.customerPaymentProfileId;
             if (response.billTo != null)
             {
                 

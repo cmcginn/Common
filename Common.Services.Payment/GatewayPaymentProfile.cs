@@ -9,7 +9,7 @@ namespace Common.Services.Payment
     {        
         public IPaymentCardData PaymentCardData { get; set; }
         public ICustomerData CustomerData { get; set; }
-        public string PaymentProfileId { get; set; }
+        public string Id { get; set; }
         public string MerchantId { get; set; }       
         public string CustomerDescription { get; set; }
     }

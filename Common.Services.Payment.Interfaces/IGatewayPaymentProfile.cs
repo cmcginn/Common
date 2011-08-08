@@ -9,6 +9,6 @@ namespace Common.Services.Payment.Interfaces
     {
         ICustomerData CustomerData { get; set; }
         IPaymentCardData PaymentCardData { get; set; }
-        string PaymentProfileId { get; set; }
+        string Id { get; set; }
     }
 }

@@ -77,7 +77,7 @@ namespace Common.Services.Payment.Gateways.AuthNet
             IGatewayProfile profile = GetOrCreateCustomerProfile(data);
             var customerPaymentProfile = data.MapPaymentDataToCustomerPaymentProfileType();                   
             var paymentProfile = GetOrCreateCustomerPaymentProfile(profile, data);
-            var transaction = data.MapPaymentDataToProfileTransAuthCaptureType(long.Parse(paymentProfile.PaymentProfileId), long.Parse(profile.ProfileId));
+            var transaction = data.MapPaymentDataToProfileTransAuthCaptureType(long.Parse(paymentProfile.Id), long.Parse(profile.Id));
             var transactionResult = GatewayHelper.CreateProfileTransaction(transaction);
             data.Transaction.TransactionMessages.AddRange(GetTransactionMessage(transactionResult.messages,"createCustomerProfileTransactionResponse"));
            
@@ -155,14 +155,14 @@ namespace Common.Services.Payment.Gateways.AuthNet
             var result = messages.message.Select(n=>new TransactionMessage{ Code=n.code, MessageType=messageType, TransactionMessageResult=n.text, Description=description});
             return result;
         }
-        AuthorizeNetCIMGatewayHelper _GatewayHelper;
-        public AuthorizeNetCIMGatewayHelper GatewayHelper
+        AuthorizeNetGatewayHelper _GatewayHelper;
+        public AuthorizeNetGatewayHelper GatewayHelper
         {
             get
             {
                 if (_GatewayHelper == null)
                 {
-                    _GatewayHelper = new AuthorizeNetCIMGatewayHelper();
+                    _GatewayHelper = new AuthorizeNetGatewayHelper();
                     _GatewayHelper.MerchantAuthenticationType = MerchantAuthentication;
                     _GatewayHelper.ServiceMode = GatewaySettings.TestMode ? AuthorizeNet.ServiceMode.Test : AuthorizeNet.ServiceMode.Live;
                 }
@@ -197,7 +197,7 @@ namespace Common.Services.Payment.Gateways.AuthNet
             }
             if (result == null)
             {
-                result = GetOrCreateCustomerPaymentProfile(data, long.Parse(gatewayProfile.ProfileId));
+                result = GetOrCreateCustomerPaymentProfile(data, long.Parse(gatewayProfile.Id));
             }
             return result;
         }
@@ -213,7 +213,7 @@ namespace Common.Services.Payment.Gateways.AuthNet
             }
             catch (System.InvalidOperationException ex)
             {
-                if (ex.Message == AuthorizeNetCIMGatewayHelper.DUPLICATE_PAYMENT_PROFILE_MESSAGE)
+                if (ex.Message == AuthorizeNetGatewayHelper.DUPLICATE_PAYMENT_PROFILE_MESSAGE)
                 {
                     var lastFour = data.CardData.CardNumber.Substring(data.CardData.CardNumber.Length - 4);
                     //get the existing profile

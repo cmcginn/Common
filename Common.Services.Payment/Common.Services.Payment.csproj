@@ -98,7 +98,7 @@
     <Compile Include="GatewayPaymentProfile.cs" />
     <Compile Include="Gateways\AuthorizeNet\AuthorizeNetCIMCreditCardGateway.cs" />
     <Compile Include="GatewayProfile.cs" />
-    <Compile Include="Gateways\AuthorizeNet\helpers\AuthorizeNetCIMGatewayHelper.cs" />
+    <Compile Include="Gateways\AuthorizeNet\helpers\AuthorizeNetGatewayHelper.cs" />
     <Compile Include="Gateways\AuthorizeNet\helpers\AuthorizeNetGatewayExtensions.cs" />
     <Compile Include="PaymentDomainService.cs" />
     <Compile Include="Properties\AuthorizeNet.Designer.cs">
