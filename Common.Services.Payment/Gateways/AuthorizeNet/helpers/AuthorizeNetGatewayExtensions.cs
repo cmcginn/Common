@@ -28,7 +28,6 @@ namespace Common.Services.Payment.Gateways.AuthNet.helpers
             }
             return result;
         }
-
         public static IGatewayPaymentProfile MapCustomerPaymentProfileMaskTypeToGatewayPaymentProfile(this AuthorizeNet.APICore.customerPaymentProfileMaskedType response)
         {
             var result = new GatewayPaymentProfile();
@@ -76,12 +75,7 @@ namespace Common.Services.Payment.Gateways.AuthNet.helpers
             result.billTo.firstName = request.CardData.CardHolderFirstName;
             result.billTo.lastName = request.CardData.CardHolderLastName;
             result.payment = new AuthorizeNet.APICore.paymentType();
-            var creditCard = new AuthorizeNet.APICore.creditCardType();
-            creditCard.cardCode = request.CardData.SecurityCode;
-            creditCard.cardNumber = request.CardData.CardNumber;
-           
-            creditCard.expirationDate = String.Format("{0}-{1}", request.CardData.ExpirationYear.ToString(), request.CardData.ExpirationMonth.ToString().PadLeft(2, '0'));
-            result.payment.Item = creditCard;
+            result.payment.Item = request.CardData.MapIPaymentCardDataToCreditCardType();
             return result;
         }
         public static AuthorizeNet.APICore.customerAddressType MapAddressTypeToCustomerAddressType(this IAddressType request)
@@ -109,6 +103,74 @@ namespace Common.Services.Payment.Gateways.AuthNet.helpers
             return result;
             
         }
-       
+        public static AuthorizeNet.APICore.creditCardType MapIPaymentCardDataToCreditCardType(this IPaymentCardData request)
+        {
+            var result = new AuthorizeNet.APICore.creditCardType();
+            result.cardCode = request.SecurityCode;
+            result.cardNumber = request.CardNumber;
+            if(request.ExpirationYear.ToString().Length==2)
+                request.ExpirationYear=2000+request.ExpirationYear;
+
+            result.expirationDate = request.ExpirationYear + "-" + request.ExpirationMonth.ToString().PadLeft(2, '0');
+            return result;
+        }
+        public static AuthorizeNet.APICore.customerType MapCustomerDataToCustomerType(this ICustomerData request)
+        {
+            var result = new AuthorizeNet.APICore.customerType();
+            result.email = request.EmailAddress;
+            result.typeSpecified = false;
+            return result;
+        }
+        public static AuthorizeNet.APICore.nameAndAddressType MapCustomerDataToNameAddressType(this ICustomerData request)
+        {
+            var result = new AuthorizeNet.APICore.nameAndAddressType();
+            result.address = String.Format("{0} {1}", request.Address.AddressLine1, request.Address.AddressLine2);
+            result.city = request.Address.City;
+            result.state = request.Address.State;
+            result.country = request.Address.Country;
+            result.firstName = request.FirstName;
+            result.lastName = request.LastName;
+            result.zip = request.Address.PostalCode;
+            return result;
+        }
+        public static AuthorizeNet.APICore.ARBSubscriptionType MapRecurringPaymentDataToSubscription(this IRecurringPaymentData request)
+        {
+            var result = new AuthorizeNet.APICore.ARBSubscriptionType();
+            var paymentScheduleType = new AuthorizeNet.APICore.paymentScheduleType();
+            var paymentScheduleTypeInterval = new AuthorizeNet.APICore.paymentScheduleTypeInterval();
+            paymentScheduleTypeInterval.length = (short)request.Intervals;
+            paymentScheduleTypeInterval.unit = request.RecurringPaymentInterval == RecurringPaymentIntervals.Days ? AuthorizeNet.APICore.ARBSubscriptionUnitEnum.days : AuthorizeNet.APICore.ARBSubscriptionUnitEnum.months;
+                   
+            paymentScheduleType.interval = paymentScheduleTypeInterval;
+            paymentScheduleType.startDateSpecified = request.StartDate.HasValue;
+            if (request.StartDate.HasValue)
+                paymentScheduleType.startDate = request.StartDate.Value;
+            //Defaults to 9999 no end
+            paymentScheduleType.totalOccurrences = 9999;
+            paymentScheduleType.totalOccurrencesSpecified = true;
+            if(request.Intervals.HasValue)
+                paymentScheduleType.totalOccurrences= (short)request.Intervals.Value;
+            paymentScheduleType.trialOccurrencesSpecified = request.TrialIntervals.HasValue;
+            if (request.TrialIntervals.HasValue)
+            {
+                paymentScheduleType.trialOccurrences = (short)request.TrialIntervals;
+                result.trialAmountSpecified = request.TrialIntervalPrice.HasValue;
+                if (request.TrialIntervalPrice.HasValue)
+                    result.trialAmount = request.TrialIntervalPrice.Value;
+            }
+            result.paymentSchedule = paymentScheduleType;
+            result.payment = new AuthorizeNet.APICore.paymentType();
+            result.payment.Item = request.CardData.MapIPaymentCardDataToCreditCardType();
+            result.customer = request.Customer.MapCustomerDataToCustomerType();
+            result.billTo = request.Customer.MapCustomerDataToNameAddressType();
+            result.amountSpecified = request.Transaction.Amount > 0;
+            if (request.Transaction.Amount>0)
+                result.amount = request.Transaction.Amount;
+
+            return result;
+            
+
+            
+        }
     }
 }

@@ -65,6 +65,7 @@
     <Compile Include="IPaymentService.cs" />
     <Compile Include="IGatewayProfile.cs" />
     <Compile Include="IProfileCreditCardGateway.cs" />
+    <Compile Include="IRecurringPaymentData.cs" />
     <Compile Include="IResponseMessage.cs" />
     <Compile Include="ITransactionData.cs" />
     <Compile Include="ITransactionMessage.cs" />

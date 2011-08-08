@@ -29,6 +29,7 @@ namespace Common.Services.Payment.Gateways.AuthNet.helpers
                 _MerchantAuthenticationType = value;
             }
         }
+
         #region CIM
         public long CreateCustomerProfile(string email, string description,out AuthorizeNet.APICore.messagesType messages)
         {
@@ -107,6 +108,7 @@ namespace Common.Services.Payment.Gateways.AuthNet.helpers
             };
         }
         #endregion
+
         #region ARB
         public AuthorizeNet.APICore.ARBCreateSubscriptionResponse CreateARBSubscription(AuthorizeNet.APICore.ARBSubscriptionType subscription)
         {

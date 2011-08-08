@@ -119,6 +119,7 @@
     <Compile Include="PaymentGatewaySettings.cs" />
     <Compile Include="PaymentRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecurringPaymentData.cs" />
     <Compile Include="Service References\PayPal\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
