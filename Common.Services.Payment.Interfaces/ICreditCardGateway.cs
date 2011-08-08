@@ -22,6 +22,7 @@ namespace Common.Services.Payment.Interfaces
         bool SupportsRefund { get; }
         bool SupportsVoid { get; }
         bool SupportsProfile { get;}
+        bool SupportsRecurring { get; }
         // These methods do the real work of communicating with 
         // outside services based on the 
         bool Authorize(IPaymentData data);

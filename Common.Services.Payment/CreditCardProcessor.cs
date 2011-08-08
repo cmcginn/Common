@@ -15,6 +15,21 @@ namespace Common.Services.Payment
             set { _CurrentProcessor = value; }
         }
 
+        public override bool SupportsRecurring
+        {
+            get 
+            {
+                if (_CurrentProcessor != null)
+                {
+                    return _CurrentProcessor.SupportsRecurring;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
         public override string GatewayName
         {
             get

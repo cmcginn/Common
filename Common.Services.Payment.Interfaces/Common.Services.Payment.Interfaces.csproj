@@ -67,6 +67,7 @@
     <Compile Include="IProfileCreditCardGateway.cs" />
     <Compile Include="IRecurringPaymentData.cs" />
     <Compile Include="IResponseMessage.cs" />
+    <Compile Include="ISubscriptionCreditCardGateway.cs" />
     <Compile Include="ITransactionData.cs" />
     <Compile Include="ITransactionMessage.cs" />
     <Compile Include="PaymentCardType.cs" />

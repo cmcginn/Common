@@ -131,7 +131,10 @@ namespace Common.Services.Payment.Gateways
         {
             get { return true; }
         }
-
+        public override bool SupportsRecurring
+        {
+            get { return false; }
+        }
         public override bool SupportsCharge
         {
             get { return true; }

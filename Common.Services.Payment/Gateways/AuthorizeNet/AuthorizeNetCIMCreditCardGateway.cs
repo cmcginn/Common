@@ -9,7 +9,7 @@ using Common.Services.Payment.Gateways.AuthNet.helpers;
 
 namespace Common.Services.Payment.Gateways.AuthNet
 {
-    public class AuthorizeNetCIMCreditCardGateway : BaseProfileCreditCardGateway
+    public class AuthorizeNetCIMCreditCardGateway : BaseProfileCreditCardGateway,ISubscriptionCreditCardGateway
     {
         #region public interface
         public const string GATEWAY_ID_STRING = "7107FFA1-D376-422E-9DF5-A15DD6909E9C";
@@ -22,7 +22,10 @@ namespace Common.Services.Payment.Gateways.AuthNet
         {
             get { return GATEWAY_NAME; }
         }
-
+        public override bool SupportsRecurring
+        {
+            get { return true; }
+        }
         public override bool SupportsAuthorize
         {
             get { return true; }
@@ -47,7 +50,7 @@ namespace Common.Services.Payment.Gateways.AuthNet
         {
             get { return true; }
         }
-
+        
         public override bool Authorize(IPaymentData data)
         {
             //Pre Conditions
@@ -146,6 +149,51 @@ namespace Common.Services.Payment.Gateways.AuthNet
 
         }
 
+        public bool CreateSubscription(IRecurringPaymentData data)
+        {
+            //Pre Conditions
+            Contract.Requires(data.Customer != null, "Customer required");
+            Contract.Requires(data.CardData != null, "CardData Required");
+            Contract.Requires(data.CardData.BillingAddress != null, "CardData billing address required");
+            Contract.Requires(!String.IsNullOrWhiteSpace(data.CardData.BillingAddress.AddressLine1), "CardData Street Address Required");
+            Contract.Requires(!String.IsNullOrWhiteSpace(data.CardData.BillingAddress.City), "CardData City Required");
+            Contract.Requires(!String.IsNullOrWhiteSpace(data.CardData.BillingAddress.Country), "CardData country required");
+            Contract.Requires(!String.IsNullOrWhiteSpace(data.CardData.BillingAddress.PostalCode), "CardData postal code required");
+            Contract.Requires(!String.IsNullOrWhiteSpace(data.CardData.CardNumber), "CardData cardnumber required");
+            Contract.Requires(data.CardData.ExpirationMonth > 0, "CardData expiration month required");
+            Contract.Requires(data.CardData.ExpirationYear >= System.DateTime.Now.Year, "CardData expiration year must be greater than or equal current year.");
+            Contract.Requires(!String.IsNullOrWhiteSpace(data.CardData.CardHolderName), "CardData carholder name required");
+            Contract.Requires(!String.IsNullOrWhiteSpace(data.Customer.FirstName), "PaymentData first name required");
+            Contract.Requires(!String.IsNullOrWhiteSpace(data.Customer.LastName), "PaymentData last name required");
+            Contract.Requires(!String.IsNullOrWhiteSpace(data.CardData.CardHolderFirstName), "PaymentData cardholder first name required");
+            Contract.Requires(!String.IsNullOrWhiteSpace(data.CardData.CardHolderLastName), "PaymentData cardholder last name required");
+            Contract.Requires(data.Transaction != null, "PaymentData transaction required");
+            Contract.Requires(data.Transaction.Amount > 0, "PaymentData transaction amount must be greater than zero");
+            //Post Conditions
+            Contract.Ensures(data.Transaction.TransactionMessages.Count > 0, "A critical error was encountered left control of CreateSubscription without assigning  transaction result messages");
+
+            var result = false;
+            var subscription = data.MapRecurringPaymentDataToSubscription();
+            var response = GatewayHelper.CreateARBSubscription(subscription);
+            data.Transaction.TransactionMessages.AddRange(GetTransactionMessage(response.messages, "ARBCreateSubscriptionResponse"));
+            return response.messages.resultCode == AuthorizeNet.APICore.messageTypeEnum.Ok;
+        
+        }
+
+        public bool UpdateSubscription(IRecurringPaymentData paymentData)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool GetSubscriptionStatus(IRecurringPaymentData paymentData)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool CancelSubscription(IRecurringPaymentData paymentData)
+        {
+            throw new NotImplementedException();
+        }
         #endregion
 
         #region Class Memebers
@@ -225,5 +273,7 @@ namespace Common.Services.Payment.Gateways.AuthNet
             return result;
         }
         #endregion
+
+        
     }
 }

@@ -112,8 +112,7 @@ namespace Common.Services.Payment.Gateways.AuthNet.helpers
         #region ARB
         public AuthorizeNet.APICore.ARBCreateSubscriptionResponse CreateARBSubscription(AuthorizeNet.APICore.ARBSubscriptionType subscription)
         {
-            AuthorizeNet.APICore.ARBCreateSubscriptionRequest req = new AuthorizeNet.APICore.ARBCreateSubscriptionRequest();
-            req.merchantAuthentication = MerchantAuthenticationType;
+            AuthorizeNet.APICore.ARBCreateSubscriptionRequest req = new AuthorizeNet.APICore.ARBCreateSubscriptionRequest();            
             req.subscription = subscription;
             AuthorizeNet.HttpXmlUtility util = new AuthorizeNet.HttpXmlUtility(ServiceMode, MerchantAuthenticationType.name, MerchantAuthenticationType.transactionKey);
             return (AuthorizeNet.APICore.ARBCreateSubscriptionResponse)util.Send(req);

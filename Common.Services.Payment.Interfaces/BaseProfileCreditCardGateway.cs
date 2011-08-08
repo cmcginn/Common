@@ -11,7 +11,7 @@ namespace Common.Services.Payment.Interfaces
         public override bool SupportsProfile
         {
             get { return true; }
-        }
+        }        
         public abstract IGatewayProfile GetCustomerProfile(string id);
         
     }
