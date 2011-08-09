@@ -2,12 +2,17 @@
 using System.Collections.Generic;
 using System.Text;
 using Common.Services.Payment.Interfaces;
-
+using System.Runtime.Serialization;
+using Common.Utils.Extensions;
+using System.Xml;
+using System.Xml.Schema;
+using System.Xml.Serialization;
 namespace Common.Services.Payment
 {
     /// <summary>
     /// Holds all transactional data needed to perform actions and return results
     /// </summary>
+    [DataContract]
     public class PaymentData : IPaymentData
     {
         
@@ -18,22 +23,23 @@ namespace Common.Services.Payment
         
 
         public string Id { get; set; }
+        [DataMember]        
         public IPaymentCardData CardData
         {
             get { return _CardData; }
             set { _CardData = value; }
         }
+        [DataMember]
         public ICustomerData Customer
         {
             get { return _Customer; }
             set { _Customer = value; }
-        }        
+        }
+        [DataMember]  
         public ITransactionData Transaction
         {
             get { return _Transaction; }
             set { _Transaction = value; }
         }
-        
-
     }
 }

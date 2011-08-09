@@ -7,11 +7,27 @@ using System.Xml.Serialization;
 using System.Xml.Schema;
 using System.Xml.Linq;
 using System.IO;
-
+using System.Runtime.Serialization;
 namespace Common.Utils.Extensions
 {
     public static class XmlExtensions
     {
+        public static XElement SerializeDataContract(this object target)
+        {
+            var settings = new System.Xml.XmlWriterSettings();
+            settings.Indent = true;
+            settings.OmitXmlDeclaration = true;
+
+            var sb = new System.Text.StringBuilder();
+            using (var writer = System.Xml.XmlWriter.Create(sb, settings))
+            {
+                var serializer = new System.Runtime.Serialization.DataContractSerializer(target.GetType());
+                serializer.WriteObject(writer, target);
+                writer.Flush();
+            }
+
+            return XElement.Parse(sb.ToString());
+        }
         public static XElement Serialize(this object target)
         {
             {

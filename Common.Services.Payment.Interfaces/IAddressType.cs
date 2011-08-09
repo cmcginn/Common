@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.ComponentModel.DataAnnotations;
+using System.Xml.Serialization;
 namespace Common.Services.Payment.Interfaces
 {
     public interface IAddressType

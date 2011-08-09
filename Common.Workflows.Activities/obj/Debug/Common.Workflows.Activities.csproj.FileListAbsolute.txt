@@ -79,6 +79,3 @@ C:\Projects\Urbana\Common\Common.Workflows.Activities\obj\Debug\Common.Workflows
 C:\Projects\Urbana\Common\Common.Workflows.Activities\obj\Debug\Common.Workflows.Activities.rewritten
 C:\Projects\Urbana\Common\Common.Workflows.Activities\obj\Debug\Common.Workflows.Activities.dll
 C:\Projects\Urbana\Common\Common.Workflows.Activities\obj\Debug\Common.Workflows.Activities.pdb
-C:\Projects\Urbana\Common\Common.Workflows.Activities\obj\Debug\InProcessTempFiles\ExtractZipArchive.g.cs
-C:\Projects\Urbana\Common\Common.Workflows.Activities\obj\Debug\InProcessTempFiles\ExtractZipArchive.g.xaml
-C:\Projects\Urbana\Common\Common.Workflows.Activities\obj\Debug\InProcessTempFiles\_Common.Workflows.Activities.g.cs

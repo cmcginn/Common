@@ -120,6 +120,7 @@
     <Compile Include="PaymentRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecurringPaymentData.cs" />
+    <Compile Include="SerializationHelper.cs" />
     <Compile Include="Service References\PayPal\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -137,6 +138,10 @@
     <ProjectReference Include="..\Common.Types\Common.Types.csproj">
       <Project>{1AE66EE4-2725-4D5E-9609-E32FA2FF9451}</Project>
       <Name>Common.Types</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common.Utils\Common.Utils.csproj">
+      <Project>{AA3BB369-7C8C-400F-8920-319B594836B1}</Project>
+      <Name>Common.Utils</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

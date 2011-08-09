@@ -25,3 +25,5 @@ C:\Projects\Urbana\Common\Common.Services.Payment\obj\Debug\ResolveAssemblyRefer
 C:\Projects\Urbana\Common\Common.Services.Payment\obj\Debug\Common.Services.Payment.rewritten
 C:\Projects\Urbana\Common\Common.Services.Payment\obj\Debug\Common.Services.Payment.dll
 C:\Projects\Urbana\Common\Common.Services.Payment\obj\Debug\Common.Services.Payment.pdb
+C:\Projects\Urbana\Common\Common.Services.Payment\bin\Debug\Common.Utils.dll
+C:\Projects\Urbana\Common\Common.Services.Payment\bin\Debug\Common.Utils.pdb

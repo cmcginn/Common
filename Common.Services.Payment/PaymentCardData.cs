@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 using Common.Services.Payment.Interfaces;
-
+using System.Runtime.Serialization;
 namespace Common.Services.Payment
 {
-
+    [DataContract]
+    [KnownType(typeof(PaymentCardData))]
     public class PaymentCardData : IPaymentCardData
     {
         private int _ExpirationMonth = 1;
@@ -35,16 +36,19 @@ namespace Common.Services.Payment
             get { return _CardNumber; }
             set { _CardNumber = value; }
         }
+        [DataMember]
         public string MaskedCardNumber
         {
             get { return _MaskedCardNumber; }
             set { _MaskedCardNumber = value; }
         }
+        [DataMember]
         public string SecurityCode
         {
             get { return _SecurityCode; }
             set { _SecurityCode = value; }
         }
+        [DataMember]
         public string CardHolderName
         {
             get 
@@ -55,6 +59,7 @@ namespace Common.Services.Payment
             }
             set { _CardHolderName = value; }
         }
+        [DataMember]
         public string CardHolderFirstName
         {
             get
@@ -66,6 +71,7 @@ namespace Common.Services.Payment
                 _CardHolderFirstName = value;
             }
         }
+        [DataMember]
         public string CardHolderLastName
         {
             get
@@ -77,6 +83,7 @@ namespace Common.Services.Payment
                 _CardHolderLastName = value;
             }
         }
+        [DataMember]
         public PaymentCardType CardType
         {
             get { return _CardType; }
