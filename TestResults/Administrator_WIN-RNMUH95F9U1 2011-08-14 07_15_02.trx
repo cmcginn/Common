@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="058db3cd-dee3-4660-9631-dbea27c25d30" name="Administrator@WIN-RNMUH95F9U1 2011-08-14 07:15:02" runUser="WIN-RNMUH95F9U1\Administrator" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="1ddb4cbd-2c91-4264-b717-275efc45f586">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment runDeploymentRoot="Administrator_WIN-RNMUH95F9U1 2011-08-14 07_15_02">
+      <DeploymentItem filename="Common.Services.Fax\bin\Debug\Common.Services.Fax.dll" />
+      <DeploymentItem filename="Common.Services.Fax.Interfaces\Validation\FaxRequestType\PreProcess\FaxValidation.xsd" />
+      <DeploymentItem filename="C:\Projects\Urbana\Common\Common.Services.Payment.Interfaces\bin\Debug\Common.Services.Payment.Interfaces.dll" />
+      <DeploymentItem filename="C:\Projects\Urbana\Common\Common.Testing\bin\Debug\Common.Testing.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft Enterprise Library 5.0\Bin\Microsoft.Practices.EnterpriseLibrary.Logging.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft Unity Application Block 2.0\Bin\Microsoft.Practices.Unity.Interception.Configuration.dll" />
+      <DeploymentItem filename="Common.Workflows.Activities.Tests\Resources\" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft Enterprise Library 5.0\Bin\Microsoft.Practices.EnterpriseLibrary.PolicyInjection.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft Unity Application Block 2.0\Bin\Microsoft.Practices.Unity.Configuration.dll" />
+      <DeploymentItem filename="C:\Projects\Urbana\Common\Common.Services.Payment\bin\Debug\Common.Services.Payment.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft Unity Application Block 2.0\Bin\Microsoft.Practices.Unity.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft Unity Application Block 2.0\Bin\Microsoft.Practices.ServiceLocation.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft Unity Application Block 2.0\Bin\Microsoft.Practices.Unity.Interception.dll" />
+      <DeploymentItem filename="Common.Services.Fax.Interfaces\Validation\FaxRequestType\PreProcess\FaxValidation2.xsd" />
+      <DeploymentItem filename="Common.Services.Fax.Interfaces\Validation\FaxRequestType\" />
+      <DeploymentItem filename="C:\Projects\Urbana\Common\Common.Utils\bin\Debug\Common.Utils.dll" />
+      <DeploymentItem filename="Common.IO.Tests\Resources\" />
+      <DeploymentItem filename="Common.Workflows.Activities.Tests\Resources\Placeholder.txt" />
+      <DeploymentItem filename="Common.Services.Fax.Interfaces\Validation\FaxRequestType\PreProcess\FaxValidation1.xsd" />
+      <DeploymentItem filename="Common.Services.Fax.Interfaces\Validation\FaxRequestType\PreProcess\" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft Enterprise Library 5.0\Bin\Microsoft.Practices.EnterpriseLibrary.Common.dll" />
+      <DeploymentItem filename="C:\Projects\Urbana\Common\Common.Types\bin\Debug\Common.Types.dll" />
+      <DeploymentItem filename="Common.Services.Payment.Tests\Resources\" />
+      <DeploymentItem filename="Common.Services.Fax.Tests\TestResources\" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific>
+        <UnitTestRunConfig testTypeId="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b">
+          <AssemblyResolution>
+            <TestDirectory useLoadContext="true" />
+          </AssemblyResolution>
+        </UnitTestRunConfig>
+        <WebTestRunConfiguration testTypeId="4e7599fa-5ecb-43e9-a887-cd63cf72d207">
+          <Browser name="Internet Explorer 7.0">
+            <Headers>
+              <Header name="User-Agent" value="Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)" />
+              <Header name="Accept" value="*/*" />
+              <Header name="Accept-Language" value="{{$IEAcceptLanguage}}" />
+              <Header name="Accept-Encoding" value="GZIP" />
+            </Headers>
+          </Browser>
+        </WebTestRunConfiguration>
+      </TestTypeSpecific>
+      <AgentRule name="LocalMachineDefaultRole">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-08-14T07:15:02.2898281-04:00" queuing="2011-08-14T07:15:03.4089687-04:00" start="2011-08-14T07:15:03.4245937-04:00" finish="2011-08-14T07:15:12.7361171-04:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="8" executed="8" passed="6" error="0" failed="2" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="WIN-RNMUH95F9U1" outcome="Warning" timestamp="2011-08-14T07:15:03.3835781-04:00">
+        <Text>Warning: conflict during test run deployment: deployment item 'Common.IO.Tests\Resources\' specified by the test settings cannot be deployed to 'Placeholder.txt' because otherwise the file 'C:\Projects\Urbana\Common\Common.IO.Tests\Resources\Placeholder.txt' would overwrite deployment item 'Common.Workflows.Activities.Tests\Resources\' specified by the test settings.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="AuthorizeTest_WhenDuplicate_CheckResponseStillOk" storage="c:\projects\urbana\common\common.services.payment.tests\bin\debug\common.services.payment.tests.dll" id="e2d077a5-2dbb-f972-5303-f04d4c874234">
+      <Execution id="9a7d6906-da69-495a-ba9a-41cb04b26aa1" />
+      <TestMethod codeBase="C:/Projects/Urbana/Common/Common.Services.Payment.Tests/bin/Debug/Common.Services.Payment.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Common.Services.Payment.Tests.Gateways.AuthorizeNet.AuthorizeNetCIMCreditCardGatewayTest, Common.Services.Payment.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="AuthorizeTest_WhenDuplicate_CheckResponseStillOk" />
+    </UnitTest>
+    <UnitTest name="GetCustomerProfileTest_WhenProfileExists_AssertProfileIdsMatch" storage="c:\projects\urbana\common\common.services.payment.tests\bin\debug\common.services.payment.tests.dll" id="2632879d-831e-a597-cc1f-72206b206ef7">
+      <Execution id="a18653c1-7748-4bd7-8c28-ff18d7f658f8" />
+      <TestMethod codeBase="C:/Projects/Urbana/Common/Common.Services.Payment.Tests/bin/Debug/Common.Services.Payment.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Common.Services.Payment.Tests.Gateways.AuthorizeNet.AuthorizeNetCIMCreditCardGatewayTest, Common.Services.Payment.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetCustomerProfileTest_WhenProfileExists_AssertProfileIdsMatch" />
+    </UnitTest>
+    <UnitTest name="AuthorizeTest_WhenValidData_CheckResultIsTrue" storage="c:\projects\urbana\common\common.services.payment.tests\bin\debug\common.services.payment.tests.dll" id="84e670af-5682-ef51-3af4-74679c65ea20">
+      <Execution id="19393a02-b4ca-4f31-8f03-c3cdc30f66fa" />
+      <TestMethod codeBase="C:/Projects/Urbana/Common/Common.Services.Payment.Tests/bin/Debug/Common.Services.Payment.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Common.Services.Payment.Tests.Gateways.AuthorizeNet.AuthorizeNetCIMCreditCardGatewayTest, Common.Services.Payment.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="AuthorizeTest_WhenValidData_CheckResultIsTrue" />
+    </UnitTest>
+    <UnitTest name="AuthorizeTest_WhenValidData_CheckTransactionResultMessageCountGreaterThanZero" storage="c:\projects\urbana\common\common.services.payment.tests\bin\debug\common.services.payment.tests.dll" id="72288aec-fdbb-3487-dd83-73610742294c">
+      <Execution id="f38cc463-cc69-46f8-9e51-81186e32509d" />
+      <TestMethod codeBase="C:/Projects/Urbana/Common/Common.Services.Payment.Tests/bin/Debug/Common.Services.Payment.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Common.Services.Payment.Tests.Gateways.AuthorizeNet.AuthorizeNetCIMCreditCardGatewayTest, Common.Services.Payment.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="AuthorizeTest_WhenValidData_CheckTransactionResultMessageCountGreaterThanZero" />
+    </UnitTest>
+    <UnitTest name="CreateProfileTest_AssertProfileResponseLengthGreaterThanZero" storage="c:\projects\urbana\common\common.services.payment.tests\bin\debug\common.services.payment.tests.dll" id="0705ff9e-52f3-1ce2-5315-c676fb913c0d">
+      <Execution id="5c4bc712-90f3-45fc-9dc3-3f9c696a99ea" />
+      <TestMethod codeBase="C:/Projects/Urbana/Common/Common.Services.Payment.Tests/bin/Debug/Common.Services.Payment.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Common.Services.Payment.Tests.Gateways.AuthorizeNet.AuthorizeNetCIMCreditCardGatewayTest, Common.Services.Payment.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="CreateProfileTest_AssertProfileResponseLengthGreaterThanZero" />
+    </UnitTest>
+    <UnitTest name="RefundTest_WhenUsingRefundableTransaction_CheckTransactionResultMessageCountGreaterThanZero" storage="c:\projects\urbana\common\common.services.payment.tests\bin\debug\common.services.payment.tests.dll" id="1c274027-6d36-9fe3-5fb4-dd8ea95aa78a">
+      <Execution id="5aa9a460-d738-4d98-8b5d-140e5ae77acf" />
+      <TestMethod codeBase="C:/Projects/Urbana/Common/Common.Services.Payment.Tests/bin/Debug/Common.Services.Payment.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Common.Services.Payment.Tests.Gateways.AuthorizeNet.AuthorizeNetCIMCreditCardGatewayTest, Common.Services.Payment.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="RefundTest_WhenUsingRefundableTransaction_CheckTransactionResultMessageCountGreaterThanZero" />
+    </UnitTest>
+    <UnitTest name="RefundTest_WhenUsingRefundableTransaction_CheckResponseOk" storage="c:\projects\urbana\common\common.services.payment.tests\bin\debug\common.services.payment.tests.dll" id="c5663ff6-aea7-8a4a-097c-b53a5fd1037b">
+      <Execution id="3641adab-d4ac-41e6-98ed-32dadd928c42" />
+      <TestMethod codeBase="C:/Projects/Urbana/Common/Common.Services.Payment.Tests/bin/Debug/Common.Services.Payment.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Common.Services.Payment.Tests.Gateways.AuthorizeNet.AuthorizeNetCIMCreditCardGatewayTest, Common.Services.Payment.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="RefundTest_WhenUsingRefundableTransaction_CheckResponseOk" />
+    </UnitTest>
+    <UnitTest name="CreateSubscriptionTest_WhenValidData_CheckResultIsTrue" storage="c:\projects\urbana\common\common.services.payment.tests\bin\debug\common.services.payment.tests.dll" id="927df642-1e60-9e51-ec4b-7178b466f970">
+      <Execution id="4aeac129-542a-4d5e-9b94-994d99bc5e0d" />
+      <TestMethod codeBase="C:/Projects/Urbana/Common/Common.Services.Payment.Tests/bin/Debug/Common.Services.Payment.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Common.Services.Payment.Tests.Gateways.AuthorizeNet.AuthorizeNetCIMCreditCardGatewayTest, Common.Services.Payment.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="CreateSubscriptionTest_WhenValidData_CheckResultIsTrue" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="0705ff9e-52f3-1ce2-5315-c676fb913c0d" executionId="5c4bc712-90f3-45fc-9dc3-3f9c696a99ea" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1c274027-6d36-9fe3-5fb4-dd8ea95aa78a" executionId="5aa9a460-d738-4d98-8b5d-140e5ae77acf" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2632879d-831e-a597-cc1f-72206b206ef7" executionId="a18653c1-7748-4bd7-8c28-ff18d7f658f8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="72288aec-fdbb-3487-dd83-73610742294c" executionId="f38cc463-cc69-46f8-9e51-81186e32509d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="84e670af-5682-ef51-3af4-74679c65ea20" executionId="19393a02-b4ca-4f31-8f03-c3cdc30f66fa" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="927df642-1e60-9e51-ec4b-7178b466f970" executionId="4aeac129-542a-4d5e-9b94-994d99bc5e0d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c5663ff6-aea7-8a4a-097c-b53a5fd1037b" executionId="3641adab-d4ac-41e6-98ed-32dadd928c42" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e2d077a5-2dbb-f972-5303-f04d4c874234" executionId="9a7d6906-da69-495a-ba9a-41cb04b26aa1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="5c4bc712-90f3-45fc-9dc3-3f9c696a99ea" testId="0705ff9e-52f3-1ce2-5315-c676fb913c0d" testName="CreateProfileTest_AssertProfileResponseLengthGreaterThanZero" computerName="WIN-RNMUH95F9U1" duration="00:00:01.6756171" startTime="2011-08-14T07:15:03.4275234-04:00" endTime="2011-08-14T07:15:05.5740078-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5c4bc712-90f3-45fc-9dc3-3f9c696a99ea">
+    </UnitTestResult>
+    <UnitTestResult executionId="5aa9a460-d738-4d98-8b5d-140e5ae77acf" testId="1c274027-6d36-9fe3-5fb4-dd8ea95aa78a" testName="RefundTest_WhenUsingRefundableTransaction_CheckTransactionResultMessageCountGreaterThanZero" computerName="WIN-RNMUH95F9U1" duration="00:00:00.0450322" startTime="2011-08-14T07:15:05.5749843-04:00" endTime="2011-08-14T07:15:05.6247890-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5aa9a460-d738-4d98-8b5d-140e5ae77acf">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method Common.Services.Payment.Tests.Gateways.AuthorizeNet.AuthorizeNetCIMCreditCardGatewayTest.RefundTest_WhenUsingRefundableTransaction_CheckTransactionResultMessageCountGreaterThanZero threw exception: 
+System.Diagnostics.Contracts.__ContractsRuntime+ContractException: Precondition failed: !String.IsNullOrWhiteSpace(data.Transaction.PreviousTransactionReferenceNumber)  A refund requires a previous transaction number</Message>
+          <StackTrace>    at System.Diagnostics.Contracts.__ContractsRuntime.TriggerFailure(ContractFailureKind kind, String msg, String userMessage, String conditionTxt, Exception inner) in :line 0
+   at System.Diagnostics.Contracts.__ContractsRuntime.ReportFailure(ContractFailureKind kind, String msg, String conditionTxt, Exception inner) in :line 0
+   at System.Diagnostics.Contracts.__ContractsRuntime.Requires(Boolean condition, String msg, String conditionTxt) in :line 0
+   at Common.Services.Payment.Gateways.AuthNet.AuthorizeNetCIMCreditCardGateway.Refund(IPaymentData data) in C:\Projects\Urbana\Common\Common.Services.Payment\Gateways\AuthorizeNet\AuthorizeNetCIMCreditCardGateway.cs:line 108
+   at Common.Services.Payment.Tests.Gateways.AuthorizeNet.AuthorizeNetCIMCreditCardGatewayTest.RefundTest_WhenUsingRefundableTransaction_CheckTransactionResultMessageCountGreaterThanZero() in C:\Projects\Urbana\Common\Common.Services.Payment.Tests\Gateways\AuthorizeNet\AuthorizeNetCIMCreditCardGatewayTest.cs:line 246
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="a18653c1-7748-4bd7-8c28-ff18d7f658f8" testId="2632879d-831e-a597-cc1f-72206b206ef7" testName="GetCustomerProfileTest_WhenProfileExists_AssertProfileIdsMatch" computerName="WIN-RNMUH95F9U1" duration="00:00:00.6892971" startTime="2011-08-14T07:15:05.6267421-04:00" endTime="2011-08-14T07:15:06.3201015-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a18653c1-7748-4bd7-8c28-ff18d7f658f8">
+    </UnitTestResult>
+    <UnitTestResult executionId="f38cc463-cc69-46f8-9e51-81186e32509d" testId="72288aec-fdbb-3487-dd83-73610742294c" testName="AuthorizeTest_WhenValidData_CheckTransactionResultMessageCountGreaterThanZero" computerName="WIN-RNMUH95F9U1" duration="00:00:02.3042604" startTime="2011-08-14T07:15:06.3279140-04:00" endTime="2011-08-14T07:15:08.6365078-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f38cc463-cc69-46f8-9e51-81186e32509d">
+    </UnitTestResult>
+    <UnitTestResult executionId="19393a02-b4ca-4f31-8f03-c3cdc30f66fa" testId="84e670af-5682-ef51-3af4-74679c65ea20" testName="AuthorizeTest_WhenValidData_CheckResultIsTrue" computerName="WIN-RNMUH95F9U1" duration="00:00:01.2722041" startTime="2011-08-14T07:15:08.6374843-04:00" endTime="2011-08-14T07:15:09.9148281-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="19393a02-b4ca-4f31-8f03-c3cdc30f66fa">
+    </UnitTestResult>
+    <UnitTestResult executionId="4aeac129-542a-4d5e-9b94-994d99bc5e0d" testId="927df642-1e60-9e51-ec4b-7178b466f970" testName="CreateSubscriptionTest_WhenValidData_CheckResultIsTrue" computerName="WIN-RNMUH95F9U1" duration="00:00:00.6995210" startTime="2011-08-14T07:15:09.9245937-04:00" endTime="2011-08-14T07:15:10.6286953-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4aeac129-542a-4d5e-9b94-994d99bc5e0d">
+    </UnitTestResult>
+    <UnitTestResult executionId="3641adab-d4ac-41e6-98ed-32dadd928c42" testId="c5663ff6-aea7-8a4a-097c-b53a5fd1037b" testName="RefundTest_WhenUsingRefundableTransaction_CheckResponseOk" computerName="WIN-RNMUH95F9U1" duration="00:00:00.0027520" startTime="2011-08-14T07:15:10.6296718-04:00" endTime="2011-08-14T07:15:10.6374843-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3641adab-d4ac-41e6-98ed-32dadd928c42">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method Common.Services.Payment.Tests.Gateways.AuthorizeNet.AuthorizeNetCIMCreditCardGatewayTest.RefundTest_WhenUsingRefundableTransaction_CheckResponseOk threw exception: 
+System.Diagnostics.Contracts.__ContractsRuntime+ContractException: Precondition failed: !String.IsNullOrWhiteSpace(data.Transaction.PreviousTransactionReferenceNumber)  A refund requires a previous transaction number</Message>
+          <StackTrace>    at System.Diagnostics.Contracts.__ContractsRuntime.TriggerFailure(ContractFailureKind kind, String msg, String userMessage, String conditionTxt, Exception inner) in :line 0
+   at System.Diagnostics.Contracts.__ContractsRuntime.ReportFailure(ContractFailureKind kind, String msg, String conditionTxt, Exception inner) in :line 0
+   at System.Diagnostics.Contracts.__ContractsRuntime.Requires(Boolean condition, String msg, String conditionTxt) in :line 0
+   at Common.Services.Payment.Gateways.AuthNet.AuthorizeNetCIMCreditCardGateway.Refund(IPaymentData data) in C:\Projects\Urbana\Common\Common.Services.Payment\Gateways\AuthorizeNet\AuthorizeNetCIMCreditCardGateway.cs:line 108
+   at Common.Services.Payment.Tests.Gateways.AuthorizeNet.AuthorizeNetCIMCreditCardGatewayTest.RefundTest_WhenUsingRefundableTransaction_CheckResponseOk() in C:\Projects\Urbana\Common\Common.Services.Payment.Tests\Gateways\AuthorizeNet\AuthorizeNetCIMCreditCardGatewayTest.cs:line 224
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="9a7d6906-da69-495a-ba9a-41cb04b26aa1" testId="e2d077a5-2dbb-f972-5303-f04d4c874234" testName="AuthorizeTest_WhenDuplicate_CheckResponseStillOk" computerName="WIN-RNMUH95F9U1" duration="00:00:02.0453278" startTime="2011-08-14T07:15:10.6384609-04:00" endTime="2011-08-14T07:15:12.6882656-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9a7d6906-da69-495a-ba9a-41cb04b26aa1">
+    </UnitTestResult>
+  </Results>
+</TestRun>

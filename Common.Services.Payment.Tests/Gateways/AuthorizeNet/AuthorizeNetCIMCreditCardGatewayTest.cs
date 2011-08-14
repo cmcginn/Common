@@ -92,7 +92,7 @@ namespace Common.Services.Payment.Tests.Gateways.AuthorizeNet
             result.Customer.LastName = "Cardholder";
             result.Customer.EmailAddress = Guid.NewGuid().ToString().Replace("-",String.Empty) + "@sxddasdasddonotresolve.com";
             result.Transaction = new TransactionData();
-            result.Transaction.Amount = (decimal)0.01;
+            result.Transaction.Amount = ( new System.Random().Next( 100, 1000 ) * ( decimal )0.001 );
             result.Transaction.PreviousTransactionReferenceNumber = "0";
             result.CardData.CardHolderFirstName = "Test";
             result.CardData.CardHolderLastName = "Cardholder";
@@ -149,7 +149,7 @@ namespace Common.Services.Payment.Tests.Gateways.AuthorizeNet
             result.Transaction.PreviousTransactionReferenceNumber = "2161773175";
             result.Customer = _Container.GetNewCustomerData();
             result.Transaction = _Container.GetNewTransactionData();
-            result.Transaction.Amount = (decimal)0.01;
+            result.Transaction.Amount = ( new System.Random().Next( 100, 1000 ) * ( decimal )0.001 );
             result.Customer.CustomerId = "4255825";
             return result;
         }

@@ -49,12 +49,17 @@ namespace Common.Services.Payment.Gateways.AuthNet.helpers
             }
             catch (System.InvalidOperationException ex)
             {
-                if (ex.Message.Contains(DUPLICATE_PROFILE_MESSAGE))
-                {
-                    
-                    profileId = ex.Message.Replace(DUPLICATE_PROFILE_MESSAGE, String.Empty).Replace(" already exists.", String.Empty);
-                    long.TryParse(profileId, out result);
+              if( ex.Message.Contains( DUPLICATE_PROFILE_MESSAGE ) ) {
+                profileId = ex.Message.Replace( DUPLICATE_PROFILE_MESSAGE, String.Empty ).Replace( " already exists.", String.Empty );
+                long.TryParse( profileId, out result );
+                if( result > 0 ) {
+                  response = new AuthorizeNet.APICore.createCustomerProfileResponse();
+                  response.messages = new messagesType();
+                  response.messages.message = new messagesTypeMessage[1]{new messagesTypeMessage{ code="00000", text="A duplicate profile was found, existing profile will be used"}};
+                  response.messages.resultCode = messageTypeEnum.Ok;
                 }
+              } else
+                throw ( ex );
             }
             messages = response.messages;
             return result;

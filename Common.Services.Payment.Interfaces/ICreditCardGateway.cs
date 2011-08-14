@@ -30,6 +30,7 @@ namespace Common.Services.Payment.Interfaces
         bool Charge(IPaymentData data);
         bool Refund(IPaymentData data);
         bool Void(IPaymentData data);
+        
 
     }
 }

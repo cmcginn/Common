@@ -50,6 +50,8 @@ namespace XamlStaticHelperNamespace {
             System.Collections.Generic.IList<System.Reflection.Assembly> assemblyList = new System.Collections.Generic.List<System.Reflection.Assembly>();
             assemblyList.Add(Load("Common.IO.Interfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"));
             assemblyList.Add(Load("Common.Net.Interfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"));
+            assemblyList.Add(Load("Common.Services.Payment.Interfaces, Version=1.0.0.0, Culture=neutral, PublicKeyTo" +
+                        "ken=null"));
             assemblyList.Add(Load("Microsoft.CSharp, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a" +
                         "3a"));
             assemblyList.Add(Load("Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyT" +
