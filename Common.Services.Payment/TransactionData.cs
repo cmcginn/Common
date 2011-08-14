@@ -5,7 +5,7 @@ using Common.Services.Payment.Interfaces;
 using System.Runtime.Serialization;
 namespace Common.Services.Payment
 {
-    [DataContract]
+    [DataContract( Namespace = "http://Common.Services.Payments" )]
     [KnownType(typeof(TransactionData))]
     public class TransactionData : ITransactionData
     {

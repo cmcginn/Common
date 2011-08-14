@@ -5,7 +5,7 @@ using Common.Services.Payment.Interfaces;
 using System.Runtime.Serialization;
 namespace Common.Services.Payment
 {
-    [DataContract]
+    [DataContract( Namespace = "http://Common.Services.Payments" )]
     [KnownType(typeof(CustomerData))]
     public class CustomerData : ICustomerData
     {
@@ -26,13 +26,7 @@ namespace Common.Services.Payment
         {
             get { return _MerchantId; }
             set { _MerchantId = value; }
-        }
-        [DataMember]
-        public string Company
-        {
-            get { return _Company; }
-            set { _Company = value; }
-        }
+        }       
         [DataMember]
         public string CustomerId
         {

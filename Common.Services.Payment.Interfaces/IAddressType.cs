@@ -18,6 +18,6 @@ namespace Common.Services.Payment.Interfaces
         string FaxNumber { get; set; }
         string PhoneNumber { get; set; }
         string PostalCode { get; set; }
-        string State { get; set; }
+        string StateProvince { get; set; }
     }
 }

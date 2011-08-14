@@ -157,6 +157,24 @@
       <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>PayPalExpress.Designer.cs</LastGenOutput>
     </None>
+    <None Include="Schema\CustomerData.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schema\PaymentCardData.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schema\PaymentData.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schema\PaymentTypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schema\TransactionData.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schema\TransactionMessage.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\PayPal\Common.Services.Payment.PayPal.AddressVerifyResponseType.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

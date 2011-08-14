@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PaymentDataTypes"
+    targetNamespace="http://Common.Services.Payments"
+    elementFormDefault="qualified"
+    xmlns="http://Common.Services.Payments"
+    xmlns:mstns="http://Common.Services.Payments"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <xs:include schemaLocation="PaymentTypes.xsd"/>
+
+  <xs:complexType name="PaymentCardData">
+    <xs:sequence>
+      <xs:element name="CardHolderFirstName" type="xs:string" minOccurs="1" maxOccurs="1"></xs:element>
+      <xs:element name="CardHolderLastName" type="xs:string" minOccurs="1" maxOccurs="1"></xs:element>
+      <xs:element name="CardHolderName" type="xs:string" minOccurs="0" maxOccurs="1"></xs:element>
+      <xs:element name="CardNumber" type="CardNumber" minOccurs="1" maxOccurs="1"></xs:element>
+      <xs:element name="CardType" type="CardType" minOccurs="1" maxOccurs="1"></xs:element>
+      <xs:element name="ExpirationMonth" type="ExpirationMonth" minOccurs="1" maxOccurs="1"></xs:element>
+      <xs:element name="ExpirationYear" type="ExpirationYear" minOccurs="1" maxOccurs="1"></xs:element>
+      <xs:element name="MaskedCardNumber" type="xs:string" minOccurs="0" maxOccurs="1"></xs:element>
+      <xs:element name="SecurityCode" type="mstns:SecurityCode" minOccurs="0" maxOccurs="1"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  
+  
+
+ 
+</xs:schema>
+
+

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PaymentData"
+    targetNamespace="http://Common.Services.Payments"
+    elementFormDefault="qualified"
+    xmlns="http://Common.Services.Payments"
+    xmlns:mstns="http://Common.Services.Payments"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <xs:include schemaLocation="PaymentCardData.xsd"/>
+  <xs:include schemaLocation="CustomerData.xsd"/>
+  <xs:include schemaLocation="TransactionData.xsd"/>
+  <xs:complexType name="PaymentData">
+    <xs:sequence>
+      <xs:element type="PaymentCardData" name="CardData" minOccurs="1" maxOccurs="1"></xs:element>
+      <xs:element type="CustomerData" name="Customer" minOccurs="1" maxOccurs="1"></xs:element>
+      <xs:element type="TransactionData" name="Transaction" minOccurs="0" maxOccurs="1"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaymentData" type="PaymentData"/>    
+</xs:schema>

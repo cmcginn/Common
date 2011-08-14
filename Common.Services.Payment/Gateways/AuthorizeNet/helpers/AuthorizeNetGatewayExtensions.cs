@@ -64,7 +64,7 @@ namespace Common.Services.Payment.Gateways.AuthNet.helpers
             result.Country = response.country;
             result.PhoneNumber = response.phoneNumber;
             result.PostalCode = response.zip;
-            result.State = response.state;
+            result.StateProvince = response.state;
             return result;
         }
         public static AuthorizeNet.APICore.customerPaymentProfileType MapPaymentDataToCustomerPaymentProfileType(this IPaymentData request)
@@ -85,7 +85,7 @@ namespace Common.Services.Payment.Gateways.AuthNet.helpers
             result.city = request.City;
             result.country = request.Country;
             result.company = request.Company;
-            result.state = request.State;
+            result.state = request.StateProvince;
             result.zip = request.PostalCode;
             result.phoneNumber = request.PhoneNumber;
             return result;
@@ -126,7 +126,7 @@ namespace Common.Services.Payment.Gateways.AuthNet.helpers
             var result = new AuthorizeNet.APICore.nameAndAddressType();
             result.address = String.Format("{0} {1}", request.Address.AddressLine1, request.Address.AddressLine2);
             result.city = request.Address.City;
-            result.state = request.Address.State;
+            result.state = request.Address.StateProvince;
             result.country = request.Address.Country;
             result.firstName = request.FirstName;
             result.lastName = request.LastName;

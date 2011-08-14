@@ -11,8 +11,7 @@ namespace Common.Services.Payment.Interfaces
         string EmailAddress { get; set; }        
         string FirstName { get; set; }
         string IPAddress { get; set; }
-        string LastName { get; set; }
-        string Company { get; set; }
+        string LastName { get; set; }        
         string CustomerDescription { get; set; }
     }
 }

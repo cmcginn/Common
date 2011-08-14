@@ -12,7 +12,7 @@ namespace Common.Services.Payment
     /// <summary>
     /// Holds all transactional data needed to perform actions and return results
     /// </summary>
-    [DataContract]
+    [DataContract( Namespace = "http://Common.Services.Payments" )]
     public class PaymentData : IPaymentData
     {
         

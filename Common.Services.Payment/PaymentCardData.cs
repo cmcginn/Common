@@ -5,7 +5,7 @@ using Common.Services.Payment.Interfaces;
 using System.Runtime.Serialization;
 namespace Common.Services.Payment
 {
-    [DataContract]
+    [DataContract( Namespace = "http://Common.Services.Payments" )]
     [KnownType(typeof(PaymentCardData))]
     public class PaymentCardData : IPaymentCardData
     {
@@ -21,16 +21,19 @@ namespace Common.Services.Payment
         public IAddressType BillingAddress { get; set; }
         private PaymentCardType _CardType = PaymentCardType.Unknown;
 
+        [DataMember]
         public int ExpirationMonth
         {
             get { return _ExpirationMonth; }
             set { _ExpirationMonth = ValidateMonth(value); }
         }
+        [DataMember]
         public int ExpirationYear
         {
             get { return _ExpirationYear; }
             set { _ExpirationYear = ValidateYear(value); }
         }
+        [DataMember]
         public string CardNumber
         {
             get { return _CardNumber; }
