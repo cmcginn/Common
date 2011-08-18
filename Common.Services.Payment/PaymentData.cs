@@ -7,12 +7,14 @@ using Common.Utils.Extensions;
 using System.Xml;
 using System.Xml.Schema;
 using System.Xml.Serialization;
+using Microsoft.Practices.Unity;
 namespace Common.Services.Payment
 {
     /// <summary>
     /// Holds all transactional data needed to perform actions and return results
     /// </summary>
     [DataContract( Namespace = "http://Common.Services.Payments" )]
+    [KnownType(typeof(PaymentData))]
     public class PaymentData : IPaymentData
     {
         
@@ -23,19 +25,19 @@ namespace Common.Services.Payment
         
 
         public string Id { get; set; }
-        [DataMember]        
+        [DataMember]
         public IPaymentCardData CardData
         {
             get { return _CardData; }
             set { _CardData = value; }
         }
-        [DataMember]
+        [DataMember]        
         public ICustomerData Customer
         {
             get { return _Customer; }
             set { _Customer = value; }
         }
-        [DataMember]  
+        [DataMember]        
         public ITransactionData Transaction
         {
             get { return _Transaction; }

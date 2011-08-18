@@ -17,11 +17,12 @@ namespace Common.Services.Payment.Tests.Gateways.AuthorizeNet
 
             IUnityContainer _UnityContainer;
             static Container _Instance;
-
+            
             private Container()
             {
                 _UnityContainer = new UnityContainer();
                 _UnityContainer.LoadConfiguration();
+        
 
             }
             public static Container Instance
@@ -34,46 +35,50 @@ namespace Common.Services.Payment.Tests.Gateways.AuthorizeNet
                 }
                 set { Container._Instance = value; }
             }
-            public IAddressType GetNewAddressType()
-            {
-                return _UnityContainer.Resolve<IAddressType>();
+
+            public IPaymentGatewaySettings GetNewPaymentGatewaySettings() {
+              return _UnityContainer.Resolve<IPaymentGatewaySettings>();
             }
-            public IPaymentGatewaySettings GetNewPaymentGatewaySettings()
-            {
-                return _UnityContainer.Resolve<IPaymentGatewaySettings>();
+
+            ICreditCardGateway _CreditCardGateway;
+
+            public ICreditCardGateway CreditCardGateway {
+              get 
+              {
+                if( _CreditCardGateway == null )
+                  _CreditCardGateway = _UnityContainer.Resolve<ICreditCardGateway>();
+                return _CreditCardGateway; 
+              }
+              set { _CreditCardGateway = value; }
             }
-            public IPaymentCardData GetNewPaymentCardData()
-            {
-                return _UnityContainer.Resolve<IPaymentCardData>();
-            }
-            public ICustomerData GetNewCustomerData()
-            {
-                return _UnityContainer.Resolve<ICustomerData>();
+            IPaymentData _PaymentData;
+
+            public IPaymentData PaymentData {
+              get 
+              {
+                if( _PaymentData == null )
+                  _PaymentData = GetNewPaymentData();
+                return _PaymentData; 
+              }
+              set { _PaymentData = value; }
             }
             public IPaymentData GetNewPaymentData()
             {
                 return _UnityContainer.Resolve<IPaymentData>();
             }
-            public ITransactionData GetNewTransactionData()
-            {
-                return _UnityContainer.Resolve<ITransactionData>();
-            }
-            public IProfileCreditCardGateway GetNewProfileCreditCardGateway()
-            {
-                return _UnityContainer.Resolve<IProfileCreditCardGateway>();
-            }
         }
+
         static IPaymentGatewaySettings GetPaymentGatewaySettings()
         {
-            var result = _Container.GetNewPaymentGatewaySettings();
-            result.TestMode = true;
-            result.Username = "9E4n3PdG";
-            result.Password = "8RMF6ZjL2D4z8d75";
+          var result = _Container.GetNewPaymentGatewaySettings();
+            //result.TestMode = true;
+            //result.Username = "9E4n3PdG";
+            //result.Password = "8RMF6ZjL2D4z8d75";
             return result;
         }
         static IPaymentData GetPaymentData()
         {
-            var result = new PaymentData();
+          var result = _Container.PaymentData;
             result.CardData = new PaymentCardData();
             result.CardData.CardHolderName = "Test Cardholder";
             result.CardData.CardNumber = "4111111111111111";
@@ -147,21 +152,24 @@ namespace Common.Services.Payment.Tests.Gateways.AuthorizeNet
             result.Id = "3756118";
             result.Transaction = new TransactionData();
             result.Transaction.PreviousTransactionReferenceNumber = "2161773175";
-            result.Customer = _Container.GetNewCustomerData();
-            result.Transaction = _Container.GetNewTransactionData();
+            result.Customer = _Container.PaymentData.Customer;
+            result.Transaction = _Container.PaymentData.Transaction;
             result.Transaction.Amount = ( new System.Random().Next( 100, 1000 ) * ( decimal )0.001 );
             result.Customer.CustomerId = "4255825";
             return result;
         }
         public static IGatewayProfile CreateProfile(IPaymentData data)
         {
-            var target = _Container.GetNewProfileCreditCardGateway();
+          var target = _Container.CreditCardGateway as BaseProfileCreditCardGateway;
             return target.GetOrCreateCustomerProfile(data);
         }
         public static IGatewayProfile GetGatewayProfile(IGatewayProfile profile)
         {
-            IProfileCreditCardGateway target = _Container.GetNewProfileCreditCardGateway();
+          IProfileCreditCardGateway target = GetGateway();
             return target.GetCustomerProfile(profile.Id);
+        }
+        public static IProfileCreditCardGateway GetGateway( ) {
+          return _Container.CreditCardGateway as BaseProfileCreditCardGateway;         
         }
         #endregion
 
@@ -169,7 +177,7 @@ namespace Common.Services.Payment.Tests.Gateways.AuthorizeNet
         public void AuthorizeTest_WhenValidData_CheckResultIsTrue()
         {
             //Arrange
-            var target = Container.Instance.GetNewProfileCreditCardGateway();
+          var target = GetGateway();
             target.GatewaySettings = GetPaymentGatewaySettings();
             var paymentData = GetPaymentData();
             //Act
@@ -200,7 +208,7 @@ namespace Common.Services.Payment.Tests.Gateways.AuthorizeNet
         public void AuthorizeTest_WhenDuplicate_CheckResponseStillOk()
         {
             //Arrange
-            var target = _Container.GetNewProfileCreditCardGateway();
+          var target = GetGateway();
             var paymentData = GetPaymentData();
             paymentData.Transaction.Amount = (new System.Random().Next(1, 99) * (decimal)0.01);
             var expected = target.Authorize(paymentData);
@@ -218,7 +226,7 @@ namespace Common.Services.Payment.Tests.Gateways.AuthorizeNet
         public void RefundTest_WhenUsingRefundableTransaction_CheckResponseOk()
         {
             //Arrange
-            var target = _Container.GetNewProfileCreditCardGateway();
+          var target = GetGateway();
             var paymentData = GetRefundTransactionPaymentData();
             //Act
             var actual = target.Refund(paymentData);
@@ -229,7 +237,7 @@ namespace Common.Services.Payment.Tests.Gateways.AuthorizeNet
         public void AuthorizeTest_WhenValidData_CheckTransactionResultMessageCountGreaterThanZero()
         {
             //Arrange
-            var target = _Container.GetNewProfileCreditCardGateway();
+          var target = GetGateway();
             var paymentData = GetPaymentData();
             //Act
             var actual = target.Authorize(paymentData);
@@ -240,7 +248,7 @@ namespace Common.Services.Payment.Tests.Gateways.AuthorizeNet
         public void RefundTest_WhenUsingRefundableTransaction_CheckTransactionResultMessageCountGreaterThanZero()
         {
             //Arrange
-            var target = _Container.GetNewProfileCreditCardGateway();
+          var target = GetGateway();
             var paymentData = GetRefundTransactionPaymentData();
             //Act
             var actual = target.Refund(paymentData);
@@ -251,7 +259,7 @@ namespace Common.Services.Payment.Tests.Gateways.AuthorizeNet
         public void CreateSubscriptionTest_WhenValidData_CheckResultIsTrue()
         {
             //Arrange
-            var target = _Container.GetNewProfileCreditCardGateway() as ISubscriptionCreditCardGateway;
+            var target = GetGateway() as ISubscriptionCreditCardGateway;
             var recurringPaymentData = GetRecurringPaymentData();
             recurringPaymentData.Customer.FirstName = "TestUser" + Guid.NewGuid().ToString().Replace("-", "").Substring(0, 5);
             recurringPaymentData.Customer.LastName = "TestUserLast" + Guid.NewGuid().ToString().Replace("-", "").Substring(0, 5);

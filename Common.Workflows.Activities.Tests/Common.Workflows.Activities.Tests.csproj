@@ -123,6 +123,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Mock\ZipFileUtilityMock.cs" />
+    <Compile Include="ProcessGatewayPaymentTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ExtractZipArchiveTest.cs" />
   </ItemGroup>
@@ -130,6 +131,14 @@
     <ProjectReference Include="..\Common.IO.Interfaces\Common.IO.Interfaces.csproj">
       <Project>{C2F283CA-339E-4F75-B03E-63935DFA4F67}</Project>
       <Name>Common.IO.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common.Services.Payment.Interfaces\Common.Services.Payment.Interfaces.csproj">
+      <Project>{E6F17B2A-DC74-4B8F-96E8-1DAE0AAA1D6A}</Project>
+      <Name>Common.Services.Payment.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common.Services.Payment\Common.Services.Payment.csproj">
+      <Project>{71096B76-0C83-49D5-9D07-3D1E0E855151}</Project>
+      <Name>Common.Services.Payment</Name>
     </ProjectReference>
     <ProjectReference Include="..\Common.Workflows.Activities\Common.Workflows.Activities.csproj">
       <Project>{06671979-E286-41C2-82C3-1B0D8D127278}</Project>

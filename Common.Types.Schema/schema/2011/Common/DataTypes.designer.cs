@@ -11115,7 +11115,7 @@ namespace Common.Types.Schema
 
         private string modelField;
 
-        private Offer offersField;
+        private List<Offer> offersField;
 
         private string productIDField;
 
@@ -11164,7 +11164,7 @@ namespace Common.Types.Schema
             }
         }
 
-        public virtual Offer Offers
+        public virtual List<Offer> Offers
         {
             get
             {

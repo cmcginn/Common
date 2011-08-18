@@ -1,1 +1,2 @@
 obj\Debug\ExtractZipArchive.g.xaml
+obj\Debug\ProcessGatewayPayment.g.xaml

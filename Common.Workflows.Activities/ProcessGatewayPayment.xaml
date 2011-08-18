@@ -12,10 +12,6 @@
     <Flowchart.Variables>
       <Variable x:TypeArguments="cspi:IPaymentGatewaySettings" Name="paymentGatewaySettings" />
       <Variable x:TypeArguments="cspi:IPaymentData" Name="paymentData" />
-      <Variable x:TypeArguments="cspi:IPaymentCardData" Name="paymentCardData" />
-      <Variable x:TypeArguments="cspi:ICustomerData" Name="customerData" />
-      <Variable x:TypeArguments="cspi:ITransactionData" Name="transactionData" />
-      <Variable x:TypeArguments="cspi:IAddressType" Name="addressType" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg3:Dictionary x:TypeArguments="x:String, x:Object">
@@ -26,87 +22,104 @@
       </scg3:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID1</x:Reference>
+      <FlowStep x:Name="__ReferenceID0">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">200,129</av:Point>
+            <av:Size x:Key="ShapeSize">200,22</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">300,151 300,181 300,199</av:PointCollection>
+          </scg3:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ntwa:SystemFailureEvaluator ParameterName="{x:Null}" Condition="[validationDirectoryInfo.Exists &lt;&gt; True]" DisplayName="PreCondition Validation Path Exists" ExceptionType="[GetType(Exception)]" sap:VirtualizedContainerService.HintSize="200,22" Message="[String.Format(&quot;PreCondition failed, Validation Directory {0} does not exist&quot;,validationDirectoryInfo.FullName)]" />
+        <FlowStep.Next>
+          <FlowStep x:Name="__ReferenceID1">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+                <av:Point x:Key="ShapeLocation">200,199</av:Point>
+                <av:Size x:Key="ShapeSize">200,49</av:Size>
+              </scg3:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ntwa:InstanceResolver x:TypeArguments="cspi:IPaymentGatewaySettings, cspi:IPaymentData, cspi:IPaymentCardData, cspi:ICustomerData, cspi:ITransactionData, cspi:IAddressType, x:Object, x:Object, x:Object, x:Object, x:Object, x:Object, x:Object, x:Object, x:Object, x:Object" ResolutionName1="{x:Null}" ResolutionName10="{x:Null}" ResolutionName11="{x:Null}" ResolutionName12="{x:Null}" ResolutionName13="{x:Null}" ResolutionName14="{x:Null}" ResolutionName15="{x:Null}" ResolutionName16="{x:Null}" ResolutionName2="{x:Null}" ResolutionName3="{x:Null}" ResolutionName4="{x:Null}" ResolutionName5="{x:Null}" ResolutionName6="{x:Null}" ResolutionName7="{x:Null}" ResolutionName8="{x:Null}" ResolutionName9="{x:Null}" ArgumentCount="Two" DisplayName="InstanceResolver&lt;IPaymentGatewaySettings, IPaymentData&gt;" sap:VirtualizedContainerService.HintSize="200,49">
+              <ActivityAction x:TypeArguments="ntw:InstanceHandler(cspi:IPaymentGatewaySettings), ntw:InstanceHandler(cspi:IPaymentData), ntw:InstanceHandler(cspi:IPaymentCardData), ntw:InstanceHandler(cspi:ICustomerData), ntw:InstanceHandler(cspi:ITransactionData), ntw:InstanceHandler(cspi:IAddressType), ntw:InstanceHandler(x:Object), ntw:InstanceHandler(x:Object), ntw:InstanceHandler(x:Object), ntw:InstanceHandler(x:Object), ntw:InstanceHandler(x:Object), ntw:InstanceHandler(x:Object), ntw:InstanceHandler(x:Object), ntw:InstanceHandler(x:Object), ntw:InstanceHandler(x:Object), ntw:InstanceHandler(x:Object)">
+                <ActivityAction.Argument1>
+                  <DelegateInArgument x:TypeArguments="ntw:InstanceHandler(cspi:IPaymentGatewaySettings)" Name="paymentGatewaySettingsHandler" />
+                </ActivityAction.Argument1>
+                <ActivityAction.Argument10>
+                  <DelegateInArgument x:TypeArguments="ntw:InstanceHandler(x:Object)" Name="handler10" />
+                </ActivityAction.Argument10>
+                <ActivityAction.Argument11>
+                  <DelegateInArgument x:TypeArguments="ntw:InstanceHandler(x:Object)" Name="handler11" />
+                </ActivityAction.Argument11>
+                <ActivityAction.Argument12>
+                  <DelegateInArgument x:TypeArguments="ntw:InstanceHandler(x:Object)" Name="handler12" />
+                </ActivityAction.Argument12>
+                <ActivityAction.Argument13>
+                  <DelegateInArgument x:TypeArguments="ntw:InstanceHandler(x:Object)" Name="handler13" />
+                </ActivityAction.Argument13>
+                <ActivityAction.Argument14>
+                  <DelegateInArgument x:TypeArguments="ntw:InstanceHandler(x:Object)" Name="handler14" />
+                </ActivityAction.Argument14>
+                <ActivityAction.Argument15>
+                  <DelegateInArgument x:TypeArguments="ntw:InstanceHandler(x:Object)" Name="handler15" />
+                </ActivityAction.Argument15>
+                <ActivityAction.Argument16>
+                  <DelegateInArgument x:TypeArguments="ntw:InstanceHandler(x:Object)" Name="handler16" />
+                </ActivityAction.Argument16>
+                <ActivityAction.Argument2>
+                  <DelegateInArgument x:TypeArguments="ntw:InstanceHandler(cspi:IPaymentData)" Name="paymentDataHandler" />
+                </ActivityAction.Argument2>
+                <ActivityAction.Argument3>
+                  <DelegateInArgument x:TypeArguments="ntw:InstanceHandler(cspi:IPaymentCardData)" Name="paymentCardDataHandler" />
+                </ActivityAction.Argument3>
+                <ActivityAction.Argument4>
+                  <DelegateInArgument x:TypeArguments="ntw:InstanceHandler(cspi:ICustomerData)" Name="customerDataHandler" />
+                </ActivityAction.Argument4>
+                <ActivityAction.Argument5>
+                  <DelegateInArgument x:TypeArguments="ntw:InstanceHandler(cspi:ITransactionData)" Name="transactionDataHandler" />
+                </ActivityAction.Argument5>
+                <ActivityAction.Argument6>
+                  <DelegateInArgument x:TypeArguments="ntw:InstanceHandler(cspi:IAddressType)" Name="addressDataHandler" />
+                </ActivityAction.Argument6>
+                <ActivityAction.Argument7>
+                  <DelegateInArgument x:TypeArguments="ntw:InstanceHandler(x:Object)" Name="handler7" />
+                </ActivityAction.Argument7>
+                <ActivityAction.Argument8>
+                  <DelegateInArgument x:TypeArguments="ntw:InstanceHandler(x:Object)" Name="handler8" />
+                </ActivityAction.Argument8>
+                <ActivityAction.Argument9>
+                  <DelegateInArgument x:TypeArguments="ntw:InstanceHandler(x:Object)" Name="handler9" />
+                </ActivityAction.Argument9>
+                <Sequence DisplayName="Sequence Build Up Gateway" sap:VirtualizedContainerService.HintSize="465,49">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg3:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign DisplayName="Assign PaymentData" sap:VirtualizedContainerService.HintSize="242,57">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="cspi:IPaymentData">[paymentData]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="cspi:IPaymentData">[paymentDataHandler.Instance]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign DisplayName="Assign PaymentGatewaySettings" sap:VirtualizedContainerService.HintSize="242,57">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="cspi:IPaymentGatewaySettings">[paymentGatewaySettings]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="cspi:IPaymentGatewaySettings">[paymentGatewaySettingsHandler.Instance]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </ActivityAction>
+            </ntwa:InstanceResolver>
+          </FlowStep>
+        </FlowStep.Next>
+      </FlowStep>
     </Flowchart.StartNode>
-    <FlowStep x:Name="__ReferenceID1">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg3:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">200,129</av:Point>
-          <av:Size x:Key="ShapeSize">200,22</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">300,151 300,181 300,199</av:PointCollection>
-        </scg3:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <ntwa:SystemFailureEvaluator Condition="[validationDirectoryInfo.Exists]" DisplayName="PreCondition Validation Path Exists" ExceptionType="[GetType(FileNotFoundException)]" sap:VirtualizedContainerService.HintSize="200,22" Message="[String.Format(&quot;PreCondition failed, Validation Directory {0} does not exist&quot;,validationDirectoryInfo.FullName)]" ParameterName="validationDirectoryInfo" />
-      <FlowStep.Next>
-        <FlowStep x:Name="__ReferenceID0">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg3:Dictionary x:TypeArguments="x:String, x:Object">
-              <av:Point x:Key="ShapeLocation">200,199</av:Point>
-              <av:Size x:Key="ShapeSize">200,49</av:Size>
-            </scg3:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ntwa:InstanceResolver x:TypeArguments="cspi:IPaymentGatewaySettings, cspi:IPaymentData, cspi:IPaymentCardData, cspi:ICustomerData, cspi:ITransactionData, cspi:IAddressType, x:Object, x:Object, x:Object, x:Object, x:Object, x:Object, x:Object, x:Object, x:Object, x:Object" ResolutionName1="{x:Null}" ResolutionName10="{x:Null}" ResolutionName11="{x:Null}" ResolutionName12="{x:Null}" ResolutionName13="{x:Null}" ResolutionName14="{x:Null}" ResolutionName15="{x:Null}" ResolutionName16="{x:Null}" ResolutionName2="{x:Null}" ResolutionName3="{x:Null}" ResolutionName4="{x:Null}" ResolutionName5="{x:Null}" ResolutionName6="{x:Null}" ResolutionName7="{x:Null}" ResolutionName8="{x:Null}" ResolutionName9="{x:Null}" ArgumentCount="Six" DisplayName="InstanceResolver&lt;IPaymentGatewaySettings, IPaymentData, IPaymentCardData, ICustomerData, ITransactionData, IAddressType&gt;" sap:VirtualizedContainerService.HintSize="491,380">
-            <ActivityAction x:TypeArguments="ntw:InstanceHandler(cspi:IPaymentGatewaySettings), ntw:InstanceHandler(cspi:IPaymentData), ntw:InstanceHandler(cspi:IPaymentCardData), ntw:InstanceHandler(cspi:ICustomerData), ntw:InstanceHandler(cspi:ITransactionData), ntw:InstanceHandler(cspi:IAddressType), ntw:InstanceHandler(x:Object), ntw:InstanceHandler(x:Object), ntw:InstanceHandler(x:Object), ntw:InstanceHandler(x:Object), ntw:InstanceHandler(x:Object), ntw:InstanceHandler(x:Object), ntw:InstanceHandler(x:Object), ntw:InstanceHandler(x:Object), ntw:InstanceHandler(x:Object), ntw:InstanceHandler(x:Object)">
-              <ActivityAction.Argument1>
-                <DelegateInArgument x:TypeArguments="ntw:InstanceHandler(cspi:IPaymentGatewaySettings)" Name="paymentGatewaySettingsHandler" />
-              </ActivityAction.Argument1>
-              <ActivityAction.Argument10>
-                <DelegateInArgument x:TypeArguments="ntw:InstanceHandler(x:Object)" Name="handler10" />
-              </ActivityAction.Argument10>
-              <ActivityAction.Argument11>
-                <DelegateInArgument x:TypeArguments="ntw:InstanceHandler(x:Object)" Name="handler11" />
-              </ActivityAction.Argument11>
-              <ActivityAction.Argument12>
-                <DelegateInArgument x:TypeArguments="ntw:InstanceHandler(x:Object)" Name="handler12" />
-              </ActivityAction.Argument12>
-              <ActivityAction.Argument13>
-                <DelegateInArgument x:TypeArguments="ntw:InstanceHandler(x:Object)" Name="handler13" />
-              </ActivityAction.Argument13>
-              <ActivityAction.Argument14>
-                <DelegateInArgument x:TypeArguments="ntw:InstanceHandler(x:Object)" Name="handler14" />
-              </ActivityAction.Argument14>
-              <ActivityAction.Argument15>
-                <DelegateInArgument x:TypeArguments="ntw:InstanceHandler(x:Object)" Name="handler15" />
-              </ActivityAction.Argument15>
-              <ActivityAction.Argument16>
-                <DelegateInArgument x:TypeArguments="ntw:InstanceHandler(x:Object)" Name="handler16" />
-              </ActivityAction.Argument16>
-              <ActivityAction.Argument2>
-                <DelegateInArgument x:TypeArguments="ntw:InstanceHandler(cspi:IPaymentData)" Name="paymentDataHandler" />
-              </ActivityAction.Argument2>
-              <ActivityAction.Argument3>
-                <DelegateInArgument x:TypeArguments="ntw:InstanceHandler(cspi:IPaymentCardData)" Name="paymentCardDataHandler" />
-              </ActivityAction.Argument3>
-              <ActivityAction.Argument4>
-                <DelegateInArgument x:TypeArguments="ntw:InstanceHandler(cspi:ICustomerData)" Name="customerDataHandler" />
-              </ActivityAction.Argument4>
-              <ActivityAction.Argument5>
-                <DelegateInArgument x:TypeArguments="ntw:InstanceHandler(cspi:ITransactionData)" Name="transactionDataHandler" />
-              </ActivityAction.Argument5>
-              <ActivityAction.Argument6>
-                <DelegateInArgument x:TypeArguments="ntw:InstanceHandler(cspi:IAddressType)" Name="addressDataHandler" />
-              </ActivityAction.Argument6>
-              <ActivityAction.Argument7>
-                <DelegateInArgument x:TypeArguments="ntw:InstanceHandler(x:Object)" Name="handler7" />
-              </ActivityAction.Argument7>
-              <ActivityAction.Argument8>
-                <DelegateInArgument x:TypeArguments="ntw:InstanceHandler(x:Object)" Name="handler8" />
-              </ActivityAction.Argument8>
-              <ActivityAction.Argument9>
-                <DelegateInArgument x:TypeArguments="ntw:InstanceHandler(x:Object)" Name="handler9" />
-              </ActivityAction.Argument9>
-              <Sequence DisplayName="Sequence Build Up Gateway" sap:VirtualizedContainerService.HintSize="465,97">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg3:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  </scg3:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-              </Sequence>
-            </ActivityAction>
-          </ntwa:InstanceResolver>
-        </FlowStep>
-      </FlowStep.Next>
-    </FlowStep>
     <x:Reference>__ReferenceID0</x:Reference>
+    <x:Reference>__ReferenceID1</x:Reference>
   </Flowchart>
 </Activity>

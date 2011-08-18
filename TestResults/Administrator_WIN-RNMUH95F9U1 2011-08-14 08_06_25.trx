@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="95b7b723-495f-4323-be77-1eca7533d831" name="Administrator@WIN-RNMUH95F9U1 2011-08-14 08:06:25" runUser="WIN-RNMUH95F9U1\Administrator" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="1ddb4cbd-2c91-4264-b717-275efc45f586">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment runDeploymentRoot="Administrator_WIN-RNMUH95F9U1 2011-08-14 08_06_25">
+      <DeploymentItem filename="Common.Services.Payment.Tests\Resources\" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft Unity Application Block 2.0\Bin\Microsoft.Practices.Unity.Configuration.dll" />
+      <DeploymentItem filename="C:\Projects\Urbana\Common\Common.IO.Interfaces\bin\Debug\Common.IO.Interfaces.dll" />
+      <DeploymentItem filename="Common.Services.Fax\bin\Debug\Common.Services.Fax.dll" />
+      <DeploymentItem filename="C:\Projects\Urbana\Common\Common.Utils\bin\Debug\Common.Utils.dll" />
+      <DeploymentItem filename="C:\Projects\Urbana\Common\Common.Testing\bin\Debug\Common.Testing.dll" />
+      <DeploymentItem filename="Common.Services.Fax.Interfaces\Validation\FaxRequestType\PreProcess\FaxValidation1.xsd" />
+      <DeploymentItem filename="C:\Projects\Urbana\Common\Common.Services.Payment\bin\Debug\Common.Services.Payment.dll" />
+      <DeploymentItem filename="C:\Projects\Urbana\Common\Common.Workflows.Activities.Tests\bin\Debug\Neovolve.Toolkit.Workflow.dll" />
+      <DeploymentItem filename="Common.Services.Fax.Tests\TestResources\" />
+      <DeploymentItem filename="C:\Projects\Urbana\Common\Common.Types\bin\Debug\Common.Types.dll" />
+      <DeploymentItem filename="C:\Projects\Urbana\Common\Common.Workflows.Activities\bin\Debug\Common.Workflows.Activities.dll" />
+      <DeploymentItem filename="C:\Projects\Urbana\Common\Common.Services.Fax.Interfaces\bin\Debug\Common.Services.Fax.Interfaces.dll" />
+      <DeploymentItem filename="Common.Services.Fax.Interfaces\Validation\FaxRequestType\PreProcess\FaxValidation.xsd" />
+      <DeploymentItem filename="Common.Services.Fax.Interfaces\Validation\FaxRequestType\PreProcess\" />
+      <DeploymentItem filename="Common.Services.Fax.Interfaces\Validation\FaxRequestType\" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft Unity Application Block 2.0\Bin\Microsoft.Practices.ServiceLocation.dll" />
+      <DeploymentItem filename="Common.Workflows.Activities.Tests\Resources\" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft Unity Application Block 2.0\Bin\Microsoft.Practices.Unity.dll" />
+      <DeploymentItem filename="Common.Services.Fax.Interfaces\Validation\FaxRequestType\PreProcess\FaxValidation2.xsd" />
+      <DeploymentItem filename="C:\Projects\Urbana\Common\Common.Net.Interfaces\bin\Debug\Common.Net.Interfaces.dll" />
+      <DeploymentItem filename="C:\Projects\Urbana\Common\Common.IO\bin\Debug\Common.IO.dll" />
+      <DeploymentItem filename="Common.IO.Tests\Resources\" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft Enterprise Library 5.0\Bin\Microsoft.Practices.EnterpriseLibrary.Logging.dll" />
+      <DeploymentItem filename="C:\Projects\Urbana\Common\Common.Services.Payment.Interfaces\bin\Debug\Common.Services.Payment.Interfaces.dll" />
+      <DeploymentItem filename="C:\Projects\Urbana\Common\Common.Workflows.Activities.Tests\bin\Debug\Neovolve.Toolkit.Unity.dll" />
+      <DeploymentItem filename="Common.Workflows.Activities.Tests\Resources\Placeholder.txt" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft Unity Application Block 2.0\Bin\Microsoft.Practices.Unity.Interception.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft SDKs\Silverlight\v4.0\Libraries\Client\System.Windows.Data.dll" />
+      <DeploymentItem filename="C:\Projects\Urbana\Common\Dependencies\Neovolve.Toolkit 1.0\Neovolve.Toolkit.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft Enterprise Library 5.0\Bin\Microsoft.Practices.EnterpriseLibrary.Common.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft Unity Application Block 2.0\Bin\Microsoft.Practices.Unity.Interception.Configuration.dll" />
+      <DeploymentItem filename="C:\Projects\Urbana\Common\Common.Net\bin\Debug\Common.Net.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft Enterprise Library 5.0\Bin\Microsoft.Practices.EnterpriseLibrary.PolicyInjection.dll" />
+      <DeploymentItem filename="C:\Projects\Urbana\Common\Common.Workflows.Activities.Tests\bin\Debug\Neovolve.Toolkit.Workflow.Design.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific>
+        <UnitTestRunConfig testTypeId="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b">
+          <AssemblyResolution>
+            <TestDirectory useLoadContext="true" />
+          </AssemblyResolution>
+        </UnitTestRunConfig>
+        <WebTestRunConfiguration testTypeId="4e7599fa-5ecb-43e9-a887-cd63cf72d207">
+          <Browser name="Internet Explorer 7.0">
+            <Headers>
+              <Header name="User-Agent" value="Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)" />
+              <Header name="Accept" value="*/*" />
+              <Header name="Accept-Language" value="{{$IEAcceptLanguage}}" />
+              <Header name="Accept-Encoding" value="GZIP" />
+            </Headers>
+          </Browser>
+        </WebTestRunConfiguration>
+      </TestTypeSpecific>
+      <AgentRule name="LocalMachineDefaultRole">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-08-14T08:06:25.2458828-04:00" queuing="2011-08-14T08:06:27.1062343-04:00" start="2011-08-14T08:06:27.1257656-04:00" finish="2011-08-14T08:06:50.8894375-04:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="17" executed="17" passed="15" error="0" failed="2" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="WIN-RNMUH95F9U1" outcome="Warning" timestamp="2011-08-14T08:06:26.9900234-04:00">
+        <Text>Warning: conflict during test run deployment: deployment item 'Common.IO.Tests\Resources\' specified by the test settings cannot be deployed to 'Placeholder.txt' because otherwise the file 'C:\Projects\Urbana\Common\Common.IO.Tests\Resources\Placeholder.txt' would overwrite deployment item 'Common.Workflows.Activities.Tests\Resources\' specified by the test settings.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="AuthorizeTest_WhenValidData_CheckTransactionResultMessageCountGreaterThanZero" storage="c:\projects\urbana\common\common.services.payment.tests\bin\debug\common.services.payment.tests.dll" id="72288aec-fdbb-3487-dd83-73610742294c">
+      <Execution id="f7923b38-5062-43d0-9eaf-1fc50b7fdf6f" />
+      <TestMethod codeBase="C:/Projects/Urbana/Common/Common.Services.Payment.Tests/bin/Debug/Common.Services.Payment.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Common.Services.Payment.Tests.Gateways.AuthorizeNet.AuthorizeNetCIMCreditCardGatewayTest, Common.Services.Payment.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="AuthorizeTest_WhenValidData_CheckTransactionResultMessageCountGreaterThanZero" />
+    </UnitTest>
+    <UnitTest name="GetGatewayProfileTest" storage="c:\projects\urbana\common\common.services.payment.tests\bin\debug\common.services.payment.tests.dll" id="f24e3e2a-9be3-6331-301c-bf6407f4c06b">
+      <Execution id="9c38b1ac-b5ad-440f-ac5d-f4471ab2f872" />
+      <TestMethod codeBase="C:/Projects/Urbana/Common/Common.Services.Payment.Tests/bin/Debug/Common.Services.Payment.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Common.Services.Payment.Tests.PaymentDomainServiceTests, Common.Services.Payment.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetGatewayProfileTest" />
+    </UnitTest>
+    <UnitTest name="ExtractAll_WhenUsingWellKnownArchiveWithFilesAndDirectory_AssertFileSystemInfosExist" storage="c:\projects\urbana\common\common.io.tests\bin\debug\common.io.tests.dll" id="8fb67cb5-e907-da76-11ae-2131b3d72150">
+      <Execution id="33fee548-7acd-4fe5-97b8-76f7512eeac5" />
+      <TestMethod codeBase="C:/Projects/Urbana/Common/Common.IO.Tests/bin/Debug/Common.IO.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Common.IO.Tests.FileUtilitiesTest, Common.IO.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ExtractAll_WhenUsingWellKnownArchiveWithFilesAndDirectory_AssertFileSystemInfosExist" />
+    </UnitTest>
+    <UnitTest name="AuthorizeTest_WhenValidData_CheckResultIsTrue" storage="c:\projects\urbana\common\common.services.payment.tests\bin\debug\common.services.payment.tests.dll" id="84e670af-5682-ef51-3af4-74679c65ea20">
+      <Execution id="67cf3a5e-89f7-4639-ade1-d2a8542e6063" />
+      <TestMethod codeBase="C:/Projects/Urbana/Common/Common.Services.Payment.Tests/bin/Debug/Common.Services.Payment.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Common.Services.Payment.Tests.Gateways.AuthorizeNet.AuthorizeNetCIMCreditCardGatewayTest, Common.Services.Payment.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="AuthorizeTest_WhenValidData_CheckResultIsTrue" />
+    </UnitTest>
+    <UnitTest name="AuthorizeTest_WhenDuplicate_CheckResponseStillOk" storage="c:\projects\urbana\common\common.services.payment.tests\bin\debug\common.services.payment.tests.dll" id="e2d077a5-2dbb-f972-5303-f04d4c874234">
+      <Execution id="8d5989e1-5d08-4162-889b-ea44bf018ccb" />
+      <TestMethod codeBase="C:/Projects/Urbana/Common/Common.Services.Payment.Tests/bin/Debug/Common.Services.Payment.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Common.Services.Payment.Tests.Gateways.AuthorizeNet.AuthorizeNetCIMCreditCardGatewayTest, Common.Services.Payment.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="AuthorizeTest_WhenDuplicate_CheckResponseStillOk" />
+    </UnitTest>
+    <UnitTest name="CreateProfileTest_AssertProfileResponseLengthGreaterThanZero" storage="c:\projects\urbana\common\common.services.payment.tests\bin\debug\common.services.payment.tests.dll" id="0705ff9e-52f3-1ce2-5315-c676fb913c0d">
+      <Execution id="46baf54a-6914-4fe7-af25-480a6d186d6c" />
+      <TestMethod codeBase="C:/Projects/Urbana/Common/Common.Services.Payment.Tests/bin/Debug/Common.Services.Payment.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Common.Services.Payment.Tests.Gateways.AuthorizeNet.AuthorizeNetCIMCreditCardGatewayTest, Common.Services.Payment.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="CreateProfileTest_AssertProfileResponseLengthGreaterThanZero" />
+    </UnitTest>
+    <UnitTest name="TestExtraxctZipArchive_AssertCollectionOfFileSystemInfoReturned" storage="c:\projects\urbana\common\common.workflows.activities.tests\bin\debug\common.workflows.activities.tests.dll" id="7569201d-a109-2219-01fc-2cbbf3931b14">
+      <Execution id="0bde78f4-3cec-4198-b954-4c8f8a68d2e0" />
+      <TestMethod codeBase="C:/Projects/Urbana/Common/Common.Workflows.Activities.Tests/bin/Debug/Common.Workflows.Activities.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Common.Workflows.Activities.Tests.ExtractZipArchiveTest, Common.Workflows.Activities.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestExtraxctZipArchive_AssertCollectionOfFileSystemInfoReturned" />
+    </UnitTest>
+    <UnitTest name="TestMethod1" storage="c:\projects\urbana\common\common.services.payment.tests\bin\debug\common.services.payment.tests.dll" id="4be67675-34e2-95bf-3e6d-69260a74f383">
+      <Execution id="7457c8b5-5875-4eca-90fd-b7fe5171adfd" />
+      <TestMethod codeBase="C:/Projects/Urbana/Common/Common.Services.Payment.Tests/bin/Debug/Common.Services.Payment.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Common.Services.Payment.Tests.CreditCardGatewayTest, Common.Services.Payment.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestMethod1" />
+    </UnitTest>
+    <UnitTest name="GetCustomerProfileTest_WhenProfileExists_AssertProfileIdsMatch" storage="c:\projects\urbana\common\common.services.payment.tests\bin\debug\common.services.payment.tests.dll" id="2632879d-831e-a597-cc1f-72206b206ef7">
+      <Execution id="038fe3fc-2840-4f74-b118-d92889b8e9a8" />
+      <TestMethod codeBase="C:/Projects/Urbana/Common/Common.Services.Payment.Tests/bin/Debug/Common.Services.Payment.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Common.Services.Payment.Tests.Gateways.AuthorizeNet.AuthorizeNetCIMCreditCardGatewayTest, Common.Services.Payment.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetCustomerProfileTest_WhenProfileExists_AssertProfileIdsMatch" />
+    </UnitTest>
+    <UnitTest name="RefundTest_WhenUsingRefundableTransaction_CheckResponseOk" storage="c:\projects\urbana\common\common.services.payment.tests\bin\debug\common.services.payment.tests.dll" id="c5663ff6-aea7-8a4a-097c-b53a5fd1037b">
+      <Execution id="810d203b-0954-4c4c-b115-be8ce0666c16" />
+      <TestMethod codeBase="C:/Projects/Urbana/Common/Common.Services.Payment.Tests/bin/Debug/Common.Services.Payment.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Common.Services.Payment.Tests.Gateways.AuthorizeNet.AuthorizeNetCIMCreditCardGatewayTest, Common.Services.Payment.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="RefundTest_WhenUsingRefundableTransaction_CheckResponseOk" />
+    </UnitTest>
+    <UnitTest name="GetFileStreamTest_WhenRequestingGoogle_AssertFileExists" storage="c:\projects\urbana\common\common.io.tests\bin\debug\common.io.tests.dll" id="6697cefb-d4b0-62dc-89b0-758d363b0e80">
+      <Execution id="b74c41e7-46c8-4c2d-a2d6-2566c0180f04" />
+      <TestMethod codeBase="C:/Projects/Urbana/Common/Common.IO.Tests/bin/Debug/Common.IO.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Common.IO.Tests.HttpFileSystemServiceTest, Common.IO.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetFileStreamTest_WhenRequestingGoogle_AssertFileExists" />
+    </UnitTest>
+    <UnitTest name="RunServiceTest" storage="c:\projects\urbana\common\common.services.fax.tests\bin\debug\common.services.fax.tests.dll" id="56f52918-253c-d685-4022-dcd281c528cf">
+      <Execution id="0339b366-20d0-4d0b-ad05-0076600e744e" />
+      <TestMethod codeBase="C:/Projects/Urbana/Common/Common.Services.Fax.Tests/bin/Debug/Common.Services.Fax.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Common.Services.Fax.Tests.AcceptanceTests, Common.Services.Fax.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="RunServiceTest" />
+    </UnitTest>
+    <UnitTest name="Post_WhenUsingFullOverloadParametersWithGoogleURI_NoExceptionsThrown" storage="c:\projects\urbana\common\common.net.tests\bin\debug\common.net.tests.dll" id="f0ca9198-8905-2a22-e270-113ed25c285d">
+      <Execution id="2aaa4b4e-36e1-4525-a4d4-d5c8bdea8b6f" />
+      <TestMethod codeBase="C:/Projects/Urbana/Common/Common.Net.Tests/bin/Debug/Common.Net.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Common.Net.Tests.HttpPostTest, Common.Net.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Post_WhenUsingFullOverloadParametersWithGoogleURI_NoExceptionsThrown" />
+    </UnitTest>
+    <UnitTest name="CreateSubscriptionTest_WhenValidData_CheckResultIsTrue" storage="c:\projects\urbana\common\common.services.payment.tests\bin\debug\common.services.payment.tests.dll" id="927df642-1e60-9e51-ec4b-7178b466f970">
+      <Execution id="92f041d1-d178-48a9-8c9c-7d445424bc9d" />
+      <TestMethod codeBase="C:/Projects/Urbana/Common/Common.Services.Payment.Tests/bin/Debug/Common.Services.Payment.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Common.Services.Payment.Tests.Gateways.AuthorizeNet.AuthorizeNetCIMCreditCardGatewayTest, Common.Services.Payment.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="CreateSubscriptionTest_WhenValidData_CheckResultIsTrue" />
+    </UnitTest>
+    <UnitTest name="RefundTest_WhenUsingRefundableTransaction_CheckTransactionResultMessageCountGreaterThanZero" storage="c:\projects\urbana\common\common.services.payment.tests\bin\debug\common.services.payment.tests.dll" id="1c274027-6d36-9fe3-5fb4-dd8ea95aa78a">
+      <Execution id="b886bef8-467a-43d8-9c72-1133e23e9c8f" />
+      <TestMethod codeBase="C:/Projects/Urbana/Common/Common.Services.Payment.Tests/bin/Debug/Common.Services.Payment.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Common.Services.Payment.Tests.Gateways.AuthorizeNet.AuthorizeNetCIMCreditCardGatewayTest, Common.Services.Payment.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="RefundTest_WhenUsingRefundableTransaction_CheckTransactionResultMessageCountGreaterThanZero" />
+    </UnitTest>
+    <UnitTest name="GetFileStreamTest_WhenDOCXFile_AssertEncodedCorrect" storage="c:\projects\urbana\common\common.io.tests\bin\debug\common.io.tests.dll" id="65ca0ada-9992-0f8e-b6ce-c9ec225e3830">
+      <Description>Requires MVC project executed and running to serve expected DOCX file</Description>
+      <Execution id="4f0a85e4-164e-4da9-bb90-0c9aa821f1be" />
+      <TestMethod codeBase="C:/Projects/Urbana/Common/Common.IO.Tests/bin/Debug/Common.IO.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Common.IO.Tests.HttpFileSystemServiceTest, Common.IO.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetFileStreamTest_WhenDOCXFile_AssertEncodedCorrect" />
+    </UnitTest>
+    <UnitTest name="Get_WhenUsingFullOverloadParametersWithGoogleURI_AssertResponseNotNull" storage="c:\projects\urbana\common\common.net.tests\bin\debug\common.net.tests.dll" id="1c2b5639-891b-beec-cdf0-399f913b3095">
+      <Execution id="54c3fd13-cac1-4dd2-8288-4c7fff5af2ac" />
+      <TestMethod codeBase="C:/Projects/Urbana/Common/Common.Net.Tests/bin/Debug/Common.Net.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Common.Net.Tests.HttpPostTest, Common.Net.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Get_WhenUsingFullOverloadParametersWithGoogleURI_AssertResponseNotNull" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="0705ff9e-52f3-1ce2-5315-c676fb913c0d" executionId="46baf54a-6914-4fe7-af25-480a6d186d6c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1c274027-6d36-9fe3-5fb4-dd8ea95aa78a" executionId="b886bef8-467a-43d8-9c72-1133e23e9c8f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1c2b5639-891b-beec-cdf0-399f913b3095" executionId="54c3fd13-cac1-4dd2-8288-4c7fff5af2ac" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2632879d-831e-a597-cc1f-72206b206ef7" executionId="038fe3fc-2840-4f74-b118-d92889b8e9a8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4be67675-34e2-95bf-3e6d-69260a74f383" executionId="7457c8b5-5875-4eca-90fd-b7fe5171adfd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="56f52918-253c-d685-4022-dcd281c528cf" executionId="0339b366-20d0-4d0b-ad05-0076600e744e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="65ca0ada-9992-0f8e-b6ce-c9ec225e3830" executionId="4f0a85e4-164e-4da9-bb90-0c9aa821f1be" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6697cefb-d4b0-62dc-89b0-758d363b0e80" executionId="b74c41e7-46c8-4c2d-a2d6-2566c0180f04" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="72288aec-fdbb-3487-dd83-73610742294c" executionId="f7923b38-5062-43d0-9eaf-1fc50b7fdf6f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7569201d-a109-2219-01fc-2cbbf3931b14" executionId="0bde78f4-3cec-4198-b954-4c8f8a68d2e0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="84e670af-5682-ef51-3af4-74679c65ea20" executionId="67cf3a5e-89f7-4639-ade1-d2a8542e6063" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8fb67cb5-e907-da76-11ae-2131b3d72150" executionId="33fee548-7acd-4fe5-97b8-76f7512eeac5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="927df642-1e60-9e51-ec4b-7178b466f970" executionId="92f041d1-d178-48a9-8c9c-7d445424bc9d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c5663ff6-aea7-8a4a-097c-b53a5fd1037b" executionId="810d203b-0954-4c4c-b115-be8ce0666c16" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e2d077a5-2dbb-f972-5303-f04d4c874234" executionId="8d5989e1-5d08-4162-889b-ea44bf018ccb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f0ca9198-8905-2a22-e270-113ed25c285d" executionId="2aaa4b4e-36e1-4525-a4d4-d5c8bdea8b6f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f24e3e2a-9be3-6331-301c-bf6407f4c06b" executionId="9c38b1ac-b5ad-440f-ac5d-f4471ab2f872" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="46baf54a-6914-4fe7-af25-480a6d186d6c" testId="0705ff9e-52f3-1ce2-5315-c676fb913c0d" testName="CreateProfileTest_AssertProfileResponseLengthGreaterThanZero" computerName="WIN-RNMUH95F9U1" duration="00:00:01.7237397" startTime="2011-08-14T08:06:27.1286953-04:00" endTime="2011-08-14T08:06:29.2732265-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="46baf54a-6914-4fe7-af25-480a6d186d6c">
+    </UnitTestResult>
+    <UnitTestResult executionId="b886bef8-467a-43d8-9c72-1133e23e9c8f" testId="1c274027-6d36-9fe3-5fb4-dd8ea95aa78a" testName="RefundTest_WhenUsingRefundableTransaction_CheckTransactionResultMessageCountGreaterThanZero" computerName="WIN-RNMUH95F9U1" duration="00:00:05.7124045" startTime="2011-08-14T08:06:29.2742031-04:00" endTime="2011-08-14T08:06:34.9919765-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b886bef8-467a-43d8-9c72-1133e23e9c8f">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method Common.Services.Payment.Tests.Gateways.AuthorizeNet.AuthorizeNetCIMCreditCardGatewayTest.RefundTest_WhenUsingRefundableTransaction_CheckTransactionResultMessageCountGreaterThanZero threw exception: 
+System.NullReferenceException: Object reference not set to an instance of an object.</Message>
+          <StackTrace>    at AuthorizeNet.HttpXmlUtility.CheckForErrors(ANetApiResponse response)
+   at AuthorizeNet.HttpXmlUtility.Send(ANetApiRequest apiRequest)
+   at Common.Services.Payment.Gateways.AuthNet.helpers.AuthorizeNetGatewayHelper.CreateProfileTransaction(profileTransactionType transaction) in C:\Projects\Urbana\Common\Common.Services.Payment\Gateways\AuthorizeNet\helpers\AuthorizeNetGatewayHelper.cs:line 102
+   at Common.Services.Payment.Gateways.AuthNet.AuthorizeNetCIMCreditCardGateway.Refund(IPaymentData data) in C:\Projects\Urbana\Common\Common.Services.Payment\Gateways\AuthorizeNet\AuthorizeNetCIMCreditCardGateway.cs:line 120
+   at Common.Services.Payment.Tests.Gateways.AuthorizeNet.AuthorizeNetCIMCreditCardGatewayTest.RefundTest_WhenUsingRefundableTransaction_CheckTransactionResultMessageCountGreaterThanZero() in C:\Projects\Urbana\Common\Common.Services.Payment.Tests\Gateways\AuthorizeNet\AuthorizeNetCIMCreditCardGatewayTest.cs:line 254
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="54c3fd13-cac1-4dd2-8288-4c7fff5af2ac" testId="1c2b5639-891b-beec-cdf0-399f913b3095" testName="Get_WhenUsingFullOverloadParametersWithGoogleURI_AssertResponseNotNull" computerName="WIN-RNMUH95F9U1" duration="00:00:00.1883172" startTime="2011-08-14T08:06:34.9929531-04:00" endTime="2011-08-14T08:06:35.4812343-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="54c3fd13-cac1-4dd2-8288-4c7fff5af2ac">
+    </UnitTestResult>
+    <UnitTestResult executionId="038fe3fc-2840-4f74-b118-d92889b8e9a8" testId="2632879d-831e-a597-cc1f-72206b206ef7" testName="GetCustomerProfileTest_WhenProfileExists_AssertProfileIdsMatch" computerName="WIN-RNMUH95F9U1" duration="00:00:00.6762881" startTime="2011-08-14T08:06:35.4900234-04:00" endTime="2011-08-14T08:06:36.1716640-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="038fe3fc-2840-4f74-b118-d92889b8e9a8">
+    </UnitTestResult>
+    <UnitTestResult executionId="7457c8b5-5875-4eca-90fd-b7fe5171adfd" testId="4be67675-34e2-95bf-3e6d-69260a74f383" testName="TestMethod1" computerName="WIN-RNMUH95F9U1" duration="00:00:00.0135148" startTime="2011-08-14T08:06:36.1794765-04:00" endTime="2011-08-14T08:06:36.1999843-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7457c8b5-5875-4eca-90fd-b7fe5171adfd">
+    </UnitTestResult>
+    <UnitTestResult executionId="0339b366-20d0-4d0b-ad05-0076600e744e" testId="56f52918-253c-d685-4022-dcd281c528cf" testName="RunServiceTest" computerName="WIN-RNMUH95F9U1" duration="00:00:00.0206333" startTime="2011-08-14T08:06:36.2019375-04:00" endTime="2011-08-14T08:06:36.5261562-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0339b366-20d0-4d0b-ad05-0076600e744e">
+    </UnitTestResult>
+    <UnitTestResult executionId="4f0a85e4-164e-4da9-bb90-0c9aa821f1be" testId="65ca0ada-9992-0f8e-b6ce-c9ec225e3830" testName="GetFileStreamTest_WhenDOCXFile_AssertEncodedCorrect" computerName="WIN-RNMUH95F9U1" duration="00:00:01.6145971" startTime="2011-08-14T08:06:36.5271328-04:00" endTime="2011-08-14T08:06:38.4392421-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4f0a85e4-164e-4da9-bb90-0c9aa821f1be">
+    </UnitTestResult>
+    <UnitTestResult executionId="b74c41e7-46c8-4c2d-a2d6-2566c0180f04" testId="6697cefb-d4b0-62dc-89b0-758d363b0e80" testName="GetFileStreamTest_WhenRequestingGoogle_AssertFileExists" computerName="WIN-RNMUH95F9U1" duration="00:00:00.1322103" startTime="2011-08-14T08:06:38.4402187-04:00" endTime="2011-08-14T08:06:38.5769375-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b74c41e7-46c8-4c2d-a2d6-2566c0180f04">
+    </UnitTestResult>
+    <UnitTestResult executionId="f7923b38-5062-43d0-9eaf-1fc50b7fdf6f" testId="72288aec-fdbb-3487-dd83-73610742294c" testName="AuthorizeTest_WhenValidData_CheckTransactionResultMessageCountGreaterThanZero" computerName="WIN-RNMUH95F9U1" duration="00:00:02.1179543" startTime="2011-08-14T08:06:38.5837734-04:00" endTime="2011-08-14T08:06:40.7087734-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f7923b38-5062-43d0-9eaf-1fc50b7fdf6f">
+    </UnitTestResult>
+    <UnitTestResult executionId="0bde78f4-3cec-4198-b954-4c8f8a68d2e0" testId="7569201d-a109-2219-01fc-2cbbf3931b14" testName="TestExtraxctZipArchive_AssertCollectionOfFileSystemInfoReturned" computerName="WIN-RNMUH95F9U1" duration="00:00:00.9634350" startTime="2011-08-14T08:06:40.7165859-04:00" endTime="2011-08-14T08:06:41.9675625-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0bde78f4-3cec-4198-b954-4c8f8a68d2e0">
+    </UnitTestResult>
+    <UnitTestResult executionId="67cf3a5e-89f7-4639-ade1-d2a8542e6063" testId="84e670af-5682-ef51-3af4-74679c65ea20" testName="AuthorizeTest_WhenValidData_CheckResultIsTrue" computerName="WIN-RNMUH95F9U1" duration="00:00:01.4745798" startTime="2011-08-14T08:06:41.9695156-04:00" endTime="2011-08-14T08:06:43.4490078-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="67cf3a5e-89f7-4639-ade1-d2a8542e6063">
+    </UnitTestResult>
+    <UnitTestResult executionId="33fee548-7acd-4fe5-97b8-76f7512eeac5" testId="8fb67cb5-e907-da76-11ae-2131b3d72150" testName="ExtractAll_WhenUsingWellKnownArchiveWithFilesAndDirectory_AssertFileSystemInfosExist" computerName="WIN-RNMUH95F9U1" duration="00:00:00.0721524" startTime="2011-08-14T08:06:43.4568203-04:00" endTime="2011-08-14T08:06:43.5349453-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="33fee548-7acd-4fe5-97b8-76f7512eeac5">
+    </UnitTestResult>
+    <UnitTestResult executionId="92f041d1-d178-48a9-8c9c-7d445424bc9d" testId="927df642-1e60-9e51-ec4b-7178b466f970" testName="CreateSubscriptionTest_WhenValidData_CheckResultIsTrue" computerName="WIN-RNMUH95F9U1" duration="00:00:00.9608888" startTime="2011-08-14T08:06:43.5359218-04:00" endTime="2011-08-14T08:06:44.5017421-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="92f041d1-d178-48a9-8c9c-7d445424bc9d">
+    </UnitTestResult>
+    <UnitTestResult executionId="810d203b-0954-4c4c-b115-be8ce0666c16" testId="c5663ff6-aea7-8a4a-097c-b53a5fd1037b" testName="RefundTest_WhenUsingRefundableTransaction_CheckResponseOk" computerName="WIN-RNMUH95F9U1" duration="00:00:03.7941724" startTime="2011-08-14T08:06:44.5027187-04:00" endTime="2011-08-14T08:06:48.3015468-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="810d203b-0954-4c4c-b115-be8ce0666c16">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method Common.Services.Payment.Tests.Gateways.AuthorizeNet.AuthorizeNetCIMCreditCardGatewayTest.RefundTest_WhenUsingRefundableTransaction_CheckResponseOk threw exception: 
+System.NullReferenceException: Object reference not set to an instance of an object.</Message>
+          <StackTrace>    at AuthorizeNet.HttpXmlUtility.CheckForErrors(ANetApiResponse response)
+   at AuthorizeNet.HttpXmlUtility.Send(ANetApiRequest apiRequest)
+   at Common.Services.Payment.Gateways.AuthNet.helpers.AuthorizeNetGatewayHelper.CreateProfileTransaction(profileTransactionType transaction) in C:\Projects\Urbana\Common\Common.Services.Payment\Gateways\AuthorizeNet\helpers\AuthorizeNetGatewayHelper.cs:line 102
+   at Common.Services.Payment.Gateways.AuthNet.AuthorizeNetCIMCreditCardGateway.Refund(IPaymentData data) in C:\Projects\Urbana\Common\Common.Services.Payment\Gateways\AuthorizeNet\AuthorizeNetCIMCreditCardGateway.cs:line 120
+   at Common.Services.Payment.Tests.Gateways.AuthorizeNet.AuthorizeNetCIMCreditCardGatewayTest.RefundTest_WhenUsingRefundableTransaction_CheckResponseOk() in C:\Projects\Urbana\Common\Common.Services.Payment.Tests\Gateways\AuthorizeNet\AuthorizeNetCIMCreditCardGatewayTest.cs:line 232
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="8d5989e1-5d08-4162-889b-ea44bf018ccb" testId="e2d077a5-2dbb-f972-5303-f04d4c874234" testName="AuthorizeTest_WhenDuplicate_CheckResponseStillOk" computerName="WIN-RNMUH95F9U1" duration="00:00:02.4489562" startTime="2011-08-14T08:06:48.3142421-04:00" endTime="2011-08-14T08:06:50.7673671-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8d5989e1-5d08-4162-889b-ea44bf018ccb">
+    </UnitTestResult>
+    <UnitTestResult executionId="2aaa4b4e-36e1-4525-a4d4-d5c8bdea8b6f" testId="f0ca9198-8905-2a22-e270-113ed25c285d" testName="Post_WhenUsingFullOverloadParametersWithGoogleURI_NoExceptionsThrown" computerName="WIN-RNMUH95F9U1" duration="00:00:00.0103420" startTime="2011-08-14T08:06:50.7751796-04:00" endTime="2011-08-14T08:06:50.7908046-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2aaa4b4e-36e1-4525-a4d4-d5c8bdea8b6f">
+    </UnitTestResult>
+    <UnitTestResult executionId="9c38b1ac-b5ad-440f-ac5d-f4471ab2f872" testId="f24e3e2a-9be3-6331-301c-bf6407f4c06b" testName="GetGatewayProfileTest" computerName="WIN-RNMUH95F9U1" duration="00:00:00.0003033" startTime="2011-08-14T08:06:50.7917812-04:00" endTime="2011-08-14T08:06:50.7986171-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9c38b1ac-b5ad-440f-ac5d-f4471ab2f872">
+    </UnitTestResult>
+  </Results>
+</TestRun>

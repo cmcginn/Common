@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="722db946-6823-4034-8c0b-fe3f02979dd2" name="Administrator@WIN-RNMUH95F9U1 2011-08-14 07:40:24" runUser="WIN-RNMUH95F9U1\Administrator" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="1ddb4cbd-2c91-4264-b717-275efc45f586">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment userDeploymentRoot="C:\Projects\Urbana\Common\TestResults" useDefaultDeploymentRoot="false" runDeploymentRoot="Administrator_WIN-RNMUH95F9U1 2011-08-14 07_40_24">
+      <DeploymentItem filename="Common.Services.Fax\bin\Debug\Common.Services.Fax.dll" />
+      <DeploymentItem filename="Common.Services.Fax.Interfaces\Validation\FaxRequestType\PreProcess\FaxValidation.xsd" />
+      <DeploymentItem filename="C:\Projects\Urbana\Common\Common.Testing\bin\Debug\Common.Testing.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft Enterprise Library 5.0\Bin\Microsoft.Practices.EnterpriseLibrary.Logging.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft Unity Application Block 2.0\Bin\Microsoft.Practices.Unity.Interception.Configuration.dll" />
+      <DeploymentItem filename="Common.Workflows.Activities.Tests\Resources\" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft Enterprise Library 5.0\Bin\Microsoft.Practices.EnterpriseLibrary.PolicyInjection.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft Unity Application Block 2.0\Bin\Microsoft.Practices.Unity.Configuration.dll" />
+      <DeploymentItem filename="C:\Projects\Urbana\Common\Common.Services.Payment\bin\Debug\Common.Services.Payment.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft Unity Application Block 2.0\Bin\Microsoft.Practices.Unity.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft Unity Application Block 2.0\Bin\Microsoft.Practices.ServiceLocation.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft Unity Application Block 2.0\Bin\Microsoft.Practices.Unity.Interception.dll" />
+      <DeploymentItem filename="Common.Services.Fax.Interfaces\Validation\FaxRequestType\PreProcess\" />
+      <DeploymentItem filename="Common.Services.Fax.Interfaces\Validation\FaxRequestType\PreProcess\FaxValidation2.xsd" />
+      <DeploymentItem filename="Common.Services.Fax.Interfaces\Validation\FaxRequestType\" />
+      <DeploymentItem filename="C:\Projects\Urbana\Common\Common.Utils\bin\Debug\Common.Utils.dll" />
+      <DeploymentItem filename="Common.IO.Tests\Resources\" />
+      <DeploymentItem filename="Common.Workflows.Activities.Tests\Resources\Placeholder.txt" />
+      <DeploymentItem filename="Common.Services.Fax.Interfaces\Validation\FaxRequestType\PreProcess\FaxValidation1.xsd" />
+      <DeploymentItem filename="C:\Projects\Urbana\Common\Common.Services.Payment.Interfaces\bin\Debug\Common.Services.Payment.Interfaces.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft Enterprise Library 5.0\Bin\Microsoft.Practices.EnterpriseLibrary.Common.dll" />
+      <DeploymentItem filename="C:\Projects\Urbana\Common\Common.Types\bin\Debug\Common.Types.dll" />
+      <DeploymentItem filename="Common.Services.Payment.Tests\Resources\" />
+      <DeploymentItem filename="Common.Services.Fax.Tests\TestResources\" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific>
+        <UnitTestRunConfig testTypeId="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b">
+          <AssemblyResolution>
+            <TestDirectory useLoadContext="true" />
+          </AssemblyResolution>
+        </UnitTestRunConfig>
+        <WebTestRunConfiguration testTypeId="4e7599fa-5ecb-43e9-a887-cd63cf72d207">
+          <Browser name="Internet Explorer 7.0">
+            <Headers>
+              <Header name="User-Agent" value="Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)" />
+              <Header name="Accept" value="*/*" />
+              <Header name="Accept-Language" value="{{$IEAcceptLanguage}}" />
+              <Header name="Accept-Encoding" value="GZIP" />
+            </Headers>
+          </Browser>
+        </WebTestRunConfiguration>
+      </TestTypeSpecific>
+      <AgentRule name="LocalMachineDefaultRole">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-08-14T07:40:24.7048671-04:00" queuing="2011-08-14T07:40:25.7722500-04:00" start="2011-08-14T07:40:25.7859218-04:00" finish="2011-08-14T07:40:26.4245937-04:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="WIN-RNMUH95F9U1" outcome="Warning" timestamp="2011-08-14T07:40:25.7449062-04:00">
+        <Text>Warning: conflict during test run deployment: deployment item 'Common.IO.Tests\Resources\' specified by the test settings cannot be deployed to 'Placeholder.txt' because otherwise the file 'C:\Projects\Urbana\Common\Common.IO.Tests\Resources\Placeholder.txt' would overwrite deployment item 'Common.Workflows.Activities.Tests\Resources\' specified by the test settings.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="AuthorizeTest_WhenDuplicate_CheckResponseStillOk" storage="c:\projects\urbana\common\common.services.payment.tests\bin\debug\common.services.payment.tests.dll" id="e2d077a5-2dbb-f972-5303-f04d4c874234">
+      <Execution id="78b541b5-0dbe-4875-9a01-bc0b60675241" />
+      <TestMethod codeBase="C:/Projects/Urbana/Common/Common.Services.Payment.Tests/bin/Debug/Common.Services.Payment.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Common.Services.Payment.Tests.Gateways.AuthorizeNet.AuthorizeNetCIMCreditCardGatewayTest, Common.Services.Payment.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="AuthorizeTest_WhenDuplicate_CheckResponseStillOk" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="e2d077a5-2dbb-f972-5303-f04d4c874234" executionId="78b541b5-0dbe-4875-9a01-bc0b60675241" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="78b541b5-0dbe-4875-9a01-bc0b60675241" testId="e2d077a5-2dbb-f972-5303-f04d4c874234" testName="AuthorizeTest_WhenDuplicate_CheckResponseStillOk" computerName="WIN-RNMUH95F9U1" duration="00:00:00.1311446" startTime="2011-08-14T07:40:25.7888515-04:00" endTime="2011-08-14T07:40:26.4031093-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="78b541b5-0dbe-4875-9a01-bc0b60675241">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method Common.Services.Payment.Tests.Gateways.AuthorizeNet.AuthorizeNetCIMCreditCardGatewayTest.AuthorizeTest_WhenDuplicate_CheckResponseStillOk threw exception: 
+Microsoft.Practices.Unity.ResolutionFailedException: Resolution of the dependency failed, type = "Common.Services.Payment.Interfaces.ICreditCardGateway", name = "(none)".
+Exception occurred while: while resolving.
+Exception is: InvalidOperationException - The current type, Common.Services.Payment.Interfaces.ICreditCardGateway, is an interface and cannot be constructed. Are you missing a type mapping?
+-----------------------------------------------
+At the time of the exception, the container was:
+
+  Resolving Common.Services.Payment.Interfaces.ICreditCardGateway,(none)
+ ---&gt; System.InvalidOperationException: The current type, Common.Services.Payment.Interfaces.ICreditCardGateway, is an interface and cannot be constructed. Are you missing a type mapping?</Message>
+          <StackTrace>    at Microsoft.Practices.ObjectBuilder2.DynamicMethodConstructorStrategy.ThrowForAttemptingToConstructInterface(IBuilderContext context) in e:\Builds\Unity\UnityTemp\Compile\Unity\Unity\Src\ObjectBuilder\Strategies\BuildPlan\DynamicMethod\Creation\DynamicMethodConstructorStrategy.cs:line 209
+   at BuildUp_Common.Services.Payment.Interfaces.ICreditCardGateway(IBuilderContext )
+   at Microsoft.Practices.ObjectBuilder2.DynamicMethodBuildPlan.BuildUp(IBuilderContext context) in e:\Builds\Unity\UnityTemp\Compile\Unity\Unity\Src\ObjectBuilder\Strategies\BuildPlan\DynamicMethod\DynamicMethodBuildPlan.cs:line 37
+   at Microsoft.Practices.ObjectBuilder2.BuildPlanStrategy.PreBuildUp(IBuilderContext context) in e:\Builds\Unity\UnityTemp\Compile\Unity\Unity\Src\ObjectBuilder\Strategies\BuildPlan\BuildPlanStrategy.cs:line 43
+   at Microsoft.Practices.ObjectBuilder2.StrategyChain.ExecuteBuildUp(IBuilderContext context) in e:\Builds\Unity\UnityTemp\Compile\Unity\Unity\Src\ObjectBuilder\Strategies\StrategyChain.cs:line 110
+   at Microsoft.Practices.Unity.UnityContainer.DoBuildUp(Type t, Object existing, String name, IEnumerable`1 resolverOverrides) in e:\Builds\Unity\UnityTemp\Compile\Unity\Unity\Src\UnityContainer.cs:line 511
+ --- End of inner exception stack trace ---
+    at Microsoft.Practices.Unity.UnityContainer.DoBuildUp(Type t, Object existing, String name, IEnumerable`1 resolverOverrides) in e:\Builds\Unity\UnityTemp\Compile\Unity\Unity\Src\UnityContainer.cs:line 515
+   at Microsoft.Practices.Unity.UnityContainer.Resolve(Type t, String name, ResolverOverride[] resolverOverrides) in e:\Builds\Unity\UnityTemp\Compile\Unity\Unity\Src\UnityContainer.cs:line 173
+   at Microsoft.Practices.Unity.UnityContainerExtensions.Resolve[T](IUnityContainer container, ResolverOverride[] overrides) in e:\Builds\Unity\UnityTemp\Compile\Unity\Unity\Src\UnityContainerExtensions.cs:line 504
+   at Common.Services.Payment.Tests.Gateways.AuthorizeNet.AuthorizeNetCIMCreditCardGatewayTest.Container.get_CreditCardGateway() in C:\Projects\Urbana\Common\Common.Services.Payment.Tests\Gateways\AuthorizeNet\AuthorizeNetCIMCreditCardGatewayTest.cs:line 48
+   at Common.Services.Payment.Tests.Gateways.AuthorizeNet.AuthorizeNetCIMCreditCardGatewayTest.GetGateway() in C:\Projects\Urbana\Common\Common.Services.Payment.Tests\Gateways\AuthorizeNet\AuthorizeNetCIMCreditCardGatewayTest.cs:line 172
+   at Common.Services.Payment.Tests.Gateways.AuthorizeNet.AuthorizeNetCIMCreditCardGatewayTest.AuthorizeTest_WhenDuplicate_CheckResponseStillOk() in C:\Projects\Urbana\Common\Common.Services.Payment.Tests\Gateways\AuthorizeNet\AuthorizeNetCIMCreditCardGatewayTest.cs:line 211
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

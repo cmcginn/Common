@@ -1047,7 +1047,7 @@
           <xs:element minOccurs="0" maxOccurs="1" name="Duration" type="Duration" />
           <xs:element minOccurs="0" maxOccurs="1" name="EndDate" type="xs:dateTime" />
           <xs:element minOccurs="0" maxOccurs="1" name="Location" type="Place" />
-          <xs:element minOccurs="0" maxOccurs="1" name="Offers" type="Offer" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Offers" type="Offer" />
           <xs:element minOccurs="0" maxOccurs="1" name="Performers" type="Organization" />
           <xs:element minOccurs="0" maxOccurs="1" name="StartDate" type="xs:dateTime" />
           <xs:element minOccurs="0" maxOccurs="1" name="SubEvents" type="Event" />

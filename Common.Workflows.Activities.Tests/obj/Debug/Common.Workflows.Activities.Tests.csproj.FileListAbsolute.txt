@@ -92,3 +92,8 @@ C:\Projects\Urbana\Common\Common.Workflows.Activities.Tests\obj\Debug\Common.Wor
 C:\Projects\Urbana\Common\Common.Workflows.Activities.Tests\bin\Debug\Neovolve.Toolkit.dll
 C:\Projects\Urbana\Common\Common.Workflows.Activities.Tests\bin\Debug\Neovolve.Toolkit.pdb
 C:\Projects\Urbana\Common\Common.Workflows.Activities.Tests\bin\Debug\Neovolve.Toolkit.xml
+C:\Projects\Urbana\Common\Common.Workflows.Activities.Tests\bin\Debug\Common.Services.Payment.Interfaces.dll
+C:\Projects\Urbana\Common\Common.Workflows.Activities.Tests\bin\Debug\Common.Services.Payment.Interfaces.pdb
+C:\Projects\Urbana\Common\Common.Workflows.Activities.Tests\bin\Debug\Common.Services.Payment.dll
+C:\Projects\Urbana\Common\Common.Workflows.Activities.Tests\bin\Debug\AuthorizeNet.dll
+C:\Projects\Urbana\Common\Common.Workflows.Activities.Tests\bin\Debug\Common.Services.Payment.pdb

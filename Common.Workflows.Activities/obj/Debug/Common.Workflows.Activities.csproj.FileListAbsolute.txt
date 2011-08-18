@@ -79,3 +79,12 @@ C:\Projects\Urbana\Common\Common.Workflows.Activities\obj\Debug\Common.Workflows
 C:\Projects\Urbana\Common\Common.Workflows.Activities\obj\Debug\Common.Workflows.Activities.rewritten
 C:\Projects\Urbana\Common\Common.Workflows.Activities\obj\Debug\Common.Workflows.Activities.dll
 C:\Projects\Urbana\Common\Common.Workflows.Activities\obj\Debug\Common.Workflows.Activities.pdb
+C:\Projects\Urbana\Common\Common.Workflows.Activities\bin\Debug\Common.Services.Payment.Interfaces.dll
+C:\Projects\Urbana\Common\Common.Workflows.Activities\bin\Debug\Common.Services.Payment.Interfaces.pdb
+C:\Projects\Urbana\Common\Common.Workflows.Activities\obj\Debug\ProcessGatewayPayment.g.xaml
+C:\Projects\Urbana\Common\Common.Workflows.Activities\obj\Debug\ProcessGatewayPayment.g.cs
+C:\Projects\Urbana\Common\Common.Workflows.Activities\obj\Debug\InProcessTempFiles\ExtractZipArchive.g.cs
+C:\Projects\Urbana\Common\Common.Workflows.Activities\obj\Debug\InProcessTempFiles\ExtractZipArchive.g.xaml
+C:\Projects\Urbana\Common\Common.Workflows.Activities\obj\Debug\InProcessTempFiles\ProcessGatewayPayment.g.cs
+C:\Projects\Urbana\Common\Common.Workflows.Activities\obj\Debug\InProcessTempFiles\ProcessGatewayPayment.g.xaml
+C:\Projects\Urbana\Common\Common.Workflows.Activities\obj\Debug\InProcessTempFiles\_Common.Workflows.Activities.g.cs
