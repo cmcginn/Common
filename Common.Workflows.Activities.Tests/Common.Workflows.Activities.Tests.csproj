@@ -114,6 +114,8 @@
     <Reference Include="System.Windows.Data">
       <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft SDKs\Silverlight\v4.0\Libraries\Client\System.Windows.Data.dll</HintPath>
     </Reference>
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
@@ -126,6 +128,7 @@
     <Compile Include="ProcessGatewayPaymentTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ExtractZipArchiveTest.cs" />
+    <Compile Include="XslTransformTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common.IO.Interfaces\Common.IO.Interfaces.csproj">
@@ -140,6 +143,10 @@
       <Project>{71096B76-0C83-49D5-9D07-3D1E0E855151}</Project>
       <Name>Common.Services.Payment</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Common.Utils\Common.Utils.csproj">
+      <Project>{AA3BB369-7C8C-400F-8920-319B594836B1}</Project>
+      <Name>Common.Utils</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Common.Workflows.Activities\Common.Workflows.Activities.csproj">
       <Project>{06671979-E286-41C2-82C3-1B0D8D127278}</Project>
       <Name>Common.Workflows.Activities</Name>
@@ -147,6 +154,8 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Resources\orderMockup.xml" />
+    <Content Include="Resources\orderTransformer.xsl" />
     <Content Include="Resources\Placeholder.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

@@ -83,8 +83,9 @@ C:\Projects\Urbana\Common\Common.Workflows.Activities\bin\Debug\Common.Services.
 C:\Projects\Urbana\Common\Common.Workflows.Activities\bin\Debug\Common.Services.Payment.Interfaces.pdb
 C:\Projects\Urbana\Common\Common.Workflows.Activities\obj\Debug\ProcessGatewayPayment.g.xaml
 C:\Projects\Urbana\Common\Common.Workflows.Activities\obj\Debug\ProcessGatewayPayment.g.cs
-C:\Projects\Urbana\Common\Common.Workflows.Activities\obj\Debug\InProcessTempFiles\ExtractZipArchive.g.cs
-C:\Projects\Urbana\Common\Common.Workflows.Activities\obj\Debug\InProcessTempFiles\ExtractZipArchive.g.xaml
-C:\Projects\Urbana\Common\Common.Workflows.Activities\obj\Debug\InProcessTempFiles\ProcessGatewayPayment.g.cs
-C:\Projects\Urbana\Common\Common.Workflows.Activities\obj\Debug\InProcessTempFiles\ProcessGatewayPayment.g.xaml
-C:\Projects\Urbana\Common\Common.Workflows.Activities\obj\Debug\InProcessTempFiles\_Common.Workflows.Activities.g.cs
+C:\Projects\Urbana\Common\Common.Workflows.Activities\bin\Debug\Common.Utils.dll
+C:\Projects\Urbana\Common\Common.Workflows.Activities\bin\Debug\Common.Utils.pdb
+C:\Projects\Urbana\Common\Common.Workflows.Activities\obj\Debug\XslTransform.g.xaml
+C:\Projects\Urbana\Common\Common.Workflows.Activities\obj\Debug\XslTransform.g.cs
+C:\Projects\Urbana\Common\Common.Workflows.Activities\obj\Debug\InProcessTempFiles\XslTransform.g.cs
+C:\Projects\Urbana\Common\Common.Workflows.Activities\obj\Debug\InProcessTempFiles\XslTransform.g.xaml

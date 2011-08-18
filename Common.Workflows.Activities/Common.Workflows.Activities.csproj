@@ -132,6 +132,10 @@
       <Project>{E6F17B2A-DC74-4B8F-96E8-1DAE0AAA1D6A}</Project>
       <Name>Common.Services.Payment.Interfaces</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Common.Utils\Common.Utils.csproj">
+      <Project>{AA3BB369-7C8C-400F-8920-319B594836B1}</Project>
+      <Name>Common.Utils</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <XamlAppDef Include="ExtractZipArchive.xaml">
@@ -141,6 +145,12 @@
   </ItemGroup>
   <ItemGroup>
     <XamlAppDef Include="ProcessGatewayPayment.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </XamlAppDef>
+  </ItemGroup>
+  <ItemGroup>
+    <XamlAppDef Include="XslTransform.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </XamlAppDef>

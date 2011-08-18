@@ -1,3 +1,4 @@
 obj\Debug\_Common.Workflows.Activities.g.cs
 obj\Debug\ExtractZipArchive.g.cs
 obj\Debug\ProcessGatewayPayment.g.cs
+obj\Debug\XslTransform.g.cs

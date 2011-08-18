@@ -97,3 +97,5 @@ C:\Projects\Urbana\Common\Common.Workflows.Activities.Tests\bin\Debug\Common.Ser
 C:\Projects\Urbana\Common\Common.Workflows.Activities.Tests\bin\Debug\Common.Services.Payment.dll
 C:\Projects\Urbana\Common\Common.Workflows.Activities.Tests\bin\Debug\AuthorizeNet.dll
 C:\Projects\Urbana\Common\Common.Workflows.Activities.Tests\bin\Debug\Common.Services.Payment.pdb
+C:\Projects\Urbana\Common\Common.Workflows.Activities.Tests\bin\Debug\Common.Utils.dll
+C:\Projects\Urbana\Common\Common.Workflows.Activities.Tests\bin\Debug\Common.Utils.pdb
