@@ -89,3 +89,12 @@ C:\Projects\Urbana\Common\Common.Workflows.Activities\obj\Debug\XslTransform.g.x
 C:\Projects\Urbana\Common\Common.Workflows.Activities\obj\Debug\XslTransform.g.cs
 C:\Projects\Urbana\Common\Common.Workflows.Activities\obj\Debug\InProcessTempFiles\XslTransform.g.cs
 C:\Projects\Urbana\Common\Common.Workflows.Activities\obj\Debug\InProcessTempFiles\XslTransform.g.xaml
+C:\Projects\Urbana\Common\Common.Workflows.Activities\obj\Debug\InProcessTempFiles\ExtractZipArchive.g.cs
+C:\Projects\Urbana\Common\Common.Workflows.Activities\obj\Debug\InProcessTempFiles\ExtractZipArchive.g.xaml
+C:\Projects\Urbana\Common\Common.Workflows.Activities\obj\Debug\InProcessTempFiles\ProcessGatewayPayment.g.cs
+C:\Projects\Urbana\Common\Common.Workflows.Activities\obj\Debug\InProcessTempFiles\ProcessGatewayPayment.g.xaml
+C:\Projects\Urbana\Common\Common.Workflows.Activities\obj\Debug\InProcessTempFiles\_Common.Workflows.Activities.g.cs
+C:\Projects\Urbana\Common\Common.Workflows.Activities\obj\Debug\ValidateSchema.g.xaml
+C:\Projects\Urbana\Common\Common.Workflows.Activities\obj\Debug\ValidateSchema.g.cs
+C:\Projects\Urbana\Common\Common.Workflows.Activities\obj\Debug\InProcessTempFiles\ValidateSchema.g.cs
+C:\Projects\Urbana\Common\Common.Workflows.Activities\obj\Debug\InProcessTempFiles\ValidateSchema.g.xaml

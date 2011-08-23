@@ -14,17 +14,17 @@ namespace Common.Workflows.Activities.Tests {
   [TestClass]
   public class XslTransformTest {
     [TestMethod]
-    public void TextXslTransform_WhenValidInputs_AssertResultHasElements() {
+    public void TextValidateSchema_WhenElementInvalid_AssertValidationResultArgsListCount() {
       //Arrange
       var inputs = new Dictionary<string, object>();
-      var activity = new XslTransform();
-      var fi = new FileInfo( AppDomain.CurrentDomain.BaseDirectory + "\\orderTransformer.xsl" );
-      var element = XElement.Load( AppDomain.CurrentDomain.BaseDirectory + "\\orderMockup.xml" );
-      System.Xml.Xsl.XsltArgumentList args = new System.Xml.Xsl.XsltArgumentList();
-
-      inputs.Add( "element", element );
-      inputs.Add( "xslFileInfo", fi );
-      inputs.Add( "xsltArgumentList", args );
+      var activity = new ValidateSchema();
+      var validationSchemaFile = new FileInfo( AppDomain.CurrentDomain.BaseDirectory + "\\ANetApi.xsd" );
+      var element = XElement.Load( AppDomain.CurrentDomain.BaseDirectory + "\\invalidOrder.xml" );
+      
+      
+      inputs.Add( "validationTarget", element );
+      inputs.Add( "validationSchemaFile", validationSchemaFile );
+      
       WorkflowInvoker invoker = new WorkflowInvoker( activity );
       invoker.InvokeCompleted += delegate( object sender, InvokeCompletedEventArgs e ) {
         if( e.Error != null )
@@ -33,7 +33,7 @@ namespace Common.Workflows.Activities.Tests {
       //Act
       var result = invoker.Invoke(inputs);
       //Assert
-      Assert.IsTrue( ( ( XElement )result[ "result" ] ).HasElements);
+      Assert.IsTrue( ( ( System.Collections.Generic.List<System.Xml.Schema.ValidationEventArgs> )result[ "result" ] ).Count>0);
     }
   }
 }

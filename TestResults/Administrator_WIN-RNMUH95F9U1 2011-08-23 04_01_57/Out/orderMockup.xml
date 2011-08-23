@@ -1,0 +1,36 @@
+<Order>
+  <Offer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Name xmlns="http://schema.org/Intangible">Standard Download</Name>
+    <Price xmlns="http://schema.org/Offer">8.99</Price>
+    <ItemOffered xmlns="http://schema.org/Offer">
+      <Name xmlns="http://schema.org/Product">Huge Snake</Name>
+      <ProductID xmlns="http://schema.org/Product">51149675-7885-44d0-8ec8-95a6d1b644d2</ProductID>
+    </ItemOffered>
+  </Offer>
+  <Person xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Description xmlns="http://schema.org/Person">bObby</Description>
+    <Address xmlns="http://schema.org/Person">
+      <PostalAddress>
+        <Name xmlns="http://schema.org/Intangible">Billing Address</Name>
+        <AddressLocality xmlns="http://schema.org/StructuredValue">Orlando</AddressLocality>
+        <AddressRegion xmlns="http://schema.org/StructuredValue">FL</AddressRegion>
+        <PostalCode xmlns="http://schema.org/StructuredValue">32323</PostalCode>
+        <StreetAddress xmlns="http://schema.org/StructuredValue">123 SMith Street</StreetAddress>
+        <AddressCountry xmlns="http://schema.org/StructuredValue">
+          <Name xmlns="http://schema.org/Place">US</Name>
+        </AddressCountry>
+      </PostalAddress>
+    </Address>
+    <Email xmlns="http://schema.org/Person">
+      <string>bobby@sadsdasdsa.com</string>
+    </Email>
+  </Person>
+  <ElectronicPaymentCardData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <ExpirationMonth xmlns="http://schema.org/Thing">1</ExpirationMonth>
+    <ExpirationYear xmlns="http://schema.org/Thing">2010</ExpirationYear>
+    <CardNumber xmlns="http://schema.org/Thing">4111111111111111</CardNumber>
+    <Cardholder xmlns="http://schema.org/Thing">Bill Smith</Cardholder>
+    <CardType xmlns="http://schema.org/Thing">Visa</CardType>
+    <CVV xmlns="http://schema.org/Thing">123</CVV>
+  </ElectronicPaymentCardData>
+</Order> 

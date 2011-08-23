@@ -128,6 +128,7 @@
     <Compile Include="ProcessGatewayPaymentTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ExtractZipArchiveTest.cs" />
+    <Compile Include="ValidateSchemaTest.cs" />
     <Compile Include="XslTransformTest.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -154,6 +155,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Resources\InvalidOrder.xml" />
     <Content Include="Resources\orderMockup.xml" />
     <Content Include="Resources\orderTransformer.xsl" />
     <Content Include="Resources\Placeholder.txt">
@@ -162,6 +164,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Resources\ANetApi.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
