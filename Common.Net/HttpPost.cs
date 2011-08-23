@@ -79,15 +79,14 @@ namespace Common.Net
         private string EncodeParameters()
         {
             StringBuilder builder = new StringBuilder();
-            if (Parameters.Count > 0)
-            {
-                var start = String.Format("?{0}={1}", Parameters.First().Key, Parameters.First().Value);
-                builder.Append(start);
-                if (Parameters.Count > 1)
-                {
-                    Parameters.Skip(1).Select(n => String.Format("&{0}={1}", n.Key, System.Web.HttpUtility.UrlEncode(n.Value))).ToList().ForEach(n => builder.Append(n));
-                }
-            }
+            if( Parameters.Count > 0 ) {
+              var start = String.Format( "?{0}={1}", Parameters.First().Key, Parameters.First().Value );
+              builder.Append( start );
+              if( Parameters.Count > 1 ) {
+                Parameters.Skip( 1 ).Select( n => String.Format( "&{0}={1}", n.Key, System.Web.HttpUtility.UrlEncode( n.Value ) ) ).ToList().ForEach( n => builder.Append( n ) );
+              }
+            } else if( !String.IsNullOrEmpty( PostData ) )
+              builder.Append( PostData );
             return builder.ToString();
         }
 
@@ -109,6 +108,9 @@ namespace Common.Net
                 {
                     case PostEncodingTypes.UrlEncoded:
                         requestContentType = "application/x-www-form-urlencoded";
+                        break;
+                  case PostEncodingTypes.Xml:
+                        requestContentType = "text/xml";
                         break;
                     default:
                         requestContentType = "application/x-www-form-urlencoded";

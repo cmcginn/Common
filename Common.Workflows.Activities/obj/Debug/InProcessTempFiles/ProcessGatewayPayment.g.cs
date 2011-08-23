@@ -17,19 +17,40 @@ namespace Common.Workflows.Activities {
         
         private bool _contentLoaded;
         
-        private System.Activities.InArgument<System.IO.DirectoryInfo> _validationDirectoryInfo;
+        private System.Activities.InArgument<System.Xml.Linq.XElement> _orderElement;
+        
+        private System.Activities.InArgument<System.IO.FileInfo> _orderTransformationDocument;
+        
+        private System.Activities.InArgument<System.IO.FileInfo> _gatewayOrderSchema;
         
         public ProcessGatewayPayment() {
             this.InitializeComponent();
         }
         
-        [System.Activities.RequiredArgumentAttribute()]
-        public System.Activities.InArgument<System.IO.DirectoryInfo> validationDirectoryInfo {
+        public System.Activities.InArgument<System.Xml.Linq.XElement> orderElement {
             get {
-                return this._validationDirectoryInfo;
+                return this._orderElement;
             }
             set {
-                this._validationDirectoryInfo = value;
+                this._orderElement = value;
+            }
+        }
+        
+        public System.Activities.InArgument<System.IO.FileInfo> orderTransformationDocument {
+            get {
+                return this._orderTransformationDocument;
+            }
+            set {
+                this._orderTransformationDocument = value;
+            }
+        }
+        
+        public System.Activities.InArgument<System.IO.FileInfo> gatewayOrderSchema {
+            get {
+                return this._gatewayOrderSchema;
+            }
+            set {
+                this._gatewayOrderSchema = value;
             }
         }
         
