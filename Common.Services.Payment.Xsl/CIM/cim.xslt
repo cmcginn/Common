@@ -1,9 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
   <xsl:output method="xml" indent="yes"/>
-  <xsl:template match="/">
-    <xsl:call-template name="merchantAuthentication"></xsl:call-template>
-  </xsl:template>
+<!--Types-->
   <!--Merchant Authentication Template-->
   <xsl:template name="merchantAuthentication">
     <xsl:param name="username"/>
@@ -76,76 +74,6 @@
       <xsl:value-of select="$email"/>
     </xsl:element>
   </xsl:template>
-  <!--createCustomerProfileRequest-->
-  <xsl:template name="createCustomerProfileRequest">
-    <xsl:param name="username"/>
-    <xsl:param name="password"/>
-    <xsl:param name="merchantCustomerId"/>
-    <xsl:param name="description"/>
-    <xsl:param name="email"/>
-    <xsl:element name="createCustomerProfileRequest" namespace="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
-      <xsl:call-template name="merchantAuthentication">
-        <xsl:with-param name="username" select="$username"></xsl:with-param>
-        <xsl:with-param name="password" select="$password"></xsl:with-param>
-      </xsl:call-template>
-      <xsl:element name="profile" namespace="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
-        <xsl:call-template name="customerProfileType">
-          <xsl:with-param name="merchantCustomerId" select="$merchantCustomerId"></xsl:with-param>
-          <xsl:with-param name="description" select="$description"></xsl:with-param>
-          <xsl:with-param name="email" select="$email"></xsl:with-param>
-        </xsl:call-template>
-      </xsl:element>
-    </xsl:element>
-  </xsl:template>
-  <!--createCustomerPaymentProfileRequest-->
-  <xsl:template name="createCustomerPaymentProfileRequest">
-    <xsl:param name="username"/>
-    <xsl:param name="password"/>
-    <xsl:param name="customerProfileId"></xsl:param>
-    <xsl:param name="firstName"/>
-    <xsl:param name="lastName"/>
-    <xsl:param name="company"/>
-    <xsl:param name="address"/>
-    <xsl:param name="city"/>
-    <xsl:param name="state"/>
-    <xsl:param name="zip"/>
-    <xsl:param name="country"/>
-    <xsl:param name="phoneNumber"/>
-    <xsl:param name="faxNumber"/>
-    <xsl:param name="cardNumber"/>
-    <xsl:param name="expirationDate"/>
-    <xsl:element name="createCustomerPaymentProfileRequest" namespace="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
-      <xsl:call-template name="merchantAuthentication">
-        <xsl:with-param name="username" select="$username"></xsl:with-param>
-        <xsl:with-param name="password" select="$password"></xsl:with-param>
-      </xsl:call-template>
-      <xsl:element name="customerProfileId" namespace="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
-        <xsl:value-of select="$customerProfileId"/>
-      </xsl:element>
-      <xsl:element name="paymentProfile" namespace="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
-        <xsl:element name="billTo" namespace="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
-          <xsl:call-template name="addressType">
-            <xsl:with-param name="firstName" select="$firstName"></xsl:with-param>
-            <xsl:with-param name="lastName" select="$lastName"></xsl:with-param>
-            <xsl:with-param name="company" select="$company"></xsl:with-param>
-            <xsl:with-param name="address" select="$address"></xsl:with-param>
-            <xsl:with-param name="city" select="$city"></xsl:with-param>
-            <xsl:with-param name="state" select="$state"></xsl:with-param>
-            <xsl:with-param name="zip" select="$zip"></xsl:with-param>
-            <xsl:with-param name="country" select="$country"></xsl:with-param>
-            <xsl:with-param name="phoneNumber" select="$phoneNumber"></xsl:with-param>
-            <xsl:with-param name="faxNumber" select="$faxNumber"></xsl:with-param>
-          </xsl:call-template>
-        </xsl:element>
-        <xsl:element name="payment" namespace="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
-          <xsl:call-template name="creditCardTypeType">
-            <xsl:with-param name="cardNumber" select="$cardNumber"></xsl:with-param>
-            <xsl:with-param name="expirationDate" select="$expirationDate"></xsl:with-param>
-          </xsl:call-template>
-        </xsl:element>
-      </xsl:element>
-    </xsl:element>
-  </xsl:template>
   <!--creditCardType-->
   <xsl:template name="creditCardTypeType">
     <xsl:param name="cardNumber"/>
@@ -156,45 +84,6 @@
       </xsl:element>
       <xsl:element name="expirationDate" namespace="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
         <xsl:value-of select="$expirationDate"/>
-      </xsl:element>
-    </xsl:element>
-  </xsl:template>
-  <!--createCustomerShippingAddressRequest-->
-  <xsl:template name="createCustomerShippingAddressRequest">
-    <xsl:param name="username"/>
-    <xsl:param name="password"/>
-    <xsl:param name="customerProfileId"/>
-    <xsl:param name="address"/>
-    <xsl:param name="firstName"/>
-    <xsl:param name="lastName"/>
-    <xsl:param name="company"/>
-    <xsl:param name="city"/>
-    <xsl:param name="state"/>
-    <xsl:param name="zip"/>
-    <xsl:param name="country"/>
-    <xsl:param name="phoneNumber"/>
-    <xsl:param name="faxNumber"/>
-    <xsl:element name="createCustomerShippingAddressRequest" namespace="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
-      <xsl:call-template name="merchantAuthentication">
-        <xsl:with-param name="username" select="$username"></xsl:with-param>
-        <xsl:with-param name="password" select="$password"></xsl:with-param>
-      </xsl:call-template>
-      <xsl:element name="customerProfileId" namespace="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
-        <xsl:value-of select="$customerProfileId"/>
-      </xsl:element>
-      <xsl:element name="address" namespace="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
-        <xsl:call-template name="addressType">
-          <xsl:with-param name="address" select="$address"></xsl:with-param>
-          <xsl:with-param name="firstName" select="$firstName"></xsl:with-param>
-          <xsl:with-param name="lastName" select="$lastName"></xsl:with-param>
-          <xsl:with-param name="company" select="$company"></xsl:with-param>
-          <xsl:with-param name="city" select="$city"></xsl:with-param>
-          <xsl:with-param name="state" select="$state"></xsl:with-param>
-          <xsl:with-param name="zip" select="$zip"></xsl:with-param>
-          <xsl:with-param name="country" select="$country"></xsl:with-param>
-          <xsl:with-param name="phoneNumber" select="$phoneNumber"></xsl:with-param>
-          <xsl:with-param name="faxNumber" select="$faxNumber"></xsl:with-param>
-        </xsl:call-template>
       </xsl:element>
     </xsl:element>
   </xsl:template>
@@ -226,13 +115,12 @@
         <xsl:value-of select="$taxable"/>
       </xsl:element>
     </xsl:element>
-  </xsl:template>
-  <!--shipping-->
-  <xsl:template name="shipping">
+  </xsl:template> 
+  <!--charge-->
+  <xsl:template name="charge">
     <xsl:param name="amount"/>
     <xsl:param name="name"/>
-    <xsl:param name="description"/>
-    <xsl:element name="shipping" namespace="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+    <xsl:param name="description"/>   
       <xsl:element name="amount" namespace="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
         <xsl:value-of select="$amount"/>
       </xsl:element>
@@ -241,76 +129,53 @@
       </xsl:element>
       <xsl:element name="description" namespace="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
         <xsl:value-of select="$description"/>
-      </xsl:element>
-    </xsl:element>
+      </xsl:element>   
   </xsl:template>
-  <!--tax-->
-  <xsl:template name="tax">
-    <xsl:param name="amount"/>
-    <xsl:param name="name"/>
+  <!--order-->
+  <xsl:template name="order">
+    <xsl:param name="invoiceNumber"/>
     <xsl:param name="description"/>
-    <xsl:element name="tax" namespace="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
-      <xsl:element name="amount" namespace="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
-        <xsl:value-of select="$amount"/>
-      </xsl:element>
-      <xsl:element name="name" namespace="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
-        <xsl:value-of select="$name"/>
+    <xsl:param name="purchaseOrderNumber"/>
+    <xsl:element name="order" namespace="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+      <xsl:element name="invoiceNumber" namespace="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+        <xsl:value-of select="$invoiceNumber"/>
       </xsl:element>
       <xsl:element name="description" namespace="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
         <xsl:value-of select="$description"/>
+      </xsl:element>
+      <xsl:element name="purchaseOrderNumber" namespace="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+        <xsl:value-of select="$purchaseOrderNumber"/>
       </xsl:element>
     </xsl:element>
   </xsl:template>
   <!--sale-->
   <xsl:template name="sale">
     <xsl:param name="amount"/>
-    <xsl:param name="tax.amount"/>
-    <xsl:param name="tax.name"/>
-    <xsl:param name="tax.description"/>
-    <xsl:param name="shipping.amount"/>
-    <xsl:param name="shipping.name"/>
-    <xsl:param name="shipping.description"/>
+    <xsl:param name="tax.charge"/>
+    <xsl:param name="shipping.charge"/>
+    <xsl:param name="order"></xsl:param>
     <xsl:param name="customerProfileId"/>
     <xsl:param name="customerPaymentProfileId"/>
     <xsl:param name="customerShippingAddressId"/>
-    <xsl:param name="order.invoiceNumber"/>
-    <xsl:param name="order.description"/>
-    <xsl:param name="purchaseOrderNumber"/>
     <xsl:param name="taxExempt"/>
     <xsl:param name="recurringBilling"/>
     <xsl:param name="cardCode"/>
     <xsl:param name="splitTenderId"/>
     <!--prototype needs loop-->
-    <xsl:param name="itemId"/>
-    <xsl:param name="item.name"/>
-    <xsl:param name="item.description"/>
-    <xsl:param name="quantity"/>
-    <xsl:param name="unitPrice"/>
-    <xsl:param name="taxable"/>
+    <xsl:param name="lineItems"></xsl:param>
     <xsl:element name="amount" namespace="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
       <xsl:value-of select="$amount"/>
     </xsl:element>
     <!--Tax-->
-    <xsl:call-template name="tax">
-      <xsl:with-param name="amount" select="$tax.amount"></xsl:with-param>
-      <xsl:with-param name="name" select="$tax.name"></xsl:with-param>
-      <xsl:with-param name="description" select="$tax.description"></xsl:with-param>
-    </xsl:call-template>
+    <xsl:element name="tax" namespace="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+      <xsl:copy-of select="$tax.charge"/>
+    </xsl:element>   
     <!--Shipping-->
-    <xsl:call-template name="shipping">
-      <xsl:with-param name="amount" select="$shipping.amount"></xsl:with-param>
-      <xsl:with-param name="name" select="$shipping.name"></xsl:with-param>
-      <xsl:with-param name="description" select="$shipping.description"></xsl:with-param>
-    </xsl:call-template>
+    <xsl:element name="shipping" namespace="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+      <xsl:copy-of select="$shipping.charge"/>
+    </xsl:element>
     <!--Line Items 1..*-->
-    <xsl:call-template name="lineItems">
-      <xsl:with-param name="itemId" select="$itemId"></xsl:with-param>
-      <xsl:with-param name="name" select="$item.name"></xsl:with-param>
-      <xsl:with-param name="description" select="$item.description"></xsl:with-param>
-      <xsl:with-param name="quantity" select="$quantity"></xsl:with-param>
-      <xsl:with-param name="unitPrice" select="$unitPrice"></xsl:with-param>
-      <xsl:with-param name="taxable" select="$taxable"></xsl:with-param>
-    </xsl:call-template>
+    <xsl:copy-of select="$lineItems"/>
     <!--Customer Profile Id-->
     <xsl:element name="customerProfileId" namespace="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
       <xsl:value-of select="$customerProfileId"/>
@@ -324,11 +189,7 @@
       <xsl:value-of select="$customerShippingAddressId"/>
     </xsl:element>
     <!--Order-->
-    <xsl:call-template name="order">
-      <xsl:with-param name="invoiceNumber" select="$order.invoiceNumber"></xsl:with-param>
-      <xsl:with-param name="description" select="$order.description"></xsl:with-param>
-      <xsl:with-param name="purchaseOrderNumber" select="$purchaseOrderNumber"></xsl:with-param>
-    </xsl:call-template>
+    <xsl:copy-of select="$order"/>
     <!--Tax Exempt-->
     <xsl:element name="taxExempt" namespace="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
       <xsl:value-of select="$taxExempt"/>
@@ -348,85 +209,83 @@
     </xsl:element>
     </xsl:if>
   </xsl:template>
-  <!--order-->
-  <xsl:template name="order">
-    <xsl:param name="invoiceNumber"/>
+
+  <!--Messages-->
+  <!--createCustomerProfileRequest-->
+  <xsl:template name="createCustomerProfileRequest">
+    <xsl:param name="merchantAuthentication"></xsl:param>
+    <xsl:param name="merchantCustomerId"/>
     <xsl:param name="description"/>
-    <xsl:param name="purchaseOrderNumber"/>
-    <xsl:element name="order" namespace="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
-      <xsl:element name="invoiceNumber" namespace="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
-        <xsl:value-of select="$invoiceNumber"/>
+    <xsl:param name="email"/>
+    <xsl:element name="createCustomerProfileRequest" namespace="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+      <xsl:copy-of select="$merchantAuthentication"/>
+      <xsl:element name="profile" namespace="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+        <xsl:call-template name="customerProfileType">
+          <xsl:with-param name="merchantCustomerId" select="$merchantCustomerId"></xsl:with-param>
+          <xsl:with-param name="description" select="$description"></xsl:with-param>
+          <xsl:with-param name="email" select="$email"></xsl:with-param>
+        </xsl:call-template>
       </xsl:element>
-      <xsl:element name="description" namespace="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
-        <xsl:value-of select="$description"/>
+    </xsl:element>
+  </xsl:template>
+  <!--createCustomerShippingAddressRequest-->
+  <xsl:template name="createCustomerShippingAddressRequest">
+    <xsl:param name="merchantAuthentication"/>
+    <xsl:param name="shipping.address"/>
+    <xsl:param name="customerProfileId"/>
+    <xsl:element name="createCustomerShippingAddressRequest" namespace="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+      <xsl:copy-of select="$merchantAuthentication"/>
+      <xsl:element name="customerProfileId" namespace="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+        <xsl:value-of select="$customerProfileId"/>
       </xsl:element>
-      <xsl:element name="purchaseOrderNumber" namespace="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
-        <xsl:value-of select="$purchaseOrderNumber"/>
+      <xsl:element name="address" namespace="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+        <xsl:copy-of select="$shipping.address"/>
+      </xsl:element>
+    </xsl:element>
+  </xsl:template>
+  <!--createCustomerPaymentProfileRequest-->
+  <xsl:template name="createCustomerPaymentProfileRequest">
+    <xsl:param name="merchantAuthentication"/>
+    <xsl:param name="billto.address"></xsl:param>
+    <xsl:param name="customerProfileId"></xsl:param>
+    <xsl:param name="payment"></xsl:param>
+    <xsl:element name="createCustomerPaymentProfileRequest" namespace="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+      <xsl:copy-of select="$merchantAuthentication"></xsl:copy-of>
+      <xsl:element name="customerProfileId" namespace="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+        <xsl:value-of select="$customerProfileId"/>
+      </xsl:element>
+      <xsl:element name="paymentProfile" namespace="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+        <xsl:element name="billTo" namespace="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+          <xsl:copy-of select="$billto.address"/>
+        </xsl:element>
+        <xsl:element name="payment" namespace="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+          <xsl:copy-of select="$payment"/>
+        </xsl:element>
       </xsl:element>
     </xsl:element>
   </xsl:template>
   <!--profileTransaAuthOnly-->
   <xsl:template name="profileTransAuthOnly">
-    <xsl:param name="username"></xsl:param>
-    <xsl:param name="password"></xsl:param>
-    <xsl:param name="amount"></xsl:param>
-    <xsl:param name="tax.amount"></xsl:param>
-    <xsl:param name="tax.name"></xsl:param>
-    <xsl:param name="tax.description"></xsl:param>
-    <xsl:param name="shipping.amount"></xsl:param>
-    <xsl:param name="shipping.name"></xsl:param>
-    <xsl:param name="shipping.description"></xsl:param>
-    <xsl:param name="customerProfileId"></xsl:param>
-    <xsl:param name="customerPaymentProfileId"></xsl:param>
-    <xsl:param name="customerShippingAddressId"></xsl:param>
-    <xsl:param name="order.invoiceNumber"></xsl:param>
-    <xsl:param name="order.description"></xsl:param>
-    <xsl:param name="purchaseOrderNumber"></xsl:param>
-    <xsl:param name="taxExempt"></xsl:param>
-    <xsl:param name="recurringBilling"></xsl:param>
-    <xsl:param name="cardCode"></xsl:param>
-    <xsl:param name="splitTenderId"></xsl:param>
-    <!--prototype needs loop-->
-    <xsl:param name="itemId"></xsl:param>
-    <xsl:param name="item.name"></xsl:param>
-    <xsl:param name="item.description"></xsl:param>
-    <xsl:param name="quantity"></xsl:param>
-    <xsl:param name="unitPrice"></xsl:param>
-    <xsl:param name="taxable"></xsl:param>
+    <xsl:param name="merchantAuthentication"></xsl:param>
+    <xsl:param name="sale"></xsl:param>   
     <xsl:element name="createCustomerProfileTransactionRequest" namespace="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
-
-      <xsl:call-template name="merchantAuthentication">
-        <xsl:with-param name="username" select="$username"></xsl:with-param>
-        <xsl:with-param name="password" select="$password"></xsl:with-param>
-      </xsl:call-template>
-
-      <xsl:element name="transaction" namespace="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+      <xsl:copy-of select="$merchantAuthentication"/>
+      <xsl:element name="transaction" namespace="AnetApi/xml/v1/schema/AnetApiSchema.xsd">       
         <xsl:element name="profileTransAuthOnly" namespace="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
-          <xsl:call-template name="sale">
-            <xsl:with-param name="amount" select="$amount"></xsl:with-param>
-            <xsl:with-param name="tax.amount" select="$tax.amount"></xsl:with-param>
-            <xsl:with-param name="tax.name" select="$tax.name"></xsl:with-param>
-            <xsl:with-param name="tax.description" select="$tax.description"></xsl:with-param>
-            <xsl:with-param name="shipping.amount" select="$shipping.amount"></xsl:with-param>
-            <xsl:with-param name="shipping.name" select="$shipping.name"></xsl:with-param>
-            <xsl:with-param name="shipping.description" select="$shipping.description"></xsl:with-param>
-            <xsl:with-param name="itemId" select="$itemId"></xsl:with-param>
-            <xsl:with-param name="item.name" select="$item.name"></xsl:with-param>
-            <xsl:with-param name="item.description" select="$item.description"></xsl:with-param>
-            <xsl:with-param name="quantity" select="$quantity"></xsl:with-param>
-            <xsl:with-param name="unitPrice" select="$unitPrice"></xsl:with-param>
-            <xsl:with-param name="taxable" select="$taxable"></xsl:with-param>
-            <xsl:with-param name="customerProfileId" select="$customerProfileId"></xsl:with-param>
-            <xsl:with-param name="customerPaymentProfileId" select="$customerPaymentProfileId"></xsl:with-param>
-            <xsl:with-param name="customerShippingAddressId" select="$customerShippingAddressId"></xsl:with-param>
-            <xsl:with-param name="order.invoiceNumber" select="$order.invoiceNumber"></xsl:with-param>
-            <xsl:with-param name="order.description" select="$order.description"></xsl:with-param>
-            <xsl:with-param name="purchaseOrderNumber" select="$purchaseOrderNumber"></xsl:with-param>
-            <xsl:with-param name="taxExempt" select="$taxExempt"></xsl:with-param>
-            <xsl:with-param name="recurringBilling" select="$recurringBilling"></xsl:with-param>
-            <xsl:with-param name="cardCode" select="$cardCode"></xsl:with-param>
-            <xsl:with-param name="splitTenderId" select="$splitTenderId"></xsl:with-param>
-          </xsl:call-template>
+          <xsl:copy-of select="$sale"/>
+        </xsl:element>
+      </xsl:element>
+    </xsl:element>
+  </xsl:template>
+  <!--profileTransaAuthCapture-->
+  <xsl:template name="profileTransAuthCapture">
+    <xsl:param name="merchantAuthentication"></xsl:param>
+    <xsl:param name="sale"></xsl:param>
+    <xsl:element name="createCustomerProfileTransactionRequest" namespace="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+      <xsl:copy-of select="$merchantAuthentication"/>
+      <xsl:element name="transaction" namespace="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+        <xsl:element name="profileTransAuthCapture" namespace="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+          <xsl:copy-of select="$sale"/>
         </xsl:element>
       </xsl:element>
     </xsl:element>
