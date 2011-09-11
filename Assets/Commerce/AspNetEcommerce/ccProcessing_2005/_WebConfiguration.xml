@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WebConfiguration xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <MSDEServerName>(local)</MSDEServerName>
+   <ShowVisualStudioConfiguration>true</ShowVisualStudioConfiguration>
+   <ShowMSDEConfiguration>false</ShowMSDEConfiguration>
+   <ShowDirectoryPermissionConfiguration>true</ShowDirectoryPermissionConfiguration>
+   <Virtual>
+      <AnonymousUserName />
+      <AuthNTLM>true</AuthNTLM>
+      <AuthAnonymous>true</AuthAnonymous>
+      <AuthBasic>true</AuthBasic>
+      <DefaultDocuments>default.htm,default.aspx,default.asp</DefaultDocuments>
+      <DomainName>localhost</DomainName>
+      <DotNetVersion>1.1.4322</DotNetVersion>
+      <ServerType>IIS6</ServerType>
+      <Virtual>PayPalIntegration</Virtual>
+      <Path>.</Path>
+      <FriendlyName />
+      <IISPath>IIS://localhost/W3SVC/1/ROOT</IISPath>
+   </Virtual>
+   <ScriptMaps />
+   <VisualStudioSolutionPath>.\paypalintegration.sln</VisualStudioSolutionPath>
+   <VisualStudioWebProjectWebPath>http://localhost/PayPalIntegration/PayPalIntegration.csproj</VisualStudioWebProjectWebPath>
+   <DirectoryPermissions>
+      <DirectoryPermission>
+         <Pathname>.</Pathname>
+         <Username>IUSR_RASNOTE</Username>
+         <UserRights>R</UserRights>
+         <InheritSubDirectories>true</InheritSubDirectories>
+         <OverrideExistingRights>false</OverrideExistingRights>
+      </DirectoryPermission>
+      <DirectoryPermission>
+         <Pathname>.</Pathname>
+         <Username>ASPNET</Username>
+         <UserRights>F</UserRights>
+         <InheritSubDirectories>true</InheritSubDirectories>
+         <OverrideExistingRights>false</OverrideExistingRights>
+      </DirectoryPermission>
+   </DirectoryPermissions>
+   <ApplicationName>Web Configuration Utility</ApplicationName>
+   <MSDELoginMode>SQLServer</MSDELoginMode>
+</WebConfiguration>

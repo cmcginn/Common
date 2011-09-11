@@ -1,0 +1,229 @@
+BODY,TABLE,TD,TH,INPUT,TEXTAREA,SELECT
+{
+    FONT-FAMILY: Verdana,sans-serif;
+    FONT-SIZE: 10pt;
+}
+BODY
+{
+    MARGIN-TOP: 0pt;
+    PADDING-TOP: 0pt; 
+    scrollbar-face-color:#0066cc;
+    scrollbar-shadow-color: darkgrey;
+    scrollbar-arrow-color:cornsilk;
+   
+}
+PRE
+{
+    BACKGROUND: LightGray;
+    COLOR: DarkBlue;
+    FONT-FAMILY: Courier New;
+    FONT-SIZE: 10pt;
+    FONT-WEIGHT: normal;
+}
+H1
+{
+    BACKGROUND-COLOR: #eeeeee;
+    COLOR: navy;
+    FONT-SIZE: 16pt;
+    height: 25pt;
+    FONT-WEIGHT: bold;
+    MARGIN-BOTTOM: 0pt;
+    MARGIN-TOP: 0pt;
+    PADDING-BOTTOM: 0px;
+    PADDING-TOP: 3pt;
+    TEXT-ALIGN: center
+}
+H2
+{
+    COLOR: maroon;
+    FONT-SIZE: 14pt;
+    FONT-WEIGHT: bold;
+    MARGIN-BOTTOM: 0pt;
+    MARGIN-TOP: 0pt;
+    PADDING-BOTTOM: 0pt;
+    PADDING-TOP: 0pt
+}
+H3
+{
+    COLOR: navy;
+    FONT-SIZE: 10pt;
+    FONT-WEIGHT: bold;
+    MARGIN-BOTTOM: 0pt;
+    MARGIN-TOP: 0pt;
+    PADDING-BOTTOM: 0pt;
+    PADDING-TOP: 0pt
+}
+FORM
+{
+    MARGIN-BOTTOM: 0pt;
+    MARGIN-TOP: 0pt;
+    PADDING-BOTTOM: 0pt;
+    PADDING-TOP: 0pt
+}
+TABLE
+{
+ 	BORDER-COLLAPSE: collapse;
+	Border-Color: lightgrey;
+}
+TH
+{
+	font-weight: bold;
+	text-align: center;
+}
+A 
+{ COLOR:DarkBlue; font-weight:normal;}
+A:visited
+{
+	font-weight: normal;
+	color: DarkRed;
+}
+A:hover 
+{ COLOR:Red;}
+HR 
+{ color:DarkBlue; background: DarkBlue; border: 0; Height:1px;}
+	
+UL 
+{
+    MARGIN-BOTTOM: 0pt;
+    MARGIN-TOP: 3pt;
+    PADDING-BOTTOM: 0pt;
+    PADDING-TOP: 0pt;
+}	
+/* 
+   used on the main page left table column 
+   the default contains the wave background
+*/
+.categorylistbackground
+{
+	background-image: url(images/newwave.jpg);
+	width: 170px;
+	vertical-align: top;
+	padding-left: 4pt;
+}
+.smallbody 
+{
+    FONT-SIZE: 8pt;
+}
+
+/* Block backgrounds for headers etc. */
+.menuband, .gridheader, .buttonlinks, .blockheader
+{
+	color: Cornsilk;
+	background-color: #003399;
+}
+/* Alternate background color Color to offset the background
+   used for the category list and banner strips for color
+   variety. Should be a companion color to the block background
+   colors (previous tag
+*/
+.alternatebackground
+{
+	color: white;
+	background-color: #0066cc;
+ 	xfilter: progid:DXImageTransform.Microsoft.BasicImage(opacity=.75);
+}
+
+.webstoretitletext 
+{
+	color: #003399;
+	font-size: 24pt;
+	font-face: Arial Narrow;
+	font-weight: bold;	
+}
+
+/* used for any block tags like headers on tables etc. */
+.blockheader
+{
+}
+
+/* Menu text for the banner below the logo */
+.webstorebannertext
+{
+	color: White;
+	font-weight: bold;
+	text-decoration: none;
+}
+.webstorebannertext:visited
+{
+	color: White;
+	font-weight: bold;
+}
+.webstorebannertext:hover
+{
+	color: #003399;
+	background: White;
+	font-weight: bold;
+}
+
+/* Used on the category list as a standard link */
+.menulink
+{
+    COLOR: White;
+    FONT-SIZE: 8pt;
+    FONT-WEIGHT: normal;
+    TEXT-DECORATION: none ;
+    display:block;
+    width:155px;
+    text-align:left;
+    padding-top:2px;
+    padding-bottom: 2px;
+    padding-left: 4px;
+}
+.menulink:visited { color: cornsilk } 
+.menulink:hover { COLOR:DarkBlue;text-decoration:none; font-weight:normal;background:white;}
+.menuband
+{
+	font-weight: bold;
+}
+
+
+.buttonlinks 
+{
+    FONT-WEIGHT:bold;
+    TEXT-DECORATION: none;
+    display: block;
+    padding:2px;
+}
+.buttonlinks:visited { color: cornsilk; }
+.buttonlinks:hover { COLOR:DarkBlue; text-decoration:none; background:white;} 
+
+
+.gridheader
+{
+	font-weight: bold;
+	text-decoration: none;
+	background-image:url(images/floralbackground_sm.gif);
+}
+.gridnormal
+{
+	background-color: WhiteSmoke;
+}
+.gridalternate
+{
+	background-color:#B5C7D6;
+}
+.errormessage
+{
+	font-size: 10pt;
+	font-weight: bold;
+	color: Maroon;
+}
+.tabbutton, .selectedtabbutton
+{
+	vertical-align: middle;
+	cursor: hand;
+	color: Black;
+	background-color: lightsteelblue;
+	text-align: center;
+	font-size: 8pt;
+	border-right:  solid 2px white;
+}
+.selectedtabbutton 
+{ 
+	font-size: 10pt;
+	FONT-WEIGHT: bold; 
+	COLOR: Cornsilk; 
+	BACKGROUND-COLOR: #003399;
+	cursor:default;
+	
+}

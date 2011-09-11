@@ -59,6 +59,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Workflows.Activities
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Workflows.Activities.Tests", "Common.Workflows.Activities.Tests\Common.Workflows.Activities.Tests.csproj", "{AA2CFDC2-9ABE-4EFA-AD1A-2E3ADBBCE5E7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Services.Payment.Xsl", "Common.Services.Payment.Xsl\Common.Services.Payment.Xsl.csproj", "{6719E2AA-B429-4DA4-A54C-8F6B68D15789}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = Common.vsmdi
@@ -144,6 +146,10 @@ Global
 		{AA2CFDC2-9ABE-4EFA-AD1A-2E3ADBBCE5E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA2CFDC2-9ABE-4EFA-AD1A-2E3ADBBCE5E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA2CFDC2-9ABE-4EFA-AD1A-2E3ADBBCE5E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6719E2AA-B429-4DA4-A54C-8F6B68D15789}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6719E2AA-B429-4DA4-A54C-8F6B68D15789}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6719E2AA-B429-4DA4-A54C-8F6B68D15789}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6719E2AA-B429-4DA4-A54C-8F6B68D15789}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

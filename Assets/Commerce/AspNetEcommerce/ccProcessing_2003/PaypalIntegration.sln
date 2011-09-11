@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaypalIntegration", "http://localhost/PayPalIntegration/PayPalIntegration.csproj", "{1FE48019-60B6-4DC2-AFAF-16B8AF1184B3}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{1FE48019-60B6-4DC2-AFAF-16B8AF1184B3}.Debug.ActiveCfg = Debug|.NET
+		{1FE48019-60B6-4DC2-AFAF-16B8AF1184B3}.Debug.Build.0 = Debug|.NET
+		{1FE48019-60B6-4DC2-AFAF-16B8AF1184B3}.Release.ActiveCfg = Release|.NET
+		{1FE48019-60B6-4DC2-AFAF-16B8AF1184B3}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal
