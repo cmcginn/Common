@@ -56,20 +56,34 @@ namespace Common.Utils.Extensions {
     public static XElement Transform( this XElement element, FileInfo xslFileInfo ) {
       return element.Transform( new XsltArgumentList(), xslFileInfo );
     }
-    public static XElement Transform( this XElement element,XsltArgumentList args, FileInfo xslFileInfo ) {
+    public static XElement Transform( this XElement element, XsltArgumentList args, FileInfo xslFileInfo,bool debug ) {
       var document = new XDocument();
       document.Add( element );
       return document.Transform( args, xslFileInfo ).Root;
     }
+    public static XElement Transform( this XElement element,XsltArgumentList args, FileInfo xslFileInfo ) {
+      return element.Transform( args, xslFileInfo, false );
+    }
     public static XDocument Transform( this XDocument document, FileInfo xslFileInfo ) {
       return document.Transform( new XsltArgumentList(), xslFileInfo );
     }
+    public static XDocument Transform( this XDocument document, FileInfo xslFileInfo,bool debug ) {
+      return document.Transform( xslFileInfo, debug );
+    }
     public static XDocument Transform( this XDocument document, XsltArgumentList args, FileInfo xslFileInfo ) {
+      return document.Transform(args, XDocument.Load( xslFileInfo.FullName ),false );
+    }
+    public static XDocument Transform( this XDocument document, XsltArgumentList args, FileInfo xslFileInfo,bool debug ) {
+      return document.Transform( args, XDocument.Load( xslFileInfo.FullName ),debug );
+    }
+    public static XDocument Transform( this XDocument document, XsltArgumentList args, XDocument xsltDocument ) {
+      return document.Transform( args, xsltDocument, false );
+    }
+    public static XDocument Transform( this XDocument document, XsltArgumentList args, XDocument xsltDocument,bool debug ) {
 
-      Contract.Requires( xslFileInfo.Exists, "The specified xsl file does not exist" );
       XDocument result = null;
-      var transformer = new XslCompiledTransform();
-      transformer.Load( xslFileInfo.FullName );
+      var transformer = new XslCompiledTransform(debug);
+      transformer.Load( xsltDocument.CreateReader() );
       var navigator = document.CreateNavigator();
       var sb = new StringBuilder();
       using( var writer = new XmlTextWriter( new StringWriter( sb ) ) ) {
