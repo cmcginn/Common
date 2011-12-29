@@ -14,6 +14,20 @@ using System.Reflection;
 using System.Diagnostics.Contracts;
 namespace Common.Utils.Extensions {
   public static class XmlExtensions {
+    public static XmlDocument ToXmlDocument( this XDocument xDocument ) {
+      var xmlDocument = new XmlDocument();
+      using( var xmlReader = xDocument.CreateReader() ) {
+        xmlDocument.Load( xmlReader );
+      }
+      return xmlDocument;
+    }
+
+    public static XDocument ToXDocument( this XmlDocument xmlDocument ) {
+      using( var nodeReader = new XmlNodeReader( xmlDocument ) ) {
+        nodeReader.MoveToContent();
+        return XDocument.Load( nodeReader );
+      }
+    }
     public static void CopyObject( this object source, Type type, object destination ) {
       if( type.IsInterface ) {
         PropertyInfo[] myInterfaceFields = type.GetProperties(
@@ -53,36 +67,37 @@ namespace Common.Utils.Extensions {
         return XElement.Parse( builder.ToString() );
       };
     }
+    #region Transformation
     public static XElement Transform( this XElement element, FileInfo xslFileInfo ) {
       return element.Transform( new XsltArgumentList(), xslFileInfo );
     }
-    public static XElement Transform( this XElement element, XsltArgumentList args, FileInfo xslFileInfo,bool debug ) {
+    public static XElement Transform( this XElement element, XsltArgumentList args, FileInfo xslFileInfo, bool debug ) {
       var document = new XDocument();
       document.Add( element );
       return document.Transform( args, xslFileInfo ).Root;
     }
-    public static XElement Transform( this XElement element,XsltArgumentList args, FileInfo xslFileInfo ) {
+    public static XElement Transform( this XElement element, XsltArgumentList args, FileInfo xslFileInfo ) {
       return element.Transform( args, xslFileInfo, false );
     }
     public static XDocument Transform( this XDocument document, FileInfo xslFileInfo ) {
       return document.Transform( new XsltArgumentList(), xslFileInfo );
     }
-    public static XDocument Transform( this XDocument document, FileInfo xslFileInfo,bool debug ) {
+    public static XDocument Transform( this XDocument document, FileInfo xslFileInfo, bool debug ) {
       return document.Transform( xslFileInfo, debug );
     }
     public static XDocument Transform( this XDocument document, XsltArgumentList args, FileInfo xslFileInfo ) {
-      return document.Transform(args, XDocument.Load( xslFileInfo.FullName ),false );
+      return document.Transform( args, XDocument.Load( xslFileInfo.FullName ), false );
     }
-    public static XDocument Transform( this XDocument document, XsltArgumentList args, FileInfo xslFileInfo,bool debug ) {
-      return document.Transform( args, XDocument.Load( xslFileInfo.FullName ),debug );
+    public static XDocument Transform( this XDocument document, XsltArgumentList args, FileInfo xslFileInfo, bool debug ) {
+      return document.Transform( args, XDocument.Load( xslFileInfo.FullName ), debug );
     }
     public static XDocument Transform( this XDocument document, XsltArgumentList args, XDocument xsltDocument ) {
       return document.Transform( args, xsltDocument, false );
     }
-    public static XDocument Transform( this XDocument document, XsltArgumentList args, XDocument xsltDocument,bool debug ) {
+    public static XDocument Transform( this XDocument document, XsltArgumentList args, XDocument xsltDocument, bool debug ) {
 
       XDocument result = null;
-      var transformer = new XslCompiledTransform(debug);
+      var transformer = new XslCompiledTransform( debug );
       transformer.Load( xsltDocument.CreateReader() );
       var navigator = document.CreateNavigator();
       var sb = new StringBuilder();
@@ -92,6 +107,7 @@ namespace Common.Utils.Extensions {
       }
       return result;
     }
+    #endregion
     public static T Deserialize<T>( this XElement element ) {
       XmlSerializer serializer = new XmlSerializer( typeof( T ) );
       var result = ( T )serializer.Deserialize( element.CreateReader() );

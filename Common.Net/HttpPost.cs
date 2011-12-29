@@ -19,7 +19,7 @@ namespace Common.Net {
       if( null != Error )
         Error( this, new EventArgs<NetException>( exception ) );
     }
-
+    public string UserAgent { get; set; }
     private PostEncodingTypes _PostEncodingType = PostEncodingTypes.UrlEncoded;
     public PostEncodingTypes PostEncodingType {
       get {
@@ -78,8 +78,7 @@ namespace Common.Net {
       Encoding = encoding;
       return Post( postUri, postEncodingType, postType, parameters );
     }
-
-
+    
     public byte[] Post() {
       byte[] result = null;
       Stream writeStream = null;
@@ -102,6 +101,8 @@ namespace Common.Net {
 
 
         request = ( HttpWebRequest )WebRequest.Create( PostUri );
+        if( !String.IsNullOrEmpty( UserAgent ) )
+          request.UserAgent = UserAgent;
         if( NetworkCredential != null )
           request.Credentials = NetworkCredential;
         if( PostType == PostTypes.Post ) {
@@ -139,7 +140,8 @@ namespace Common.Net {
         var netException = new NetException( "HttpPost Failed", ex );
         OnError( netException );
       } finally {
-        writeStream.Dispose();
+        if(writeStream != null)
+          writeStream.Dispose();
       }
       return result;
     }
@@ -162,6 +164,9 @@ namespace Common.Net {
     public byte[] Post( Uri postUri, PostEncodingTypes postEncodingType, PostTypes postType, IDictionary<string, string> parameters ) {
       Parameters = parameters;
       return Post( postUri, postEncodingType, postType );
+    }
+    public static string GetString( byte[] response ) {
+      return new String( response.Select( x => ( char )x ).ToArray() );
     }
   }
 }
