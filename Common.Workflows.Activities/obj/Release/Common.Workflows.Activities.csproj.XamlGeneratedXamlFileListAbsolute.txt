@@ -1,0 +1,4 @@
+obj\Release\ExtractZipArchive.g.xaml
+obj\Release\ProcessGatewayPayment.g.xaml
+obj\Release\XslTransform.g.xaml
+obj\Release\ValidateSchema.g.xaml

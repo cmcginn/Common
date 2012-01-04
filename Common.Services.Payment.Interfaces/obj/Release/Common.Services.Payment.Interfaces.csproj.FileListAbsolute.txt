@@ -3,3 +3,14 @@ C:\Projects\Urbana\Common\Common.Services.Payment.Interfaces\bin\Release\Common.
 C:\Projects\Urbana\Common\Common.Services.Payment.Interfaces\obj\Release\ResolveAssemblyReference.cache
 C:\Projects\Urbana\Common\Common.Services.Payment.Interfaces\obj\Release\Common.Services.Payment.Interfaces.dll
 C:\Projects\Urbana\Common\Common.Services.Payment.Interfaces\obj\Release\Common.Services.Payment.Interfaces.pdb
+C:\Projects\Urbana\Common\Common.Services.Payment.Interfaces\bin\Release\Microsoft.Practices.Unity.Configuration.dll
+C:\Projects\Urbana\Common\Common.Services.Payment.Interfaces\bin\Release\Microsoft.Practices.Unity.dll
+C:\Projects\Urbana\Common\Common.Services.Payment.Interfaces\bin\Release\Microsoft.Practices.Unity.Interception.Configuration.dll
+C:\Projects\Urbana\Common\Common.Services.Payment.Interfaces\bin\Release\Microsoft.Practices.Unity.Interception.dll
+C:\Projects\Urbana\Common\Common.Services.Payment.Interfaces\bin\Release\Microsoft.Practices.ServiceLocation.dll
+C:\Projects\Urbana\Common\Common.Services.Payment.Interfaces\bin\Release\Microsoft.Practices.Unity.xml
+C:\Projects\Urbana\Common\Common.Services.Payment.Interfaces\bin\Release\Microsoft.Practices.Unity.Configuration.xml
+C:\Projects\Urbana\Common\Common.Services.Payment.Interfaces\bin\Release\Microsoft.Practices.Unity.Interception.pdb
+C:\Projects\Urbana\Common\Common.Services.Payment.Interfaces\bin\Release\Microsoft.Practices.Unity.Interception.xml
+C:\Projects\Urbana\Common\Common.Services.Payment.Interfaces\bin\Release\Microsoft.Practices.Unity.Interception.Configuration.pdb
+C:\Projects\Urbana\Common\Common.Services.Payment.Interfaces\bin\Release\Microsoft.Practices.Unity.Interception.Configuration.xml

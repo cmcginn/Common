@@ -88,17 +88,21 @@
       <HintPath>..\..\..\Dependencies\EntLib50\Microsoft.Practices.Unity.Interception.Configuration.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-    <Reference Include="Neovolve.Toolkit">
+    <Reference Include="Neovolve.Toolkit, Version=1.1.237.25175, Culture=neutral, PublicKeyToken=911824a9aa319cb2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Dependencies\Neovolve.Toolkit 1.0\Neovolve.Toolkit.dll</HintPath>
     </Reference>
-    <Reference Include="Neovolve.Toolkit.Unity">
-      <HintPath>..\..\..\Dependencies\Neovolve.Toolkit 1.0\Neovolve.Toolkit.Unity.dll</HintPath>
+    <Reference Include="Neovolve.Toolkit.Unity, Version=1.1.237.25181, Culture=neutral, PublicKeyToken=911824a9aa319cb2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\Neovolve.Toolkit 1.0\Neovolve.Toolkit.Unity.dll</HintPath>
     </Reference>
-    <Reference Include="Neovolve.Toolkit.Workflow">
-      <HintPath>..\..\..\Dependencies\Neovolve.Toolkit 1.0\Neovolve.Toolkit.Workflow.dll</HintPath>
+    <Reference Include="Neovolve.Toolkit.Workflow, Version=1.1.237.25187, Culture=neutral, PublicKeyToken=911824a9aa319cb2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\Neovolve.Toolkit 1.0\Neovolve.Toolkit.Workflow.dll</HintPath>
     </Reference>
-    <Reference Include="Neovolve.Toolkit.Workflow.Design">
-      <HintPath>..\..\..\Dependencies\Neovolve.Toolkit 1.0\Neovolve.Toolkit.Workflow.Design.dll</HintPath>
+    <Reference Include="Neovolve.Toolkit.Workflow.Design, Version=1.1.237.25200, Culture=neutral, PublicKeyToken=911824a9aa319cb2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\Neovolve.Toolkit 1.0\Neovolve.Toolkit.Workflow.Design.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />

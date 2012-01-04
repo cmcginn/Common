@@ -26,9 +26,7 @@ C:\Projects\Urbana\Common\Common.Services.Payment.Tests\bin\Release\Microsoft.Pr
 C:\Projects\Urbana\Common\Common.Services.Payment.Tests\bin\Release\Microsoft.Practices.EnterpriseLibrary.Logging.xml
 C:\Projects\Urbana\Common\Common.Services.Payment.Tests\bin\Release\Microsoft.Practices.EnterpriseLibrary.PolicyInjection.pdb
 C:\Projects\Urbana\Common\Common.Services.Payment.Tests\bin\Release\Microsoft.Practices.EnterpriseLibrary.PolicyInjection.xml
-C:\Projects\Urbana\Common\Common.Services.Payment.Tests\bin\Release\Microsoft.Practices.Unity.pdb
 C:\Projects\Urbana\Common\Common.Services.Payment.Tests\bin\Release\Microsoft.Practices.Unity.xml
-C:\Projects\Urbana\Common\Common.Services.Payment.Tests\bin\Release\Microsoft.Practices.Unity.Configuration.pdb
 C:\Projects\Urbana\Common\Common.Services.Payment.Tests\bin\Release\Microsoft.Practices.Unity.Configuration.xml
 C:\Projects\Urbana\Common\Common.Services.Payment.Tests\bin\Release\Microsoft.Practices.Unity.Interception.pdb
 C:\Projects\Urbana\Common\Common.Services.Payment.Tests\bin\Release\Microsoft.Practices.Unity.Interception.xml

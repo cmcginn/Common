@@ -21,6 +21,3 @@ C:\Projects\Urbana\Common\Common.Services.Fax\obj\Release\Common.Services.Fax.cs
 C:\Projects\Urbana\Common\Common.Services.Fax\obj\Release\Common.Services.Fax.csproj.XamlGeneratedXamlFileListAbsolute.txt
 C:\Projects\Urbana\Common\Common.Services.Fax\obj\Release\Common.Services.Fax.dll
 C:\Projects\Urbana\Common\Common.Services.Fax\obj\Release\Common.Services.Fax.pdb
-C:\Projects\Urbana\Common\Common.Services.Fax\obj\Release\InProcessTempFiles\Activity1.g.cs
-C:\Projects\Urbana\Common\Common.Services.Fax\obj\Release\InProcessTempFiles\Activity1.g.xaml
-C:\Projects\Urbana\Common\Common.Services.Fax\obj\Release\InProcessTempFiles\_Common.Services.Fax.g.cs

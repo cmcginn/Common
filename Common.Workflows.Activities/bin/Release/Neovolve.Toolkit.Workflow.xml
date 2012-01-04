@@ -1,0 +1,2229 @@
+﻿<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>Neovolve.Toolkit.Workflow</name>
+  </assembly>
+  <members>
+    <member name="T:Neovolve.Toolkit.Workflow.WorkflowExtensionWrapper`1">
+      <summary>
+            The <see cref="T:Neovolve.Toolkit.Workflow.WorkflowExtensionWrapper`1" />
+              class is used to generate a function that creates an extension.
+            </summary>
+      <typeparam name="T">
+            The type of extension to create.
+            </typeparam>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.WorkflowExtensionWrapper`1.GenerateCreateExtensionWrapper">
+      <summary>
+            Generates the create extension wrapper.
+            </summary>
+      <returns>
+            A <see cref="T:System.Func`1" /> instance.
+            </returns>
+    </member>
+    <member name="T:Neovolve.Toolkit.Workflow.NamespaceDoc">
+      <summary>
+            The Neovolve.Toolkit.Workflow namespace contains classes and namespaces that provided assistance in developing Windows Workflow 4 projects.
+            </summary>
+    </member>
+    <member name="T:Neovolve.Toolkit.Workflow.Activities.NamespaceDoc">
+      <summary>
+            The Neovolve.Toolkit.Workflow.Activities namespace contains classes and namespaces 
+              that provided custom Windows Workflow activities.
+            </summary>
+    </member>
+    <member name="T:Neovolve.Toolkit.Workflow.Activities.InstanceResolver`16">
+      <summary>
+            The <see cref="T:Neovolve.Toolkit.Workflow.Activities.InstanceResolver`16" />
+              class is used to provide resolution of instances for workflow activities.
+            </summary>
+      <typeparam name="T1">
+            The first instance type.
+            </typeparam>
+      <typeparam name="T2">
+            The second instance type.
+            </typeparam>
+      <typeparam name="T3">
+            The third instance type.
+            </typeparam>
+      <typeparam name="T4">
+            The fourth instance type.
+            </typeparam>
+      <typeparam name="T5">
+            The fifth instance type.
+            </typeparam>
+      <typeparam name="T6">
+            The sixth instance type.
+            </typeparam>
+      <typeparam name="T7">
+            The seventh instance type.
+            </typeparam>
+      <typeparam name="T8">
+            The eighth instance type.
+            </typeparam>
+      <typeparam name="T9">
+            The ninth instance type.
+            </typeparam>
+      <typeparam name="T10">
+            The tenth instance type.
+            </typeparam>
+      <typeparam name="T11">
+            The eleventh instance type.
+            </typeparam>
+      <typeparam name="T12">
+            The twelfth instance type.
+            </typeparam>
+      <typeparam name="T13">
+            The thirteenth instance type.
+            </typeparam>
+      <typeparam name="T14">
+            The fourteenth instance type.
+            </typeparam>
+      <typeparam name="T15">
+            The fifteenth instance type.
+            </typeparam>
+      <typeparam name="T16">
+            The sixteenth instance type.
+            </typeparam>
+    </member>
+    <member name="F:Neovolve.Toolkit.Workflow.Activities.InstanceResolver`16._handlers">
+      <summary>
+              Stores the instance handler for this instance.
+            </summary>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.InstanceResolver`16.#ctor">
+      <summary>
+              Initializes a new instance of the <see cref="T:Neovolve.Toolkit.Workflow.Activities.InstanceResolver`16" /> class.
+            </summary>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.InstanceResolver`16.#ctor(Neovolve.Toolkit.Workflow.GenericArgumentCount)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Neovolve.Toolkit.Workflow.Activities.InstanceResolver`16" /> class.
+            </summary>
+      <param name="argumentCount">
+            The argument count.
+            </param>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.InstanceResolver`16.Abort(System.Activities.NativeActivityAbortContext)">
+      <summary>
+            Aborts the specified context.
+            </summary>
+      <param name="context">
+            The context.
+            </param>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.InstanceResolver`16.CacheMetadata(System.Activities.NativeActivityMetadata)">
+      <summary>
+            Caches the metadata.
+            </summary>
+      <param name="metadata">
+            The metadata.
+            </param>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.InstanceResolver`16.Cancel(System.Activities.NativeActivityContext)">
+      <summary>
+            Cancels the specified context.
+            </summary>
+      <param name="context">
+            The context.
+            </param>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.InstanceResolver`16.Execute(System.Activities.NativeActivityContext)">
+      <summary>
+            Executes the specified context.
+            </summary>
+      <param name="context">
+            The context.
+            </param>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.InstanceResolver`16.CacheMetadataBindProperties(System.Activities.NativeActivityMetadata)">
+      <summary>
+            The cache metadata bind properties.
+            </summary>
+      <param name="metadata">
+            The metadata.
+            </param>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.InstanceResolver`16.CanExecute">
+      <summary>
+            Determines whether this instance can execute.
+            </summary>
+      <returns>
+        <c>true</c> if this instance can execute; otherwise, <c>false</c>.
+            </returns>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.InstanceResolver`16.CreateHandler``1(System.Activities.ActivityContext,Neovolve.Toolkit.Workflow.Extensions.InstanceManagerExtension,System.Activities.InArgument{System.String},Neovolve.Toolkit.Workflow.GenericArgumentCount,Neovolve.Toolkit.Workflow.GenericArgumentCount)">
+      <summary>
+            The create handler.
+            </summary>
+      <typeparam name="TH">
+            The type of handler to create.
+            </typeparam>
+      <param name="context">
+            The context.
+            </param>
+      <param name="extension">
+            The extension.
+            </param>
+      <param name="resolutionName">
+            The resolution name.
+            </param>
+      <param name="handlerCount">
+            The handler count.
+            </param>
+      <param name="argumentCount">
+            The argument count.
+            </param>
+      <returns>
+            A <see cref="T:Neovolve.Toolkit.Workflow.InstanceHandler`1" /> instance.
+            </returns>
+      <requires exception="T:System.ArgumentNullException">extension != null</requires>
+      <exception cref="T:System.ArgumentNullException">extension == null</exception>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.InstanceResolver`16.DestroyHandlers(System.Activities.ActivityContext)">
+      <summary>
+            Destroys the handlers.
+            </summary>
+      <param name="context">
+            The context.
+            </param>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.InstanceResolver`16.OnCompleted(System.Activities.ActivityContext,System.Activities.ActivityInstance)">
+      <summary>
+            Called when the activity has completed.
+            </summary>
+      <param name="context">
+            The context.
+            </param>
+      <param name="completedInstance">
+            The completed instance.
+            </param>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Activities.InstanceResolver`16.ArgumentCount">
+      <summary>
+              Gets or sets the argument count.
+            </summary>
+      <value>
+              The argument count.
+            </value>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Activities.InstanceResolver`16.Body">
+      <summary>
+              Gets or sets the body of the activity.
+            </summary>
+      <value>
+              The body of the activity.
+            </value>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Activities.InstanceResolver`16.ResolutionName1">
+      <summary>
+              Gets or sets the first resolution name.
+            </summary>
+      <value>
+              The resolution first name.
+            </value>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Activities.InstanceResolver`16.ResolutionName10">
+      <summary>
+              Gets or sets the tenth resolution name10.
+            </summary>
+      <value>
+              The resolution tenth name.
+            </value>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Activities.InstanceResolver`16.ResolutionName11">
+      <summary>
+              Gets or sets the eleventh resolution name.
+            </summary>
+      <value>
+              The eleventh resolution name.
+            </value>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Activities.InstanceResolver`16.ResolutionName12">
+      <summary>
+              Gets or sets the twelfth resolution name.
+            </summary>
+      <value>
+              The twelfth resolution name.
+            </value>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Activities.InstanceResolver`16.ResolutionName13">
+      <summary>
+              Gets or sets the thirteenth resolution name.
+            </summary>
+      <value>
+              The thirteenth resolution name.
+            </value>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Activities.InstanceResolver`16.ResolutionName14">
+      <summary>
+              Gets or sets the fourteenth resolution name.
+            </summary>
+      <value>
+              The fourteenth resolution name.
+            </value>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Activities.InstanceResolver`16.ResolutionName15">
+      <summary>
+              Gets or sets the fifteenth resolution name.
+            </summary>
+      <value>
+              The fifteenth resolution name.
+            </value>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Activities.InstanceResolver`16.ResolutionName16">
+      <summary>
+              Gets or sets the sixteenth resolution name.
+            </summary>
+      <value>
+              The sixteenth resolution name.
+            </value>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Activities.InstanceResolver`16.ResolutionName2">
+      <summary>
+              Gets or sets the second resolution name.
+            </summary>
+      <value>
+              The second resolution name.
+            </value>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Activities.InstanceResolver`16.ResolutionName3">
+      <summary>
+              Gets or sets the third resolution name.
+            </summary>
+      <value>
+              The third resolution name.
+            </value>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Activities.InstanceResolver`16.ResolutionName4">
+      <summary>
+              Gets or sets the fourth resolution name.
+            </summary>
+      <value>
+              The fourth resolution name.
+            </value>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Activities.InstanceResolver`16.ResolutionName5">
+      <summary>
+              Gets or sets the fifth resolution name.
+            </summary>
+      <value>
+              The fifth resolution name.
+            </value>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Activities.InstanceResolver`16.ResolutionName6">
+      <summary>
+              Gets or sets the sixth resolution name.
+            </summary>
+      <value>
+              The sixth resolution name.
+            </value>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Activities.InstanceResolver`16.ResolutionName7">
+      <summary>
+              Gets or sets the seventh resolution name.
+            </summary>
+      <value>
+              The seventh resolution name.
+            </value>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Activities.InstanceResolver`16.ResolutionName8">
+      <summary>
+              Gets or sets the eighth resolution name.
+            </summary>
+      <value>
+              The eighth resolution name.
+            </value>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Activities.InstanceResolver`16.ResolutionName9">
+      <summary>
+              Gets or sets the ninth resolution name.
+            </summary>
+      <value>
+              The ninth resolution name.
+            </value>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Activities.InstanceResolver`16.Handlers">
+      <summary>
+              Gets the instance handlers for this instance.
+            </summary>
+      <value>
+              The handlers.
+            </value>
+    </member>
+    <member name="T:Neovolve.Toolkit.Workflow.Activities.ExecuteBookmark">
+      <summary>
+            The <see cref="T:Neovolve.Toolkit.Workflow.Activities.ExecuteBookmark" />
+              class is a workflow activity that is used to process bookmarks.
+            </summary>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.ExecuteBookmark.CacheMetadata(System.Activities.NativeActivityMetadata)">
+      <summary>
+            Caches the metadata.
+            </summary>
+      <param name="metadata">
+            The metadata.
+            </param>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.ExecuteBookmark.Execute(System.Activities.NativeActivityContext)">
+      <summary>
+            Runs the activity’s execution logic.
+            </summary>
+      <param name="context">
+            The execution context in which the activity executes.
+            </param>
+      <exception cref="T:System.ArgumentNullException">
+            No <see cref="P:Neovolve.Toolkit.Workflow.Activities.ExecuteBookmark.BookmarkName" /> has been provided.
+            </exception>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.ExecuteBookmark.BookmarkResumed(System.Activities.NativeActivityContext,System.Activities.Bookmark,System.Object)">
+      <summary>
+            Executes the callback logic when a bookmark is resumed.
+            </summary>
+      <param name="context">
+            The context.
+            </param>
+      <param name="bookmark">
+            The bookmark.
+            </param>
+      <param name="value">
+            The value.
+            </param>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Activities.ExecuteBookmark.BookmarkName">
+      <summary>
+              Gets or sets the name of the bookmark.
+            </summary>
+      <value>
+              The name of the bookmark.
+            </value>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Activities.ExecuteBookmark.CanInduceIdle">
+      <summary>
+              Gets or sets a value that indicates whether the activity can cause the workflow to become idle.
+            </summary>
+      <value>
+              The can induce idle.
+            </value>
+      <returns>
+              True if the activity can cause the workflow to become idle. This value is false by default.
+            </returns>
+    </member>
+    <member name="T:Neovolve.Toolkit.Workflow.Activities.ApplicationSetting`1">
+      <summary>
+            The <see cref="T:Neovolve.Toolkit.Workflow.Activities.ApplicationSetting`1" />
+              class is a workflow activity that returns an application configuration value.
+            </summary>
+      <typeparam name="T">
+            The type of value to return.
+            </typeparam>
+      <remarks>
+            The configuration value is obtained from a <see cref="T:Neovolve.Toolkit.Storage.IConfigurationStore" /> instance. 
+              The instance is resolved from <see cref="M:Neovolve.Toolkit.Unity.DomainContainer.TryGetCurrent(Microsoft.Practices.Unity.IUnityContainer@)">DomainContainer.TryGetCurrent</see>.
+              If no <see cref="T:Microsoft.Practices.Unity.IUnityContainer" /> exists with a registration for <see cref="T:Neovolve.Toolkit.Storage.IConfigurationStore" />, the instance is obtained from
+              <see cref="M:Neovolve.Toolkit.Storage.ConfigurationStoreFactory.Create">ConfigurationStoreFactory.Create</see>.
+            </remarks>
+      <seealso cref="T:Neovolve.Toolkit.Unity.DomainContainer" />
+      <seealso cref="T:Neovolve.Toolkit.Storage.ConfigurationStoreFactory" />
+    </member>
+    <member name="F:Neovolve.Toolkit.Workflow.Activities.ApplicationSetting`1._configurationStore">
+      <summary>
+              Stores the configuration store for the activity against the current app domain.
+            </summary>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.ApplicationSetting`1.CacheMetadata(System.Activities.NativeActivityMetadata)">
+      <summary>
+            Caches the metadata.
+            </summary>
+      <param name="metadata">
+            The metadata.
+            </param>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.ApplicationSetting`1.Execute(System.Activities.NativeActivityContext)">
+      <summary>
+            Runs the activity’s execution logic.
+            </summary>
+      <param name="context">
+            The execution context in which the activity executes.
+            </param>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.ApplicationSetting`1.BuildConfigurationStore">
+      <summary>
+            Builds the configuration store.
+            </summary>
+      <returns>
+            A <see cref="T:Neovolve.Toolkit.Storage.IConfigurationStore" /> instance.
+            </returns>
+      <ensures>Contract.Result&lt;IConfigurationStore&gt;() != null</ensures>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Activities.ApplicationSetting`1.DefaultValue">
+      <summary>
+              Gets or sets the default value.
+            </summary>
+      <value>
+              The default value.
+            </value>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Activities.ApplicationSetting`1.IsRequired">
+      <summary>
+              Gets or sets the is required.
+            </summary>
+      <value>
+              The is required.
+            </value>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Activities.ApplicationSetting`1.Key">
+      <summary>
+              Gets or sets the key.
+            </summary>
+      <value>
+              The key.
+            </value>
+    </member>
+    <member name="T:Neovolve.Toolkit.Workflow.Properties.Resources">
+      <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Properties.Resources.ResourceManager">
+      <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Properties.Resources.Culture">
+      <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Properties.Resources.Activity_NoChildActivitiesDefined">
+      <summary>
+              Looks up a localized string similar to No child activities are defined.
+            </summary>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Properties.Resources.BusinessFailureEvaluator_CodeNotBound">
+      <summary>
+              Looks up a localized string similar to A Code value must be provided if a Description value is provided..
+            </summary>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Properties.Resources.BusinessFailureEvaluator_ConflictingFailureInformationBound">
+      <summary>
+              Looks up a localized string similar to Only the Failure property must be specified or Code and Description, not both..
+            </summary>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Properties.Resources.BusinessFailureEvaluator_DescriptionNotBound">
+      <summary>
+              Looks up a localized string similar to A Description value must be provided if a Code value is provided..
+            </summary>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Properties.Resources.BusinessFailureEvaluator_FailureInformationNotBound">
+      <summary>
+              Looks up a localized string similar to Either the Failure property must be specified or Code and Description..
+            </summary>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Properties.Resources.BusinessFailureEvaluator_NoConditionBoundWarning">
+      <summary>
+              Looks up a localized string similar to This activity will always throw an exception with no Condition property set..
+            </summary>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Properties.Resources.BusinessFailureScope_EvaluatorWithDifferentTypeDetected">
+      <summary>
+              Looks up a localized string similar to Scope contains a BusinessFailureEvaluator defined by a different generic type. BusinessFailureEvaluators with a different generic type will throw failures directly rather than collating the failures in this scope activity..
+            </summary>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Properties.Resources.ExecuteBookmark_InvalidBookmarkValueTypeProvided">
+      <summary>
+              Looks up a localized string similar to A value of type {0} was expected but a value of {1} was provided..
+            </summary>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Properties.Resources.OperationIdentityInspector_NullBodyFailure">
+      <summary>
+              Looks up a localized string similar to A Receive activity is required as a child activity..
+            </summary>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Properties.Resources.OperationIdentityInspector_UnexpectedIdentityType">
+      <summary>
+              Looks up a localized string similar to The operation identity type expected was {0} but the identity type {1} was detected..
+            </summary>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Properties.Resources.Retry_InvalidExceptionType">
+      <summary>
+              Looks up a localized string similar to The type specified does not derived from System.Exception..
+            </summary>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Properties.Resources.SystemFailureEvaluator_MessageConstructorNotFound">
+      <summary>
+              Looks up a localized string similar to The exception type '{0}' does not define a constructor with parameter of message..
+            </summary>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Properties.Resources.SystemFailureEvaluator_ParamNameConstructorNotFound">
+      <summary>
+              Looks up a localized string similar to The exception type '{0}' does not define a constructor with parameter of paramName..
+            </summary>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Properties.Resources.SystemFailureEvaluator_ParamNameMessageConstructorNotFound">
+      <summary>
+              Looks up a localized string similar to The exception type '{0}' does not define a constructor with parameters of paramName and message..
+            </summary>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Properties.Resources.WorkflowExtensionBehavior_InvalidServiceHostType">
+      <summary>
+              Looks up a localized string similar to Invalid ServiceHost type. Workflow extension can only be added to a WorkflowServiceHost instance..
+            </summary>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Properties.Resources.WorkflowExtensionElement_ExtensionTypeNotLoaded">
+      <summary>
+              Looks up a localized string similar to The workflow extension type '{0}' could not be loaded..
+            </summary>
+    </member>
+    <member name="T:Neovolve.Toolkit.Workflow.Activities.GetWorkflowInstanceId">
+      <summary>
+            The <see cref="T:Neovolve.Toolkit.Workflow.Activities.GetWorkflowInstanceId" />
+              class is used to obtain the instance id of the executing workflow.
+            </summary>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.GetWorkflowInstanceId.CacheMetadata(System.Activities.CodeActivityMetadata)">
+      <summary>
+            Caches the metadata.
+            </summary>
+      <param name="metadata">
+            The metadata.
+            </param>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.GetWorkflowInstanceId.Execute(System.Activities.CodeActivityContext)">
+      <summary>
+            Executes the specified context.
+            </summary>
+      <param name="context">
+            The context.
+            </param>
+      <returns>
+            A <see cref="T:System.Guid" /> instance.
+            </returns>
+    </member>
+    <member name="T:Neovolve.Toolkit.Workflow.ResumeBookmarkContext`1">
+      <summary>
+            The <see cref="T:Neovolve.Toolkit.Workflow.ResumeBookmarkContext`1" />
+              class is used to define the information required to resume a workflow bookmark.
+            </summary>
+      <typeparam name="T">
+            The type of data to resume the workflow with.
+            </typeparam>
+    </member>
+    <member name="T:Neovolve.Toolkit.Workflow.ResumeBookmarkContext">
+      <summary>
+            The <see cref="T:Neovolve.Toolkit.Workflow.ResumeBookmarkContext" />
+              class is used to resume a workflow from a bookmark.
+            </summary>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.ResumeBookmarkContext.#ctor(System.Guid,System.String)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Neovolve.Toolkit.Workflow.ResumeBookmarkContext" /> class.
+            </summary>
+      <param name="workflowInstanceId">
+            The workflow instance id.
+            </param>
+      <param name="bookmarkName">
+            Name of the bookmark.
+            </param>
+      <requires exception="T:System.ArgumentException">workflowInstanceId.Equals(Guid.Empty) == false</requires>
+      <exception cref="T:System.ArgumentException">!(workflowInstanceId.Equals(Guid.Empty) == false)</exception>
+      <requires exception="T:System.ArgumentNullException">String.IsNullOrWhiteSpace(bookmarkName) == false</requires>
+      <exception cref="T:System.ArgumentNullException">!(String.IsNullOrWhiteSpace(bookmarkName) == false)</exception>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.ResumeBookmarkContext.PromoteToValueBookmark">
+      <summary>
+            Promotes to value bookmark.
+            </summary>
+      <returns>
+            A <see cref="T:Neovolve.Toolkit.Workflow.ResumeBookmarkContext`1" /> instance.
+            </returns>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.ResumeBookmarkContext.BookmarkName">
+      <summary>
+              Gets the name of the bookmark.
+            </summary>
+      <value>
+              The name of the bookmark.
+            </value>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.ResumeBookmarkContext.WorkflowInstanceId">
+      <summary>
+              Gets the workflow instance id.
+            </summary>
+      <value>
+              The workflow instance id.
+            </value>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.ResumeBookmarkContext`1.#ctor(System.Guid,System.String)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Neovolve.Toolkit.Workflow.ResumeBookmarkContext`1" /> class.
+            </summary>
+      <param name="workflowInstanceId">
+            The workflow instance id.
+            </param>
+      <param name="bookmarkName">
+            Name of the bookmark.
+            </param>
+      <requires exception="T:System.ArgumentException">workflowInstanceId.Equals(Guid.Empty) == false</requires>
+      <exception cref="T:System.ArgumentException">!(workflowInstanceId.Equals(Guid.Empty) == false)</exception>
+      <requires exception="T:System.ArgumentNullException">String.IsNullOrWhiteSpace(bookmarkName) == false</requires>
+      <exception cref="T:System.ArgumentNullException">!(String.IsNullOrWhiteSpace(bookmarkName) == false)</exception>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.ResumeBookmarkContext`1.#ctor(System.Guid,System.String,`0)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Neovolve.Toolkit.Workflow.ResumeBookmarkContext`1" /> class.
+            </summary>
+      <param name="workflowInstanceId">
+            The workflow instance id.
+            </param>
+      <param name="bookmarkName">
+            Name of the bookmark.
+            </param>
+      <param name="bookmarkValue">
+            The bookmark value.
+            </param>
+      <requires exception="T:System.ArgumentException">workflowInstanceId.Equals(Guid.Empty) == false</requires>
+      <exception cref="T:System.ArgumentException">!(workflowInstanceId.Equals(Guid.Empty) == false)</exception>
+      <requires exception="T:System.ArgumentNullException">String.IsNullOrWhiteSpace(bookmarkName) == false</requires>
+      <exception cref="T:System.ArgumentNullException">!(String.IsNullOrWhiteSpace(bookmarkName) == false)</exception>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.ResumeBookmarkContext`1.BookmarkValue">
+      <summary>
+              Gets the bookmark value.
+            </summary>
+      <value>
+              The bookmark value.
+            </value>
+    </member>
+    <member name="T:Neovolve.Toolkit.Workflow.ExecutionProperties.OperationIdentity">
+      <summary>
+            The <see cref="T:Neovolve.Toolkit.Workflow.ExecutionProperties.OperationIdentity" />
+              class is used to get the identity executing the service operation.
+            </summary>
+    </member>
+    <member name="F:Neovolve.Toolkit.Workflow.ExecutionProperties.OperationIdentity._executionPropertyName">
+      <summary>
+              Defines the name of the execution property.
+            </summary>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.ExecutionProperties.OperationIdentity.OnReceiveMessage(System.ServiceModel.OperationContext,System.Activities.ExecutionProperties)">
+      <summary>
+            Executed when a service message is received.
+            </summary>
+      <param name="operationContext">
+            The operation context under which the message received.
+            </param>
+      <param name="activityExecutionProperties">
+            The set of execution properties available within the workflow.
+            </param>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.ExecutionProperties.OperationIdentity.Name">
+      <summary>
+              Gets the name of the property.
+            </summary>
+      <value>
+              The name of the property.
+            </value>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.ExecutionProperties.OperationIdentity.Identity">
+      <summary>
+              Gets or sets the principal.
+            </summary>
+      <value>
+              The principal.
+            </value>
+    </member>
+    <member name="T:Neovolve.Toolkit.Workflow.Activities.BusinessFailureEvaluator`1">
+      <summary>
+            The <see cref="T:Neovolve.Toolkit.Workflow.Activities.BusinessFailureEvaluator`1" />
+              class is used to evaluate business failure conditions.
+            </summary>
+      <typeparam name="T">
+            The type of failure code.
+            </typeparam>
+      <remarks>
+            This activity will throw a <see cref="T:Neovolve.Toolkit.BusinessFailureException`1" /> directly when it does not exist within a 
+              <see cref="T:Neovolve.Toolkit.Workflow.Activities.BusinessFailureScope`1" /> of the same generic type. The activity will add the failure to the resolved parent
+              scope activity where it is contained within a <see cref="T:Neovolve.Toolkit.Workflow.Activities.BusinessFailureScope`1" /> of the same generic type.
+            </remarks>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.BusinessFailureEvaluator`1.CacheMetadata(System.Activities.NativeActivityMetadata)">
+      <summary>
+            Creates and validates a description of the activity’s arguments, variables, child activities, and activity delegates.
+            </summary>
+      <param name="metadata">
+            The activity’s metadata that encapsulates the activity’s arguments, variables, child activities, and activity delegates.
+            </param>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.BusinessFailureEvaluator`1.Execute(System.Activities.NativeActivityContext)">
+      <summary>
+            Performs the execution of the activity.
+            </summary>
+      <param name="context">
+            The execution context under which the activity executes.
+            </param>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.BusinessFailureEvaluator`1.CacheMetadataBindProperties(System.Activities.NativeActivityMetadata)">
+      <summary>
+            Caches the metadata bind properties.
+            </summary>
+      <param name="metadata">
+            The metadata.
+            </param>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.BusinessFailureEvaluator`1.CacheMetadataValidation(System.Activities.NativeActivityMetadata)">
+      <summary>
+            Caches the metadata validation.
+            </summary>
+      <param name="metadata">
+            The metadata.
+            </param>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Activities.BusinessFailureEvaluator`1.Code">
+      <summary>
+              Gets or sets the code.
+            </summary>
+      <value>
+              The code for the failure.
+            </value>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Activities.BusinessFailureEvaluator`1.Condition">
+      <summary>
+              Gets or sets the condition.
+            </summary>
+      <value>
+              The condition.
+            </value>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Activities.BusinessFailureEvaluator`1.Description">
+      <summary>
+              Gets or sets the description.
+            </summary>
+      <value>
+              The description.
+            </value>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Activities.BusinessFailureEvaluator`1.Failure">
+      <summary>
+              Gets or sets the failure.
+            </summary>
+      <value>
+              The failure.
+            </value>
+    </member>
+    <member name="T:Neovolve.Toolkit.Workflow.Activities.IfThen">
+      <summary>
+            The <see cref="T:Neovolve.Toolkit.Workflow.Activities.IfThen" />
+              class is a workflow activity that executes the child activity only if a condition is valid.
+            </summary>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.IfThen.#ctor">
+      <summary>
+              Initializes a new instance of the <see cref="T:Neovolve.Toolkit.Workflow.Activities.IfThen" /> class.
+            </summary>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.IfThen.CacheMetadata(System.Activities.NativeActivityMetadata)">
+      <summary>
+            Caches the metadata.
+            </summary>
+      <param name="metadata">
+            The metadata.
+            </param>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.IfThen.Execute(System.Activities.NativeActivityContext)">
+      <summary>
+            Runs the activity’s execution logic.
+            </summary>
+      <param name="context">
+            The execution context in which the activity executes.
+            </param>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Activities.IfThen.Body">
+      <summary>
+              Gets or sets the body of the activity.
+            </summary>
+      <value>
+              The body of the activity.
+            </value>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Activities.IfThen.Condition">
+      <summary>
+              Gets or sets the condition.
+            </summary>
+      <value>
+              The condition.
+            </value>
+    </member>
+    <member name="T:Neovolve.Toolkit.Workflow.WorkflowExtensionElement">
+      <summary>
+            The <see cref="T:Neovolve.Toolkit.Workflow.WorkflowExtensionElement" />
+              class is used to provide configuration support for adding the <see cref="T:Neovolve.Toolkit.Workflow.WorkflowExtensionBehavior" />
+              to the configuration of a service.
+            </summary>
+      <example>
+        <para>
+            The following configuration adds an extension to the service.
+              </para>
+        <code lang="xml" title="Example of web.config"><![CDATA[
+            <?xml version="1.0" ?>
+            <configuration>
+                <system.serviceModel>
+                    <behaviors>
+                        <serviceBehaviors>
+                            <behavior name="ExtensionBehavior">
+                                <workflowExtension type="Neovolve.Toolkit.Workflow.Extensions.InstanceManagerExtension, Neovolve.Toolkit.Workflow"/>
+                                <workflowExtension 
+                                    type="MyApplication.SingleInstanceExtension, MyApplication"
+                                    isSingleton="true"/>
+                            </behavior>
+                        </serviceBehaviors>
+                    </behaviors>
+                    <extensions>
+                        <behaviorExtensions>
+                            <add name="workflowExtension"
+                                 type="Neovolve.Toolkit.Workflow.WorkflowExtensionElement, Neovolve.Toolkit.Workflow"/>
+                        </behaviorExtensions>
+                    </extensions>
+                    <services>
+                        <service behaviorConfiguration="ExtensionBehavior"
+                                 name="Neovolve.Toolkit.IntegrationTests.Communication.TestService">
+                            <endpoint address=""
+                                      binding="basicHttpBinding"
+                                      bindingConfiguration=""
+                                      contract="Neovolve.Toolkit.IntegrationTests.Communication.ITestService"/>
+                        </service>
+                    </services>
+                </system.serviceModel>
+            </configuration> 
+            ]]></code>
+      </example>
+      <seealso cref="T:Neovolve.Toolkit.Workflow.WorkflowExtensionBehavior" />
+    </member>
+    <member name="F:Neovolve.Toolkit.Workflow.WorkflowExtensionElement.ExtensionTypeAttributeName">
+      <summary>
+              Defines the attribute name for the error handler type.
+            </summary>
+    </member>
+    <member name="F:Neovolve.Toolkit.Workflow.WorkflowExtensionElement.IsSingletonAttributeName">
+      <summary>
+              Defines the attribute name for the is singleton value.
+            </summary>
+    </member>
+    <member name="F:Neovolve.Toolkit.Workflow.WorkflowExtensionElement._properties">
+      <summary>
+              Stores the set of properties for the element.
+            </summary>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.WorkflowExtensionElement.CreateBehavior">
+      <summary>
+            Creates a behaviour extension based on the current configuration settings.
+            </summary>
+      <returns>
+            The behaviour extension.
+            </returns>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.WorkflowExtensionElement.BehaviorType">
+      <summary>
+              Gets the type of behavior.
+            </summary>
+      <returns>
+              A <see cref="T:System.Type" />.
+            </returns>
+      <value>
+              The behavior type.
+            </value>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.WorkflowExtensionElement.ExtensionType">
+      <summary>
+              Gets or sets the type of the extension.
+            </summary>
+      <value>
+              The type of the extension.
+            </value>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.WorkflowExtensionElement.IsSingleton">
+      <summary>
+              Gets or sets a value indicating whether the extension is a singleton.
+            </summary>
+      <value>
+        <c>true</c> if the extension is a singleton; otherwise, <c>false</c>.
+            </value>
+      <remarks>
+        <para>
+                Only one instance of the extension will exist for the <see cref="T:System.ServiceModel.Activities.WorkflowServiceHost" /> if
+                <see cref="P:Neovolve.Toolkit.Workflow.WorkflowExtensionElement.IsSingleton" /> is <c>true</c>. 
+                A new instance of the extension will be created for each <see cref="T:System.Activities.Hosting.WorkflowInstance" /> in the
+                <see cref="T:System.ServiceModel.Activities.WorkflowServiceHost" /> if <see cref="P:Neovolve.Toolkit.Workflow.WorkflowExtensionElement.IsSingleton" /> is <c>false</c>.
+              </para>
+        <para>
+                The default value is <c>false</c>.
+              </para>
+      </remarks>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.WorkflowExtensionElement.Properties">
+      <summary>
+              Gets the collection of properties.
+            </summary>
+      <value>
+              The properties.
+            </value>
+      <returns>
+              The <see cref="T:System.Configuration.ConfigurationPropertyCollection" /> of properties for the element.
+            </returns>
+    </member>
+    <member name="T:Neovolve.Toolkit.Workflow.ExecutionProperties.BusinessFailureTracker`1">
+      <summary>
+            The <see cref="T:Neovolve.Toolkit.Workflow.ExecutionProperties.BusinessFailureTracker`1" />
+              class is used to add a business failure to a <see cref="T:Neovolve.Toolkit.Workflow.Activities.BusinessFailureScope`1" /> activity.
+            </summary>
+      <typeparam name="T">
+            The type of failure code.
+            </typeparam>
+    </member>
+    <member name="F:Neovolve.Toolkit.Workflow.ExecutionProperties.BusinessFailureTracker`1._executionPropertyName">
+      <summary>
+              Defines the name of the execution property.
+            </summary>
+    </member>
+    <member name="F:Neovolve.Toolkit.Workflow.ExecutionProperties.BusinessFailureTracker`1._failures">
+      <summary>
+              Stores the failures.
+            </summary>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.ExecutionProperties.BusinessFailureTracker`1.Name">
+      <summary>
+              Gets the name of the property.
+            </summary>
+      <value>
+              The name of the property.
+            </value>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.ExecutionProperties.BusinessFailureTracker`1.Failures">
+      <summary>
+              Gets the add failure method.
+            </summary>
+      <value>
+              The add failure method.
+            </value>
+    </member>
+    <member name="T:Neovolve.Toolkit.Workflow.Extensions.InstanceManagerExtension">
+      <summary>
+            The <see cref="T:Neovolve.Toolkit.Workflow.Extensions.InstanceManagerExtension" />
+              class is used to manage instances resolved from a container.
+            </summary>
+      <threadsafety instance="true" />
+    </member>
+    <member name="F:Neovolve.Toolkit.Workflow.Extensions.InstanceManagerExtension._instanceCache">
+      <summary>
+              Stores the set of instances for the extension.
+            </summary>
+    </member>
+    <member name="F:Neovolve.Toolkit.Workflow.Extensions.InstanceManagerExtension._instanceSyncLock">
+      <summary>
+              Stores the instance synchronization lock.
+            </summary>
+    </member>
+    <member name="F:Neovolve.Toolkit.Workflow.Extensions.InstanceManagerExtension._handlerIdCache">
+      <summary>
+              Stores the set of instance handler id values against the extension instance.
+            </summary>
+    </member>
+    <member name="F:Neovolve.Toolkit.Workflow.Extensions.InstanceManagerExtension._handlerSyncLock">
+      <summary>
+              Stores the handler synchronization lock.
+            </summary>
+    </member>
+    <member name="F:Neovolve.Toolkit.Workflow.Extensions.InstanceManagerExtension._container">
+      <summary>
+              Stores the container.
+            </summary>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Extensions.InstanceManagerExtension.Resolve``1(Neovolve.Toolkit.Workflow.InstanceHandler{``0})">
+      <summary>
+            Resolves an instance using the specified handler.
+            </summary>
+      <typeparam name="T">
+            The type of instance to resolve.
+            </typeparam>
+      <param name="handler">
+            The handler.
+            </param>
+      <returns>
+            A <typeparamref name="T" /> instance.
+            </returns>
+      <requires exception="T:System.ArgumentNullException">handler != null</requires>
+      <exception cref="T:System.ArgumentNullException">handler == null</exception>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Extensions.InstanceManagerExtension.DestroyHandler(System.Guid)">
+      <summary>
+            Destroys the handler.
+            </summary>
+      <param name="instanceHandlerId">
+            The instance handler id.
+            </param>
+      <requires exception="T:System.ArgumentException">instanceHandlerId.Equals(Guid.Empty) == false</requires>
+      <exception cref="T:System.ArgumentException">!(instanceHandlerId.Equals(Guid.Empty) == false)</exception>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Extensions.InstanceManagerExtension.Dispose">
+      <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Extensions.InstanceManagerExtension.CreateInstanceHandler``1(System.String)">
+      <summary>
+            Creates the instance handler.
+            </summary>
+      <typeparam name="T">
+            The type of instance being handled.
+            </typeparam>
+      <param name="resolutionName">
+            Name of the resolution.
+            </param>
+      <returns>
+            A <see cref="T:Neovolve.Toolkit.Workflow.InstanceHandler`1" /> instance.
+            </returns>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Extensions.InstanceManagerExtension.Dispose(System.Boolean)">
+      <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+      <param name="disposing">
+        <c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.
+            </param>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Extensions.InstanceManagerExtension.MapValues(System.Collections.Generic.IDictionary{System.Xml.Linq.XName,System.Object},System.Collections.Generic.IDictionary{System.Xml.Linq.XName,System.Object})">
+      <summary>
+            A host invokes this method after it is done with collecting the values in the first stage. 
+              The host forwards two read-only dictionaries of values it collected from all persistence participants during the first stage (CollectValues stage) 
+              to this method for mapping. 
+              The host adds values in the dictionary returned by this method to the collection of write-only values.
+            </summary>
+      <param name="readWriteValues">
+            The read-write values to be persisted.
+            </param>
+      <param name="writeOnlyValues">
+            The write-only values to be persisted.
+            </param>
+      <returns>
+            A dictionary containing additional write-only values to be persisted.
+            </returns>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Extensions.InstanceManagerExtension.DestroyHandlerByHandlerInstanceId(System.Guid)">
+      <summary>
+            Destroys the handler by handler instance id.
+            </summary>
+      <param name="instanceHandlerId">
+            The instance handler id.
+            </param>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Extensions.InstanceManagerExtension.DestroyLocalHandles">
+      <summary>
+            Destroys the local handles.
+            </summary>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Extensions.InstanceManagerExtension.Container">
+      <summary>
+              Gets or sets the container.
+            </summary>
+      <value>
+              The container.
+            </value>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Extensions.InstanceManagerExtension.Disposed">
+      <summary>
+              Gets or sets a value indicating whether this <see cref="T:Neovolve.Toolkit.Workflow.Extensions.InstanceManagerExtension" /> is disposed.
+            </summary>
+      <value>
+        <c>true</c> if disposed; otherwise, <c>false</c>.
+            </value>
+    </member>
+    <member name="T:Neovolve.Toolkit.Workflow.Activities.Retry">
+      <summary>
+            The <see cref="T:Neovolve.Toolkit.Workflow.Activities.Retry" />
+              class is used to provide the logic for retrying a child activity when an exception occurs.
+            </summary>
+    </member>
+    <member name="F:Neovolve.Toolkit.Workflow.Activities.Retry._defaultRetryInterval">
+      <summary>
+              Defines the default retry interval.
+            </summary>
+    </member>
+    <member name="F:Neovolve.Toolkit.Workflow.Activities.Retry._attemptCount">
+      <summary>
+              Stores the attempt count.
+            </summary>
+    </member>
+    <member name="F:Neovolve.Toolkit.Workflow.Activities.Retry._delayDuration">
+      <summary>
+              Stores the duration of the delay.
+            </summary>
+    </member>
+    <member name="F:Neovolve.Toolkit.Workflow.Activities.Retry._internalDelay">
+      <summary>
+              Storres the internal delay activity.
+            </summary>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.Retry.#ctor">
+      <summary>
+              Initializes a new instance of the <see cref="T:Neovolve.Toolkit.Workflow.Activities.Retry" /> class.
+            </summary>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.Retry.CacheMetadata(System.Activities.NativeActivityMetadata)">
+      <summary>
+            Caches the metadata.
+            </summary>
+      <param name="metadata">
+            The metadata.
+            </param>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.Retry.Execute(System.Activities.NativeActivityContext)">
+      <summary>
+            Runs the activity’s execution logic.
+            </summary>
+      <param name="context">
+            The execution context in which the activity executes.
+            </param>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.Retry.ShouldRetryAction(System.Type,System.Exception)">
+      <summary>
+            Shoulds the retry action.
+            </summary>
+      <param name="exceptionType">
+            The catch exception.
+            </param>
+      <param name="thrownException">
+            The thrown exception.
+            </param>
+      <returns>
+            A <see cref="T:System.Boolean" /> instance.
+            </returns>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.Retry.ActionFailed(System.Activities.NativeActivityFaultContext,System.Exception,System.Activities.ActivityInstance)">
+      <summary>
+            Actions the failed attempt.
+            </summary>
+      <param name="faultcontext">
+            The faultcontext.
+            </param>
+      <param name="propagatedexception">
+            The propagatedexception.
+            </param>
+      <param name="propagatedfrom">
+            The propagatedfrom.
+            </param>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.Retry.DelayCompleted(System.Activities.NativeActivityContext,System.Activities.ActivityInstance)">
+      <summary>
+            Delays the completed.
+            </summary>
+      <param name="context">
+            The context.
+            </param>
+      <param name="completedinstance">
+            The completedinstance.
+            </param>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.Retry.ExecuteAttempt(System.Activities.NativeActivityContext)">
+      <summary>
+            Executes the attempt.
+            </summary>
+      <param name="context">
+            The context.
+            </param>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Activities.Retry.Body">
+      <summary>
+              Gets or sets the body of the activity.
+            </summary>
+      <value>
+              The body of the activity.
+            </value>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Activities.Retry.ExceptionType">
+      <summary>
+              Gets or sets the type of the exception.
+            </summary>
+      <value>
+              The type of the exception.
+            </value>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Activities.Retry.MaxAttempts">
+      <summary>
+              Gets or sets the max attempts.
+            </summary>
+      <value>
+              The max attempts.
+            </value>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Activities.Retry.RetryInterval">
+      <summary>
+              Gets or sets the retry interval.
+            </summary>
+      <value>
+              The retry interval.
+            </value>
+    </member>
+    <member name="T:Neovolve.Toolkit.Workflow.Activities.ExecuteBookmark`1">
+      <summary>
+            The <see cref="T:Neovolve.Toolkit.Workflow.Activities.ExecuteBookmark`1" />
+              class is a workflow activity that is used to process bookmarks.
+            </summary>
+      <typeparam name="T">
+            The type of value provided to the bookmark when resumed.
+            </typeparam>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.ExecuteBookmark`1.CacheMetadata(System.Activities.NativeActivityMetadata)">
+      <summary>
+            Caches the metadata.
+            </summary>
+      <param name="metadata">
+            The metadata.
+            </param>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.ExecuteBookmark`1.Execute(System.Activities.NativeActivityContext)">
+      <summary>
+            Runs the activity’s execution logic.
+            </summary>
+      <param name="context">
+            The execution context in which the activity executes.
+            </param>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.ExecuteBookmark`1.BookmarkResumed(System.Activities.NativeActivityContext,System.Activities.Bookmark,System.Object)">
+      <summary>
+            Executes the callback logic when a bookmark is resumed.
+            </summary>
+      <param name="context">
+            The context.
+            </param>
+      <param name="bookmark">
+            The bookmark.
+            </param>
+      <param name="value">
+            The value.
+            </param>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Activities.ExecuteBookmark`1.BookmarkName">
+      <summary>
+              Gets or sets the name of the bookmark.
+            </summary>
+      <value>
+              The name of the bookmark.
+            </value>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Activities.ExecuteBookmark`1.CanInduceIdle">
+      <summary>
+              Gets or sets a value that indicates whether the activity can cause the workflow to become idle.
+            </summary>
+      <value>
+              The can induce idle.
+            </value>
+      <returns>
+              True if the activity can cause the workflow to become idle. This value is false by default.
+            </returns>
+    </member>
+    <member name="T:Neovolve.Toolkit.Workflow.Activities.ActivityHelper">
+      <summary>
+            The <see cref="T:Neovolve.Toolkit.Workflow.Activities.ActivityHelper" />
+              class is used to provide helper methods for activities.
+            </summary>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.ActivityHelper.GenerateDisplayName(System.Type,Neovolve.Toolkit.Workflow.GenericArgumentCount)">
+      <summary>
+            Generates the display name.
+            </summary>
+      <param name="activityType">
+            Type of the activity.
+            </param>
+      <param name="argumentCount">
+            The argument count.
+            </param>
+      <returns>
+            A <see cref="T:System.String" /> instance.
+            </returns>
+      <requires exception="T:System.ArgumentNullException">activityType != null</requires>
+      <exception cref="T:System.ArgumentNullException">activityType == null</exception>
+    </member>
+    <member name="T:Neovolve.Toolkit.Workflow.ActivityInvoker">
+      <summary>
+            The <see cref="T:Neovolve.Toolkit.Workflow.ActivityInvoker" />
+              class is used to invoke activities.
+            </summary>
+    </member>
+    <member name="F:Neovolve.Toolkit.Workflow.ActivityInvoker._parentProperty">
+      <summary>
+              Stores the parent property reference.
+            </summary>
+    </member>
+    <member name="F:Neovolve.Toolkit.Workflow.ActivityInvoker._preserveStackTraceMethod">
+      <summary>
+              Stores the preserve stack trace method.
+            </summary>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.ActivityInvoker.Invoke(System.Activities.Activity)">
+      <summary>
+            Invokes the specified activity.
+            </summary>
+      <param name="activity">
+            The activity.
+            </param>
+      <returns>
+            A <see cref="T:System.Collections.Generic.IDictionary`2" /> instance.
+            </returns>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.ActivityInvoker.Invoke(System.Activities.Activity,System.Collections.Generic.IDictionary{System.String,System.Object})">
+      <summary>
+            Invokes the specified activity using the provided input parameters.
+            </summary>
+      <param name="activity">
+            The activity.
+            </param>
+      <param name="inputParameters">
+            The input parameters.
+            </param>
+      <returns>
+            A <see cref="T:System.Collections.Generic.IDictionary`2" /> instance.
+            </returns>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.ActivityInvoker.Invoke(System.Activities.WorkflowApplication)">
+      <summary>
+            Invokes the specified application.
+            </summary>
+      <param name="application">
+            The application.
+            </param>
+      <returns>
+            A <see cref="T:System.Collections.Generic.IDictionary`2" /> instance.
+            </returns>
+      <requires exception="T:System.ArgumentNullException">application != null</requires>
+      <exception cref="T:System.ArgumentNullException">application == null</exception>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.ActivityInvoker.Invoke(System.Activities.WorkflowApplication,System.Runtime.DurableInstancing.InstanceStore)">
+      <summary>
+            Invokes the specified application.
+            </summary>
+      <param name="application">
+            The application.
+            </param>
+      <param name="instanceStore">
+            The instance store.
+            </param>
+      <returns>
+            A <see cref="T:System.Collections.Generic.IDictionary`2" /> instance.
+            </returns>
+      <requires exception="T:System.ArgumentNullException">application != null</requires>
+      <exception cref="T:System.ArgumentNullException">application == null</exception>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.ActivityInvoker.Invoke(System.Activities.WorkflowApplication,System.Runtime.DurableInstancing.InstanceStore,Neovolve.Toolkit.Workflow.ResumeBookmarkContext)">
+      <summary>
+            Invokes the specified application.
+            </summary>
+      <param name="application">
+            The application.
+            </param>
+      <param name="instanceStore">
+            The instance store.
+            </param>
+      <param name="resumeContext">
+            The resume context.
+            </param>
+      <returns>
+            A <see cref="T:System.Collections.Generic.IDictionary`2" /> instance.
+            </returns>
+      <requires exception="T:System.ArgumentNullException">application != null</requires>
+      <exception cref="T:System.ArgumentNullException">application == null</exception>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.ActivityInvoker.Invoke(System.Activities.WorkflowApplication,System.Action{System.Activities.Activity})">
+      <summary>
+            Invokes the specified application.
+            </summary>
+      <param name="application">
+            The application.
+            </param>
+      <param name="initialize">
+            The initialize.
+            </param>
+      <returns>
+            A <see cref="T:System.Collections.Generic.IDictionary`2" /> instance.
+            </returns>
+      <requires exception="T:System.ArgumentNullException">application != null</requires>
+      <exception cref="T:System.ArgumentNullException">application == null</exception>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.ActivityInvoker.Invoke(System.Activities.WorkflowApplication,System.Runtime.DurableInstancing.InstanceStore,Neovolve.Toolkit.Workflow.ResumeBookmarkContext,System.Action{System.Activities.Activity})">
+      <summary>
+            Invokes the specified application.
+            </summary>
+      <param name="application">
+            The application.
+            </param>
+      <param name="instanceStore">
+            The instance store.
+            </param>
+      <param name="resumeContext">
+            The resume context.
+            </param>
+      <param name="initialize">
+            The initialize.
+            </param>
+      <returns>
+            A <see cref="T:System.Collections.Generic.IDictionary`2" /> instance.
+            </returns>
+      <requires exception="T:System.ArgumentNullException">application != null</requires>
+      <exception cref="T:System.ArgumentNullException">application == null</exception>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.ActivityInvoker.Invoke``1(System.Activities.WorkflowApplication,System.Runtime.DurableInstancing.InstanceStore,Neovolve.Toolkit.Workflow.ResumeBookmarkContext{``0})">
+      <summary>
+            Invokes the specified application.
+            </summary>
+      <typeparam name="T">
+            The type of resume value.
+            </typeparam>
+      <param name="application">
+            The application.
+            </param>
+      <param name="instanceStore">
+            The instance store.
+            </param>
+      <param name="resumeContext">
+            The resume context.
+            </param>
+      <returns>
+            A <see cref="T:System.Collections.Generic.IDictionary`2" /> instance.
+            </returns>
+      <requires exception="T:System.ArgumentNullException">application != null</requires>
+      <exception cref="T:System.ArgumentNullException">application == null</exception>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.ActivityInvoker.Invoke``1(System.Activities.WorkflowApplication,System.Runtime.DurableInstancing.InstanceStore,Neovolve.Toolkit.Workflow.ResumeBookmarkContext{``0},System.Action{System.Activities.Activity})">
+      <summary>
+            Invokes the specified application.
+            </summary>
+      <typeparam name="T">
+            The type of resume value.
+            </typeparam>
+      <param name="application">
+            The application.
+            </param>
+      <param name="instanceStore">
+            The instance store.
+            </param>
+      <param name="resumeContext">
+            The resume context.
+            </param>
+      <param name="initialize">
+            The initialize.
+            </param>
+      <returns>
+            A <see cref="T:System.Collections.Generic.IDictionary`2" /> instance.
+            </returns>
+      <requires exception="T:System.ArgumentNullException">application != null</requires>
+      <exception cref="T:System.ArgumentNullException">application == null</exception>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.ActivityInvoker.InvokeAsync(System.Activities.Activity)">
+      <summary>
+            Invokes the specified activity asynchronously.
+            </summary>
+      <param name="activity">
+            The activity.
+            </param>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.ActivityInvoker.InvokeAsync(System.Activities.Activity,System.Collections.Generic.IDictionary{System.String,System.Object})">
+      <summary>
+            Invokes the activity asynchronously using the specified input parameters.
+            </summary>
+      <param name="activity">
+            The activity.
+            </param>
+      <param name="inputParameters">
+            The input parameters.
+            </param>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.ActivityInvoker.CreateActivityFailureException(System.Exception,System.Activities.Activity)">
+      <summary>
+            Creates the activity failure exception.
+            </summary>
+      <param name="exception">
+            The exception.
+            </param>
+      <param name="source">
+            The source.
+            </param>
+      <returns>
+            A <see cref="T:System.Exception" /> instance.
+            </returns>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.ActivityInvoker.GetActivityParentProperty">
+      <summary>
+            Gets the activity parent property.
+            </summary>
+      <returns>
+            A <see cref="T:System.Reflection.PropertyInfo" /> instance.
+            </returns>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.ActivityInvoker.GetExceptionPreserveMethod">
+      <summary>
+            Gets the exception preserve method.
+            </summary>
+      <returns>
+            A <see cref="T:System.Reflection.MethodInfo" /> instance.
+            </returns>
+    </member>
+    <member name="T:Neovolve.Toolkit.Workflow.ExecutionProperties.NamespaceDoc">
+      <summary>
+            The Neovolve.Toolkit.Workflow.ExecutionProperties namespace contains classes and namespaces 
+              that provided custom extensions that support development with 
+              execution properties for activities running in Windows Workflow 4.
+            </summary>
+    </member>
+    <member name="T:Neovolve.Toolkit.Workflow.ActivityStore">
+      <summary>
+            The <see cref="T:Neovolve.Toolkit.Workflow.ActivityStore" />
+              class is used to cache activity instances for reuse.
+            </summary>
+    </member>
+    <member name="F:Neovolve.Toolkit.Workflow.ActivityStore._store">
+      <summary>
+              Stores the activity instances.
+            </summary>
+    </member>
+    <member name="F:Neovolve.Toolkit.Workflow.ActivityStore._syncLock">
+      <summary>
+              Provides the lock mechanism for working with the store.
+            </summary>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.ActivityStore.Resolve``1">
+      <summary>
+            Resolves this instance.
+            </summary>
+      <typeparam name="T">
+            The type of activity to return.
+            </typeparam>
+      <returns>
+            A <typeparamref name="T" /> instance.
+            </returns>
+    </member>
+    <member name="T:Neovolve.Toolkit.Workflow.Extensions.NamespaceDoc">
+      <summary>
+            The Neovolve.Toolkit.Workflow.Extensions namespace contains classes and namespaces 
+              that provided custom extensions that support development with Windows Workflow 4.
+            </summary>
+    </member>
+    <member name="T:Neovolve.Toolkit.Workflow.ActivityFailureException">
+      <summary>
+            The <see cref="T:Neovolve.Toolkit.Workflow.ActivityFailureException" />
+              class is used to describe a failure in the execution of a workflow activity .
+            </summary>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.ActivityFailureException.#ctor">
+      <summary>
+              Initializes a new instance of the <see cref="T:Neovolve.Toolkit.Workflow.ActivityFailureException" /> class.
+            </summary>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.ActivityFailureException.#ctor(System.String)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Neovolve.Toolkit.Workflow.ActivityFailureException" /> class.
+            </summary>
+      <param name="message">
+            The message.
+            </param>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.ActivityFailureException.#ctor(System.String,System.Exception)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Neovolve.Toolkit.Workflow.ActivityFailureException" /> class.
+            </summary>
+      <param name="message">
+            The message.
+            </param>
+      <param name="inner">
+            The inner.
+            </param>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.ActivityFailureException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Neovolve.Toolkit.Workflow.ActivityFailureException" /> class.
+            </summary>
+      <param name="info">
+            The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.
+            </param>
+      <param name="context">
+            The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.
+            </param>
+      <exception cref="T:System.ArgumentNullException">
+            The <paramref name="info" /> parameter is null. 
+            </exception>
+      <exception cref="T:System.Runtime.Serialization.SerializationException">
+            The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). 
+            </exception>
+    </member>
+    <member name="T:Neovolve.Toolkit.Workflow.Activities.DisposalScope`1">
+      <summary>
+            The <see cref="T:Neovolve.Toolkit.Workflow.Activities.DisposalScope`1" />
+              class is used to provide disposal support for a resource held by a workflow.
+            </summary>
+      <typeparam name="T">
+            The type of resource to dispose.
+            </typeparam>
+      <remarks>
+            This activity uses a <see cref="P:Neovolve.Toolkit.Workflow.Activities.DisposalScope`1.NoPersistHandle" /> to prevent persistence within
+              its execution.
+            </remarks>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.DisposalScope`1.#ctor">
+      <summary>
+              Initializes a new instance of the <see cref="T:Neovolve.Toolkit.Workflow.Activities.DisposalScope`1" /> class.
+            </summary>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.DisposalScope`1.CacheMetadata(System.Activities.NativeActivityMetadata)">
+      <summary>
+            Caches the metadata.
+            </summary>
+      <param name="metadata">
+            The metadata.
+            </param>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.DisposalScope`1.Execute(System.Activities.NativeActivityContext)">
+      <summary>
+            Runs the activity’s execution logic.
+            </summary>
+      <param name="context">
+            The execution context in which the activity executes.
+            </param>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.DisposalScope`1.DestroyInstance(System.Activities.NativeActivityContext)">
+      <summary>
+            Destroys the instance.
+            </summary>
+      <param name="context">
+            The context.
+            </param>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.DisposalScope`1.OnCompletion(System.Activities.NativeActivityContext,System.Activities.ActivityInstance)">
+      <summary>
+            Called when the activity has completed.
+            </summary>
+      <param name="context">
+            The context.
+            </param>
+      <param name="completedinstance">
+            The completed instance.
+            </param>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.DisposalScope`1.OnFaulted(System.Activities.NativeActivityFaultContext,System.Exception,System.Activities.ActivityInstance)">
+      <summary>
+            Called when the activity has faulted.
+            </summary>
+      <param name="faultcontext">
+            The fault context.
+            </param>
+      <param name="propagatedexception">
+            The propagated exception.
+            </param>
+      <param name="propagatedfrom">
+            The propagated from.
+            </param>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Activities.DisposalScope`1.Body">
+      <summary>
+              Gets or sets the body of the activity.
+            </summary>
+      <value>
+              The body of the activity.
+            </value>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Activities.DisposalScope`1.Instance">
+      <summary>
+              Gets or sets the instance.
+            </summary>
+      <value>
+              The instance.
+            </value>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Activities.DisposalScope`1.NoPersistHandle">
+      <summary>
+              Gets or sets the no persist handle.
+            </summary>
+      <value>
+              The no persist handle.
+            </value>
+    </member>
+    <member name="T:Neovolve.Toolkit.Workflow.Activities.BusinessFailureScope`1">
+      <summary>
+            The <see cref="T:Neovolve.Toolkit.Workflow.Activities.BusinessFailureScope`1" />
+              class is used to provide scope management of business failures in a workflow.
+            </summary>
+      <typeparam name="T">
+            The type of failure code.
+            </typeparam>
+      <remarks>
+        <para>
+            This activity uses the
+                <see cref="T:Neovolve.Toolkit.Workflow.ExecutionProperties.BusinessFailureTracker`1" /> workflow execution property with the name of 
+                <see cref="P:Neovolve.Toolkit.Workflow.ExecutionProperties.BusinessFailureTracker`1.Name">BusinessFailureTracker{T}.Name</see>
+                to obtain <see cref="T:Neovolve.Toolkit.BusinessFailure`1" /> values.
+                A <see cref="T:Neovolve.Toolkit.BusinessFailureException`1" /> instance is then created with these failures.
+                No exception will be thrown if the execution property does not contain any failure values.
+              </para>
+        <para>
+            The <see cref="T:Neovolve.Toolkit.Workflow.ExecutionProperties.BusinessFailureTracker`1" /> execution property is typically populated by
+                executions of child <see cref="T:Neovolve.Toolkit.Workflow.Activities.BusinessFailureEvaluator`1" /> activities.
+              </para>
+      </remarks>
+    </member>
+    <member name="F:Neovolve.Toolkit.Workflow.Activities.BusinessFailureScope`1._activityExecutionIndex">
+      <summary>
+              The activity execution index.
+            </summary>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.BusinessFailureScope`1.#ctor">
+      <summary>
+              Initializes a new instance of the <see cref="T:Neovolve.Toolkit.Workflow.Activities.BusinessFailureScope`1" /> class.
+            </summary>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.BusinessFailureScope`1.CacheMetadata(System.Activities.NativeActivityMetadata)">
+      <summary>
+            Creates and validates a description of the activity’s arguments, variables, child activities, and activity delegates.
+            </summary>
+      <param name="metadata">
+            The activity’s metadata that encapsulates the activity’s arguments, variables, child activities, and activity delegates.
+            </param>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.BusinessFailureScope`1.Execute(System.Activities.NativeActivityContext)">
+      <summary>
+            Performs the execution of the activity.
+            </summary>
+      <param name="context">
+            The execution context under which the activity executes.
+            </param>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.BusinessFailureScope`1.CompleteScope(System.Activities.NativeActivityContext)">
+      <summary>
+            The complete scope.
+            </summary>
+      <param name="context">
+            The context.
+            </param>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.BusinessFailureScope`1.CacheMetadataValidation(System.Activities.NativeActivityMetadata)">
+      <summary>
+            Caches the metadata validation.
+            </summary>
+      <param name="metadata">
+            The metadata.
+            </param>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.BusinessFailureScope`1.ExecuteChildActivity(System.Activities.NativeActivityContext,System.Activities.Activity)">
+      <summary>
+            Executes the child activity.
+            </summary>
+      <param name="context">
+            The context.
+            </param>
+      <param name="activity">
+            The activity.
+            </param>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.BusinessFailureScope`1.OnActivityCompleted(System.Activities.NativeActivityContext,System.Activities.ActivityInstance)">
+      <summary>
+            Called when an activity has completed.
+            </summary>
+      <param name="context">
+            The context.
+            </param>
+      <param name="completedInstance">
+            The completed instance.
+            </param>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Activities.BusinessFailureScope`1.Activities">
+      <summary>
+              Gets the activities.
+            </summary>
+      <value>
+              The branches.
+            </value>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Activities.BusinessFailureScope`1.Variables">
+      <summary>
+              Gets the variables.
+            </summary>
+      <value>
+              The variables.
+            </value>
+    </member>
+    <member name="T:Neovolve.Toolkit.Workflow.GenericArgumentCount">
+      <summary>
+            The <see cref="T:Neovolve.Toolkit.Workflow.GenericArgumentCount" />
+              enum defines the number of generic arguments available for an activity type.
+            </summary>
+    </member>
+    <member name="F:Neovolve.Toolkit.Workflow.GenericArgumentCount.One">
+      <summary>
+              One generic argument is available.
+            </summary>
+    </member>
+    <member name="F:Neovolve.Toolkit.Workflow.GenericArgumentCount.Two">
+      <summary>
+              Two generic arguments are available.
+            </summary>
+    </member>
+    <member name="F:Neovolve.Toolkit.Workflow.GenericArgumentCount.Three">
+      <summary>
+              Three generic arguments are available.
+            </summary>
+    </member>
+    <member name="F:Neovolve.Toolkit.Workflow.GenericArgumentCount.Four">
+      <summary>
+              Four generic arguments are available.
+            </summary>
+    </member>
+    <member name="F:Neovolve.Toolkit.Workflow.GenericArgumentCount.Five">
+      <summary>
+              Five generic arguments are available.
+            </summary>
+    </member>
+    <member name="F:Neovolve.Toolkit.Workflow.GenericArgumentCount.Six">
+      <summary>
+              Six generic arguments are available.
+            </summary>
+    </member>
+    <member name="F:Neovolve.Toolkit.Workflow.GenericArgumentCount.Seven">
+      <summary>
+              Seven generic arguments are available.
+            </summary>
+    </member>
+    <member name="F:Neovolve.Toolkit.Workflow.GenericArgumentCount.Eight">
+      <summary>
+              Eight generic arguments are available.
+            </summary>
+    </member>
+    <member name="F:Neovolve.Toolkit.Workflow.GenericArgumentCount.Nine">
+      <summary>
+              Nine generic arguments are available.
+            </summary>
+    </member>
+    <member name="F:Neovolve.Toolkit.Workflow.GenericArgumentCount.Ten">
+      <summary>
+              Ten generic arguments are available.
+            </summary>
+    </member>
+    <member name="F:Neovolve.Toolkit.Workflow.GenericArgumentCount.Eleven">
+      <summary>
+              Eleven generic arguments are available.
+            </summary>
+    </member>
+    <member name="F:Neovolve.Toolkit.Workflow.GenericArgumentCount.Twelve">
+      <summary>
+              Twelve generic arguments are available.
+            </summary>
+    </member>
+    <member name="F:Neovolve.Toolkit.Workflow.GenericArgumentCount.Thirteen">
+      <summary>
+              Thirteen generic arguments are available.
+            </summary>
+    </member>
+    <member name="F:Neovolve.Toolkit.Workflow.GenericArgumentCount.Fourteen">
+      <summary>
+              Fourteen generic arguments are available.
+            </summary>
+    </member>
+    <member name="F:Neovolve.Toolkit.Workflow.GenericArgumentCount.Fifteen">
+      <summary>
+              Fifteen generic arguments are available.
+            </summary>
+    </member>
+    <member name="F:Neovolve.Toolkit.Workflow.GenericArgumentCount.Sixteen">
+      <summary>
+              Sixteen generic arguments are available.
+            </summary>
+    </member>
+    <member name="T:Neovolve.Toolkit.Workflow.InstanceHandler`1">
+      <summary>
+            The <see cref="T:Neovolve.Toolkit.Workflow.InstanceHandler`1" />
+              class is used to provide instance handling logic for a <see cref="T:Neovolve.Toolkit.Workflow.Activities.InstanceResolver`16" /> instance.
+            </summary>
+      <typeparam name="T">
+            The type of instance to handle.
+            </typeparam>
+    </member>
+    <member name="F:Neovolve.Toolkit.Workflow.InstanceHandler`1._resolveAttemptMade">
+      <summary>
+              Stores whether a resolution attempt has been made on this instance.
+            </summary>
+    </member>
+    <member name="F:Neovolve.Toolkit.Workflow.InstanceHandler`1._resolvedInstance">
+      <summary>
+              Stores the resolved instance.
+            </summary>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.InstanceHandler`1.#ctor(System.String)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Neovolve.Toolkit.Workflow.InstanceHandler`1" /> class.
+            </summary>
+      <param name="resolutionName">
+            The handle description.
+            </param>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.InstanceHandler`1.Instance">
+      <summary>
+              Gets the instance.
+            </summary>
+      <value>
+              The instance.
+            </value>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.InstanceHandler`1.InstanceHandlerId">
+      <summary>
+              Gets the instance handler id.
+            </summary>
+      <value>
+              The instance handler id.
+            </value>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.InstanceHandler`1.ResolutionName">
+      <summary>
+              Gets the name of the resolution.
+            </summary>
+      <value>
+              The name of the resolution.
+            </value>
+    </member>
+    <member name="T:Neovolve.Toolkit.Workflow.WorkflowExtensionBehavior">
+      <summary>
+            The <see cref="T:Neovolve.Toolkit.Workflow.WorkflowExtensionBehavior" />
+              class provides support for adding a workflow extension to a <see cref="T:System.ServiceModel.Activities.WorkflowServiceHost" /> instance.
+            </summary>
+    </member>
+    <member name="F:Neovolve.Toolkit.Workflow.WorkflowExtensionBehavior._extensionType">
+      <summary>
+              Stores the extension type to use.
+            </summary>
+    </member>
+    <member name="F:Neovolve.Toolkit.Workflow.WorkflowExtensionBehavior._isSingleton">
+      <summary>
+              Stores the is singleton value.
+            </summary>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.WorkflowExtensionBehavior.#ctor(System.Type,System.Boolean)">
+      <summary>
+            Initializes a new instance of the <see cref="T:Neovolve.Toolkit.Workflow.WorkflowExtensionBehavior" /> class.
+            </summary>
+      <param name="extensionType">
+            Type of the extension.
+            </param>
+      <param name="isSingleton">
+            If set to <c>true</c> the extension will be added as [is singleton].
+            </param>
+      <requires exception="T:System.ArgumentNullException">extensionType != null</requires>
+      <exception cref="T:System.ArgumentNullException">extensionType == null</exception>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.WorkflowExtensionBehavior.AddBindingParameters(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase,System.Collections.ObjectModel.Collection{System.ServiceModel.Description.ServiceEndpoint},System.ServiceModel.Channels.BindingParameterCollection)">
+      <summary>
+            Provides the ability to pass custom data to binding elements to support the contract implementation.
+            </summary>
+      <param name="serviceDescription">
+            The service description of the service.
+            </param>
+      <param name="serviceHostBase">
+            The host of the service.
+            </param>
+      <param name="endpoints">
+            The service endpoints.
+            </param>
+      <param name="bindingParameters">
+            Custom objects to which binding elements have access.
+            </param>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.WorkflowExtensionBehavior.ApplyDispatchBehavior(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase)">
+      <summary>
+            Provides the ability to change run-time property values or insert custom extension objects such as error handlers, message or parameter interceptors, security extensions, and other custom extension objects.
+            </summary>
+      <param name="serviceDescription">
+            The service description.
+            </param>
+      <param name="serviceHostBase">
+            The host that is currently being built.
+            </param>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.WorkflowExtensionBehavior.Validate(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase)">
+      <summary>
+            Provides the ability to inspect the service host and the service description to confirm that the service can run successfully.
+            </summary>
+      <param name="serviceDescription">
+            The service description.
+            </param>
+      <param name="serviceHostBase">
+            The service host that is currently being constructed.
+            </param>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.WorkflowExtensionBehavior.BuildCreateExtension(System.Type)">
+      <summary>
+            Builds the create extension.
+            </summary>
+      <param name="extensionType">
+            Type of the extension.
+            </param>
+      <returns>
+            A <see cref="T:System.Func`1" /> instance.
+            </returns>
+    </member>
+    <member name="T:Neovolve.Toolkit.Workflow.Activities.SystemFailureEvaluator">
+      <summary>
+            The <see cref="T:Neovolve.Toolkit.Workflow.Activities.SystemFailureEvaluator" />
+              class is used to evaluate a condition to determine whether a system failure has occurred.
+            </summary>
+    </member>
+    <member name="F:Neovolve.Toolkit.Workflow.Activities.SystemFailureEvaluator.MessageParameterName">
+      <summary>
+              Defines the message parameter name.
+            </summary>
+    </member>
+    <member name="F:Neovolve.Toolkit.Workflow.Activities.SystemFailureEvaluator.ParamNameParameterName">
+      <summary>
+              Defines the paramName parameter name.
+            </summary>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.SystemFailureEvaluator.CacheMetadata(System.Activities.CodeActivityMetadata)">
+      <summary>
+            Creates and validates a description of the activity’s arguments, variables, child activities, and activity delegates.
+            </summary>
+      <param name="metadata">
+            The activity’s metadata that encapsulates the activity’s arguments, variables, child activities, and activity delegates.
+            </param>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.SystemFailureEvaluator.Execute(System.Activities.CodeActivityContext)">
+      <summary>
+            Performs the execution of the activity.
+            </summary>
+      <param name="context">
+            The execution context under which the activity executes.
+            </param>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.SystemFailureEvaluator.CreateParameterNameMessageException(System.Type,System.String,System.String)">
+      <summary>
+            Creates the parameter name message exception.
+            </summary>
+      <param name="exceptionType">
+            Type of the exception.
+            </param>
+      <param name="parameterName">
+            Name of the parameter.
+            </param>
+      <param name="message">
+            The message.
+            </param>
+      <returns>
+            A <see cref="T:System.Exception" /> instance.
+            </returns>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.SystemFailureEvaluator.CreateStringException(System.Type,System.String,System.String)">
+      <summary>
+            Creates the string exception.
+            </summary>
+      <param name="exceptionType">
+            Type of the exception.
+            </param>
+      <param name="parameterName">
+            Name of the parameter.
+            </param>
+      <param name="message">
+            The message.
+            </param>
+      <returns>
+            A <see cref="T:System.Exception" /> instance.
+            </returns>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.SystemFailureEvaluator.DetermineExceptionToThrow(System.Type,System.String,System.String)">
+      <summary>
+            Determines the exception to throw.
+            </summary>
+      <param name="exceptionType">
+            Type of the exception.
+            </param>
+      <param name="parameterName">
+            Name of the parameter.
+            </param>
+      <param name="message">
+            The message.
+            </param>
+      <returns>
+            A <see cref="T:System.Exception" /> instance.
+            </returns>
+      <requires exception="T:System.ArgumentNullException">exceptionType != null</requires>
+      <exception cref="T:System.ArgumentNullException">exceptionType == null</exception>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Activities.SystemFailureEvaluator.Condition">
+      <summary>
+              Gets or sets the condition.
+            </summary>
+      <value>
+              The condition.
+            </value>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Activities.SystemFailureEvaluator.ExceptionType">
+      <summary>
+              Gets or sets the type of the exception.
+            </summary>
+      <value>
+              The type of the exception.
+            </value>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Activities.SystemFailureEvaluator.Message">
+      <summary>
+              Gets or sets the message.
+            </summary>
+      <value>
+              The message.
+            </value>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Activities.SystemFailureEvaluator.ParameterName">
+      <summary>
+              Gets or sets the name of the parameter.
+            </summary>
+      <value>
+              The name of the parameter.
+            </value>
+    </member>
+    <member name="T:Neovolve.Toolkit.Workflow.Activities.ReceiveIdentityInspector`1">
+      <summary>
+            The <see cref="T:Neovolve.Toolkit.Workflow.Activities.ReceiveIdentityInspector`1" />
+              class is used to inspect the identity that is executing a service operation in a <see cref="T:System.ServiceModel.Activities.Receive" /> activity.
+            </summary>
+      <typeparam name="T">
+            The type of <see cref="T:System.Security.Principal.IIdentity" /> to return.
+            </typeparam>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.ReceiveIdentityInspector`1.CacheMetadata(System.Activities.NativeActivityMetadata)">
+      <summary>
+            Caches the metadata.
+            </summary>
+      <param name="metadata">
+            The metadata.
+            </param>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.ReceiveIdentityInspector`1.Execute(System.Activities.NativeActivityContext)">
+      <summary>
+            Runs the activity’s execution logic.
+            </summary>
+      <param name="context">
+            The execution context in which the activity executes.
+            </param>
+    </member>
+    <member name="M:Neovolve.Toolkit.Workflow.Activities.ReceiveIdentityInspector`1.OnBodyCompleted(System.Activities.NativeActivityContext,System.Activities.ActivityInstance)">
+      <summary>
+            Called when the body activity has completed.
+            </summary>
+      <param name="context">
+            The context.
+            </param>
+      <param name="instance">
+            The instance.
+            </param>
+    </member>
+    <member name="P:Neovolve.Toolkit.Workflow.Activities.ReceiveIdentityInspector`1.Body">
+      <summary>
+              Gets or sets the body.
+            </summary>
+      <value>
+              The body of the activity.
+            </value>
+    </member>
+  </members>
+</doc>

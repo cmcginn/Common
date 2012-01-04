@@ -1,0 +1,5 @@
+obj\Release\_Common.Workflows.Activities.g.cs
+obj\Release\ExtractZipArchive.g.cs
+obj\Release\ProcessGatewayPayment.g.cs
+obj\Release\XslTransform.g.cs
+obj\Release\ValidateSchema.g.cs
